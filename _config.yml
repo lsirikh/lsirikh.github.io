@@ -1,20 +1,18 @@
 # --- General options --- #
 
-# Name of website
-title: My website
+minimal_mistakes_skin    : "default" # "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise"
 
-# Short description of your site
-description: A virtual proof that I'm awesome
+# Site Settings
+locale                   : "en-US"
+title                    : "Site Title"
+title_separator          : "-"
+name                     : "lsirikh"
+description              : "An amazing website."
+url                      : "https://lsirikh.github.io"
+baseurl                  : # the subpath of your site, e.g. "/blog"
+repository               : # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
 
-# --- Local development options ---
-# If your website is hosted locally rather than on GitHub, then you need to uncomment the next two parameters to set the url and baseurl
-# *** If you're not sure what this mean, then leave this section as it is. Only modify the url and baseurl if you know what you're doing!***
 
-# url is the the website domain URL without a trailing slash
-#url: "https://lsirikh.github.io"
-
-# baseurl should be an empty string
-#baseurl: ""
 
 # --- Navigation bar options --- #
 
