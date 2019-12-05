@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+      
+      ROS installation based from Ubuntu 16.04 Kinetic Kame
+      
+    </title>
+    <link rel="shortcut icon" type="image/x-icon" href="/assets/res/favicon.ico">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/materialize/0.99.0/css/materialize.min.css">
+    <link rel="stylesheet" href="//fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="/assets/css/main.css">
+    
+    
+    <link rel="stylesheet" href="/assets/css/post.css">
+    
+    
+    
+    <link rel="stylesheet" href="/assets/css/syntax.css">
+    <link rel="alternate" type="application/rss+xml" title="RSS" href="/feed.xml">
+    <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml">
+    <!-- Begin Jekyll SEO tag v2.6.1 -->
+<meta name="generator" content="Jekyll v3.8.5" />
+<meta property="og:title" content="ROS installation based from Ubuntu 16.04 Kinetic Kame" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="우분투 16.04 LTS버전에서 활용되는 ROS는 Kinectic Kame는 사실 우분투 16.04이기 때문에 설치되는 환경 종속적인 ROS 버전이다." />
+<meta property="og:description" content="우분투 16.04 LTS버전에서 활용되는 ROS는 Kinectic Kame는 사실 우분투 16.04이기 때문에 설치되는 환경 종속적인 ROS 버전이다." />
+<link rel="canonical" href="http://localhost:4000/2019/12/05/ROS-ros-installation" />
+<meta property="og:url" content="http://localhost:4000/2019/12/05/ROS-ros-installation" />
+<meta property="og:site_name" content="테스트 페이지" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2019-12-05T17:17:13+09:00" />
+<meta name="google-site-verification" content="UA-96359860-1" />
+<script type="application/ld+json">
+{"description":"우분투 16.04 LTS버전에서 활용되는 ROS는 Kinectic Kame는 사실 우분투 16.04이기 때문에 설치되는 환경 종속적인 ROS 버전이다.","@type":"BlogPosting","headline":"ROS installation based from Ubuntu 16.04 Kinetic Kame","dateModified":"2019-12-05T17:17:13+09:00","datePublished":"2019-12-05T17:17:13+09:00","url":"http://localhost:4000/2019/12/05/ROS-ros-installation","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/2019/12/05/ROS-ros-installation"},"@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+  </head>
+  <body>
+    <header>
+      <nav class="top-nav teal">
+        <div class="nav-wrapper">
+          <div class="container">
+            <a class="page-title" href="/">테스트 페이지</a>
+          </div>
+        </div>
+      </nav>
+      <div class="container">
+        <a href="#" data-activates="slide-out" class="button-collapse top-nav full hide-on-large-only">
+          <i class="material-icons">menu</i>
+        </a>
+      </div>
+      <ul id="slide-out" class="side-nav fixed">
+        <li>
+          <div class="userView">
+            <div class="background"></div>
+            <a href="https://github.com/ShawnTeoh" target="_blank"><img class="circle z-depth-2" src="/assets/res/user.png"></a>
+            <span class="white-text name">John Doe</span>
+            <span class="white-text email">john@doe.com</span>
+          </div>
+        </li>
+        <li><a class="waves-effect" href="/"><i class="material-icons">home</i>Home</a></li>
+        <li><a class="waves-effect" href="/projects"><i class="material-icons">description</i>Projects</a></li>
+        <li><a class="waves-effect" href="/categories"><i class="material-icons">sort</i>Categories</a></li>
+        <li><a class="waves-effect" href="/tags"><i class="material-icons">label</i>Tags</a></li>
+        <li><a class="waves-effect" href="/feed.xml" target="_blank"><i class="material-icons">rss_feed</i>RSS</a></li>
+        <li><div class="divider"></div></li>
+        <li><a class="waves-effect" href="/about"><i class="material-icons">person</i>About</a></li>
+        <li><a class="waves-effect" href="/contact"><i class="material-icons">email</i>Contact</a></li>
+      </ul>
+    </header>
+    <main>
+
+<div class="container">
+  <div id="post-info">
+  <h3>ROS installation based from Ubuntu 16.04 Kinetic Kame</h3>
+  <ul class="collapsible hoverable" data-collapsible="accordion">
+    <li>
+      <div class="collapsible-header">
+        <span>
+          <i class="material-icons tooltipped" data-position="left" data-delay="30" data-tooltip="Date">date_range</i>
+          05/12/2019 17:17
+          <i id="indicate" class="right material-icons tooltipped" data-position="left" data-delay="30" data-tooltip="Show extra info">info</i>
+        </span>
+      </div>
+      <div class="collapsible-body">
+        <span>
+          <i class="material-icons tooltipped" data-position="left" data-delay="30" data-tooltip="Categories">sort</i>
+          
+          
+          
+          <a href="/categories#ros_cap" target="_blank"><div class="chip">ROS</div></a>
+          
+        </span>
+        <span>
+          <i class="material-icons tooltipped" data-position="left" data-delay="30" data-tooltip="Tags">label</i>
+          
+          
+          
+          <a href="/tags#ros_cap" target="_blank"><div class="chip">ROS</div></a>
+          
+          
+          
+          <a href="/tags#installation" target="_blank"><div class="chip">installation</div></a>
+          
+        </span>
+      </div>
+    </li>
+  </ul>
+</div>
+<div class="divider"></div>
+<div class="row">
+  <div class="col s12">
+    <p>우분투 16.04 LTS버전에서 활용되는 ROS는 Kinectic Kame는 사실 우분투 16.04이기 때문에 설치되는 환경 종속적인 ROS 버전이다.</p>
+
+<p>물론 Ros.org에서 말하는 위키 내용은 다소 다른 감이 있지만, 통상적으로 이렇다고 본다.</p>
+
+<blockquote>
+  <p><strong>ROS Kinetic Kame은 주로 Ubuntu 16.04 (Xenial) 릴리스를 대상으로하지만 Mac OS X, Android 및 Windows뿐만 아니라 다른 Linux 시스템도 다양한 정도로 지원됩니다. 다른 플랫폼과의 호환성에 대한 자세한 내용은 REP 3 : 대상 플랫폼을 참조하십시오. 또한 Ubuntu 15.10 Wily 및 Debian Jessie도 지원합니다.</strong></p>
+</blockquote>
+
+<hr />
+
+<p><img src="/assets/img/ros/kinetic_kame.png" width="40%" height="30%" alt="Kinetic Kame" /></p>
+
+<p>설치 과정은 사실 위키에 더 자세히 나와있지만, 추후 반복작업을 위해서 좀더 간략하게 정리해보자.</p>
+
+<p>참고로 여기서 다루지는 않지만, Ubuntu 18.04LTS 버전에서 활용하는 ROS Melodic Morenia는 이런 이미지를 쓰더라.</p>
+
+<p><img src="/assets/img/ros/Melodic_morenia.png" width="40%" height="30%" alt="Melodic Morenia" /></p>
+
+<p>우선 ROS 를 설치하기 전에 반드시 해야될 것은 Ubuntu 16.04를 설치를 해야 한다.</p>
+
+<p>이 과정이 참고로 굉장히 지랄같기 때문에 다시 정리가 필요할 듯 하다.</p>
+
+<p>추후에 다루도록 한다.</p>
+
+<h3 id="1-설치하기">1. 설치하기</h3>
+
+<p>ROS Kinetic은 데비안 패키지 용 Wily (Ubuntu 15.10), Xenial (Ubuntu 16.04) 및 Jessie (Debian 8)만 지원한다.</p>
+
+<h4 id="11-우분투-리포지토리-구성하기뭔말인지-몰라-패스">1.1. 우분투 리포지토리 구성하기(뭔말인지 몰라 패스)</h4>
+
+<h4 id="12-sourcelist-셋업">1.2. source.list 셋업</h4>
+
+<p>packages.ros.org의 소프트웨어를 허용하도록 컴퓨터를 설정하기</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ sudo sh -c 'echo "deb http://packages.ros.org/ros/ubuntu $(lsb_release -sc) main" &gt; /etc/apt/sources.list.d/ros-latest.list'
+</code></pre></div></div>
+
+<h4 id="13-key-값-설정하기">1.3 Key 값 설정하기</h4>
+
+<p>키 서버 연결에 문제가있는 경우 이전 명령에서hkp : //pgp.mit.edu : 80또는hkp : //keyserver.ubuntu.com : 80을대체해라.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ sudo apt-key adv --keyserver 'hkp://keyserver.ubuntu.com:80' --recv-key C1CF6E31E6BADE8868B172B4F42ED6FBAB17C654
+</code></pre></div></div>
+
+<p>또는 apt-key 명령 대신 curl을 사용하면 프록시 서버 뒤에있는 경우 유용 할 수 있다.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ curl -sSL 'http://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0xC1CF6E31E6BADE8868B172B4F42ED6FBAB17C654' | sudo apt-key add -
+</code></pre></div></div>
+<p>(단, curl을 사용하려면 curl을 ubuntu에 설치해야 한다.)</p>
+
+<h4 id="14-installation">1.4. Installation</h4>
+
+<p>먼저 우분투를 업데이트 하자.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ sudo apt-get update
+</code></pre></div></div>
+
+<p>ROS에는 다양한 라이브러리와 도구가 있다. 시작을 위해 네 가지 기본 구성을 제공했다. ROS 패키지를 개별적으로 설치할 수도 있다.</p>
+
+<p><strong>Desktop-Full Install: (Recommended)</strong> : ROS, <a href="http://wiki.ros.org/rqt">rqt</a>, <a href="http://wiki.ros.org/rviz">rviz</a>, robot-generic libraries, 2D/3D simulators, navigation and 2D/3D perception</p>
+
+<p>이 것을 설치한다. 나머지는 참고로 알도록 하자.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ sudo apt-get install ros-kinetic-desktop-full
+</code></pre></div></div>
+
+<p><strong>Desktop Install:</strong>ROS,<a href="http://wiki.ros.org/rqt">rqt</a>,<a href="http://wiki.ros.org/rviz">rviz</a>, and robot-generic libraries</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ sudo apt-get install ros-kinetic-desktop
+</code></pre></div></div>
+
+<p><strong>ROS-Base: (Bare Bones)</strong>ROS package, build, and communication libraries. No GUI tools.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ sudo apt-get install ros-kinetic-ros-base
+</code></pre></div></div>
+
+<p><strong>Individual Package:</strong>You can also install a specific ROS package (replace underscores with dashes of the package name)</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ sudo apt-get install ros-kinetic-PACKAGE
+</code></pre></div></div>
+
+<p>예시)</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ sudo apt-get install ros-kinetic-slam-gmapping
+</code></pre></div></div>
+
+<p>설치하면 좀 시간이 걸린다.</p>
+
+<p>다 설치하고 나면 개발환경인 rqt도 설치를 하자.</p>
+
+<h4 id="15-rosdep-초기화">1.5. rosdep 초기화</h4>
+
+<p>ROS를 사용하기 전에 반드시 rosdep를 초기화 해야한다. rosdep은 ros의 핵심 컴포넌트들을 사용하거나 컴파일할 때 의존성 패키지를 쉽게 설치하여 사용자 편의성을 높여주는 기능이다.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ sudo rosdep init
+$ rosdep update
+</code></pre></div></div>
+
+<h4 id="16-환경설정">1.6. 환경설정</h4>
+
+<p>새로운 쉘이 실행될 때마다 ROS 환경 변수가 bash 세션에 자동으로 추가되는 것이 편리하다.</p>
+
+<p>ROS 배포가 둘 이상 설치되어있는 경우 ~ / .bashrc는 현재 사용중인 버전의 setup.bash 만 소싱해야한다.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ echo "source /opt/ros/kinetic/setup.bash" &gt;&gt; ~/.bashrc
+$ source ~/.bashrc
+</code></pre></div></div>
+
+<p>위의 명령 대신 현재 쉘의 환경을 변경하려면 다음을 입력하자.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ source /opt/ros/kinetic/setup.bash
+</code></pre></div></div>
+
+<p>bash 대신 zsh를 사용하는 경우 다음 명령을 실행하여 쉘을 설정한다.(그냥 참고만)</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ echo "source /opt/ros/kinetic/setup.zsh" &gt;&gt; ~/.zshrc
+$ source ~/.zshrc
+</code></pre></div></div>
+
+<h4 id="17-패키지-빌드를-위한-의존성-설치">1.7. 패키지 빌드를 위한 의존성 설치</h4>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ sudo apt install python-rosinstall python-rosinstall-generator python-wstool build-essential
+</code></pre></div></div>
+
+<h4 id="18-작업폴더-만들기">1.8. 작업폴더 만들기</h4>
+
+<p>ROS는 catkin이라는 ROS 전용 빌드 시스템을 사용하고 있다. 이를 사용하려면 다음처럼 catkin작업 폴더를 생성하고 초기화 하는 작업이 필요하다. 이 설정은 작업 폴더를 새롭게 생성하지 않는 한 처음 한 번만 실행하면 된다.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ mkdir -p ~/catkin_ws/src
+$ cd ~/catkin_ws/src
+$ catkin_init_workspace
+</code></pre></div></div>
+
+<h4 id="19-catkin-작업-폴더-빌드하기">1.9. catkin 작업 폴더 빌드하기</h4>
+
+<p>현재 catkin 작업폴더에는 src 폴더와 그 안에 CMakeLists.txt 파일만 있지만, 시험삼아 catkin_make 명령어를 이용해 빌드해보자.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ cd ~/catkin_ws/
+$ catkin_make
+</code></pre></div></div>
+
+<h4 id="20-빌드-결과-확인하기">2.0. 빌드 결과 확인하기</h4>
+
+<p>문제 없이 빌드가 완료되면, ls 명령어를 통해서 생성된 폴더와 파일을 확인해보자. catkin 빌드 시스템의 빌드 관련 파일은 build 폴더에 저장되고 빌드 후 실행 관련 파일은 devel 폴더에 저장된다.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ ls
+build
+devel
+src
+</code></pre></div></div>
+
+<h4 id="21-테스트-하기">2.1. 테스트 하기</h4>
+
+<p>ROS의 모든 설치가 완료되었다. 제대로 설치가 되었는지 확인하자.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ roscore
+</code></pre></div></div>
+
+  </div>
+</div>
+
+</div>
+
+    </main>
+    <footer class="page-footer teal">
+      <div class="container">
+        <div class="row">
+          <div class="col s12">
+            <img src="/assets/res/logo.png" alt="logo"/>
+            <p class="grey-text text-lighten-4">jekyll theme을 입힌 git 블로그 테스트
+</p>
+          </div>
+        </div>
+      </div>
+      <div class="footer-copyright">
+        <div class="container">
+          &#xA9; 2019 테스트 페이지. All rights reserved. Powered by <a href="https://github.com/ShawnTeoh/matjek">MatJek</a>.
+        </div>
+      </div>
+    </footer>
+    <script src="//code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/materialize/0.99.0/js/materialize.min.js"></script>
+    
+    
+    <script src="/assets/js/post.js"></script>
+    
+    
+    
+    
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})
+      (window,document,'script','//www.google-analytics.com/analytics.js','ga');
+      ga('create', 'UA-96359860-1', 'auto');
+      ga('send', 'pageview');
+    </script>
+    
+    <script src="/assets/js/main.js"></script>
+  </body>
+</html>

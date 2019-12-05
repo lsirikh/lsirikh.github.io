@@ -1,74 +1,201 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="http://localhost:4000/matjek/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/matjek/" rel="alternate" type="text/html" /><updated>2019-12-05T15:34:06+09:00</updated><id>http://localhost:4000/matjek/feed.xml</id><title type="html">MatJek</title><subtitle>Material theme based on &lt;a href=&quot;http://materializecss.com&quot;&gt;Materialize.css&lt;/a&gt; for jekyll sites
-</subtitle><entry><title type="html">This is Just Another Post</title><link href="http://localhost:4000/matjek/2017/03/25/another-post" rel="alternate" type="text/html" title="This is Just Another Post" /><published>2017-03-25T02:30:13+09:00</published><updated>2017-03-25T02:30:13+09:00</updated><id>http://localhost:4000/matjek/2017/03/25/another-post</id><content type="html" xml:base="http://localhost:4000/matjek/2017/03/25/another-post">&lt;p&gt;I have some text.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2019-12-05T18:25:51+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">테스트 페이지</title><subtitle>jekyll theme을 입힌 git 블로그 테스트
+</subtitle><entry><title type="html">ROS environmental settings for beginners ROS 환경설정 우분투 16.04 Kinetic Kame</title><link href="http://localhost:4000/2019/12/05/ROS-ros-environmetal-settings" rel="alternate" type="text/html" title="ROS environmental settings for beginners ROS 환경설정 우분투 16.04 Kinetic Kame" /><published>2019-12-05T17:36:13+09:00</published><updated>2019-12-05T17:36:13+09:00</updated><id>http://localhost:4000/2019/12/05/ROS-ros-environmetal-settings</id><content type="html" xml:base="http://localhost:4000/2019/12/05/ROS-ros-environmetal-settings">&lt;p&gt;ROS 설치 과정에서 사용된 다음 명령어는 터미널 창을 실행할 때마다 계속 입력해야한다.&lt;/p&gt;
 
-&lt;p&gt;I want some &lt;em&gt;italics&lt;/em&gt;.&lt;/p&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
+source /opt/ros/kinetic/setup.bash
+source ~/catkin_ws/devel/setup.bash
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;I want some &lt;strong&gt;bold&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;이러한 번거로운 작업을 없애기 위해서 새로운 터미널 창을 열 때 마다 정해진 환경설정 파일을 읽어오도록 할 수 있다. 이외 ROS 네트워를 설정하고 자주 사용하는 명령어를 단축 명령어로 만들어 보자.&lt;/p&gt;
 
-&lt;h1 id=&quot;this-is-heading-1&quot;&gt;this is heading 1&lt;/h1&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;sudo gedit ~/.bashrc
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;h2 id=&quot;this-is-heading-2&quot;&gt;this is heading 2&lt;/h2&gt;
+&lt;p&gt;or&lt;/p&gt;
 
-&lt;h3 id=&quot;this-is-heading-3&quot;&gt;this is heading 3&lt;/h3&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;sudo nano ~/.bashrc
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;you want a list?&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;first&lt;/li&gt;
-  &lt;li&gt;second&lt;/li&gt;
-  &lt;li&gt;third&lt;/li&gt;
-&lt;/ul&gt;
+&lt;p&gt;잠깐!&lt;/p&gt;
 
-&lt;p&gt;you want an ordered list?&lt;/p&gt;
-&lt;ol&gt;
-  &lt;li&gt;whatever&lt;/li&gt;
-  &lt;li&gt;whatever&lt;/li&gt;
-  &lt;li&gt;whatever&lt;/li&gt;
-&lt;/ol&gt;</content><author><name></name></author><category term="test" /><summary type="html">I have some text.</summary></entry><entry><title type="html">Syntax Highlighting Test</title><link href="http://localhost:4000/matjek/2017/03/24/syntax-test" rel="alternate" type="text/html" title="Syntax Highlighting Test" /><published>2017-03-24T02:30:13+09:00</published><updated>2017-03-24T02:30:13+09:00</updated><id>http://localhost:4000/matjek/2017/03/24/syntax-test</id><content type="html" xml:base="http://localhost:4000/matjek/2017/03/24/syntax-test">&lt;p&gt;Jekyll uses Rouge by default for syntax highlighting, here are some tests.&lt;/p&gt;
+&lt;p&gt;네 IP주소를 잠깐 확인해보자.&lt;/p&gt;
 
-&lt;p&gt;Ruby:&lt;/p&gt;
+&lt;p&gt;ROS 네트워크 설정을 위해서 IP 주소가 필요할 수 있다.&lt;/p&gt;
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;print_hi&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-  &lt;span class=&quot;nb&quot;&gt;puts&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;Hi, &lt;/span&gt;&lt;span class=&quot;si&quot;&gt;#{&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;print_hi&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'Tom'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;#=&amp;gt; prints 'Hi, Tom' to STDOUT.&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;ifconfig
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;Python with line numbers:&lt;/p&gt;
+&lt;p&gt;wlp2s0의  inet addr:xxx.xxx.xx.xx? 여기를 확인하자.&lt;/p&gt;
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-python&quot; data-lang=&quot;python&quot;&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
-2
-3
-4
-5
-&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;print_hi&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Hi, {}&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;format&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+&lt;p&gt;다시 환경설정으로 돌아가서…&lt;/p&gt;
 
-&lt;span class=&quot;n&quot;&gt;print_hi&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'Tom'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;# prints 'Hi, Tom' to STDOUT.&lt;/span&gt;
-&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;# Set ROS Kinetic
+source /opt/ros/kinetic/setup.bash
+source ~/catkin_ws/devel/setup.bash
 
-&lt;p&gt;C with line numbers:&lt;/p&gt;
+# Set ROS Network
+export ROS_HOSTNAME = xxx.xxx.xxx.xxx
+export ROS_MASTER_URI = http://${ROS_HOSTNAME}:11311
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-c&quot; data-lang=&quot;c&quot;&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
-2
-3
-4
-5
-&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;print_hi&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;string&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-  &lt;span class=&quot;n&quot;&gt;printf&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Hi, %s&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;print_hi&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Tom&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-&lt;span class=&quot;cm&quot;&gt;/* prints 'Hi, Tom' to STDOUT. */&lt;/span&gt;
-&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;</content><author><name></name></author><category term="test" /><category term="syntax" /><summary type="html">Jekyll uses Rouge by default for syntax highlighting, here are some tests.</summary></entry><entry><title type="html">Welcome to Jekyll!</title><link href="http://localhost:4000/matjek/2017/03/23/welcome-to-jekyll" rel="alternate" type="text/html" title="Welcome to Jekyll!" /><published>2017-03-23T02:30:13+09:00</published><updated>2017-03-23T02:30:13+09:00</updated><id>http://localhost:4000/matjek/2017/03/23/welcome-to-jekyll</id><content type="html" xml:base="http://localhost:4000/matjek/2017/03/23/welcome-to-jekyll">&lt;p&gt;You’ll find this post in your &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;_posts&lt;/code&gt; directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;jekyll serve&lt;/code&gt;, which launches a web server and auto-regenerates your site when a file is updated.&lt;/p&gt;
+# Set ROS alias command
+alias cw='cd ~/catkin_ws'
+alias cs='cd ~/catkin_ws/src'
+alias cm='cd ~/catkin_ws &amp;amp;&amp;amp; catkin_make'
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;To add new posts, simply add a file in the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;_posts&lt;/code&gt; directory that follows the convention &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;YYYY-MM-DD-name-of-post.ext&lt;/code&gt; and includes the necessary front matter. Take a look at the source for this post to get an idea about how it works.&lt;/p&gt;
+&lt;p&gt;이제 터미널창을 열면 자동으로 환경설정이 실행된다.&lt;/p&gt;</content><author><name></name></author><category term="ROS" /><category term="installation" /><summary type="html">ROS 설치 과정에서 사용된 다음 명령어는 터미널 창을 실행할 때마다 계속 입력해야한다.</summary></entry><entry><title type="html">ROS installation based from Ubuntu 16.04 Kinetic Kame</title><link href="http://localhost:4000/2019/12/05/ROS-ros-installation" rel="alternate" type="text/html" title="ROS installation based from Ubuntu 16.04 Kinetic Kame" /><published>2019-12-05T17:17:13+09:00</published><updated>2019-12-05T17:17:13+09:00</updated><id>http://localhost:4000/2019/12/05/ROS-ros-installation</id><content type="html" xml:base="http://localhost:4000/2019/12/05/ROS-ros-installation">&lt;p&gt;우분투 16.04 LTS버전에서 활용되는 ROS는 Kinectic Kame는 사실 우분투 16.04이기 때문에 설치되는 환경 종속적인 ROS 버전이다.&lt;/p&gt;
 
-&lt;p&gt;Jekyll also offers powerful support for code snippets:&lt;/p&gt;
+&lt;p&gt;물론 Ros.org에서 말하는 위키 내용은 다소 다른 감이 있지만, 통상적으로 이렇다고 본다.&lt;/p&gt;
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;print_hi&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-  &lt;span class=&quot;nb&quot;&gt;puts&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;Hi, &lt;/span&gt;&lt;span class=&quot;si&quot;&gt;#{&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;print_hi&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'Tom'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;#=&amp;gt; prints 'Hi, Tom' to STDOUT.&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;ROS Kinetic Kame은 주로 Ubuntu 16.04 (Xenial) 릴리스를 대상으로하지만 Mac OS X, Android 및 Windows뿐만 아니라 다른 Linux 시스템도 다양한 정도로 지원됩니다. 다른 플랫폼과의 호환성에 대한 자세한 내용은 REP 3 : 대상 플랫폼을 참조하십시오. 또한 Ubuntu 15.10 Wily 및 Debian Jessie도 지원합니다.&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
 
-&lt;p&gt;Check out the &lt;a href=&quot;https://jekyllrb.com/docs/home&quot;&gt;Jekyll docs&lt;/a&gt; for more info on how to get the most out of Jekyll. File all bugs/feature requests at &lt;a href=&quot;https://github.com/jekyll/jekyll&quot;&gt;Jekyll’s GitHub repo&lt;/a&gt;. If you have questions, you can ask them on &lt;a href=&quot;https://talk.jekyllrb.com/&quot;&gt;Jekyll Talk&lt;/a&gt;.&lt;/p&gt;</content><author><name></name></author><category term="test" /><category term="Test" /><summary type="html">You’ll find this post in your _posts directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run jekyll serve, which launches a web server and auto-regenerates your site when a file is updated.</summary></entry></feed>
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/ros/kinetic_kame.png&quot; width=&quot;40%&quot; height=&quot;30%&quot; alt=&quot;Kinetic Kame&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;설치 과정은 사실 위키에 더 자세히 나와있지만, 추후 반복작업을 위해서 좀더 간략하게 정리해보자.&lt;/p&gt;
+
+&lt;p&gt;참고로 여기서 다루지는 않지만, Ubuntu 18.04LTS 버전에서 활용하는 ROS Melodic Morenia는 이런 이미지를 쓰더라.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/ros/Melodic_morenia.png&quot; width=&quot;40%&quot; height=&quot;30%&quot; alt=&quot;Melodic Morenia&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;우선 ROS 를 설치하기 전에 반드시 해야될 것은 Ubuntu 16.04를 설치를 해야 한다.&lt;/p&gt;
+
+&lt;p&gt;이 과정이 참고로 굉장히 지랄같기 때문에 다시 정리가 필요할 듯 하다.&lt;/p&gt;
+
+&lt;p&gt;추후에 다루도록 한다.&lt;/p&gt;
+
+&lt;h3 id=&quot;1-설치하기&quot;&gt;1. 설치하기&lt;/h3&gt;
+
+&lt;p&gt;ROS Kinetic은 데비안 패키지 용 Wily (Ubuntu 15.10), Xenial (Ubuntu 16.04) 및 Jessie (Debian 8)만 지원한다.&lt;/p&gt;
+
+&lt;h4 id=&quot;11-우분투-리포지토리-구성하기뭔말인지-몰라-패스&quot;&gt;1.1. 우분투 리포지토리 구성하기(뭔말인지 몰라 패스)&lt;/h4&gt;
+
+&lt;h4 id=&quot;12-sourcelist-셋업&quot;&gt;1.2. source.list 셋업&lt;/h4&gt;
+
+&lt;p&gt;packages.ros.org의 소프트웨어를 허용하도록 컴퓨터를 설정하기&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ sudo sh -c 'echo &quot;deb http://packages.ros.org/ros/ubuntu $(lsb_release -sc) main&quot; &amp;gt; /etc/apt/sources.list.d/ros-latest.list'
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h4 id=&quot;13-key-값-설정하기&quot;&gt;1.3 Key 값 설정하기&lt;/h4&gt;
+
+&lt;p&gt;키 서버 연결에 문제가있는 경우 이전 명령에서hkp : //pgp.mit.edu : 80또는hkp : //keyserver.ubuntu.com : 80을대체해라.&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ sudo apt-key adv --keyserver 'hkp://keyserver.ubuntu.com:80' --recv-key C1CF6E31E6BADE8868B172B4F42ED6FBAB17C654
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;또는 apt-key 명령 대신 curl을 사용하면 프록시 서버 뒤에있는 경우 유용 할 수 있다.&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ curl -sSL 'http://keyserver.ubuntu.com/pks/lookup?op=get&amp;amp;search=0xC1CF6E31E6BADE8868B172B4F42ED6FBAB17C654' | sudo apt-key add -
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;(단, curl을 사용하려면 curl을 ubuntu에 설치해야 한다.)&lt;/p&gt;
+
+&lt;h4 id=&quot;14-installation&quot;&gt;1.4. Installation&lt;/h4&gt;
+
+&lt;p&gt;먼저 우분투를 업데이트 하자.&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ sudo apt-get update
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;ROS에는 다양한 라이브러리와 도구가 있다. 시작을 위해 네 가지 기본 구성을 제공했다. ROS 패키지를 개별적으로 설치할 수도 있다.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Desktop-Full Install: (Recommended)&lt;/strong&gt; : ROS, &lt;a href=&quot;http://wiki.ros.org/rqt&quot;&gt;rqt&lt;/a&gt;, &lt;a href=&quot;http://wiki.ros.org/rviz&quot;&gt;rviz&lt;/a&gt;, robot-generic libraries, 2D/3D simulators, navigation and 2D/3D perception&lt;/p&gt;
+
+&lt;p&gt;이 것을 설치한다. 나머지는 참고로 알도록 하자.&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ sudo apt-get install ros-kinetic-desktop-full
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;strong&gt;Desktop Install:&lt;/strong&gt;ROS,&lt;a href=&quot;http://wiki.ros.org/rqt&quot;&gt;rqt&lt;/a&gt;,&lt;a href=&quot;http://wiki.ros.org/rviz&quot;&gt;rviz&lt;/a&gt;, and robot-generic libraries&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ sudo apt-get install ros-kinetic-desktop
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;strong&gt;ROS-Base: (Bare Bones)&lt;/strong&gt;ROS package, build, and communication libraries. No GUI tools.&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ sudo apt-get install ros-kinetic-ros-base
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;strong&gt;Individual Package:&lt;/strong&gt;You can also install a specific ROS package (replace underscores with dashes of the package name)&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ sudo apt-get install ros-kinetic-PACKAGE
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;예시)&lt;/p&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ sudo apt-get install ros-kinetic-slam-gmapping
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;설치하면 좀 시간이 걸린다.&lt;/p&gt;
+
+&lt;p&gt;다 설치하고 나면 개발환경인 rqt도 설치를 하자.&lt;/p&gt;
+
+&lt;h4 id=&quot;15-rosdep-초기화&quot;&gt;1.5. rosdep 초기화&lt;/h4&gt;
+
+&lt;p&gt;ROS를 사용하기 전에 반드시 rosdep를 초기화 해야한다. rosdep은 ros의 핵심 컴포넌트들을 사용하거나 컴파일할 때 의존성 패키지를 쉽게 설치하여 사용자 편의성을 높여주는 기능이다.&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ sudo rosdep init
+$ rosdep update
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h4 id=&quot;16-환경설정&quot;&gt;1.6. 환경설정&lt;/h4&gt;
+
+&lt;p&gt;새로운 쉘이 실행될 때마다 ROS 환경 변수가 bash 세션에 자동으로 추가되는 것이 편리하다.&lt;/p&gt;
+
+&lt;p&gt;ROS 배포가 둘 이상 설치되어있는 경우 ~ / .bashrc는 현재 사용중인 버전의 setup.bash 만 소싱해야한다.&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ echo &quot;source /opt/ros/kinetic/setup.bash&quot; &amp;gt;&amp;gt; ~/.bashrc
+$ source ~/.bashrc
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;위의 명령 대신 현재 쉘의 환경을 변경하려면 다음을 입력하자.&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ source /opt/ros/kinetic/setup.bash
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;bash 대신 zsh를 사용하는 경우 다음 명령을 실행하여 쉘을 설정한다.(그냥 참고만)&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ echo &quot;source /opt/ros/kinetic/setup.zsh&quot; &amp;gt;&amp;gt; ~/.zshrc
+$ source ~/.zshrc
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h4 id=&quot;17-패키지-빌드를-위한-의존성-설치&quot;&gt;1.7. 패키지 빌드를 위한 의존성 설치&lt;/h4&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ sudo apt install python-rosinstall python-rosinstall-generator python-wstool build-essential
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h4 id=&quot;18-작업폴더-만들기&quot;&gt;1.8. 작업폴더 만들기&lt;/h4&gt;
+
+&lt;p&gt;ROS는 catkin이라는 ROS 전용 빌드 시스템을 사용하고 있다. 이를 사용하려면 다음처럼 catkin작업 폴더를 생성하고 초기화 하는 작업이 필요하다. 이 설정은 작업 폴더를 새롭게 생성하지 않는 한 처음 한 번만 실행하면 된다.&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ mkdir -p ~/catkin_ws/src
+$ cd ~/catkin_ws/src
+$ catkin_init_workspace
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h4 id=&quot;19-catkin-작업-폴더-빌드하기&quot;&gt;1.9. catkin 작업 폴더 빌드하기&lt;/h4&gt;
+
+&lt;p&gt;현재 catkin 작업폴더에는 src 폴더와 그 안에 CMakeLists.txt 파일만 있지만, 시험삼아 catkin_make 명령어를 이용해 빌드해보자.&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ cd ~/catkin_ws/
+$ catkin_make
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h4 id=&quot;20-빌드-결과-확인하기&quot;&gt;2.0. 빌드 결과 확인하기&lt;/h4&gt;
+
+&lt;p&gt;문제 없이 빌드가 완료되면, ls 명령어를 통해서 생성된 폴더와 파일을 확인해보자. catkin 빌드 시스템의 빌드 관련 파일은 build 폴더에 저장되고 빌드 후 실행 관련 파일은 devel 폴더에 저장된다.&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ ls
+build
+devel
+src
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h4 id=&quot;21-테스트-하기&quot;&gt;2.1. 테스트 하기&lt;/h4&gt;
+
+&lt;p&gt;ROS의 모든 설치가 완료되었다. 제대로 설치가 되었는지 확인하자.&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ roscore
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name></name></author><category term="ROS" /><category term="installation" /><summary type="html">우분투 16.04 LTS버전에서 활용되는 ROS는 Kinectic Kame는 사실 우분투 16.04이기 때문에 설치되는 환경 종속적인 ROS 버전이다.</summary></entry></feed>

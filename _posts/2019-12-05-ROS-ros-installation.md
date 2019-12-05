@@ -1,0 +1,183 @@
+---
+layout: post
+title:  "ROS installation based from Ubuntu 16.04 Kinetic Kame"
+date:   2019-12-05 16:17:13 +0800
+categories: ROS
+tags: ROS installation
+---
+
+우분투 16.04 LTS버전에서 활용되는 ROS는 Kinectic Kame는 사실 우분투 16.04이기 때문에 설치되는 환경 종속적인 ROS 버전이다.
+
+물론 Ros.org에서 말하는 위키 내용은 다소 다른 감이 있지만, 통상적으로 이렇다고 본다.
+
+> **ROS Kinetic Kame은 주로 Ubuntu 16.04 (Xenial) 릴리스를 대상으로하지만 Mac OS X, Android 및 Windows뿐만 아니라 다른 Linux 시스템도 다양한 정도로 지원됩니다. 다른 플랫폼과의 호환성에 대한 자세한 내용은 REP 3 : 대상 플랫폼을 참조하십시오. 또한 Ubuntu 15.10 Wily 및 Debian Jessie도 지원합니다.**
+
+---
+
+<img src="/assets/img/ros/kinetic_kame.png" width="40%" height="30%" alt="Kinetic Kame">
+
+
+설치 과정은 사실 위키에 더 자세히 나와있지만, 추후 반복작업을 위해서 좀더 간략하게 정리해보자.
+
+참고로 여기서 다루지는 않지만, Ubuntu 18.04LTS 버전에서 활용하는 ROS Melodic Morenia는 이런 이미지를 쓰더라.
+
+<img src="/assets/img/ros/Melodic_morenia.png" width="40%" height="30%" alt="Melodic Morenia">
+
+우선 ROS 를 설치하기 전에 반드시 해야될 것은 Ubuntu 16.04를 설치를 해야 한다.
+
+이 과정이 참고로 굉장히 지랄같기 때문에 다시 정리가 필요할 듯 하다.
+
+추후에 다루도록 한다.
+
+### 1. 설치하기
+
+ROS Kinetic은 데비안 패키지 용 Wily (Ubuntu 15.10), Xenial (Ubuntu 16.04) 및 Jessie (Debian 8)만 지원한다.
+
+#### 1.1. 우분투 리포지토리 구성하기(뭔말인지 몰라 패스)
+
+#### 1.2. source.list 셋업
+
+packages.ros.org의 소프트웨어를 허용하도록 컴퓨터를 설정하기
+
+```
+$ sudo sh -c 'echo "deb http://packages.ros.org/ros/ubuntu $(lsb_release -sc) main" > /etc/apt/sources.list.d/ros-latest.list'
+```
+
+#### 1.3 Key 값 설정하기
+
+키 서버 연결에 문제가있는 경우 이전 명령에서hkp : //pgp.mit.edu : 80또는hkp : //keyserver.ubuntu.com : 80을대체해라. 
+
+```
+$ sudo apt-key adv --keyserver 'hkp://keyserver.ubuntu.com:80' --recv-key C1CF6E31E6BADE8868B172B4F42ED6FBAB17C654
+```
+
+또는 apt-key 명령 대신 curl을 사용하면 프록시 서버 뒤에있는 경우 유용 할 수 있다.
+
+```
+$ curl -sSL 'http://keyserver.ubuntu.com/pks/lookup?op=get&search=0xC1CF6E31E6BADE8868B172B4F42ED6FBAB17C654' | sudo apt-key add -
+```
+(단, curl을 사용하려면 curl을 ubuntu에 설치해야 한다.)
+
+#### 1.4. Installation  
+  
+
+먼저 우분투를 업데이트 하자.
+
+```
+$ sudo apt-get update
+```
+
+
+ROS에는 다양한 라이브러리와 도구가 있다. 시작을 위해 네 가지 기본 구성을 제공했다. ROS 패키지를 개별적으로 설치할 수도 있다.
+
+**Desktop-Full Install: (Recommended)** : ROS, [rqt](http://wiki.ros.org/rqt), [rviz](http://wiki.ros.org/rviz), robot-generic libraries, 2D/3D simulators, navigation and 2D/3D perception
+
+이 것을 설치한다. 나머지는 참고로 알도록 하자.
+
+```
+$ sudo apt-get install ros-kinetic-desktop-full
+```
+
+**Desktop Install:**ROS,[rqt](http://wiki.ros.org/rqt),[rviz](http://wiki.ros.org/rviz), and robot-generic libraries
+
+```
+$ sudo apt-get install ros-kinetic-desktop
+```
+
+**ROS-Base: (Bare Bones)**ROS package, build, and communication libraries. No GUI tools.
+
+```
+$ sudo apt-get install ros-kinetic-ros-base
+```
+
+**Individual Package:**You can also install a specific ROS package (replace underscores with dashes of the package name)
+
+```
+$ sudo apt-get install ros-kinetic-PACKAGE
+```
+
+예시)
+```
+$ sudo apt-get install ros-kinetic-slam-gmapping
+```
+
+설치하면 좀 시간이 걸린다. 
+
+다 설치하고 나면 개발환경인 rqt도 설치를 하자.
+
+#### 1.5. rosdep 초기화
+
+ROS를 사용하기 전에 반드시 rosdep를 초기화 해야한다. rosdep은 ros의 핵심 컴포넌트들을 사용하거나 컴파일할 때 의존성 패키지를 쉽게 설치하여 사용자 편의성을 높여주는 기능이다.
+
+```
+$ sudo rosdep init
+$ rosdep update
+```
+
+#### 1.6. 환경설정
+
+새로운 쉘이 실행될 때마다 ROS 환경 변수가 bash 세션에 자동으로 추가되는 것이 편리하다.
+
+ROS 배포가 둘 이상 설치되어있는 경우 ~ / .bashrc는 현재 사용중인 버전의 setup.bash 만 소싱해야한다.
+
+```
+$ echo "source /opt/ros/kinetic/setup.bash" >> ~/.bashrc
+$ source ~/.bashrc
+```
+
+위의 명령 대신 현재 쉘의 환경을 변경하려면 다음을 입력하자.
+
+```
+$ source /opt/ros/kinetic/setup.bash
+```
+
+bash 대신 zsh를 사용하는 경우 다음 명령을 실행하여 쉘을 설정한다.(그냥 참고만)
+
+```
+$ echo "source /opt/ros/kinetic/setup.zsh" >> ~/.zshrc
+$ source ~/.zshrc
+```
+
+#### 1.7. 패키지 빌드를 위한 의존성 설치
+
+```
+$ sudo apt install python-rosinstall python-rosinstall-generator python-wstool build-essential
+```
+
+#### 1.8. 작업폴더 만들기
+
+ROS는 catkin이라는 ROS 전용 빌드 시스템을 사용하고 있다. 이를 사용하려면 다음처럼 catkin작업 폴더를 생성하고 초기화 하는 작업이 필요하다. 이 설정은 작업 폴더를 새롭게 생성하지 않는 한 처음 한 번만 실행하면 된다. 
+
+```
+$ mkdir -p ~/catkin_ws/src
+$ cd ~/catkin_ws/src
+$ catkin_init_workspace
+```
+
+#### 1.9. catkin 작업 폴더 빌드하기
+
+현재 catkin 작업폴더에는 src 폴더와 그 안에 CMakeLists.txt 파일만 있지만, 시험삼아 catkin_make 명령어를 이용해 빌드해보자. 
+
+```
+$ cd ~/catkin_ws/
+$ catkin_make
+```
+
+#### 2.0. 빌드 결과 확인하기
+
+문제 없이 빌드가 완료되면, ls 명령어를 통해서 생성된 폴더와 파일을 확인해보자. catkin 빌드 시스템의 빌드 관련 파일은 build 폴더에 저장되고 빌드 후 실행 관련 파일은 devel 폴더에 저장된다.
+
+```
+$ ls
+build
+devel
+src
+```
+
+#### 2.1. 테스트 하기
+
+ROS의 모든 설치가 완료되었다. 제대로 설치가 되었는지 확인하자.
+
+```
+$ roscore
+```

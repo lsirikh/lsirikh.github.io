@@ -1,10 +1,36 @@
 ---
-layout: post
-title:  "Syntax Highlighting Test"
-date:   2017-03-24 01:30:13 +0800
-categories: default
-tags: test syntax
+layout: xxx
+title:  ""
+date:   2019-12-05 16:17:13 +0800
+categories: 
+tags:
+comments: 1
 ---
+
+I have some text.
+
+I want some _italics_.
+
+I want some **bold**.
+
+# this is heading 1
+
+## this is heading 2
+
+### this is heading 3
+
+you want a list?
+* first
+* second
+* third
+
+you want an ordered list?
+1. whatever
+1. whatever
+1. whatever
+
+
+
 Jekyll uses Rouge by default for syntax highlighting, here are some tests.
 
 Ruby:
@@ -33,3 +59,7 @@ void print_hi(string name) {
 print_hi("Tom");
 /* prints 'Hi, Tom' to STDOUT. */
 {% endhighlight %}
+
+
+
+
