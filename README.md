@@ -1,1 +1,0 @@
-# lsirikh.github.io
