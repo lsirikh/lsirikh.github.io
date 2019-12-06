@@ -1,31 +1,160 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2019-12-05T18:25:51+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">테스트 페이지</title><subtitle>jekyll theme을 입힌 git 블로그 테스트
-</subtitle><entry><title type="html">ROS environmental settings for beginners ROS 환경설정 우분투 16.04 Kinetic Kame</title><link href="http://localhost:4000/2019/12/05/ROS-ros-environmetal-settings" rel="alternate" type="text/html" title="ROS environmental settings for beginners ROS 환경설정 우분투 16.04 Kinetic Kame" /><published>2019-12-05T17:36:13+09:00</published><updated>2019-12-05T17:36:13+09:00</updated><id>http://localhost:4000/2019/12/05/ROS-ros-environmetal-settings</id><content type="html" xml:base="http://localhost:4000/2019/12/05/ROS-ros-environmetal-settings">&lt;p&gt;ROS 설치 과정에서 사용된 다음 명령어는 터미널 창을 실행할 때마다 계속 입력해야한다.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2019-12-06T22:45:08+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">로봇 제작을 위한 지식공간</title><subtitle>This blog was designed to deliver the knowledge to people who want to make private Robots &lt;br&gt; jekyll theme을 입힌 git 블로그 테스트
+</subtitle><entry><title type="html">04.ROS를 GUI 기반 IDE 툴 qt creator 설치(우분투 16.04 Kinetic Kame)</title><link href="http://localhost:4000/2019/12/06/ROS-04-ros-roscore-qt-creator" rel="alternate" type="text/html" title="04.ROS를 GUI 기반 IDE 툴 qt creator 설치(우분투 16.04 Kinetic Kame)" /><published>2019-12-06T23:12:13+09:00</published><updated>2019-12-06T23:12:13+09:00</updated><id>http://localhost:4000/2019/12/06/ROS-04-ros-roscore-qt-creator</id><content type="html" xml:base="http://localhost:4000/2019/12/06/ROS-04-ros-roscore-qt-creator">&lt;h5 id=&quot;1-qt-creator란&quot;&gt;1. Qt Creator란?&lt;/h5&gt;
 
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
-source /opt/ros/kinetic/setup.bash
-source ~/catkin_ws/devel/setup.bash
+&lt;p&gt;Qt Creator는 Qt GUI 애플리케이션 개발 프레임 워크 용 SDK의 일부인 크로스 플랫폼 C ++, JavaScript 및 QML 통합 개발 환경입니다. 시각적 디버거와 통합 GUI 레이아웃 및 양식 디자이너가 포함되어 있습니다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/ros/QtProject-creator-icon.png&quot; alt=&quot;image&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Qt는 컴퓨터 프로그래밍에서 GUI 프로그램 개발에 널리 쓰이는 크로스 플랫폼 프레임워크이다. 서버용 콘솔과 명령 줄 도구와 같은 비GUI 프로그램 개발에도 사용된다. 그래픽 사용자 인터페이스를 사용하는 경우에는 Qt를 위젯 툴킷으로 분류한다. 회사 내부에서는 Qt를 “cute”로 발음하고 있으며 비공식적으로는 “큐티”로 발음한다. Qt는 KDE, Qtopia, OPIE에 이용되고 있다,&lt;/p&gt;
+
+&lt;p&gt;노르웨이 회사 트롤텍에 의해서 개발되었다. 2008년 1월에는 노키아에 인수되었다.[2] 이후, 2012년 8월에 핀란드 회사 Digia에 인수되었다.[3]&lt;/p&gt;
+
+&lt;p&gt;Qt는 C++를 주로 사용하지만, 파이썬, 루비, C, 펄, 파스칼과도 연동된다. 수많은 플랫폼에서 동작하며, 상당히 좋은 국제화를 지원한다. SQL 데이터베이스 접근, XML 처리, 스레드 관리, 단일 크로스 플랫폼 파일 관리 API를 제공한다.&lt;/p&gt;
+
+&lt;p&gt;[출처] 위키백과 https://ko.wikipedia.org/wiki/Qt_(%ED%94%84%EB%A0%88%EC%9E%84%EC%9B%8C%ED%81%AC)&lt;/p&gt;
+
+&lt;h5 id=&quot;2-qt-creator-설치하기&quot;&gt;2. Qt Creator 설치하기&lt;/h5&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ sudo apt-get install qtcreator
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;리눅스가 좋은 점은 바로 이런 apt-get install이란 간편한 방법으로 설치가 가능하다는 점이다.&lt;/p&gt;
+
+&lt;p&gt;일단 설치하고 실행하면 다음과 같이 나오는 것을 확인 할 수 있다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/ros/qtcreator_ide.png&quot; width=&quot;60%&quot; height=&quot;60%&quot; alt=&quot;image&quot; /&gt;&lt;/p&gt;</content><author><name></name></author><category term="ROS" /><category term="qt" /><category term="creator" /><summary type="html">1. Qt Creator란?</summary></entry><entry><title type="html">03.ROS를 테스트 터틀봇 움직이기(우분투 16.04 Kinetic Kame)</title><link href="http://localhost:4000/2019/12/06/ROS-03-ros-roscore-test" rel="alternate" type="text/html" title="03.ROS를 테스트 터틀봇 움직이기(우분투 16.04 Kinetic Kame)" /><published>2019-12-06T21:50:13+09:00</published><updated>2019-12-06T21:50:13+09:00</updated><id>http://localhost:4000/2019/12/06/ROS-03-ros-roscore-test</id><content type="html" xml:base="http://localhost:4000/2019/12/06/ROS-03-ros-roscore-test">&lt;h5 id=&quot;1-ros-동작-테스트-해보기&quot;&gt;1. ROS 동작 테스트 해보기&lt;/h5&gt;
+
+&lt;p&gt;일단 ROS를 설치 했기 때문에 뭐라도 구동하여 ROS가 작동하는 원리를 보고 싶은 마음이 들 것이다. 나도 처음에 설치 했을 때, 로봇에 한 발자국 더 다가간 것 같았다.&lt;/p&gt;
+
+&lt;p&gt;일단 거북이라도 돌아다니는 걸 보고 싶다면 함께 해보는 것도 좋을 것 같다.&lt;/p&gt;
+
+&lt;h5 id=&quot;2-roscore-실행하기&quot;&gt;2. roscore 실행하기&lt;/h5&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ roscore
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/img/ros/roscore_execution.png&quot; width=&quot;60%&quot; height=&quot;60%&quot; alt=&quot;image&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;ROS는 기본적으로 CORE를 기반으로 작동하는 시스템이다. 따라서, Supervisor인 Core가 없으면 동작하지 않는다.&lt;/p&gt;
+
+&lt;h5 id=&quot;2-turtlesim-패키지의-turtlesim_node-실행하기&quot;&gt;2. turtlesim 패키지의 turtlesim_node 실행하기&lt;/h5&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ rosrun turtlesim turtlesim_node
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;ROS의 노드는 실행하기 위하여 rosrun이라는 커맨드를 활용한다.&lt;/p&gt;
+
+&lt;p&gt;통신을 하기 위한 한 명의 노드 클라이언트를 등록했다. turtlesim_node는 turtlesim 패키지에 포함된 visual 기능을 갖고 있는 노드이다.&lt;/p&gt;
+
+&lt;p&gt;따라서, 화면에 보이는 거북이를 움직이기 위해서는 명령 신호를 보내주는 노드를 또 등록해야 한다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/ros/turtlesim_node.png&quot; width=&quot;60%&quot; height=&quot;60%&quot; alt=&quot;image&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/ros/turtlesim_image.png&quot; alt=&quot;image&quot; /&gt;&lt;/p&gt;
+
+&lt;h5 id=&quot;3-turtlesim_node를-콘트롤하기-위한-turtle_teleop_key-노드-실행하기&quot;&gt;3. turtlesim_node를 콘트롤하기 위한 turtle_teleop_key 노드 실행하기&lt;/h5&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ rosrun turtlesim turtle_teleop_key
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/ros/turtle_teleop_key.png&quot; width=&quot;60%&quot; height=&quot;60%&quot; alt=&quot;image&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;이제 키보드의 방향키를 움직여 보자.&lt;/p&gt;
+
+&lt;p&gt;회전방향을 정하는 좌우 방향키와 병진속도(병신 아님)를 결정하는 앞뒤 방향키로 거북이를 컨트롤 할 수 있게 된다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/ros/controlled_turtle.png&quot; alt=&quot;image&quot; /&gt;&lt;/p&gt;
+
+&lt;h5 id=&quot;4-rqt_graph&quot;&gt;4. rqt_graph&lt;/h5&gt;
+
+&lt;p&gt;현재 ROS 시스템에 맞물려 있는 노드들의 관계와 메세지의 종류 등을 한눈에 이미지로 확인하는 좋은 툴은 ROS에서 제공을 해주고 있다.&lt;/p&gt;
+
+&lt;p&gt;처음 ROS를 접하면 다소 투박해 보이는 이미지 일 수 있으나, 추후 많은 노드들 간의 관계를 파악하는데 많이 활용하게 된다.&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ rqt_graph
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/img/ros/rqt_graph.png&quot; alt=&quot;image&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;이제 ROS의 시스템을 대충 이해할 수 있는 상태가 됐을 것 같다. 물론 거북이 움직였다고 ROS를 이해할 수 없겠지만, 뭔가 창이 많이 뜨고, 서로 신호를 보내고 받는 노드들 사이에 프로그래밍이겠구나 라는 이해를 말하는 것이다.&lt;/p&gt;</content><author><name></name></author><category term="ROS" /><category term="turtlesim" /><category term="test" /><summary type="html">1. ROS 동작 테스트 해보기</summary></entry><entry><title type="html">GIT이란 무엇인가?</title><link href="http://localhost:4000/2019/12/06/GIT-01-introduction" rel="alternate" type="text/html" title="GIT이란 무엇인가?" /><published>2019-12-06T20:17:13+09:00</published><updated>2019-12-06T20:17:13+09:00</updated><id>http://localhost:4000/2019/12/06/GIT-01-introduction</id><content type="html" xml:base="http://localhost:4000/2019/12/06/GIT-01-introduction">&lt;h5 id=&quot;git-이란-무엇인가&quot;&gt;Git 이란 무엇인가???&lt;/h5&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/git/480px-Octocat_GitHub_Mascot.png&quot; width=&quot;40%&quot; height=&quot;40%&quot; alt=&quot;image&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/git/git.png&quot; width=&quot;60%&quot; height=&quot;60%&quot; alt=&quot;image&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;GitHub를 이해하려면 먼저 Git을 이해해야합니다. Git은 리눅스를 만든 사람인 Linus Torvalds에 의해 시작된 오픈 소스 버전 관리 시스템입니다. Git은 Subversion , CVS 및 Mercurial 과 같은 다른 버전 제어 시스템과 유사합니다.&lt;/p&gt;
+
+&lt;p&gt;Git은 버전 관리 시스템이지만 무엇일까?&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;예를 들어, 개발자가 무언가 앱을 만들면 코드가 지속적으로 변경되어 첫 번째 공식 (베타 이외) 릴리스 이후에 새 버전이 릴리스됩니다.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;버전 제어 시스템은 이러한 개정을 똑바로 유지하여 수정 사항을 중앙 저장소에 저장합니다. 이를 통해 개발자는 새로운 버전의 소프트웨어를 다운로드하고 변경하며 최신 버전을 업로드 할 수 있으므로 쉽게 협업 할 수 있습니다. 모든 개발자는 이러한 새로운 변경 사항을 보고 다운로드하여 제공 할 수 있습니다.&lt;/p&gt;
+
+&lt;p&gt;마찬가지로, 프로젝트 개발과 관련이 없는 사람들도 공개된 GIT ​​파일을 다운로드하여 사용할 수 있습니다. Git이 시작된 배경이 Linux 환경이기 때문에 Linux에서 좀 더 활용도가 용이 할 수 있지만, 현재 Windows나 OS X에도 많은 지원이 되는 관계로 이제는 크게 무관한 것으로 보입니다.&lt;/p&gt;
+
+&lt;p&gt;Git은 사용 가능한 다른 시스템에 비해 여러 가지 장점이 있기 때문에 대부분의 개발자가 선호하는 버전 제어 시스템입니다. 파일 변경 사항을보다 효율적으로 저장하고 파일 무결성을 향상시킵니다. 세부 사항을 알고 싶다면  Git 기본 페이지  에 Git 작동 방식에 대한 자세한 설명이 있습니다.&lt;/p&gt;
+
+&lt;h5 id=&quot;github의-허브&quot;&gt;GitHub의 “허브”&lt;/h5&gt;
+
+&lt;p&gt;Git와 함께 사용하여 더 나은 버전 제어 시스템을 확립했습니다. 그렇다면 GitHub는 무엇일까요? Git은 명령 줄 도구이지만 Git revolve와 관련된 모든 것은 프로젝트와 관련된 내용을 저장하는 허브 (GitHub.com)입니다.&lt;/p&gt;
+
+&lt;h5 id=&quot;repository-저장소&quot;&gt;repository (저장소)&lt;/h5&gt;
+
+&lt;p&gt;repository (일반적으로 “repo”로 약칭)는 특정 프로젝트의 모든 파일이 저장되는 위치입니다. 각 프로젝트에는 자체 저장소가 있으며 고유 한 URL로 액세스 할 수 있습니다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/git/repository_example.png&quot; width=&quot;80%&quot; height=&quot;80%&quot; alt=&quot;image&quot; /&gt;&lt;/p&gt;
+
+&lt;h5 id=&quot;fork&quot;&gt;Fork&lt;/h5&gt;
+
+&lt;p&gt;“Forking”(발음주의;뽀킹아님)은 이미 존재하는 다른 프로젝트를 기반으로 새 프로젝트를 만들 때 사용합니다. 이것은 프로그램 및 기타 프로젝트의 추가 개발을 손쉽게 할 수 있는 굉장히 놀라운 컨셉인 것 같습니다. GitHub에서 기여하고 싶은 프로젝트를 찾으면 저장소(Repo)를 Fork 하고 원하는대로 변경하고 수정 된 프로젝트를 새 Repo로 릴리스 할 수 있습니다. 새 프로젝트를 작성하기 위해 Fork(분기) 한 원래 저장소가 업데이트되면 해당 업데이트를 현재 분기에 쉽게 추가 할 수 있습니다. 분기 추가의 권한은 원천 개발자에게 있습니다.&lt;/p&gt;
+
+&lt;h5 id=&quot;pull&quot;&gt;Pull&lt;/h5&gt;
+
+&lt;p&gt;어떤 개발자가 Repository(repo)를 Fork(분기)하고 프로젝트를 크게 수정 한 후 원래 Repository 주인 혹은 개발자가 이를 인정해주고 원래 프로젝트에 참여시켜주기 원할 수도 있습니다. 그럴 경우 풀 요청을 하면 프로젝트에 참여가 가능합니다. 물론 원본 Repository(이하 리포지토리)의 작성자는 자신의 작업을보고 공식 프로젝트에 수락할지 여부를 선택할 수 있습니다. Pull 요청을 발행 할 때마다 GitHub는 사용자와 기본 프로젝트 관리자가 통신 할 수있는 완벽한 수단을 제공합니다.&lt;/p&gt;
+
+&lt;h5 id=&quot;social-networking&quot;&gt;Social networking&lt;/h5&gt;
+
+&lt;p&gt;사회적 네트워킹 측면에서 GitHub가 가장 강력한 특징을 지닌듯 합니다. 특히, GitHub가 가지는 다양한 특징과 장점을 압도하는 가장 중요한 점이기도 합니다. GitHub의 각 사용자는 이력서처럼 작동하는 자체 프로필을 가지고 있으며 과거 작업 및 풀 요청을 통해 다른 프로젝트에 대한 기여를 보여줍니다. 한마디로 기여도에 무임승차자가 없고, 기여도로 평가할 수 있는 중요한 지표를 제공해줍니다.&lt;/p&gt;
+
+&lt;p&gt;GitHub를 통해 프로젝트 revision은 공개적으로 논의 될 수 있고, 많은 전문가들이 해당 프로젝트를 발전시키기 위해 지식을 제공하고 협력 할 수 있습니다. GitHub가 등장하기 전에, 어떤 프로젝트에 관심이있는 개발자는 대개 프로젝트 리딩 개발자와 연락 할 수있는 방법을 수소문 한 후, 자신의 신뢰도와 신력을 입증하여야만 참여가능 했으리라 생각됩니다. 아마도 너무나 높은 난관과 진입장벽으로 협업은 거의 불가능 했던 것 같습니다. 그러나 GitHub는 일종의 협력과 상생의 헤게모니를 열었다는 측면에서 굉장한 사회적 충격을 주는 듯 합니다.&lt;/p&gt;
+
+&lt;h5 id=&quot;changelogs&quot;&gt;Changelogs&lt;/h5&gt;
+
+&lt;p&gt;여러 사람이 한 프로젝트에서 공동 작업 할 때 해당 파일이 저장되는 대상,시기 및 위치를 변경 한 수정본을 추적하기가 어렵습니다. GitHub는 리포지토리에 푸시 된 모든 변경 사항을 추적하여이 문제를 처리합니다.&lt;/p&gt;
+
+&lt;p&gt;[출처] https://www.howtogeek.com/180167/htg-explains-what-is-github-and-what-do-geeks-use-it-for/&lt;/p&gt;</content><author><name></name></author><category term="GIT" /><category term="introduction" /><summary type="html">Git 이란 무엇인가???</summary></entry><entry><title type="html">02.ROS environmental settings for beginners ROS 환경설정 우분투 16.04 Kinetic Kame</title><link href="http://localhost:4000/2019/12/05/ROS-02-ros-environmetal-settings" rel="alternate" type="text/html" title="02.ROS environmental settings for beginners ROS 환경설정 우분투 16.04 Kinetic Kame" /><published>2019-12-05T17:36:13+09:00</published><updated>2019-12-05T17:36:13+09:00</updated><id>http://localhost:4000/2019/12/05/ROS-02-ros-environmetal-settings</id><content type="html" xml:base="http://localhost:4000/2019/12/05/ROS-02-ros-environmetal-settings">&lt;h5 id=&quot;1-ros-환경설정&quot;&gt;1. ROS 환경설정&lt;/h5&gt;
+
+&lt;p&gt;ROS 설치 과정에서 사용된 다음 명령어는 터미널 창을 실행할 때마다 계속 입력해야한다.&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ source /opt/ros/kinetic/setup.bash
+$ source ~/catkin_ws/devel/setup.bash
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;이러한 번거로운 작업을 없애기 위해서 새로운 터미널 창을 열 때 마다 정해진 환경설정 파일을 읽어오도록 할 수 있다. 이외 ROS 네트워를 설정하고 자주 사용하는 명령어를 단축 명령어로 만들어 보자.&lt;/p&gt;
 
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;sudo gedit ~/.bashrc
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ sudo gedit ~/.bashrc
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;or&lt;/p&gt;
 
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;sudo nano ~/.bashrc
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ sudo nano ~/.bashrc
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;잠깐!&lt;/p&gt;
 
-&lt;p&gt;네 IP주소를 잠깐 확인해보자.&lt;/p&gt;
+&lt;p&gt;내 IP주소를 잠깐 확인해보자.&lt;/p&gt;
 
 &lt;p&gt;ROS 네트워크 설정을 위해서 IP 주소가 필요할 수 있다.&lt;/p&gt;
 
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;ifconfig
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ ifconfig
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;wlp2s0의  inet addr:xxx.xxx.xx.xx? 여기를 확인하자.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/img/ros/ifconfig.png&quot; width=&quot;40%&quot; height=&quot;30%&quot; alt=&quot;image&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;wlp2s0(무선일 때)의  inet addr:xxx.xxx.xx.xx? 여기를 확인하자.&lt;br /&gt;
+enp3s0(유선일 때)의  inet addr:xxx.xxx.xx.xx? 여기를 확인하자.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;[참고]리눅스에서 자신의 IP를 확인하기 위해 ifconfig 명령어를 사용한다. 유선인 경우 enp3s0, 무선일 경우 wlp2s0의 inet addr에 자신의 IP 주소가 표시된다.&lt;/p&gt;
+&lt;/blockquote&gt;
 
 &lt;p&gt;다시 환경설정으로 돌아가서…&lt;/p&gt;
 
@@ -43,7 +172,58 @@ alias cs='cd ~/catkin_ws/src'
 alias cm='cd ~/catkin_ws &amp;amp;&amp;amp; catkin_make'
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;이제 터미널창을 열면 자동으로 환경설정이 실행된다.&lt;/p&gt;</content><author><name></name></author><category term="ROS" /><category term="installation" /><summary type="html">ROS 설치 과정에서 사용된 다음 명령어는 터미널 창을 실행할 때마다 계속 입력해야한다.</summary></entry><entry><title type="html">ROS installation based from Ubuntu 16.04 Kinetic Kame</title><link href="http://localhost:4000/2019/12/05/ROS-ros-installation" rel="alternate" type="text/html" title="ROS installation based from Ubuntu 16.04 Kinetic Kame" /><published>2019-12-05T17:17:13+09:00</published><updated>2019-12-05T17:17:13+09:00</updated><id>http://localhost:4000/2019/12/05/ROS-ros-installation</id><content type="html" xml:base="http://localhost:4000/2019/12/05/ROS-ros-installation">&lt;p&gt;우분투 16.04 LTS버전에서 활용되는 ROS는 Kinectic Kame는 사실 우분투 16.04이기 때문에 설치되는 환경 종속적인 ROS 버전이다.&lt;/p&gt;
+&lt;p&gt;이제 터미널창을 열면 자동으로 환경설정이 실행된다.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;(만약, 현재 터미널 창에 바로 반영을 하려면 아래와 같이 해보자)&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ source ~/.bashrc
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h5 id=&quot;11-ros-환경설정-내용-분석bashrc&quot;&gt;1.1. ROS 환경설정 내용 분석(bashrc)&lt;/h5&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+2
+3
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;c&quot;&gt;# Set ROS Kinetic&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;source&lt;/span&gt; /opt/ros/kinetic/setup.bash
+&lt;span class=&quot;nb&quot;&gt;source&lt;/span&gt; ~/catkin_ws/devel/setup.bash
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;위 두 코드는 환경설정을 불러오는 명령이다.&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+2
+3
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;c&quot;&gt;# Set ROS Network&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;export &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;ROS_HOSTNAME&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;192.168.0.44
+&lt;span class=&quot;nb&quot;&gt;export &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;ROS_MASTER_URI&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;http://&lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;ROS_HOSTNAME&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;:11311
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;ROS는 네트워크 통신 기반의 플랫폼이기 때문에 메세지 통신을 위해서 네트워크 설정은 반드시 선행되어야 합니다.&lt;/p&gt;
+
+&lt;h5 id=&quot;12-단축-명령어-분석bashrc&quot;&gt;1.2. 단축 명령어 분석(bashrc)&lt;/h5&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+2
+3
+4
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;c&quot;&gt;# Set ROS alias command&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;alias &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;cw&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'cd ~/catkin_ws'&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;alias &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;cs&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'cd ~/catkin_ws/src'&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;alias &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;cs&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'cd ~/catkin_ws &amp;amp;&amp;amp; catkin_make'&lt;/span&gt;
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;alias는 별명 혹은 숏컷 네이밍이라고 볼 수 있습니다. 따라서, 해당 키워드를 사용하면 =’‘에 들어있는 명령이 실행되는 거죠.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;ROS 환경설정 확인 방법&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ export | grep ROS
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/img/ros/export_grep_ros.png&quot; width=&quot;60%&quot; height=&quot;60%&quot; alt=&quot;image&quot; /&gt;&lt;/p&gt;</content><author><name></name></author><category term="ROS" /><category term="installation" /><summary type="html">1. ROS 환경설정</summary></entry><entry><title type="html">01.ROS installation based from Ubuntu 16.04 Kinetic Kame</title><link href="http://localhost:4000/2019/12/05/ROS-01-ros-installation" rel="alternate" type="text/html" title="01.ROS installation based from Ubuntu 16.04 Kinetic Kame" /><published>2019-12-05T17:17:13+09:00</published><updated>2019-12-05T17:17:13+09:00</updated><id>http://localhost:4000/2019/12/05/ROS-01-ros-installation</id><content type="html" xml:base="http://localhost:4000/2019/12/05/ROS-01-ros-installation">&lt;p&gt;우분투 16.04 LTS버전에서 활용되는 ROS는 Kinectic Kame는 사실 우분투 16.04이기 때문에 설치되는 환경 종속적인 ROS 버전이다.&lt;/p&gt;
 
 &lt;p&gt;물론 Ros.org에서 말하는 위키 내용은 다소 다른 감이 있지만, 통상적으로 이렇다고 본다.&lt;/p&gt;
 

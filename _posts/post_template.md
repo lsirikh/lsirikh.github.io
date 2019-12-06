@@ -29,6 +29,8 @@ you want an ordered list?
 1. whatever
 1. whatever
 
+<img src="/assets/img/" width="40%" height="30%" alt="Kinetic Kame">
+
 
 
 Jekyll uses Rouge by default for syntax highlighting, here are some tests.

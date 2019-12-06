@@ -1,12 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
-<loc>http://localhost:4000/2019/12/05/ROS-ros-installation</loc>
+<loc>http://localhost:4000/2019/12/05/ROS-01-ros-installation</loc>
 <lastmod>2019-12-05T17:17:13+09:00</lastmod>
 </url>
 <url>
-<loc>http://localhost:4000/2019/12/05/ROS-ros-environmetal-settings</loc>
+<loc>http://localhost:4000/2019/12/05/ROS-02-ros-environmetal-settings</loc>
 <lastmod>2019-12-05T17:36:13+09:00</lastmod>
+</url>
+<url>
+<loc>http://localhost:4000/2019/12/06/GIT-01-introduction</loc>
+<lastmod>2019-12-06T20:17:13+09:00</lastmod>
+</url>
+<url>
+<loc>http://localhost:4000/2019/12/06/ROS-03-ros-roscore-test</loc>
+<lastmod>2019-12-06T21:50:13+09:00</lastmod>
+</url>
+<url>
+<loc>http://localhost:4000/2019/12/06/ROS-04-ros-roscore-qt-creator</loc>
+<lastmod>2019-12-06T23:12:13+09:00</lastmod>
 </url>
 <url>
 <loc>http://localhost:4000/about</loc>

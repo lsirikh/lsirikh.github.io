@@ -15,8 +15,8 @@
 # in the templates via {{ site.myvariable }}.
 title: 로봇 제작을 위한 지식공간
 description: > # this means to ignore newlines until "baseurl:"
-  This blog was designed to deliver the knowledge to people who want to make private Robots
-  jekyll theme을 입힌 git 블로그 테스트
+  This blog was designed to deliver the knowledge to people who want to make private Robots <br>
+  jekyll theme을 입힌 블로그 
 baseurl: ""
 url: "https://lsirikh.github.io"
 permalink: /:year/:month/:day/:title
@@ -35,7 +35,7 @@ disqus_shortname: "lsirikh"
 
 # Blog Layout settings
 
-categories: ROS C C++ Firmware Python AI Mathematics
+categories: ROS C C++ GIT Firmware Python AI Mathematics
 tags: 
 
 # Build settings
