@@ -32,6 +32,10 @@ you want an ordered list?
 <img src="/assets/img/" width="40%" height="30%" alt="Kinetic Kame">
 
 
+```
+$ sudo apt-get install qtcreator
+```
+
 
 Jekyll uses Rouge by default for syntax highlighting, here are some tests.
 

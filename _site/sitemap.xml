@@ -21,6 +21,10 @@
 <lastmod>2019-12-06T23:12:13+09:00</lastmod>
 </url>
 <url>
+<loc>http://localhost:4000/2019/12/07/GIT-02-initial-settings</loc>
+<lastmod>2019-12-07T23:17:13+09:00</lastmod>
+</url>
+<url>
 <loc>http://localhost:4000/about</loc>
 </url>
 <url>
@@ -37,5 +41,8 @@
 </url>
 <url>
 <loc>http://localhost:4000/tags</loc>
+</url>
+<url>
+<loc>http://localhost:4000/page2/</loc>
 </url>
 </urlset>
