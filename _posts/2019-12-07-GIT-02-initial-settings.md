@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "GIT 초기 설정하기"
+title:  "02.GIT 초기 설정하기"
 date:   2019-12-07 22:17:13 +0800
 categories: GIT
 tags: GIT initial commit 초기 커밋
