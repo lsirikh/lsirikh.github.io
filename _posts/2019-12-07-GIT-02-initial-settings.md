@@ -6,7 +6,7 @@ categories: GIT
 tags: GIT initial commit 초기 커밋
 ---
 
-#### Git 설정하기
+##### Git 설정하기
 
 <br>
 
