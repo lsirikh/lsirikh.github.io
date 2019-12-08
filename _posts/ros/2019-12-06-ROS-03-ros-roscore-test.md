@@ -4,6 +4,7 @@ title:  "03.ROS를 테스트 터틀봇 움직이기(우분투 16.04 Kinetic Kame
 date:   2019-12-06 20:50:13 +0800
 categories: ROS
 tags: ROS turtlesim test
+comments: true
 ---
 
 ##### 1. ROS 동작 테스트 해보기

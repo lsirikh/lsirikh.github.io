@@ -4,6 +4,7 @@ title:  "01.GIT이란 무엇인가?"
 date:   2019-12-06 19:17:13 +0800
 categories: GIT
 tags: GIT introduction
+comments: true
 ---
 
 ##### Git 이란 무엇인가???

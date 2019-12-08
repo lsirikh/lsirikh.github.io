@@ -4,6 +4,7 @@ title:  "01.CPP 학습에 앞서 CPP란 어떤 프로그램 언어일까?"
 date:   2019-12-08 19:17:13 +0800
 categories: CPP
 tags: CPP introduction
+comments: true
 ---
 
 ##### CPP란 어떤 프로그램 언어일까?

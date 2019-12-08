@@ -4,6 +4,7 @@ title:  "02.ROS environmental settings for beginners ROS 환경설정 우분투 
 date:   2019-12-05 16:36:13 +0800
 categories: ROS
 tags: ROS installation
+comments: true
 ---
 
 ##### 1. ROS 환경설정

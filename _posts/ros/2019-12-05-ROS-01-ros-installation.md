@@ -4,6 +4,7 @@ title:  "01.ROS installation based from Ubuntu 16.04 Kinetic Kame"
 date:   2019-12-05 16:17:13 +0800
 categories: ROS
 tags: ROS installation
+comments: true
 ---
 
 우분투 16.04 LTS버전에서 활용되는 ROS는 Kinectic Kame는 사실 우분투 16.04이기 때문에 설치되는 환경 종속적인 ROS 버전이다.
