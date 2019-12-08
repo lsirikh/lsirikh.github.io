@@ -2,7 +2,8 @@
 layout: single
 title:  "04.GIT 저장소 만들기"
 date:   2019-12-08 10:17:13 +0800
-permalink: /categories/GIT/{title}
+permalink: /categories/GIT/4/
+taxonomy: {title}
 categories: GIT
 tags: GIT 기초 저장소
 comments: true

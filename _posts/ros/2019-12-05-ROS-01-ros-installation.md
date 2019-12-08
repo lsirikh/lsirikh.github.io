@@ -2,7 +2,8 @@
 layout: single
 title:  "01.ROS installation based from Ubuntu 16.04 Kinetic Kame"
 date:   2019-12-05 16:17:13 +0800
-permalink: /categories/ROS/{title}
+permalink: /categories/ROS/1/
+taxonomy: {title}
 categories: ROS
 tags: ROS installation
 comments: true

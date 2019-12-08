@@ -1,0 +1,832 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.17.2 by Michael Rose
+  Copyright 2013-2019 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="ko" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>01.ROS installation based from Ubuntu 16.04 Kinetic Kame | 로봇 제작을 위한 지식공간</title>
+<meta name="description" content="우분투 16.04 LTS버전에서 활용되는 ROS는 Kinectic Kame는 사실 우분투 16.04이기 때문에 설치되는 환경 종속적인 ROS 버전이다.">
+
+
+  <meta name="author" content="Kiho Lee">
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:site_name" content="로봇 제작을 위한 지식공간">
+<meta property="og:title" content="01.ROS installation based from Ubuntu 16.04 Kinetic Kame">
+<meta property="og:url" content="http://localhost:4000/categories/ROS/1/">
+
+
+  <meta property="og:description" content="우분투 16.04 LTS버전에서 활용되는 ROS는 Kinectic Kame는 사실 우분투 16.04이기 때문에 설치되는 환경 종속적인 ROS 버전이다.">
+
+
+
+
+
+
+
+  <meta property="article:published_time" content="2019-12-05T17:17:13+09:00">
+
+
+
+
+
+  
+
+  
+
+
+<link rel="canonical" href="http://localhost:4000/categories/ROS/1/">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": "Kiho Lee",
+      "url": "http://localhost:4000/"
+    
+  }
+</script>
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+<link href="/feed.xml" type="application/atom+xml" rel="alternate" title="로봇 제작을 위한 지식공간 Feed">
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+
+<!--[if IE]>
+  <style>
+    /* old IE unsupported flexbox fixes */
+    .greedy-nav .site-title {
+      padding-right: 3em;
+    }
+    .greedy-nav button {
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: 100%;
+    }
+  </style>
+<![endif]-->
+
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+  </head>
+
+  <body class="layout--single">
+    <nav class="skip-links">
+  <h2 class="screen-reader-text">Skip links</h2>
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+        <a class="site-title" href="/">
+          로봇 제작을 위한 지식공간
+          
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="/year-archive/" >Posts</a>
+            </li><li class="masthead__menu-item">
+              <a href="/categories/" >Categories</a>
+            </li><li class="masthead__menu-item">
+              <a href="/tags/" >Tags</a>
+            </li></ul>
+        
+        <button class="search__toggle" type="button">
+          <span class="visually-hidden">Toggle search</span>
+          <svg class="icon" width="16" height="16" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15.99 16">
+            <path d="M15.5,13.12L13.19,10.8a1.69,1.69,0,0,0-1.28-.55l-0.06-.06A6.5,6.5,0,0,0,5.77,0,6.5,6.5,0,0,0,2.46,11.59a6.47,6.47,0,0,0,7.74.26l0.05,0.05a1.65,1.65,0,0,0,.5,1.24l2.38,2.38A1.68,1.68,0,0,0,15.5,13.12ZM6.4,2A4.41,4.41,0,1,1,2,6.4,4.43,4.43,0,0,1,6.4,2Z" transform="translate(-.01)"></path>
+          </svg>
+        </button>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">토글 메뉴</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+
+  
+    
+
+
+
+<nav class="breadcrumbs">
+  <ol itemscope itemtype="https://schema.org/BreadcrumbList">
+    
+    
+    
+      
+        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+          <a href="http://localhost:4000/" itemprop="item"><span itemprop="name">Home</span></a>
+          <meta itemprop="position" content="1" />
+        </li>
+        <span class="sep">/</span>
+      
+      
+        
+        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+          <a href="/categories/#categories" itemprop="item"><span itemprop="name">Categories</span></a>
+          <meta itemprop="position" content="2" />
+        </li>
+        <span class="sep">/</span>
+      
+    
+      
+      
+        
+        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+          <a href="/categories/#ros" itemprop="item"><span itemprop="name">Ros</span></a>
+          <meta itemprop="position" content="3" />
+        </li>
+        <span class="sep">/</span>
+      
+    
+      
+      
+        <li class="current">01.ROS installation based from Ubuntu 16.04 Kinetic Kame</li>
+      
+    
+  </ol>
+</nav>
+
+  
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+
+
+<div itemscope itemtype="https://schema.org/Person">
+
+  
+    <div class="author__avatar">
+      
+
+      
+        <img src="/assets/img/memaker.png" alt="Kiho Lee" itemprop="image">
+      
+    </div>
+  
+
+  <div class="author__content">
+    
+      <h3 class="author__name" itemprop="name">Kiho Lee</h3>
+    
+    
+      <div class="author__bio" itemprop="description">
+        
+
+      </div>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">팔로우</button>
+    <ul class="author__urls social-icons">
+      
+        <li itemprop="homeLocation" itemscope itemtype="https://schema.org/Place">
+          <i class="fas fa-fw fa-map-marker-alt" aria-hidden="true"></i> <span itemprop="name">Seoul,Korea</span>
+        </li>
+      
+
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+
+  
+  </div>
+
+
+  <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="01.ROS installation based from Ubuntu 16.04 Kinetic Kame">
+    <meta itemprop="description" content="우분투 16.04 LTS버전에서 활용되는 ROS는 Kinectic Kame는 사실 우분투 16.04이기 때문에 설치되는 환경 종속적인 ROS 버전이다.">
+    <meta itemprop="datePublished" content="December 05, 2019">
+    
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title" itemprop="headline">01.ROS installation based from Ubuntu 16.04 Kinetic Kame
+</h1>
+          
+            <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+  2 분 소요
+
+</p>
+          
+        </header>
+      
+
+      <section class="page__content" itemprop="text">
+        
+          <aside class="sidebar__right ">
+            <nav class="toc">
+              <header><h4 class="nav__title"><i class="fas fa-cog"></i> My Table of Contents</h4></header>
+              <ul class="toc__menu">
+  <li><a href="#1-설치하기">1. 설치하기</a>
+    <ul>
+      <li><a href="#11-우분투-리포지토리-구성하기뭔말인지-몰라-패스">1.1. 우분투 리포지토리 구성하기(뭔말인지 몰라 패스)</a></li>
+      <li><a href="#12-sourcelist-셋업">1.2. source.list 셋업</a></li>
+      <li><a href="#13-key-값-설정하기">1.3 Key 값 설정하기</a></li>
+      <li><a href="#14-installation">1.4. Installation</a></li>
+      <li><a href="#15-rosdep-초기화">1.5. rosdep 초기화</a></li>
+      <li><a href="#16-환경설정">1.6. 환경설정</a></li>
+      <li><a href="#17-패키지-빌드를-위한-의존성-설치">1.7. 패키지 빌드를 위한 의존성 설치</a></li>
+      <li><a href="#18-작업폴더-만들기">1.8. 작업폴더 만들기</a></li>
+      <li><a href="#19-catkin-작업-폴더-빌드하기">1.9. catkin 작업 폴더 빌드하기</a></li>
+      <li><a href="#20-빌드-결과-확인하기">2.0. 빌드 결과 확인하기</a></li>
+      <li><a href="#21-테스트-하기">2.1. 테스트 하기</a></li>
+    </ul>
+  </li>
+</ul>
+            </nav>
+          </aside>
+        
+        <p>우분투 16.04 LTS버전에서 활용되는 ROS는 Kinectic Kame는 사실 우분투 16.04이기 때문에 설치되는 환경 종속적인 ROS 버전이다.</p>
+
+<p>물론 Ros.org에서 말하는 위키 내용은 다소 다른 감이 있지만, 통상적으로 이렇다고 본다.</p>
+
+<blockquote>
+  <p><strong>ROS Kinetic Kame은 주로 Ubuntu 16.04 (Xenial) 릴리스를 대상으로하지만 Mac OS X, Android 및 Windows뿐만 아니라 다른 Linux 시스템도 다양한 정도로 지원됩니다. 다른 플랫폼과의 호환성에 대한 자세한 내용은 REP 3 : 대상 플랫폼을 참조하십시오. 또한 Ubuntu 15.10 Wily 및 Debian Jessie도 지원합니다.</strong></p>
+</blockquote>
+
+<hr />
+
+<p><img src="/assets/img/ros/kinetic_kame.png" width="40%" height="30%" alt="Kinetic Kame" /></p>
+
+<p>설치 과정은 사실 위키에 더 자세히 나와있지만, 추후 반복작업을 위해서 좀더 간략하게 정리해보자.</p>
+
+<p>참고로 여기서 다루지는 않지만, Ubuntu 18.04LTS 버전에서 활용하는 ROS Melodic Morenia는 이런 이미지를 쓰더라.</p>
+
+<p><img src="/assets/img/ros/Melodic_morenia.png" width="40%" height="30%" alt="Melodic Morenia" /></p>
+
+<p>우선 ROS 를 설치하기 전에 반드시 해야될 것은 Ubuntu 16.04를 설치를 해야 한다.</p>
+
+<p>이 과정이 참고로 굉장히 지랄같기 때문에 다시 정리가 필요할 듯 하다.</p>
+
+<p>추후에 다루도록 한다.</p>
+
+<h3 id="1-설치하기">1. 설치하기</h3>
+
+<p>ROS Kinetic은 데비안 패키지 용 Wily (Ubuntu 15.10), Xenial (Ubuntu 16.04) 및 Jessie (Debian 8)만 지원한다.</p>
+
+<h4 id="11-우분투-리포지토리-구성하기뭔말인지-몰라-패스">1.1. 우분투 리포지토리 구성하기(뭔말인지 몰라 패스)</h4>
+
+<h4 id="12-sourcelist-셋업">1.2. source.list 셋업</h4>
+
+<p>packages.ros.org의 소프트웨어를 허용하도록 컴퓨터를 설정하기</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ sudo sh -c 'echo "deb http://packages.ros.org/ros/ubuntu $(lsb_release -sc) main" &gt; /etc/apt/sources.list.d/ros-latest.list'
+</code></pre></div></div>
+
+<h4 id="13-key-값-설정하기">1.3 Key 값 설정하기</h4>
+
+<p>키 서버 연결에 문제가있는 경우 이전 명령에서hkp : //pgp.mit.edu : 80또는hkp : //keyserver.ubuntu.com : 80을대체해라.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ sudo apt-key adv --keyserver 'hkp://keyserver.ubuntu.com:80' --recv-key C1CF6E31E6BADE8868B172B4F42ED6FBAB17C654
+</code></pre></div></div>
+
+<p>또는 apt-key 명령 대신 curl을 사용하면 프록시 서버 뒤에있는 경우 유용 할 수 있다.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ curl -sSL 'http://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0xC1CF6E31E6BADE8868B172B4F42ED6FBAB17C654' | sudo apt-key add -
+</code></pre></div></div>
+<p>(단, curl을 사용하려면 curl을 ubuntu에 설치해야 한다.)</p>
+
+<h4 id="14-installation">1.4. Installation</h4>
+
+<p>먼저 우분투를 업데이트 하자.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ sudo apt-get update
+</code></pre></div></div>
+
+<p>ROS에는 다양한 라이브러리와 도구가 있다. 시작을 위해 네 가지 기본 구성을 제공했다. ROS 패키지를 개별적으로 설치할 수도 있다.</p>
+
+<p><strong>Desktop-Full Install: (Recommended)</strong> : ROS, <a href="http://wiki.ros.org/rqt">rqt</a>, <a href="http://wiki.ros.org/rviz">rviz</a>, robot-generic libraries, 2D/3D simulators, navigation and 2D/3D perception</p>
+
+<p>이 것을 설치한다. 나머지는 참고로 알도록 하자.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ sudo apt-get install ros-kinetic-desktop-full
+</code></pre></div></div>
+
+<p><strong>Desktop Install:</strong>ROS,<a href="http://wiki.ros.org/rqt">rqt</a>,<a href="http://wiki.ros.org/rviz">rviz</a>, and robot-generic libraries</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ sudo apt-get install ros-kinetic-desktop
+</code></pre></div></div>
+
+<p><strong>ROS-Base: (Bare Bones)</strong>ROS package, build, and communication libraries. No GUI tools.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ sudo apt-get install ros-kinetic-ros-base
+</code></pre></div></div>
+
+<p><strong>Individual Package:</strong>You can also install a specific ROS package (replace underscores with dashes of the package name)</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ sudo apt-get install ros-kinetic-PACKAGE
+</code></pre></div></div>
+
+<p>예시)</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ sudo apt-get install ros-kinetic-slam-gmapping
+</code></pre></div></div>
+
+<p>설치하면 좀 시간이 걸린다.</p>
+
+<p>다 설치하고 나면 개발환경인 rqt도 설치를 하자.</p>
+
+<h4 id="15-rosdep-초기화">1.5. rosdep 초기화</h4>
+
+<p>ROS를 사용하기 전에 반드시 rosdep를 초기화 해야한다. rosdep은 ros의 핵심 컴포넌트들을 사용하거나 컴파일할 때 의존성 패키지를 쉽게 설치하여 사용자 편의성을 높여주는 기능이다.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ sudo rosdep init
+$ rosdep update
+</code></pre></div></div>
+
+<h4 id="16-환경설정">1.6. 환경설정</h4>
+
+<p>새로운 쉘이 실행될 때마다 ROS 환경 변수가 bash 세션에 자동으로 추가되는 것이 편리하다.</p>
+
+<p>ROS 배포가 둘 이상 설치되어있는 경우 ~ / .bashrc는 현재 사용중인 버전의 setup.bash 만 소싱해야한다.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ echo "source /opt/ros/kinetic/setup.bash" &gt;&gt; ~/.bashrc
+$ source ~/.bashrc
+</code></pre></div></div>
+
+<p>위의 명령 대신 현재 쉘의 환경을 변경하려면 다음을 입력하자.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ source /opt/ros/kinetic/setup.bash
+</code></pre></div></div>
+
+<p>bash 대신 zsh를 사용하는 경우 다음 명령을 실행하여 쉘을 설정한다.(그냥 참고만)</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ echo "source /opt/ros/kinetic/setup.zsh" &gt;&gt; ~/.zshrc
+$ source ~/.zshrc
+</code></pre></div></div>
+
+<h4 id="17-패키지-빌드를-위한-의존성-설치">1.7. 패키지 빌드를 위한 의존성 설치</h4>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ sudo apt install python-rosinstall python-rosinstall-generator python-wstool build-essential
+</code></pre></div></div>
+
+<h4 id="18-작업폴더-만들기">1.8. 작업폴더 만들기</h4>
+
+<p>ROS는 catkin이라는 ROS 전용 빌드 시스템을 사용하고 있다. 이를 사용하려면 다음처럼 catkin작업 폴더를 생성하고 초기화 하는 작업이 필요하다. 이 설정은 작업 폴더를 새롭게 생성하지 않는 한 처음 한 번만 실행하면 된다.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ mkdir -p ~/catkin_ws/src
+$ cd ~/catkin_ws/src
+$ catkin_init_workspace
+</code></pre></div></div>
+
+<h4 id="19-catkin-작업-폴더-빌드하기">1.9. catkin 작업 폴더 빌드하기</h4>
+
+<p>현재 catkin 작업폴더에는 src 폴더와 그 안에 CMakeLists.txt 파일만 있지만, 시험삼아 catkin_make 명령어를 이용해 빌드해보자.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ cd ~/catkin_ws/
+$ catkin_make
+</code></pre></div></div>
+
+<h4 id="20-빌드-결과-확인하기">2.0. 빌드 결과 확인하기</h4>
+
+<p>문제 없이 빌드가 완료되면, ls 명령어를 통해서 생성된 폴더와 파일을 확인해보자. catkin 빌드 시스템의 빌드 관련 파일은 build 폴더에 저장되고 빌드 후 실행 관련 파일은 devel 폴더에 저장된다.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ ls
+build
+devel
+src
+</code></pre></div></div>
+
+<h4 id="21-테스트-하기">2.1. 테스트 하기</h4>
+
+<p>ROS의 모든 설치가 완료되었다. 제대로 설치가 되었는지 확인하자.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ roscore
+</code></pre></div></div>
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+  
+
+
+  
+  
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> 태그: </strong>
+    <span itemprop="keywords">
+    
+      
+      
+      <a href="/tags/#installation" class="page__taxonomy-item" rel="tag">installation</a><span class="sep">, </span>
+    
+      
+      
+      <a href="/tags/#ros" class="page__taxonomy-item" rel="tag">ROS</a>
+    
+    </span>
+  </p>
+
+
+
+
+  
+
+
+  
+  
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> 카테고리: </strong>
+    <span itemprop="keywords">
+    
+      
+      
+      <a href="/categories/#ros" class="page__taxonomy-item" rel="tag">ROS</a>
+    
+    </span>
+  </p>
+
+
+        
+          <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> 업데이트:</strong> <time datetime="2019-12-05T17:17:13+09:00">December 05, 2019</time></p>
+        
+      </footer>
+
+      <section class="page__share">
+  
+    <h4 class="page__share-title">공유하기</h4>
+  
+
+  <a href="https://twitter.com/intent/tweet?text=01.ROS+installation+based+from+Ubuntu+16.04+Kinetic+Kame%20http%3A%2F%2Flocalhost%3A4000%2Fcategories%2FROS%2F1%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2Fcategories%2FROS%2F1%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flocalhost%3A4000%2Fcategories%2FROS%2F1%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+</section>
+
+
+      
+  <nav class="pagination">
+    
+      <a href="#" class="pagination--pager disabled">이전</a>
+    
+    
+      <a href="/categories/ROS/2/" class="pagination--pager" title="02.ROS environmental settings for beginners ROS 환경설정 우분투 16.04 Kinetic Kame
+">다음</a>
+    
+  </nav>
+
+    </div>
+
+    
+  </article>
+
+  
+  
+    <div class="page__related">
+      <h4 class="page__related-title">참고</h4>
+      <div class="grid__wrapper">
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/categories/C++/2/" rel="permalink">02.C++ IDE Eclipse 설치하기
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+  2 분 소요
+
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">Eclipse IDE for C/C++ Developers
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/categories/C++/1/" rel="permalink">01.CPP 학습에 앞서 CPP란 어떤 프로그램 언어일까?
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+  8 분 소요
+
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">CPP란 어떤 프로그램 언어일까?
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/categories/GIT/5/" rel="permalink">05.GIT 저장소 수정하기와 저장하기
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+  16 분 소요
+
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">Git의 기초 - 수정하고 저장소에 저장하기
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/categories/GIT/4/" rel="permalink">04.GIT 저장소 만들기
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+  2 분 소요
+
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">Git의 기초 - Git 저장소 만들기
+</p>
+  </article>
+</div>
+
+        
+      </div>
+    </div>
+  
+  
+</div>
+
+    </div>
+
+    
+      <div class="search-content">
+        <div class="search-content__inner-wrap"><form class="search-content__form" onkeydown="return event.key != 'Enter';">
+    <label class="sr-only" for="search">
+      Enter your search term...
+    </label>
+    <input type="search" id="search" class="search-input" tabindex="-1" placeholder="검색어를 입력하세요..." />
+  </form>
+  <div id="results" class="results"></div></div>
+
+      </div>
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>팔로우:</strong></li>
+    
+
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+
+    <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> 피드</a></li>
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2019 Kiho Lee. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+  <script src="https://kit.fontawesome.com/4eee35f757.js"></script>
+
+
+
+
+<script src="/assets/js/lunr/lunr.min.js"></script>
+<script src="/assets/js/lunr/lunr-store.js"></script>
+<script src="/assets/js/lunr/lunr-en.js"></script>
+
+
+
+
+    
+  <script>
+    var disqus_config = function () {
+      this.page.url = "http://localhost:4000/categories/ROS/1/";  // Replace PAGE_URL with your page's canonical URL variable
+      this.page.identifier = "/categories/ROS/ROS-01-ros-installation"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
+    (function() { // DON'T EDIT BELOW THIS LINE
+      var d = document, s = d.createElement('script');
+      s.src = 'https://lsirikh-github-io.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  </script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+
+  
+
+
+
+
+
+  </body>
+</html>

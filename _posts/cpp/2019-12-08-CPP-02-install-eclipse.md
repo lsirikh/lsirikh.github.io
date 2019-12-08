@@ -1,7 +1,8 @@
 ---
 layout: single
 title:  "02.C++ IDE Eclipse 설치하기"
-permalink: /categories/C++/{title}
+permalink: /categories/C++/2/
+taxonomy: {title}
 date:   2019-12-08 22:17:13 +0800
 categories: C++
 tags: C++ introduction 이클립스 Eclipse

@@ -2,7 +2,8 @@
 layout: single
 title:  "01.GIT이란 무엇인가?"
 date:   2019-12-06 19:17:13 +0800
-permalink: /categories/GIT/{title}
+permalink: /categories/GIT/1/
+taxonomy: {title}
 categories: GIT
 tags: GIT introduction
 toc: true
