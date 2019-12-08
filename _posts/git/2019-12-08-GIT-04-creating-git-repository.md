@@ -1,10 +1,14 @@
 ---
-layout: post
+layout: single
 title:  "04.GIT 저장소 만들기"
 date:   2019-12-08 10:17:13 +0800
+permalink: /categories/GIT/{title}
 categories: GIT
 tags: GIT 기초 저장소
 comments: true
+toc: true
+toc_label: "My Table of Contents"
+toc_icon: "cog"
 ---
 
 ##### Git의 기초 - Git 저장소 만들기

@@ -1,10 +1,14 @@
 ---
-layout: post
-title:  "02.CPP IDE Eclipse 설치하기"
-date:   2019-12-08 20:17:13 +0800
-categories: CPP
-tags: CPP introduction 이클립스 Eclipse
+layout: single
+title:  "02.C++ IDE Eclipse 설치하기"
+permalink: /categories/C++/{title}
+date:   2019-12-08 22:17:13 +0800
+categories: C++
+tags: C++ introduction 이클립스 Eclipse
 comments: true
+toc: true
+toc_label: "My Table of Contents"
+toc_icon: "cog"
 ---
 
 ##### Eclipse IDE for C/C++ Developers

@@ -1,10 +1,14 @@
 ---
-layout: post
+layout: single
 title:  "03.GIT 시작하기에 앞서 알면 좋은 것(도움말 보기)"
 date:   2019-12-08 09:30:13 +0800
+permalink: /categories/GIT/{title}
 categories: GIT
 tags: GIT 시작하기 도움말
 comments: true
+toc: true
+toc_label: "My Table of Contents"
+toc_icon: "cog"
 ---
 
 ##### Git을 사용하기 앞서 알면 좋은 내용

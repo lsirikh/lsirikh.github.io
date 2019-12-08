@@ -1,10 +1,14 @@
 ---
-layout: post
+layout: single
 title:  "05.GIT 저장소 수정하기와 저장하기"
 date:   2019-12-08 10:50:13 +0800
+permalink: /categories/GIT/{title}
 categories: GIT
 tags: GIT 기초 수정하기 저장하기
 comments: true
+toc: true
+toc_label: "My Table of Contents"
+toc_icon: "cog"
 ---
 
 ##### Git의 기초 - 수정하고 저장소에 저장하기

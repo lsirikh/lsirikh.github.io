@@ -1,10 +1,14 @@
 ---
-layout: post
+layout: single
 title:  "02.GIT 초기 설정하기"
 date:   2019-12-07 22:17:13 +0800
+permalink: /categories/GIT/{title}
 categories: GIT
 tags: GIT initial commit 초기 커밋
 comments: true
+toc: true
+toc_label: "My Table of Contents"
+toc_icon: "cog"
 ---
 
 ##### Git 시작하기 위한 설정하기

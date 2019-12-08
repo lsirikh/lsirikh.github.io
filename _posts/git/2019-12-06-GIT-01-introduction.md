@@ -1,10 +1,13 @@
 ---
-layout: post
+layout: single
 title:  "01.GIT이란 무엇인가?"
 date:   2019-12-06 19:17:13 +0800
+permalink: /categories/GIT/{title}
 categories: GIT
 tags: GIT introduction
-comments: true
+toc: true
+toc_label: "My Table of Contents"
+toc_icon: "cog"
 ---
 
 ##### Git 이란 무엇인가???

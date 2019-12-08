@@ -1,10 +1,14 @@
 ---
-layout: post
+layout: single
 title:  "04.ROS를 GUI 기반 IDE 툴 qt creator 설치(우분투 16.04 Kinetic Kame)"
 date:   2019-12-06 22:12:13 +0800
+permalink: /categories/ROS/{title}
 categories: ROS
 tags: ROS qt creator
 comments: true
+toc: true
+toc_label: "My Table of Contents"
+toc_icon: "cog"
 ---
 
 ##### 1. Qt Creator란?
