@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+      
+      04.GIT 저장소 만들기
+      
+    </title>
+    <link rel="shortcut icon" type="image/x-icon" href="/assets/res/favicon.ico">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/materialize/0.99.0/css/materialize.min.css">
+    <link rel="stylesheet" href="//fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="/assets/css/main.css">
+    
+    
+    <link rel="stylesheet" href="/assets/css/post.css">
+    
+    
+    
+    <link rel="stylesheet" href="/assets/css/syntax.css">
+    <link rel="alternate" type="application/rss+xml" title="RSS" href="/feed.xml">
+    <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml">
+    <!-- Begin Jekyll SEO tag v2.6.1 -->
+<meta name="generator" content="Jekyll v3.8.5" />
+<meta property="og:title" content="04.GIT 저장소 만들기" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Git의 기초 - Git 저장소 만들기" />
+<meta property="og:description" content="Git의 기초 - Git 저장소 만들기" />
+<link rel="canonical" href="http://localhost:4000/2019/12/08/GIT-04-creating-git-repository" />
+<meta property="og:url" content="http://localhost:4000/2019/12/08/GIT-04-creating-git-repository" />
+<meta property="og:site_name" content="로봇 제작을 위한 지식공간" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2019-12-08T11:17:13+09:00" />
+<meta name="google-site-verification" content="" />
+<script type="application/ld+json">
+{"@type":"BlogPosting","headline":"04.GIT 저장소 만들기","dateModified":"2019-12-08T11:17:13+09:00","datePublished":"2019-12-08T11:17:13+09:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/2019/12/08/GIT-04-creating-git-repository"},"description":"Git의 기초 - Git 저장소 만들기","url":"http://localhost:4000/2019/12/08/GIT-04-creating-git-repository","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+  </head>
+  <body>
+    <header>
+      <nav class="top-nav teal">
+        <div class="nav-wrapper">
+          <div class="container">
+            <a class="page-title" href="/">로봇 제작을 위한 지식공간</a>
+          </div>
+        </div>
+      </nav>
+      <div class="container">
+        <a href="#" data-activates="slide-out" class="button-collapse top-nav full hide-on-large-only">
+          <i class="material-icons">menu</i>
+        </a>
+      </div>
+      <ul id="slide-out" class="side-nav fixed">
+        <li>
+          <div class="userView">
+            <div class="background"></div>
+            <a href="https://github.com/lsirikh" target="_blank"><img class="circle z-depth-2" src="/assets/res/user.png"></a>
+            <span class="white-text name">이기호(Kiho Lee)</span>
+            <span class="white-text email">lsirikh@naver.com</span>
+          </div>
+        </li>
+        <li><a class="waves-effect" href="/"><i class="material-icons">home</i>Home</a></li>
+        <li><a class="waves-effect" href="/projects"><i class="material-icons">description</i>Projects</a></li>
+        <li><a class="waves-effect" href="/categories"><i class="material-icons">sort</i>Categories</a></li>
+        <li><a class="waves-effect" href="/tags"><i class="material-icons">label</i>Tags</a></li>
+        <li><a class="waves-effect" href="/feed.xml" target="_blank"><i class="material-icons">rss_feed</i>RSS</a></li>
+        <li><div class="divider"></div></li>
+        <li><a class="waves-effect" href="/about"><i class="material-icons">person</i>About</a></li>
+        <li><a class="waves-effect" href="/contact"><i class="material-icons">email</i>Contact</a></li>
+      </ul>
+    </header>
+    <main>
+
+<div class="container">
+  <div id="post-info">
+  <h3>04.GIT 저장소 만들기</h3>
+  <ul class="collapsible hoverable" data-collapsible="accordion">
+    <li>
+      <div class="collapsible-header">
+        <span>
+          <i class="material-icons tooltipped" data-position="left" data-delay="30" data-tooltip="Date">date_range</i>
+          08/12/2019 11:17
+          <i id="indicate" class="right material-icons tooltipped" data-position="left" data-delay="30" data-tooltip="Show extra info">info</i>
+        </span>
+      </div>
+      <div class="collapsible-body">
+        <span>
+          <i class="material-icons tooltipped" data-position="left" data-delay="30" data-tooltip="Categories">sort</i>
+          
+          
+          
+          <a href="/categories#git_cap" target="_blank"><div class="chip">GIT</div></a>
+          
+        </span>
+        <span>
+          <i class="material-icons tooltipped" data-position="left" data-delay="30" data-tooltip="Tags">label</i>
+          
+          
+          
+          <a href="/tags#git_cap" target="_blank"><div class="chip">GIT</div></a>
+          
+          
+          
+          <a href="/tags#기초_cap" target="_blank"><div class="chip">기초</div></a>
+          
+          
+          
+          <a href="/tags#저장소_cap" target="_blank"><div class="chip">저장소</div></a>
+          
+        </span>
+      </div>
+    </li>
+  </ul>
+</div>
+<div class="divider"></div>
+<div class="row">
+  <div class="col s12">
+    <h5 id="git의-기초---git-저장소-만들기">Git의 기초 - Git 저장소 만들기</h5>
+
+<p>Git에서 자주 사용하는 명령어는 모두 이후에 올리게 될 것이다. 추후 업데이트 되는 내용을 다 읽으면 저장소를 만들고 설정하는 방법, 파일을 추적하거나(Track) 추적을 그만두는 방법, 변경 내용을 Stage 하고 커밋하는 방법을 알게 된다. 파일이나 파일 패턴을 무시하도록 Git을 설정하는 방법, 실수를 쉽고 빠르게 만회하는 방법, 프로젝트 히스토리를 조회하고 커밋을 비교하는 방법, 리모트 저장소에 Push 하고 Pull 하는 방법을 살펴본다.</p>
+
+<p><br /></p>
+
+<h5 id="git-저장소-만들기">Git 저장소 만들기</h5>
+
+<hr />
+
+<p>주로 다음 주 가지 중 한 가지 방법으로 Git 저장소를 쓰기 시작한다.</p>
+
+<ol>
+  <li>
+    <p>아직 버전관리를 하지 않는 로컬 디렉토리 하나를 선택해서 Git 저장소를 적용하는 방법</p>
+  </li>
+  <li>
+    <p>다른 어딘가에서 Git 저장소를 <strong>Clone</strong> 하는 방법</p>
+  </li>
+</ol>
+
+<p>어떤 방법을 사용하든 로컬 디렉토리에 Git 저장소가 준비되면 이제 뭔가 해볼 수 있다.</p>
+
+<p><br /></p>
+
+<h5 id="기존-디렉토리를-git-저장소로-만들기">기존 디렉토리를 “Git 저장소”로 만들기</h5>
+
+<p>버전관리를 하지 아니하는 기존 프로젝트를 Git으로 관리하고 싶은 경우 우선 프로젝트의 디렉토리로 이동한다. 이러한 과정을 처음 해보는 것이라면 시스템마다 조금 다른 점을 주의하자.</p>
+
+<p>Linux:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ cd /home/user/my_project
+</code></pre></div></div>
+
+<p>Mac:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ cd /Users/user/my_project
+</code></pre></div></div>
+
+<p>Windows:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ cd /c/user/my_project
+</code></pre></div></div>
+
+<p>그리고 아래와 같은 명령을 실행한다:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ git init
+</code></pre></div></div>
+
+<p>이 명령은 <strong>.git</strong> 이라는 하위 디렉토리를 만든다. <strong>.git</strong> 디렉토리에는 저장소에 필요한 뼈대 파일(Skeleton)이 들어 있다. 이 명령만으로는 아직 프로젝트의 어떤 파일도 관리하지 않는다. (<strong>.git</strong> 디렉토리가 막 만들어진 직후에 정확히 어떤 파일이 있는지에 대한 내용은 <strong>Git의 내부</strong>에서 다룬다)</p>
+
+<p>Git이 파일을 관리하게 하려면 저장소에 파일을 추가하고 커밋해야 한다. <strong>git add</strong> 명령으로 파일을 추가하고 <strong>git commit</strong> 명령으로 커밋한다:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ git add *.c
+$ git add LICENSE
+$ git commit -m 'initial project version'
+</code></pre></div></div>
+<blockquote>
+  <p>위의 명령어를 통해 *.c로 된 파일을 추가하고, LICENSE 파일을 추가하는 작업을 한 후 에 git commit이 이루어진 것이다. 해당 폴더의 모든 파일을 추가할 경우 아래와 같이 하는 경우가 내 경우에는 더 많다. (단, 제외 파일 목록 관리를 잘해야한다. 추후에 다루겠다.)</p>
+</blockquote>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ git add .
+</code></pre></div></div>
+
+<p>명령어 몇 개로 순식간에 Git 저장소를 만들고 파일 버전 관리를 시작했다.</p>
+
+<p><br /></p>
+
+<h5 id="기존-저장소를-clone-하기">기존 저장소를 Clone 하기</h5>
+
+<p>다른 프로젝트에 참여하려거나(Contribute) Git 저장소를 복사하고 싶을 때 <strong>git clone</strong> 명령을 사용한다. 이미 Subversion 같은 VCS에 익숙한 사용자에게는 “checkout” 이 아니라 “clone” 이라는 점이 도드라져 보일 것이다. Git이 Subversion과 다른 가장 큰 차이점은 서버에 있는 거의 모든 데이터를 복사한다는 것이다. <strong>git clone</strong> 을 실행하면 프로젝트 히스토리를 전부 받아온다. 실제로 서버의 디스크가 망가져도 클라이언트 저장소 중에서 아무거나 하나 가져다가 복구하면 된다(서버에만 적용했던 설정은 복구하지 못하지만 모든 데이터는 복구된다 - 서버에 Git 설치하기에서 좀 더 자세히 다룬다).</p>
+
+<p><strong>git clone &lt;url&gt;</strong> 명령으로 저장소를 Clone 한다. <strong>libgit2</strong> 라이브러리 소스코드를 Clone 하려면 아래과 같이 실행한다.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ git clone https://github.com/libgit2/libgit2
+</code></pre></div></div>
+<p>이 명령은 “libgit2” 라는 디렉토리를 만들고 그 안에 <strong>.git</strong> 디렉토리를 만든다. 그리고 저장소의 데이터를 모두 가져와서 자동으로 가장 최신 버전을 Checkout 해 놓는다. <strong>libgit2</strong> 디렉토리로 이동하면 Checkout으로 생성한 파일을 볼 수 있고 당장 하고자 하는 일을 시작할 수 있다.</p>
+
+<p>아래과 같은 명령을 사용하여 저장소를 Clone 하면 <code class="language-plaintext highlighter-rouge">libgit2</code>이 아니라 다른 디렉토리 이름으로 Clone 할 수 있다.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ git clone https://github.com/libgit2/libgit2 mylibgit
+</code></pre></div></div>
+
+<p>디렉토리 이름이 <strong>mylibgit</strong> 이라는 것만 빼면 이 명령의 결과와 앞선 명령의 결과는 같다.</p>
+
+<p>Git은 다양한 프로토콜을 지원한다. 이제까지는 <strong>https://</strong> 프로토콜을 사용했지만 <strong>git://</strong> 를 사용할 수도 있고 <strong>user@server:path/to/repo.git</strong> 처럼 SSH 프로토콜을 사용할 수도 있다. 자세한 내용은 서버에 Git 설치하기에서 다루며 각 프로토콜의 장단점과 Git 저장소에 접근하는 방법을 설명한다.</p>
+
+<p><span style="color:red;font-size:20px;"> <strong>Git을 시작하기에 매우 중요한 내용이기 때문에 이 내용을 모르고 Git을 시작한다는 것은 거의 불가능하다. 따라서, 본 내용을 반드시 숙지하는 것이 좋다.</strong> </span></p>
+
+<p>[출처]https://git-scm.com/book/ko/v2/Git%EC%9D%98-%EA%B8%B0%EC%B4%88-Git-%EC%A0%80%EC%9E%A5%EC%86%8C-%EB%A7%8C%EB%93%A4%EA%B8%B0</p>
+
+  </div>
+</div>
+
+</div>
+
+    </main>
+    <footer class="page-footer teal">
+      <div class="container">
+        <div class="row">
+          <div class="col s12">
+            <img src="/assets/res/logo.png" alt="logo"/>
+            <p class="grey-text text-lighten-4">This blog was designed to deliver the knowledge to people who want to make private Robots <br> jekyll theme을 입힌 블로그 
+</p>
+          </div>
+        </div>
+      </div>
+      <div class="footer-copyright">
+        <div class="container">
+          &#xA9; 2019 로봇 제작을 위한 지식공간. All rights reserved. Powered by <a href="https://github.com/ShawnTeoh/matjek">MatJek</a>.
+        </div>
+      </div>
+    </footer>
+    <script src="//code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/materialize/0.99.0/js/materialize.min.js"></script>
+    
+    
+    <script src="/assets/js/post.js"></script>
+    
+    
+    
+    
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})
+      (window,document,'script','//www.google-analytics.com/analytics.js','ga');
+      ga('create', '', 'auto');
+      ga('send', 'pageview');
+    </script>
+    
+    <script src="/assets/js/main.js"></script>
+  </body>
+</html>
