@@ -295,11 +295,12 @@ defaults:
       path: ""
       type: posts
     values:
-      layout: default
+      layout: single
       author_profile: true
       read_time: true
       comments: true
       share: true
       related: true
 
-classes: wide
+
+

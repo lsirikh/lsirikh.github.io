@@ -27,3 +27,8 @@ layout: archive
     <a href="#page-title" class="back-to-top">{{ site.data.ui-text[site.locale].back_to_top | default: 'Back to Top' }} &uarr;</a>
   </section>
 {% endfor %}
+
+{% if site.comments.disqus.shortname %}
+  <h1>aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</h1>
+  {% include disqus_comments.html %}
+{% endif %}
