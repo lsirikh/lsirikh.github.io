@@ -12,13 +12,14 @@ toc_label: "My Table of Contents"
 toc_icon: "cog"
 ---
 
-##### Git을 사용하기 앞서 알면 좋은 내용
-
 <br>
 
-##### Git 도움말 보기
+# Git을 사용하기 앞서 알면 좋은 내용
 
-<hr>
+
+
+## Git 도움말 보기
+
 
 명령어에 대한 도움말이 필요할 때 도움말을 보는 방법은 두 가지로 동일한 결과를 볼 수 있다.
 
@@ -41,7 +42,7 @@ $ git help config
 Git 명령을 사용하기 위해 매우 자세한 도움말 전체를 볼 필요 없이 각 명령에서 사용할 수 있는 옵션들에 대해서 간략히 살펴볼수도 있다. `-h`, `--help` 옵션을 사용하면 다음과 같이 Git 명령에서 사용할 수 있는 옵션들에 대한 간단한 도움말을 출력한다.
 
 
-<img src="/assets/img/git/git_help_config.png" width="100%" height="100%" title="git_help_config">
+<img src="/assets/img/git/git_help_config.png" title="git_help_config">
 
 ```
 $ git add -h
@@ -64,4 +65,4 @@ usage: git add [<options>] [--] <pathspec>...
     --chmod <(+/-)x>      override the executable bit of the listed files
 ```
 
-[출처]https://git-scm.com/book/ko/v2/%EC%8B%9C%EC%9E%91%ED%95%98%EA%B8%B0-%EB%8F%84%EC%9B%80%EB%A7%90-%EB%B3%B4%EA%B8%B0
+[출처][git-scm](https://git-scm.com/book/ko/v2/%EC%8B%9C%EC%9E%91%ED%95%98%EA%B8%B0-%EB%8F%84%EC%9B%80%EB%A7%90-%EB%B3%B4%EA%B8%B0)

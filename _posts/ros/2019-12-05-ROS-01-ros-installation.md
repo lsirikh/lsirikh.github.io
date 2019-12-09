@@ -20,14 +20,14 @@ toc_icon: "cog"
 
 ---
 
-<img src="/assets/img/ros/kinetic_kame.png" width="40%" height="30%" alt="Kinetic Kame">
+<img src="/assets/img/ros/kinetic_kame.png" title="Kinetic Kame">
 
 
 설치 과정은 사실 위키에 더 자세히 나와있지만, 추후 반복작업을 위해서 좀더 간략하게 정리해보자.
 
 참고로 여기서 다루지는 않지만, Ubuntu 18.04LTS 버전에서 활용하는 ROS Melodic Morenia는 이런 이미지를 쓰더라.
 
-<img src="/assets/img/ros/Melodic_morenia.png" width="40%" height="30%" alt="Melodic Morenia">
+<img src="/assets/img/ros/Melodic_morenia.png"  title="Melodic Morenia">
 
 우선 ROS 를 설치하기 전에 반드시 해야될 것은 Ubuntu 16.04를 설치를 해야 한다.
 
@@ -35,13 +35,13 @@ toc_icon: "cog"
 
 추후에 다루도록 한다.
 
-### 1. 설치하기
+## 1. 설치하기
 
 ROS Kinetic은 데비안 패키지 용 Wily (Ubuntu 15.10), Xenial (Ubuntu 16.04) 및 Jessie (Debian 8)만 지원한다.
 
-#### 1.1. 우분투 리포지토리 구성하기(뭔말인지 몰라 패스)
+### 1.1. 우분투 리포지토리 구성하기(뭔말인지 몰라 패스)
 
-#### 1.2. source.list 셋업
+### 1.2. source.list 셋업
 
 packages.ros.org의 소프트웨어를 허용하도록 컴퓨터를 설정하기
 
@@ -49,7 +49,7 @@ packages.ros.org의 소프트웨어를 허용하도록 컴퓨터를 설정하기
 $ sudo sh -c 'echo "deb http://packages.ros.org/ros/ubuntu $(lsb_release -sc) main" > /etc/apt/sources.list.d/ros-latest.list'
 ```
 
-#### 1.3 Key 값 설정하기
+### 1.3 Key 값 설정하기
 
 키 서버 연결에 문제가있는 경우 이전 명령에서hkp : //pgp.mit.edu : 80또는hkp : //keyserver.ubuntu.com : 80을대체해라. 
 
@@ -64,7 +64,7 @@ $ curl -sSL 'http://keyserver.ubuntu.com/pks/lookup?op=get&search=0xC1CF6E31E6BA
 ```
 (단, curl을 사용하려면 curl을 ubuntu에 설치해야 한다.)
 
-#### 1.4. Installation  
+### 1.4. Installation  
   
 
 먼저 우분투를 업데이트 하자.
@@ -111,7 +111,7 @@ $ sudo apt-get install ros-kinetic-slam-gmapping
 
 다 설치하고 나면 개발환경인 rqt도 설치를 하자.
 
-#### 1.5. rosdep 초기화
+## 2. rosdep 초기화
 
 ROS를 사용하기 전에 반드시 rosdep를 초기화 해야한다. rosdep은 ros의 핵심 컴포넌트들을 사용하거나 컴파일할 때 의존성 패키지를 쉽게 설치하여 사용자 편의성을 높여주는 기능이다.
 
@@ -120,7 +120,7 @@ $ sudo rosdep init
 $ rosdep update
 ```
 
-#### 1.6. 환경설정
+## 3. 환경설정
 
 새로운 쉘이 실행될 때마다 ROS 환경 변수가 bash 세션에 자동으로 추가되는 것이 편리하다.
 
@@ -144,13 +144,13 @@ $ echo "source /opt/ros/kinetic/setup.zsh" >> ~/.zshrc
 $ source ~/.zshrc
 ```
 
-#### 1.7. 패키지 빌드를 위한 의존성 설치
+### 3.1. 패키지 빌드를 위한 의존성 설치
 
 ```
 $ sudo apt install python-rosinstall python-rosinstall-generator python-wstool build-essential
 ```
 
-#### 1.8. 작업폴더 만들기
+### 3.2. 작업폴더 만들기
 
 ROS는 catkin이라는 ROS 전용 빌드 시스템을 사용하고 있다. 이를 사용하려면 다음처럼 catkin작업 폴더를 생성하고 초기화 하는 작업이 필요하다. 이 설정은 작업 폴더를 새롭게 생성하지 않는 한 처음 한 번만 실행하면 된다. 
 
@@ -160,7 +160,7 @@ $ cd ~/catkin_ws/src
 $ catkin_init_workspace
 ```
 
-#### 1.9. catkin 작업 폴더 빌드하기
+### 3.3. catkin 작업 폴더 빌드하기
 
 현재 catkin 작업폴더에는 src 폴더와 그 안에 CMakeLists.txt 파일만 있지만, 시험삼아 catkin_make 명령어를 이용해 빌드해보자. 
 
@@ -169,7 +169,7 @@ $ cd ~/catkin_ws/
 $ catkin_make
 ```
 
-#### 2.0. 빌드 결과 확인하기
+### 3.4. 빌드 결과 확인하기
 
 문제 없이 빌드가 완료되면, ls 명령어를 통해서 생성된 폴더와 파일을 확인해보자. catkin 빌드 시스템의 빌드 관련 파일은 build 폴더에 저장되고 빌드 후 실행 관련 파일은 devel 폴더에 저장된다.
 
@@ -180,7 +180,7 @@ devel
 src
 ```
 
-#### 2.1. 테스트 하기
+### 3.5. 테스트 하기
 
 ROS의 모든 설치가 완료되었다. 제대로 설치가 되었는지 확인하자.
 

@@ -1,0 +1,17 @@
+I"�<ul class="toc__menu">
+  <li><a href="#git의-기초---수정하고-저장소에-저장하기">Git의 기초 - 수정하고 저장소에 저장하기</a>
+    <ul>
+      <li><a href="#1-파일의-상태-확인하기">1. 파일의 상태 확인하기</a></li>
+      <li><a href="#2-파일을-새로-추적하기">2. 파일을 새로 추적하기</a></li>
+      <li><a href="#3-modified-상태의-파일을-stage-하기">3. Modified 상태의 파일을 Stage 하기</a></li>
+      <li><a href="#4-파일-상태를-짤막하게-확인하기">4. 파일 상태를 짤막하게 확인하기</a></li>
+      <li><a href="#5-파일-무시하기">5. 파일 무시하기</a></li>
+      <li><a href="#6-staged와-unstaged-상태의-변경-내용을-보기">6. Staged와 Unstaged 상태의 변경 내용을 보기</a></li>
+      <li><a href="#7-변경사항-커밋하기">7. 변경사항 커밋하기</a></li>
+      <li><a href="#8-staging-area-생략하기">8. Staging Area 생략하기</a></li>
+      <li><a href="#9-파일-삭제하기">9. 파일 삭제하기</a>
+          - {:.} <a href="#파일-이름-변경하기">파일 이름 변경하기</a></li>
+    </ul>
+  </li>
+</ul>
+:ET

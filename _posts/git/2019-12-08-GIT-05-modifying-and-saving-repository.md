@@ -12,7 +12,9 @@ toc_label: "My Table of Contents"
 toc_icon: "cog"
 ---
 
-##### Git의 기초 - 수정하고 저장소에 저장하기
+<br>
+
+# Git의 기초 - 수정하고 저장소에 저장하기
 
 실제 존재하는 Git 저장소를 하나 만들었고 워킹 디렉토리에 Checkout도 했다. 이제는 파일을 수정하고 파일의 스냅샷을 커밋해 보자. 파일을 수정하다가 저장하고 싶으면 스냅샷을 커밋한다.
 
@@ -30,9 +32,8 @@ toc_icon: "cog"
 
 <br>
 
-##### 파일의 상태 확인하기
+## 1. 파일의 상태 확인하기
 
-<hr>
 
 파일의 상태를 확인하려면 보통 **git status** 명령을 사용한다. Clone 한 후에 바로 이 명령을 실행하면 아래과 같은 메시지를 볼 수 있다.
 
@@ -63,9 +64,8 @@ nothing added to commit but untracked files present (use "git add" to track)
 
 <br>
 
-##### 파일을 새로 추적하기
+## 2. 파일을 새로 추적하기
 
-<hr>
 
 **git add** 명령으로 파일을 새로 추적할 수 있다. 아래 명령을 실행하면 Git은 README 파일을 추적한다.
 
@@ -87,9 +87,9 @@ Changes to be committed:
 
 <br>
 
-##### Modified 상태의 파일을 Stage 하기
+## 3. Modified 상태의 파일을 Stage 하기
 
-<hr>
+
 
 이미 Tracked 상태인 파일을 수정하는 법을 알아보자. **CONTRIBUTING.md** 라는 파일을 수정하고 나서 **git status** 명령을 다시 실행하면 결과는 아래와 같다.
 
@@ -165,9 +165,8 @@ Changes to be committed:
 
 <br>
 
-##### 파일 상태를 짤막하게 확인하기
+## 4. 파일 상태를 짤막하게 확인하기
 
-<hr>
 
 **git status** 명령으로 확인할 수 있는 내용이 좀 많아 보일 수 있다. 사실 그렇다. 좀 더 간단하게 변경 내용을 보여주는 옵션이 있다. **git status -s** 또는 **git status --short** 처럼 옵션을 주면 현재 변경한 상태를 짤막하게 보여준다.
 
@@ -185,9 +184,8 @@ M  lib/simplegit.rb
 
 <br>
 
-##### 파일 무시하기
+## 5. 파일 무시하기
 
-<hr>
 
 어떤 파일은 Git이 관리할 필요가 없다. 보통 로그 파일이나 빌드 시스템이 자동으로 생성한 파일이 그렇다. 그런 파일을 무시하려면 **.gitignore** 파일을 만들고 그 안에 무시할 파일 패턴을 적는다. 아래는 **.gitignore** 파일의 예이다.
 
@@ -242,9 +240,8 @@ doc/**/*.pdf
 
 <br>
 
-##### Staged와 Unstaged 상태의 변경 내용을 보기
+## 6. Staged와 Unstaged 상태의 변경 내용을 보기
 
-<hr>
 
 단순히 파일이 변경됐다는 사실이 아니라 어떤 내용이 변경됐는지 살펴보려면 git status 명령이 아니라 git diff 명령을 사용해야 한다. 보통 우리는 '수정했지만, 아직 Staged 파일이 아닌 것?'과 '어떤 파일이 Staged 상태인지?'가 궁금하기 때문에 git status 명령으로도 충분하다. 더 자세하게 볼 때는 git diff 명령을 사용하는데 Patch처럼 어떤 라인을 추가했고 삭제했는지가 궁금할 때 사용한다. git diff 는 나중에 더 자세히 다룬다.
 
@@ -360,9 +357,8 @@ index 8ebb991..643e24f 100644
 
 <br>
 
-##### 변경사항 커밋하기
+## 7. 변경사항 커밋하기
 
-<hr>
 
 수정한 것을 커밋하기 위해 Staging Area에 파일을 정리했다. Unstaged 상태의 파일은 커밋되지 않는다는 것을 기억해야 한다. Git은 생성하거나 수정하고 나서 git add 명령으로 추가하지 않은 파일은 커밋하지 않는다. 그 파일은 여전히 Modified 상태로 남아 있다. 커밋하기 전에 git status 명령으로 모든 것이 Staged 상태인지 확인할 수 있다. 그 후에 git commit 을 실행하여 커밋한다.
 
@@ -405,9 +401,8 @@ Git은 Staging Area에 속한 스냅샷을 커밋한다는 것을 기억해야 �
 
 <br>
 
-##### Staging Area 생략하기
+## 8. Staging Area 생략하기
 
-<hr>
 
 Staging Area는 커밋할 파일을 정리한다는 점에서 매우 유용하지만 복잡하기만 하고 필요하지 않은 때도 있다. 아주 쉽게 Staging Area를 생략할 수 있다. git commit 명령을 실행할 때 -a 옵션을 추가하면 Git은 Tracked 상태의 파일을 자동으로 Staging Area에 넣는다. 그래서 git add 명령을 실행하는 수고를 덜 수 있다.
 
@@ -430,9 +425,8 @@ $ git commit -a -m 'added new benchmarks'
 
 <br>
 
-##### 파일 삭제하기
+## 9. 파일 삭제하기
 
-<hr>
 
 Git에서 파일을 제거하려면 git rm 명령으로 Tracked 상태의 파일을 삭제한 후에(정확하게는 Staging Area에서 삭제하는 것) 커밋해야 한다. 이 명령은 워킹 디렉토리에 있는 파일도 삭제하기 때문에 실제로 파일도 지워진다.
 
@@ -485,9 +479,8 @@ $ git rm \*~
 
 <br>
 
-##### 파일 이름 변경하기
+## 10. 파일 이름 변경하기
 
-<hr>
 
 Git은 다른 VCS 시스템과는 달리 파일 이름의 변경이나 파일의 이동을 명시적으로 관리하지 않는다. 다시 말해서 파일 이름이 변경됐다는 별도의 정보를 저장하지 않는다. Git은 똑똑해서 굳이 파일 이름이 변경되었다는 것을 추적하지 않아도 아는 방법이 있다. 파일의 이름이 변경된 것을 Git이 어떻게 알아내는지 살펴보자.
 
@@ -517,4 +510,4 @@ $ git add README
 ```
 git mv 명령은 일종의 단축 명령어이다. 이 명령으로 파일 이름을 바꿔도 되고 mv 명령으로 파일 이름을 직접 바꿔도 된다. 단지 git mv 명령은 편리하게 명령을 세 번 실행해주는 것 뿐이다. 어떤 도구로 이름을 바꿔도 상관없다. 중요한 것은 이름을 변경하고 나서 꼭 rm/add 명령을 실행해야 한다는 것 뿐이다.
 
-[출처]https://git-scm.com/book/ko/v2/Git%EC%9D%98-%EA%B8%B0%EC%B4%88-%EC%88%98%EC%A0%95%ED%95%98%EA%B3%A0-%EC%A0%80%EC%9E%A5%EC%86%8C%EC%97%90-%EC%A0%80%EC%9E%A5%ED%95%98%EA%B8%B0
+[출처][git-scm](https://git-scm.com/book/ko/v2/Git%EC%9D%98-%EA%B8%B0%EC%B4%88-%EC%88%98%EC%A0%95%ED%95%98%EA%B3%A0-%EC%A0%80%EC%9E%A5%EC%86%8C%EC%97%90-%EC%A0%80%EC%9E%A5%ED%95%98%EA%B8%B0)

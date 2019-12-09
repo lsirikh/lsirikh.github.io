@@ -12,7 +12,7 @@ toc_label: "My Table of Contents"
 toc_icon: "cog"
 ---
 
-##### 1. ROS 환경설정
+## 1. ROS 환경설정
 
 ROS 설치 과정에서 사용된 다음 명령어는 터미널 창을 실행할 때마다 계속 입력해야한다.
 
@@ -43,7 +43,7 @@ ROS 네트워크 설정을 위해서 IP 주소가 필요할 수 있다.
 $ ifconfig
 ```
 
-<img src="/assets/img/ros/ifconfig.png" width="40%" height="30%" alt="image">
+<img src="/assets/img/ros/ifconfig.png"  alt="image">
 
 wlp2s0(무선일 때)의  inet addr:xxx.xxx.xx.xx? 여기를 확인하자.<br>
 enp3s0(유선일 때)의  inet addr:xxx.xxx.xx.xx? 여기를 확인하자.
@@ -76,7 +76,7 @@ alias cm='cd ~/catkin_ws && catkin_make'
 $ source ~/.bashrc
 ```
 
-##### 1.1. ROS 환경설정 내용 분석(bashrc)
+### 1.1. ROS 환경설정 내용 분석(bashrc)
 
 
 {% highlight bash linenos %}
@@ -97,7 +97,7 @@ export ROS_MASTER_URI=http://{ROS_HOSTNAME}:11311
 ROS는 네트워크 통신 기반의 플랫폼이기 때문에 메세지 통신을 위해서 네트워크 설정은 반드시 선행되어야 합니다.
 
 
-##### 1.2. 단축 명령어 분석(bashrc)
+### 1.2. 단축 명령어 분석(bashrc)
 
 {% highlight bash linenos %}
 # Set ROS alias command
@@ -113,6 +113,6 @@ alias는 별명 혹은 숏컷 네이밍이라고 볼 수 있습니다. 따라서
 ```
 $ export | grep ROS
 ```
-<img src="/assets/img/ros/export_grep_ros.png" width="60%" height="60%" alt="image">
+<img src="/assets/img/ros/export_grep_ros.png" title="image">
 
 

@@ -10,7 +10,7 @@
     <meta charset="utf-8">
 
 <!-- begin _includes/seo.html --><title>05.GIT 저장소 수정하기와 저장하기 - 로봇을 배우기 위한 지식 창고</title>
-<meta name="description" content="Git의 기초 - 수정하고 저장소에 저장하기">
+<meta name="description" content="">
 
 
   <meta name="author" content="Kiho Lee">
@@ -23,7 +23,7 @@
 <meta property="og:url" content="http://localhost:4000/categories/git/GIT-05-modifying-and-saving-repository.html">
 
 
-  <meta property="og:description" content="Git의 기초 - 수정하고 저장소에 저장하기">
+  <meta property="og:description" content="">
 
 
 
@@ -52,7 +52,7 @@
     "@context": "https://schema.org",
     
       "@type": "Person",
-      "name": "Kiho LEE",
+      "name": "로봇 창고",
       "url": "http://localhost:4000/"
     
   }
@@ -124,6 +124,8 @@
     <div class="masthead__menu">
       <nav id="site-nav" class="greedy-nav">
         
+          <a class="site-logo" href="/"><img src="/assets/img/memaker.png" alt=""></a>
+        
         <a class="site-title" href="/">
           로봇을 배우기 위한 지식 창고
           
@@ -135,6 +137,13 @@
             </li><li class="masthead__menu-item">
               <a href="/tags/" >Tags</a>
             </li></ul>
+        
+        <button class="search__toggle" type="button">
+          <span class="visually-hidden">Toggle search</span>
+          <svg class="icon" width="16" height="16" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15.99 16">
+            <path d="M15.5,13.12L13.19,10.8a1.69,1.69,0,0,0-1.28-.55l-0.06-.06A6.5,6.5,0,0,0,5.77,0,6.5,6.5,0,0,0,2.46,11.59a6.47,6.47,0,0,0,7.74.26l0.05,0.05a1.65,1.65,0,0,0,.5,1.24l2.38,2.38A1.68,1.68,0,0,0,15.5,13.12ZM6.4,2A4.41,4.41,0,1,1,2,6.4,4.43,4.43,0,0,1,6.4,2Z" transform="translate(-.01)"></path>
+          </svg>
+        </button>
         
         <button class="greedy-nav__toggle hidden" type="button">
           <span class="visually-hidden">토글 메뉴</span>
@@ -150,6 +159,52 @@
     <div class="initial-content">
       
 
+
+  
+    
+
+
+
+<nav class="breadcrumbs">
+  <ol itemscope itemtype="https://schema.org/BreadcrumbList">
+    
+    
+    
+      
+        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+          <a href="http://localhost:4000/" itemprop="item"><span itemprop="name">Home</span></a>
+          <meta itemprop="position" content="1" />
+        </li>
+        <span class="sep">/</span>
+      
+      
+        
+        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+          <a href="/categories/#categories" itemprop="item"><span itemprop="name">Categories</span></a>
+          <meta itemprop="position" content="2" />
+        </li>
+        <span class="sep">/</span>
+      
+    
+      
+      
+        
+        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+          <a href="/categories/#git" itemprop="item"><span itemprop="name">Git</span></a>
+          <meta itemprop="position" content="3" />
+        </li>
+        <span class="sep">/</span>
+      
+    
+      
+      
+        <li class="current">05.GIT 저장소 수정하기와 저장하기</li>
+      
+    
+  </ol>
+</nav>
+
+  
 
 
 <div id="main" role="main">
@@ -189,6 +244,8 @@
             <li><a href="mailto:lsirikh@naver.com" rel="nofollow noopener noreferrer"><i class="fas fa-fw fa-envelope-square" aria-hidden="true"></i> Email</a></li>
           
         
+          
+            <li><a href="https://memaker.com" rel="nofollow noopener noreferrer"><i class="fas fa-fw fa-link" aria-hidden="true"></i> Website</a></li>
           
         
           
@@ -266,7 +323,7 @@
 
   <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
     <meta itemprop="headline" content="05.GIT 저장소 수정하기와 저장하기">
-    <meta itemprop="description" content="Git의 기초 - 수정하고 저장소에 저장하기">
+    <meta itemprop="description" content="">
     <meta itemprop="datePublished" content="December 08, 2019">
     
 
@@ -294,22 +351,27 @@
             <nav class="toc">
               <header><h4 class="nav__title"><i class="fas fa-cog"></i> My Table of Contents</h4></header>
               <ul class="toc__menu">
-  <li><a href="#git의-기초---수정하고-저장소에-저장하기">Git의 기초 - 수정하고 저장소에 저장하기</a></li>
-  <li><a href="#파일의-상태-확인하기">파일의 상태 확인하기</a></li>
-  <li><a href="#파일을-새로-추적하기">파일을 새로 추적하기</a></li>
-  <li><a href="#modified-상태의-파일을-stage-하기">Modified 상태의 파일을 Stage 하기</a></li>
-  <li><a href="#파일-상태를-짤막하게-확인하기">파일 상태를 짤막하게 확인하기</a></li>
-  <li><a href="#파일-무시하기">파일 무시하기</a></li>
-  <li><a href="#staged와-unstaged-상태의-변경-내용을-보기">Staged와 Unstaged 상태의 변경 내용을 보기</a></li>
-  <li><a href="#변경사항-커밋하기">변경사항 커밋하기</a></li>
-  <li><a href="#staging-area-생략하기">Staging Area 생략하기</a></li>
-  <li><a href="#파일-삭제하기">파일 삭제하기</a></li>
-  <li><a href="#파일-이름-변경하기">파일 이름 변경하기</a></li>
+  <li><a href="#git의-기초---수정하고-저장소에-저장하기">Git의 기초 - 수정하고 저장소에 저장하기</a>
+    <ul>
+      <li><a href="#1-파일의-상태-확인하기">1. 파일의 상태 확인하기</a></li>
+      <li><a href="#2-파일을-새로-추적하기">2. 파일을 새로 추적하기</a></li>
+      <li><a href="#3-modified-상태의-파일을-stage-하기">3. Modified 상태의 파일을 Stage 하기</a></li>
+      <li><a href="#4-파일-상태를-짤막하게-확인하기">4. 파일 상태를 짤막하게 확인하기</a></li>
+      <li><a href="#5-파일-무시하기">5. 파일 무시하기</a></li>
+      <li><a href="#6-staged와-unstaged-상태의-변경-내용을-보기">6. Staged와 Unstaged 상태의 변경 내용을 보기</a></li>
+      <li><a href="#7-변경사항-커밋하기">7. 변경사항 커밋하기</a></li>
+      <li><a href="#8-staging-area-생략하기">8. Staging Area 생략하기</a></li>
+      <li><a href="#9-파일-삭제하기">9. 파일 삭제하기</a></li>
+      <li><a href="#10-파일-이름-변경하기">10. 파일 이름 변경하기</a></li>
+    </ul>
+  </li>
 </ul>
             </nav>
           </aside>
         
-        <h5 id="git의-기초---수정하고-저장소에-저장하기">Git의 기초 - 수정하고 저장소에 저장하기</h5>
+        <p><br /></p>
+
+<h1 id="git의-기초---수정하고-저장소에-저장하기">Git의 기초 - 수정하고 저장소에 저장하기</h1>
 
 <p>실제 존재하는 Git 저장소를 하나 만들었고 워킹 디렉토리에 Checkout도 했다. 이제는 파일을 수정하고 파일의 스냅샷을 커밋해 보자. 파일을 수정하다가 저장하고 싶으면 스냅샷을 커밋한다.</p>
 
@@ -329,9 +391,7 @@
 
 <p><br /></p>
 
-<h5 id="파일의-상태-확인하기">파일의 상태 확인하기</h5>
-
-<hr />
+<h2 id="1-파일의-상태-확인하기">1. 파일의 상태 확인하기</h2>
 
 <p>파일의 상태를 확인하려면 보통 <strong>git status</strong> 명령을 사용한다. Clone 한 후에 바로 이 명령을 실행하면 아래과 같은 메시지를 볼 수 있다.</p>
 
@@ -360,9 +420,7 @@ nothing added to commit but untracked files present (use "git add" to track)
 
 <p><br /></p>
 
-<h5 id="파일을-새로-추적하기">파일을 새로 추적하기</h5>
-
-<hr />
+<h2 id="2-파일을-새로-추적하기">2. 파일을 새로 추적하기</h2>
 
 <p><strong>git add</strong> 명령으로 파일을 새로 추적할 수 있다. 아래 명령을 실행하면 Git은 README 파일을 추적한다.</p>
 
@@ -382,9 +440,7 @@ Changes to be committed:
 
 <p><br /></p>
 
-<h5 id="modified-상태의-파일을-stage-하기">Modified 상태의 파일을 Stage 하기</h5>
-
-<hr />
+<h2 id="3-modified-상태의-파일을-stage-하기">3. Modified 상태의 파일을 Stage 하기</h2>
 
 <p>이미 Tracked 상태인 파일을 수정하는 법을 알아보자. <strong>CONTRIBUTING.md</strong> 라는 파일을 수정하고 나서 <strong>git status</strong> 명령을 다시 실행하면 결과는 아래와 같다.</p>
 
@@ -457,9 +513,7 @@ Changes to be committed:
 
 <p><br /></p>
 
-<h5 id="파일-상태를-짤막하게-확인하기">파일 상태를 짤막하게 확인하기</h5>
-
-<hr />
+<h2 id="4-파일-상태를-짤막하게-확인하기">4. 파일 상태를 짤막하게 확인하기</h2>
 
 <p><strong>git status</strong> 명령으로 확인할 수 있는 내용이 좀 많아 보일 수 있다. 사실 그렇다. 좀 더 간단하게 변경 내용을 보여주는 옵션이 있다. <strong>git status -s</strong> 또는 <strong>git status –short</strong> 처럼 옵션을 주면 현재 변경한 상태를 짤막하게 보여준다.</p>
 
@@ -478,9 +532,7 @@ M  lib/simplegit.rb
 
 <p><br /></p>
 
-<h5 id="파일-무시하기">파일 무시하기</h5>
-
-<hr />
+<h2 id="5-파일-무시하기">5. 파일 무시하기</h2>
 
 <p>어떤 파일은 Git이 관리할 필요가 없다. 보통 로그 파일이나 빌드 시스템이 자동으로 생성한 파일이 그렇다. 그런 파일을 무시하려면 <strong>.gitignore</strong> 파일을 만들고 그 안에 무시할 파일 패턴을 적는다. 아래는 <strong>.gitignore</strong> 파일의 예이다.</p>
 
@@ -550,9 +602,7 @@ doc/**/*.pdf
 
 <p><br /></p>
 
-<h5 id="staged와-unstaged-상태의-변경-내용을-보기">Staged와 Unstaged 상태의 변경 내용을 보기</h5>
-
-<hr />
+<h2 id="6-staged와-unstaged-상태의-변경-내용을-보기">6. Staged와 Unstaged 상태의 변경 내용을 보기</h2>
 
 <p>단순히 파일이 변경됐다는 사실이 아니라 어떤 내용이 변경됐는지 살펴보려면 git status 명령이 아니라 git diff 명령을 사용해야 한다. 보통 우리는 ‘수정했지만, 아직 Staged 파일이 아닌 것?’과 ‘어떤 파일이 Staged 상태인지?’가 궁금하기 때문에 git status 명령으로도 충분하다. 더 자세하게 볼 때는 git diff 명령을 사용하는데 Patch처럼 어떤 라인을 추가했고 삭제했는지가 궁금할 때 사용한다. git diff 는 나중에 더 자세히 다룬다.</p>
 
@@ -666,9 +716,7 @@ index 8ebb991..643e24f 100644
 
 <p><br /></p>
 
-<h5 id="변경사항-커밋하기">변경사항 커밋하기</h5>
-
-<hr />
+<h2 id="7-변경사항-커밋하기">7. 변경사항 커밋하기</h2>
 
 <p>수정한 것을 커밋하기 위해 Staging Area에 파일을 정리했다. Unstaged 상태의 파일은 커밋되지 않는다는 것을 기억해야 한다. Git은 생성하거나 수정하고 나서 git add 명령으로 추가하지 않은 파일은 커밋하지 않는다. 그 파일은 여전히 Modified 상태로 남아 있다. 커밋하기 전에 git status 명령으로 모든 것이 Staged 상태인지 확인할 수 있다. 그 후에 git commit 을 실행하여 커밋한다.</p>
 
@@ -707,9 +755,7 @@ index 8ebb991..643e24f 100644
 
 <p><br /></p>
 
-<h5 id="staging-area-생략하기">Staging Area 생략하기</h5>
-
-<hr />
+<h2 id="8-staging-area-생략하기">8. Staging Area 생략하기</h2>
 
 <p>Staging Area는 커밋할 파일을 정리한다는 점에서 매우 유용하지만 복잡하기만 하고 필요하지 않은 때도 있다. 아주 쉽게 Staging Area를 생략할 수 있다. git commit 명령을 실행할 때 -a 옵션을 추가하면 Git은 Tracked 상태의 파일을 자동으로 Staging Area에 넣는다. 그래서 git add 명령을 실행하는 수고를 덜 수 있다.</p>
 
@@ -731,9 +777,7 @@ $ git commit -a -m 'added new benchmarks'
 
 <p><br /></p>
 
-<h5 id="파일-삭제하기">파일 삭제하기</h5>
-
-<hr />
+<h2 id="9-파일-삭제하기">9. 파일 삭제하기</h2>
 
 <p>Git에서 파일을 제거하려면 git rm 명령으로 Tracked 상태의 파일을 삭제한 후에(정확하게는 Staging Area에서 삭제하는 것) 커밋해야 한다. 이 명령은 워킹 디렉토리에 있는 파일도 삭제하기 때문에 실제로 파일도 지워진다.</p>
 
@@ -781,9 +825,7 @@ Changes to be committed:
 
 <p><br /></p>
 
-<h5 id="파일-이름-변경하기">파일 이름 변경하기</h5>
-
-<hr />
+<h2 id="10-파일-이름-변경하기">10. 파일 이름 변경하기</h2>
 
 <p>Git은 다른 VCS 시스템과는 달리 파일 이름의 변경이나 파일의 이동을 명시적으로 관리하지 않는다. 다시 말해서 파일 이름이 변경됐다는 별도의 정보를 저장하지 않는다. Git은 똑똑해서 굳이 파일 이름이 변경되었다는 것을 추적하지 않아도 아는 방법이 있다. 파일의 이름이 변경된 것을 Git이 어떻게 알아내는지 살펴보자.</p>
 
@@ -810,7 +852,7 @@ $ git add README
 </code></pre></div></div>
 <p>git mv 명령은 일종의 단축 명령어이다. 이 명령으로 파일 이름을 바꿔도 되고 mv 명령으로 파일 이름을 직접 바꿔도 된다. 단지 git mv 명령은 편리하게 명령을 세 번 실행해주는 것 뿐이다. 어떤 도구로 이름을 바꿔도 상관없다. 중요한 것은 이름을 변경하고 나서 꼭 rm/add 명령을 실행해야 한다는 것 뿐이다.</p>
 
-<p>[출처]https://git-scm.com/book/ko/v2/Git%EC%9D%98-%EA%B8%B0%EC%B4%88-%EC%88%98%EC%A0%95%ED%95%98%EA%B3%A0-%EC%A0%80%EC%9E%A5%EC%86%8C%EC%97%90-%EC%A0%80%EC%9E%A5%ED%95%98%EA%B8%B0</p>
+<p>[출처]<a href="https://git-scm.com/book/ko/v2/Git%EC%9D%98-%EA%B8%B0%EC%B4%88-%EC%88%98%EC%A0%95%ED%95%98%EA%B3%A0-%EC%A0%80%EC%9E%A5%EC%86%8C%EC%97%90-%EC%A0%80%EC%9E%A5%ED%95%98%EA%B8%B0">git-scm</a></p>
 
         
       </section>
@@ -927,6 +969,14 @@ $ git add README
 <div class="grid__item">
   <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
     
+      <div class="archive__item-teaser">
+        <img src=
+          
+            "/assets/images/500x300.png"
+          
+          alt="">
+      </div>
+    
     <h2 class="archive__item-title" itemprop="headline">
       
         <a href="/categories/c++/CPP-02-install-eclipse.html" rel="permalink">02.C++ IDE Eclipse 설치하기
@@ -943,7 +993,7 @@ $ git add README
 
 </p>
     
-    <p class="archive__item-excerpt" itemprop="description">Eclipse IDE for C/C++ Developers
+    <p class="archive__item-excerpt" itemprop="description">
 </p>
   </article>
 </div>
@@ -955,6 +1005,14 @@ $ git add README
 
 <div class="grid__item">
   <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src=
+          
+            "/assets/images/500x300.png"
+          
+          alt="">
+      </div>
     
     <h2 class="archive__item-title" itemprop="headline">
       
@@ -972,7 +1030,7 @@ $ git add README
 
 </p>
     
-    <p class="archive__item-excerpt" itemprop="description">CPP란 어떤 프로그램 언어일까?
+    <p class="archive__item-excerpt" itemprop="description">
 </p>
   </article>
 </div>
@@ -984,6 +1042,14 @@ $ git add README
 
 <div class="grid__item">
   <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src=
+          
+            "/assets/images/500x300.png"
+          
+          alt="">
+      </div>
     
     <h2 class="archive__item-title" itemprop="headline">
       
@@ -1001,7 +1067,7 @@ $ git add README
 
 </p>
     
-    <p class="archive__item-excerpt" itemprop="description">Git의 기초 - Git 저장소 만들기
+    <p class="archive__item-excerpt" itemprop="description">
 </p>
   </article>
 </div>
@@ -1013,6 +1079,14 @@ $ git add README
 
 <div class="grid__item">
   <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src=
+          
+            "/assets/images/500x300.png"
+          
+          alt="">
+      </div>
     
     <h2 class="archive__item-title" itemprop="headline">
       
@@ -1030,7 +1104,7 @@ $ git add README
 
 </p>
     
-    <p class="archive__item-excerpt" itemprop="description">Git을 사용하기 앞서 알면 좋은 내용
+    <p class="archive__item-excerpt" itemprop="description">
 </p>
   </article>
 </div>
@@ -1044,6 +1118,17 @@ $ git add README
 
     </div>
 
+    
+      <div class="search-content">
+        <div class="search-content__inner-wrap"><form class="search-content__form" onkeydown="return event.key != 'Enter';">
+    <label class="sr-only" for="search">
+      Enter your search term...
+    </label>
+    <input type="search" id="search" class="search-input" tabindex="-1" placeholder="검색어를 입력하세요..." />
+  </form>
+  <div id="results" class="results"></div></div>
+
+      </div>
     
 
     <div id="footer" class="page__footer">
@@ -1077,7 +1162,7 @@ $ git add README
   </ul>
 </div>
 
-<div class="page__footer-copyright">&copy; 2019 Kiho LEE. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+<div class="page__footer-copyright">&copy; 2019 로봇 창고. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
 
       </footer>
     </div>
@@ -1088,6 +1173,10 @@ $ git add README
 
 
 
+
+<script src="/assets/js/lunr/lunr.min.js"></script>
+<script src="/assets/js/lunr/lunr-store.js"></script>
+<script src="/assets/js/lunr/lunr-en.js"></script>
 
 
 

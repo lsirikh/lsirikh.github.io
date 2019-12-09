@@ -52,7 +52,7 @@
     "@context": "https://schema.org",
     
       "@type": "Person",
-      "name": "Kiho LEE",
+      "name": "로봇 창고",
       "url": "http://localhost:4000/"
     
   }
@@ -124,6 +124,8 @@
     <div class="masthead__menu">
       <nav id="site-nav" class="greedy-nav">
         
+          <a class="site-logo" href="/"><img src="/assets/img/memaker.png" alt=""></a>
+        
         <a class="site-title" href="/">
           로봇을 배우기 위한 지식 창고
           
@@ -135,6 +137,13 @@
             </li><li class="masthead__menu-item">
               <a href="/tags/" >Tags</a>
             </li></ul>
+        
+        <button class="search__toggle" type="button">
+          <span class="visually-hidden">Toggle search</span>
+          <svg class="icon" width="16" height="16" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15.99 16">
+            <path d="M15.5,13.12L13.19,10.8a1.69,1.69,0,0,0-1.28-.55l-0.06-.06A6.5,6.5,0,0,0,5.77,0,6.5,6.5,0,0,0,2.46,11.59a6.47,6.47,0,0,0,7.74.26l0.05,0.05a1.65,1.65,0,0,0,.5,1.24l2.38,2.38A1.68,1.68,0,0,0,15.5,13.12ZM6.4,2A4.41,4.41,0,1,1,2,6.4,4.43,4.43,0,0,1,6.4,2Z" transform="translate(-.01)"></path>
+          </svg>
+        </button>
         
         <button class="greedy-nav__toggle hidden" type="button">
           <span class="visually-hidden">토글 메뉴</span>
@@ -150,6 +159,52 @@
     <div class="initial-content">
       
 
+
+  
+    
+
+
+
+<nav class="breadcrumbs">
+  <ol itemscope itemtype="https://schema.org/BreadcrumbList">
+    
+    
+    
+      
+        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+          <a href="http://localhost:4000/" itemprop="item"><span itemprop="name">Home</span></a>
+          <meta itemprop="position" content="1" />
+        </li>
+        <span class="sep">/</span>
+      
+      
+        
+        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+          <a href="/categories/#categories" itemprop="item"><span itemprop="name">Categories</span></a>
+          <meta itemprop="position" content="2" />
+        </li>
+        <span class="sep">/</span>
+      
+    
+      
+      
+        
+        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+          <a href="/categories/#ros" itemprop="item"><span itemprop="name">Ros</span></a>
+          <meta itemprop="position" content="3" />
+        </li>
+        <span class="sep">/</span>
+      
+    
+      
+      
+        <li class="current">02.ROS environmental settings for beginners ROS 환경설정 우분투 16.04 Kinetic Kame</li>
+      
+    
+  </ol>
+</nav>
+
+  
 
 
 <div id="main" role="main">
@@ -189,6 +244,8 @@
             <li><a href="mailto:lsirikh@naver.com" rel="nofollow noopener noreferrer"><i class="fas fa-fw fa-envelope-square" aria-hidden="true"></i> Email</a></li>
           
         
+          
+            <li><a href="https://memaker.com" rel="nofollow noopener noreferrer"><i class="fas fa-fw fa-link" aria-hidden="true"></i> Website</a></li>
           
         
           
@@ -294,14 +351,17 @@
             <nav class="toc">
               <header><h4 class="nav__title"><i class="fas fa-cog"></i> My Table of Contents</h4></header>
               <ul class="toc__menu">
-  <li><a href="#1-ros-환경설정">1. ROS 환경설정</a></li>
-  <li><a href="#11-ros-환경설정-내용-분석bashrc">1.1. ROS 환경설정 내용 분석(bashrc)</a></li>
-  <li><a href="#12-단축-명령어-분석bashrc">1.2. 단축 명령어 분석(bashrc)</a></li>
+  <li><a href="#1-ros-환경설정">1. ROS 환경설정</a>
+    <ul>
+      <li><a href="#11-ros-환경설정-내용-분석bashrc">1.1. ROS 환경설정 내용 분석(bashrc)</a></li>
+      <li><a href="#12-단축-명령어-분석bashrc">1.2. 단축 명령어 분석(bashrc)</a></li>
+    </ul>
+  </li>
 </ul>
             </nav>
           </aside>
         
-        <h5 id="1-ros-환경설정">1. ROS 환경설정</h5>
+        <h2 id="1-ros-환경설정">1. ROS 환경설정</h2>
 
 <p>ROS 설치 과정에서 사용된 다음 명령어는 터미널 창을 실행할 때마다 계속 입력해야한다.</p>
 
@@ -328,7 +388,7 @@ $ source ~/catkin_ws/devel/setup.bash
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ ifconfig
 </code></pre></div></div>
 
-<p><img src="/assets/img/ros/ifconfig.png" width="40%" height="30%" alt="image" /></p>
+<p><img src="/assets/img/ros/ifconfig.png" alt="image" /></p>
 
 <p>wlp2s0(무선일 때)의  inet addr:xxx.xxx.xx.xx? 여기를 확인하자.<br />
 enp3s0(유선일 때)의  inet addr:xxx.xxx.xx.xx? 여기를 확인하자.</p>
@@ -362,7 +422,7 @@ alias cm='cd ~/catkin_ws &amp;&amp; catkin_make'
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ source ~/.bashrc
 </code></pre></div></div>
 
-<h5 id="11-ros-환경설정-내용-분석bashrc">1.1. ROS 환경설정 내용 분석(bashrc)</h5>
+<h3 id="11-ros-환경설정-내용-분석bashrc">1.1. ROS 환경설정 내용 분석(bashrc)</h3>
 
 <figure class="highlight"><pre><code class="language-bash" data-lang="bash"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
@@ -384,7 +444,7 @@ alias cm='cd ~/catkin_ws &amp;&amp; catkin_make'
 
 <p>ROS는 네트워크 통신 기반의 플랫폼이기 때문에 메세지 통신을 위해서 네트워크 설정은 반드시 선행되어야 합니다.</p>
 
-<h5 id="12-단축-명령어-분석bashrc">1.2. 단축 명령어 분석(bashrc)</h5>
+<h3 id="12-단축-명령어-분석bashrc">1.2. 단축 명령어 분석(bashrc)</h3>
 
 <figure class="highlight"><pre><code class="language-bash" data-lang="bash"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
@@ -404,7 +464,7 @@ alias cm='cd ~/catkin_ws &amp;&amp; catkin_make'
 
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ export | grep ROS
 </code></pre></div></div>
-<p><img src="/assets/img/ros/export_grep_ros.png" width="60%" height="60%" alt="image" /></p>
+<p><img src="/assets/img/ros/export_grep_ros.png" title="image" /></p>
 
 
         
@@ -482,7 +542,7 @@ alias cm='cd ~/catkin_ws &amp;&amp; catkin_make'
 ">이전</a>
     
     
-      <a href="/categories/git/GIT-01-introduction.html" class="pagination--pager" title="01.GIT이란 무엇인가?
+      <a href="/categories/ros/ROS-03-ros-roscore-test.html" class="pagination--pager" title="03.ROS를 테스트 터틀봇 움직이기(우분투 16.04 Kinetic Kame)
 ">다음</a>
     
   </nav>
@@ -514,6 +574,14 @@ alias cm='cd ~/catkin_ws &amp;&amp; catkin_make'
 <div class="grid__item">
   <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
     
+      <div class="archive__item-teaser">
+        <img src=
+          
+            "/assets/images/500x300.png"
+          
+          alt="">
+      </div>
+    
     <h2 class="archive__item-title" itemprop="headline">
       
         <a href="/categories/c++/CPP-02-install-eclipse.html" rel="permalink">02.C++ IDE Eclipse 설치하기
@@ -530,7 +598,7 @@ alias cm='cd ~/catkin_ws &amp;&amp; catkin_make'
 
 </p>
     
-    <p class="archive__item-excerpt" itemprop="description">Eclipse IDE for C/C++ Developers
+    <p class="archive__item-excerpt" itemprop="description">
 </p>
   </article>
 </div>
@@ -542,6 +610,14 @@ alias cm='cd ~/catkin_ws &amp;&amp; catkin_make'
 
 <div class="grid__item">
   <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src=
+          
+            "/assets/images/500x300.png"
+          
+          alt="">
+      </div>
     
     <h2 class="archive__item-title" itemprop="headline">
       
@@ -559,7 +635,7 @@ alias cm='cd ~/catkin_ws &amp;&amp; catkin_make'
 
 </p>
     
-    <p class="archive__item-excerpt" itemprop="description">CPP란 어떤 프로그램 언어일까?
+    <p class="archive__item-excerpt" itemprop="description">
 </p>
   </article>
 </div>
@@ -571,6 +647,14 @@ alias cm='cd ~/catkin_ws &amp;&amp; catkin_make'
 
 <div class="grid__item">
   <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src=
+          
+            "/assets/images/500x300.png"
+          
+          alt="">
+      </div>
     
     <h2 class="archive__item-title" itemprop="headline">
       
@@ -588,7 +672,7 @@ alias cm='cd ~/catkin_ws &amp;&amp; catkin_make'
 
 </p>
     
-    <p class="archive__item-excerpt" itemprop="description">Git의 기초 - 수정하고 저장소에 저장하기
+    <p class="archive__item-excerpt" itemprop="description">
 </p>
   </article>
 </div>
@@ -600,6 +684,14 @@ alias cm='cd ~/catkin_ws &amp;&amp; catkin_make'
 
 <div class="grid__item">
   <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src=
+          
+            "/assets/images/500x300.png"
+          
+          alt="">
+      </div>
     
     <h2 class="archive__item-title" itemprop="headline">
       
@@ -617,7 +709,7 @@ alias cm='cd ~/catkin_ws &amp;&amp; catkin_make'
 
 </p>
     
-    <p class="archive__item-excerpt" itemprop="description">Git의 기초 - Git 저장소 만들기
+    <p class="archive__item-excerpt" itemprop="description">
 </p>
   </article>
 </div>
@@ -631,6 +723,17 @@ alias cm='cd ~/catkin_ws &amp;&amp; catkin_make'
 
     </div>
 
+    
+      <div class="search-content">
+        <div class="search-content__inner-wrap"><form class="search-content__form" onkeydown="return event.key != 'Enter';">
+    <label class="sr-only" for="search">
+      Enter your search term...
+    </label>
+    <input type="search" id="search" class="search-input" tabindex="-1" placeholder="검색어를 입력하세요..." />
+  </form>
+  <div id="results" class="results"></div></div>
+
+      </div>
     
 
     <div id="footer" class="page__footer">
@@ -664,7 +767,7 @@ alias cm='cd ~/catkin_ws &amp;&amp; catkin_make'
   </ul>
 </div>
 
-<div class="page__footer-copyright">&copy; 2019 Kiho LEE. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+<div class="page__footer-copyright">&copy; 2019 로봇 창고. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
 
       </footer>
     </div>
@@ -675,6 +778,10 @@ alias cm='cd ~/catkin_ws &amp;&amp; catkin_make'
 
 
 
+
+<script src="/assets/js/lunr/lunr.min.js"></script>
+<script src="/assets/js/lunr/lunr-store.js"></script>
+<script src="/assets/js/lunr/lunr-en.js"></script>
 
 
 

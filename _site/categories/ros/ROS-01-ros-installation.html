@@ -52,7 +52,7 @@
     "@context": "https://schema.org",
     
       "@type": "Person",
-      "name": "Kiho LEE",
+      "name": "로봇 창고",
       "url": "http://localhost:4000/"
     
   }
@@ -124,6 +124,8 @@
     <div class="masthead__menu">
       <nav id="site-nav" class="greedy-nav">
         
+          <a class="site-logo" href="/"><img src="/assets/img/memaker.png" alt=""></a>
+        
         <a class="site-title" href="/">
           로봇을 배우기 위한 지식 창고
           
@@ -135,6 +137,13 @@
             </li><li class="masthead__menu-item">
               <a href="/tags/" >Tags</a>
             </li></ul>
+        
+        <button class="search__toggle" type="button">
+          <span class="visually-hidden">Toggle search</span>
+          <svg class="icon" width="16" height="16" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15.99 16">
+            <path d="M15.5,13.12L13.19,10.8a1.69,1.69,0,0,0-1.28-.55l-0.06-.06A6.5,6.5,0,0,0,5.77,0,6.5,6.5,0,0,0,2.46,11.59a6.47,6.47,0,0,0,7.74.26l0.05,0.05a1.65,1.65,0,0,0,.5,1.24l2.38,2.38A1.68,1.68,0,0,0,15.5,13.12ZM6.4,2A4.41,4.41,0,1,1,2,6.4,4.43,4.43,0,0,1,6.4,2Z" transform="translate(-.01)"></path>
+          </svg>
+        </button>
         
         <button class="greedy-nav__toggle hidden" type="button">
           <span class="visually-hidden">토글 메뉴</span>
@@ -150,6 +159,52 @@
     <div class="initial-content">
       
 
+
+  
+    
+
+
+
+<nav class="breadcrumbs">
+  <ol itemscope itemtype="https://schema.org/BreadcrumbList">
+    
+    
+    
+      
+        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+          <a href="http://localhost:4000/" itemprop="item"><span itemprop="name">Home</span></a>
+          <meta itemprop="position" content="1" />
+        </li>
+        <span class="sep">/</span>
+      
+      
+        
+        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+          <a href="/categories/#categories" itemprop="item"><span itemprop="name">Categories</span></a>
+          <meta itemprop="position" content="2" />
+        </li>
+        <span class="sep">/</span>
+      
+    
+      
+      
+        
+        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+          <a href="/categories/#ros" itemprop="item"><span itemprop="name">Ros</span></a>
+          <meta itemprop="position" content="3" />
+        </li>
+        <span class="sep">/</span>
+      
+    
+      
+      
+        <li class="current">01.ROS installation based from Ubuntu 16.04 Kinetic Kame</li>
+      
+    
+  </ol>
+</nav>
+
+  
 
 
 <div id="main" role="main">
@@ -189,6 +244,8 @@
             <li><a href="mailto:lsirikh@naver.com" rel="nofollow noopener noreferrer"><i class="fas fa-fw fa-envelope-square" aria-hidden="true"></i> Email</a></li>
           
         
+          
+            <li><a href="https://memaker.com" rel="nofollow noopener noreferrer"><i class="fas fa-fw fa-link" aria-hidden="true"></i> Website</a></li>
           
         
           
@@ -300,13 +357,16 @@
       <li><a href="#12-sourcelist-셋업">1.2. source.list 셋업</a></li>
       <li><a href="#13-key-값-설정하기">1.3 Key 값 설정하기</a></li>
       <li><a href="#14-installation">1.4. Installation</a></li>
-      <li><a href="#15-rosdep-초기화">1.5. rosdep 초기화</a></li>
-      <li><a href="#16-환경설정">1.6. 환경설정</a></li>
-      <li><a href="#17-패키지-빌드를-위한-의존성-설치">1.7. 패키지 빌드를 위한 의존성 설치</a></li>
-      <li><a href="#18-작업폴더-만들기">1.8. 작업폴더 만들기</a></li>
-      <li><a href="#19-catkin-작업-폴더-빌드하기">1.9. catkin 작업 폴더 빌드하기</a></li>
-      <li><a href="#20-빌드-결과-확인하기">2.0. 빌드 결과 확인하기</a></li>
-      <li><a href="#21-테스트-하기">2.1. 테스트 하기</a></li>
+    </ul>
+  </li>
+  <li><a href="#2-rosdep-초기화">2. rosdep 초기화</a></li>
+  <li><a href="#3-환경설정">3. 환경설정</a>
+    <ul>
+      <li><a href="#31-패키지-빌드를-위한-의존성-설치">3.1. 패키지 빌드를 위한 의존성 설치</a></li>
+      <li><a href="#32-작업폴더-만들기">3.2. 작업폴더 만들기</a></li>
+      <li><a href="#33-catkin-작업-폴더-빌드하기">3.3. catkin 작업 폴더 빌드하기</a></li>
+      <li><a href="#34-빌드-결과-확인하기">3.4. 빌드 결과 확인하기</a></li>
+      <li><a href="#35-테스트-하기">3.5. 테스트 하기</a></li>
     </ul>
   </li>
 </ul>
@@ -323,13 +383,13 @@
 
 <hr />
 
-<p><img src="/assets/img/ros/kinetic_kame.png" width="40%" height="30%" alt="Kinetic Kame" /></p>
+<p><img src="/assets/img/ros/kinetic_kame.png" title="Kinetic Kame" /></p>
 
 <p>설치 과정은 사실 위키에 더 자세히 나와있지만, 추후 반복작업을 위해서 좀더 간략하게 정리해보자.</p>
 
 <p>참고로 여기서 다루지는 않지만, Ubuntu 18.04LTS 버전에서 활용하는 ROS Melodic Morenia는 이런 이미지를 쓰더라.</p>
 
-<p><img src="/assets/img/ros/Melodic_morenia.png" width="40%" height="30%" alt="Melodic Morenia" /></p>
+<p><img src="/assets/img/ros/Melodic_morenia.png" title="Melodic Morenia" /></p>
 
 <p>우선 ROS 를 설치하기 전에 반드시 해야될 것은 Ubuntu 16.04를 설치를 해야 한다.</p>
 
@@ -337,20 +397,20 @@
 
 <p>추후에 다루도록 한다.</p>
 
-<h3 id="1-설치하기">1. 설치하기</h3>
+<h2 id="1-설치하기">1. 설치하기</h2>
 
 <p>ROS Kinetic은 데비안 패키지 용 Wily (Ubuntu 15.10), Xenial (Ubuntu 16.04) 및 Jessie (Debian 8)만 지원한다.</p>
 
-<h4 id="11-우분투-리포지토리-구성하기뭔말인지-몰라-패스">1.1. 우분투 리포지토리 구성하기(뭔말인지 몰라 패스)</h4>
+<h3 id="11-우분투-리포지토리-구성하기뭔말인지-몰라-패스">1.1. 우분투 리포지토리 구성하기(뭔말인지 몰라 패스)</h3>
 
-<h4 id="12-sourcelist-셋업">1.2. source.list 셋업</h4>
+<h3 id="12-sourcelist-셋업">1.2. source.list 셋업</h3>
 
 <p>packages.ros.org의 소프트웨어를 허용하도록 컴퓨터를 설정하기</p>
 
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ sudo sh -c 'echo "deb http://packages.ros.org/ros/ubuntu $(lsb_release -sc) main" &gt; /etc/apt/sources.list.d/ros-latest.list'
 </code></pre></div></div>
 
-<h4 id="13-key-값-설정하기">1.3 Key 값 설정하기</h4>
+<h3 id="13-key-값-설정하기">1.3 Key 값 설정하기</h3>
 
 <p>키 서버 연결에 문제가있는 경우 이전 명령에서hkp : //pgp.mit.edu : 80또는hkp : //keyserver.ubuntu.com : 80을대체해라.</p>
 
@@ -363,7 +423,7 @@
 </code></pre></div></div>
 <p>(단, curl을 사용하려면 curl을 ubuntu에 설치해야 한다.)</p>
 
-<h4 id="14-installation">1.4. Installation</h4>
+<h3 id="14-installation">1.4. Installation</h3>
 
 <p>먼저 우분투를 업데이트 하자.</p>
 
@@ -402,7 +462,7 @@
 
 <p>다 설치하고 나면 개발환경인 rqt도 설치를 하자.</p>
 
-<h4 id="15-rosdep-초기화">1.5. rosdep 초기화</h4>
+<h2 id="2-rosdep-초기화">2. rosdep 초기화</h2>
 
 <p>ROS를 사용하기 전에 반드시 rosdep를 초기화 해야한다. rosdep은 ros의 핵심 컴포넌트들을 사용하거나 컴파일할 때 의존성 패키지를 쉽게 설치하여 사용자 편의성을 높여주는 기능이다.</p>
 
@@ -410,7 +470,7 @@
 $ rosdep update
 </code></pre></div></div>
 
-<h4 id="16-환경설정">1.6. 환경설정</h4>
+<h2 id="3-환경설정">3. 환경설정</h2>
 
 <p>새로운 쉘이 실행될 때마다 ROS 환경 변수가 bash 세션에 자동으로 추가되는 것이 편리하다.</p>
 
@@ -431,12 +491,12 @@ $ source ~/.bashrc
 $ source ~/.zshrc
 </code></pre></div></div>
 
-<h4 id="17-패키지-빌드를-위한-의존성-설치">1.7. 패키지 빌드를 위한 의존성 설치</h4>
+<h3 id="31-패키지-빌드를-위한-의존성-설치">3.1. 패키지 빌드를 위한 의존성 설치</h3>
 
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ sudo apt install python-rosinstall python-rosinstall-generator python-wstool build-essential
 </code></pre></div></div>
 
-<h4 id="18-작업폴더-만들기">1.8. 작업폴더 만들기</h4>
+<h3 id="32-작업폴더-만들기">3.2. 작업폴더 만들기</h3>
 
 <p>ROS는 catkin이라는 ROS 전용 빌드 시스템을 사용하고 있다. 이를 사용하려면 다음처럼 catkin작업 폴더를 생성하고 초기화 하는 작업이 필요하다. 이 설정은 작업 폴더를 새롭게 생성하지 않는 한 처음 한 번만 실행하면 된다.</p>
 
@@ -445,7 +505,7 @@ $ cd ~/catkin_ws/src
 $ catkin_init_workspace
 </code></pre></div></div>
 
-<h4 id="19-catkin-작업-폴더-빌드하기">1.9. catkin 작업 폴더 빌드하기</h4>
+<h3 id="33-catkin-작업-폴더-빌드하기">3.3. catkin 작업 폴더 빌드하기</h3>
 
 <p>현재 catkin 작업폴더에는 src 폴더와 그 안에 CMakeLists.txt 파일만 있지만, 시험삼아 catkin_make 명령어를 이용해 빌드해보자.</p>
 
@@ -453,7 +513,7 @@ $ catkin_init_workspace
 $ catkin_make
 </code></pre></div></div>
 
-<h4 id="20-빌드-결과-확인하기">2.0. 빌드 결과 확인하기</h4>
+<h3 id="34-빌드-결과-확인하기">3.4. 빌드 결과 확인하기</h3>
 
 <p>문제 없이 빌드가 완료되면, ls 명령어를 통해서 생성된 폴더와 파일을 확인해보자. catkin 빌드 시스템의 빌드 관련 파일은 build 폴더에 저장되고 빌드 후 실행 관련 파일은 devel 폴더에 저장된다.</p>
 
@@ -463,7 +523,7 @@ devel
 src
 </code></pre></div></div>
 
-<h4 id="21-테스트-하기">2.1. 테스트 하기</h4>
+<h3 id="35-테스트-하기">3.5. 테스트 하기</h3>
 
 <p>ROS의 모든 설치가 완료되었다. 제대로 설치가 되었는지 확인하자.</p>
 
@@ -576,6 +636,14 @@ src
 <div class="grid__item">
   <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
     
+      <div class="archive__item-teaser">
+        <img src=
+          
+            "/assets/images/500x300.png"
+          
+          alt="">
+      </div>
+    
     <h2 class="archive__item-title" itemprop="headline">
       
         <a href="/categories/c++/CPP-02-install-eclipse.html" rel="permalink">02.C++ IDE Eclipse 설치하기
@@ -592,7 +660,7 @@ src
 
 </p>
     
-    <p class="archive__item-excerpt" itemprop="description">Eclipse IDE for C/C++ Developers
+    <p class="archive__item-excerpt" itemprop="description">
 </p>
   </article>
 </div>
@@ -604,6 +672,14 @@ src
 
 <div class="grid__item">
   <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src=
+          
+            "/assets/images/500x300.png"
+          
+          alt="">
+      </div>
     
     <h2 class="archive__item-title" itemprop="headline">
       
@@ -621,7 +697,7 @@ src
 
 </p>
     
-    <p class="archive__item-excerpt" itemprop="description">CPP란 어떤 프로그램 언어일까?
+    <p class="archive__item-excerpt" itemprop="description">
 </p>
   </article>
 </div>
@@ -633,6 +709,14 @@ src
 
 <div class="grid__item">
   <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src=
+          
+            "/assets/images/500x300.png"
+          
+          alt="">
+      </div>
     
     <h2 class="archive__item-title" itemprop="headline">
       
@@ -650,7 +734,7 @@ src
 
 </p>
     
-    <p class="archive__item-excerpt" itemprop="description">Git의 기초 - 수정하고 저장소에 저장하기
+    <p class="archive__item-excerpt" itemprop="description">
 </p>
   </article>
 </div>
@@ -662,6 +746,14 @@ src
 
 <div class="grid__item">
   <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src=
+          
+            "/assets/images/500x300.png"
+          
+          alt="">
+      </div>
     
     <h2 class="archive__item-title" itemprop="headline">
       
@@ -679,7 +771,7 @@ src
 
 </p>
     
-    <p class="archive__item-excerpt" itemprop="description">Git의 기초 - Git 저장소 만들기
+    <p class="archive__item-excerpt" itemprop="description">
 </p>
   </article>
 </div>
@@ -693,6 +785,17 @@ src
 
     </div>
 
+    
+      <div class="search-content">
+        <div class="search-content__inner-wrap"><form class="search-content__form" onkeydown="return event.key != 'Enter';">
+    <label class="sr-only" for="search">
+      Enter your search term...
+    </label>
+    <input type="search" id="search" class="search-input" tabindex="-1" placeholder="검색어를 입력하세요..." />
+  </form>
+  <div id="results" class="results"></div></div>
+
+      </div>
     
 
     <div id="footer" class="page__footer">
@@ -726,7 +829,7 @@ src
   </ul>
 </div>
 
-<div class="page__footer-copyright">&copy; 2019 Kiho LEE. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+<div class="page__footer-copyright">&copy; 2019 로봇 창고. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
 
       </footer>
     </div>
@@ -737,6 +840,10 @@ src
 
 
 
+
+<script src="/assets/js/lunr/lunr.min.js"></script>
+<script src="/assets/js/lunr/lunr-store.js"></script>
+<script src="/assets/js/lunr/lunr-en.js"></script>
 
 
 

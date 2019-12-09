@@ -10,7 +10,7 @@
     <meta charset="utf-8">
 
 <!-- begin _includes/seo.html --><title>02.GIT 초기 설정하기 - 로봇을 배우기 위한 지식 창고</title>
-<meta name="description" content="Git 시작하기 위한 설정하기">
+<meta name="description" content="">
 
 
   <meta name="author" content="Kiho Lee">
@@ -23,7 +23,7 @@
 <meta property="og:url" content="http://localhost:4000/categories/git/GIT-02-initial-settings.html">
 
 
-  <meta property="og:description" content="Git 시작하기 위한 설정하기">
+  <meta property="og:description" content="">
 
 
 
@@ -52,7 +52,7 @@
     "@context": "https://schema.org",
     
       "@type": "Person",
-      "name": "Kiho LEE",
+      "name": "로봇 창고",
       "url": "http://localhost:4000/"
     
   }
@@ -124,6 +124,8 @@
     <div class="masthead__menu">
       <nav id="site-nav" class="greedy-nav">
         
+          <a class="site-logo" href="/"><img src="/assets/img/memaker.png" alt=""></a>
+        
         <a class="site-title" href="/">
           로봇을 배우기 위한 지식 창고
           
@@ -135,6 +137,13 @@
             </li><li class="masthead__menu-item">
               <a href="/tags/" >Tags</a>
             </li></ul>
+        
+        <button class="search__toggle" type="button">
+          <span class="visually-hidden">Toggle search</span>
+          <svg class="icon" width="16" height="16" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15.99 16">
+            <path d="M15.5,13.12L13.19,10.8a1.69,1.69,0,0,0-1.28-.55l-0.06-.06A6.5,6.5,0,0,0,5.77,0,6.5,6.5,0,0,0,2.46,11.59a6.47,6.47,0,0,0,7.74.26l0.05,0.05a1.65,1.65,0,0,0,.5,1.24l2.38,2.38A1.68,1.68,0,0,0,15.5,13.12ZM6.4,2A4.41,4.41,0,1,1,2,6.4,4.43,4.43,0,0,1,6.4,2Z" transform="translate(-.01)"></path>
+          </svg>
+        </button>
         
         <button class="greedy-nav__toggle hidden" type="button">
           <span class="visually-hidden">토글 메뉴</span>
@@ -150,6 +159,52 @@
     <div class="initial-content">
       
 
+
+  
+    
+
+
+
+<nav class="breadcrumbs">
+  <ol itemscope itemtype="https://schema.org/BreadcrumbList">
+    
+    
+    
+      
+        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+          <a href="http://localhost:4000/" itemprop="item"><span itemprop="name">Home</span></a>
+          <meta itemprop="position" content="1" />
+        </li>
+        <span class="sep">/</span>
+      
+      
+        
+        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+          <a href="/categories/#categories" itemprop="item"><span itemprop="name">Categories</span></a>
+          <meta itemprop="position" content="2" />
+        </li>
+        <span class="sep">/</span>
+      
+    
+      
+      
+        
+        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+          <a href="/categories/#git" itemprop="item"><span itemprop="name">Git</span></a>
+          <meta itemprop="position" content="3" />
+        </li>
+        <span class="sep">/</span>
+      
+    
+      
+      
+        <li class="current">02.GIT 초기 설정하기</li>
+      
+    
+  </ol>
+</nav>
+
+  
 
 
 <div id="main" role="main">
@@ -189,6 +244,8 @@
             <li><a href="mailto:lsirikh@naver.com" rel="nofollow noopener noreferrer"><i class="fas fa-fw fa-envelope-square" aria-hidden="true"></i> Email</a></li>
           
         
+          
+            <li><a href="https://memaker.com" rel="nofollow noopener noreferrer"><i class="fas fa-fw fa-link" aria-hidden="true"></i> Website</a></li>
           
         
           
@@ -266,7 +323,7 @@
 
   <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
     <meta itemprop="headline" content="02.GIT 초기 설정하기">
-    <meta itemprop="description" content="Git 시작하기 위한 설정하기">
+    <meta itemprop="description" content="">
     <meta itemprop="datePublished" content="December 07, 2019">
     
 
@@ -294,22 +351,23 @@
             <nav class="toc">
               <header><h4 class="nav__title"><i class="fas fa-cog"></i> My Table of Contents</h4></header>
               <ul class="toc__menu">
-  <li><a href="#git-시작하기-위한-설정하기">Git 시작하기 위한 설정하기</a></li>
-  <li><a href="#git-최초-설정">Git 최초 설정</a></li>
-  <li><a href="#사용자-정보-설정">사용자 정보 설정</a></li>
-  <li><a href="#편집기-설정">편집기 설정</a></li>
-  <li><a href="#설정-확인">설정 확인</a></li>
+  <li><a href="#git-시작하기-위한-설정하기">Git 시작하기 위한 설정하기</a>
+    <ul>
+      <li><a href="#1-git-최초-설정">1. Git 최초 설정</a></li>
+      <li><a href="#2--사용자-정보-설정">2.  사용자 정보 설정</a></li>
+      <li><a href="#3-편집기-설정">3. 편집기 설정</a></li>
+      <li><a href="#4-설정-확인">4. 설정 확인</a></li>
+    </ul>
+  </li>
 </ul>
             </nav>
           </aside>
         
-        <h5 id="git-시작하기-위한-설정하기">Git 시작하기 위한 설정하기</h5>
+        <p><br /></p>
 
-<p><br /></p>
+<h1 id="git-시작하기-위한-설정하기">Git 시작하기 위한 설정하기</h1>
 
-<h5 id="git-최초-설정">Git 최초 설정</h5>
-
-<hr />
+<h2 id="1-git-최초-설정">1. Git 최초 설정</h2>
 
 <p>Git을 설치하고 나면 Git의 사용 환경을 적절하게 설정해 주어야 한다. 환경 설정은 한 컴퓨터에서 한 번만 하면 된다. 설정한 내용은 Git을 업그레이드해도 유지된다. 언제든지 다시 바꿀 수 있는 명령어도 있다.</p>
 
@@ -335,9 +393,7 @@
 
 <p><br /></p>
 
-<h5 id="사용자-정보-설정">사용자 정보 설정</h5>
-
-<hr />
+<h2 id="2--사용자-정보-설정">2.  사용자 정보 설정</h2>
 
 <p>Git을 설치하고 나서 가장 먼저 해야 하는 것은 사용자이름과 이메일 주소를 설정하는 것이다. Git은 커밋할 때마다 이 정보를 사용한다. 한 번 커밋한 후에는 정보를 변경할 수 없다.</p>
 
@@ -351,9 +407,7 @@ $ git config --global user.email lsirikh@naver.com
 
 <p><br /></p>
 
-<h5 id="편집기-설정">편집기 설정</h5>
-
-<hr />
+<h2 id="3-편집기-설정">3. 편집기 설정</h2>
 
 <p>사용자 정보를 설정하고 나면 Git에서 사용할 텍스트 편집기를 고른다. 기본적으로 Git은 시스템의 기본 편집기를 사용한다.</p>
 
@@ -390,9 +444,7 @@ $ git config --global user.email lsirikh@naver.com
 
 <p><br /></p>
 
-<h5 id="설정-확인">설정 확인</h5>
-
-<hr />
+<h2 id="4-설정-확인">4. 설정 확인</h2>
 
 <p><strong>git config –list</strong> 명령을 실행하면 설정한 모든 것을 보여주어 바로 확인할 수 있다.</p>
 
@@ -511,7 +563,7 @@ file:/home/lsirikh/.gitconfig	false
       
   <nav class="pagination">
     
-      <a href="/categories/ros/ROS-04-ros-roscore-qt-creator.html" class="pagination--pager" title="04.ROS를 GUI 기반 IDE 툴 qt creator 설치(우분투 16.04 Kinetic Kame)
+      <a href="/categories/git/GIT-01-introduction.html" class="pagination--pager" title="01.GIT이란 무엇인가?
 ">이전</a>
     
     
@@ -547,6 +599,14 @@ file:/home/lsirikh/.gitconfig	false
 <div class="grid__item">
   <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
     
+      <div class="archive__item-teaser">
+        <img src=
+          
+            "/assets/images/500x300.png"
+          
+          alt="">
+      </div>
+    
     <h2 class="archive__item-title" itemprop="headline">
       
         <a href="/categories/c++/CPP-02-install-eclipse.html" rel="permalink">02.C++ IDE Eclipse 설치하기
@@ -563,7 +623,7 @@ file:/home/lsirikh/.gitconfig	false
 
 </p>
     
-    <p class="archive__item-excerpt" itemprop="description">Eclipse IDE for C/C++ Developers
+    <p class="archive__item-excerpt" itemprop="description">
 </p>
   </article>
 </div>
@@ -575,6 +635,14 @@ file:/home/lsirikh/.gitconfig	false
 
 <div class="grid__item">
   <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src=
+          
+            "/assets/images/500x300.png"
+          
+          alt="">
+      </div>
     
     <h2 class="archive__item-title" itemprop="headline">
       
@@ -592,7 +660,7 @@ file:/home/lsirikh/.gitconfig	false
 
 </p>
     
-    <p class="archive__item-excerpt" itemprop="description">CPP란 어떤 프로그램 언어일까?
+    <p class="archive__item-excerpt" itemprop="description">
 </p>
   </article>
 </div>
@@ -604,6 +672,14 @@ file:/home/lsirikh/.gitconfig	false
 
 <div class="grid__item">
   <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src=
+          
+            "/assets/images/500x300.png"
+          
+          alt="">
+      </div>
     
     <h2 class="archive__item-title" itemprop="headline">
       
@@ -621,7 +697,7 @@ file:/home/lsirikh/.gitconfig	false
 
 </p>
     
-    <p class="archive__item-excerpt" itemprop="description">Git의 기초 - 수정하고 저장소에 저장하기
+    <p class="archive__item-excerpt" itemprop="description">
 </p>
   </article>
 </div>
@@ -633,6 +709,14 @@ file:/home/lsirikh/.gitconfig	false
 
 <div class="grid__item">
   <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src=
+          
+            "/assets/images/500x300.png"
+          
+          alt="">
+      </div>
     
     <h2 class="archive__item-title" itemprop="headline">
       
@@ -650,7 +734,7 @@ file:/home/lsirikh/.gitconfig	false
 
 </p>
     
-    <p class="archive__item-excerpt" itemprop="description">Git의 기초 - Git 저장소 만들기
+    <p class="archive__item-excerpt" itemprop="description">
 </p>
   </article>
 </div>
@@ -664,6 +748,17 @@ file:/home/lsirikh/.gitconfig	false
 
     </div>
 
+    
+      <div class="search-content">
+        <div class="search-content__inner-wrap"><form class="search-content__form" onkeydown="return event.key != 'Enter';">
+    <label class="sr-only" for="search">
+      Enter your search term...
+    </label>
+    <input type="search" id="search" class="search-input" tabindex="-1" placeholder="검색어를 입력하세요..." />
+  </form>
+  <div id="results" class="results"></div></div>
+
+      </div>
     
 
     <div id="footer" class="page__footer">
@@ -697,7 +792,7 @@ file:/home/lsirikh/.gitconfig	false
   </ul>
 </div>
 
-<div class="page__footer-copyright">&copy; 2019 Kiho LEE. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+<div class="page__footer-copyright">&copy; 2019 로봇 창고. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
 
       </footer>
     </div>
@@ -708,6 +803,10 @@ file:/home/lsirikh/.gitconfig	false
 
 
 
+
+<script src="/assets/js/lunr/lunr.min.js"></script>
+<script src="/assets/js/lunr/lunr-store.js"></script>
+<script src="/assets/js/lunr/lunr-en.js"></script>
 
 
 

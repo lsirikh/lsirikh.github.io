@@ -10,7 +10,7 @@
     <meta charset="utf-8">
 
 <!-- begin _includes/seo.html --><title>02.C++ IDE Eclipse 설치하기 - 로봇을 배우기 위한 지식 창고</title>
-<meta name="description" content="Eclipse IDE for C/C++ Developers">
+<meta name="description" content="">
 
 
   <meta name="author" content="Kiho Lee">
@@ -23,7 +23,7 @@
 <meta property="og:url" content="http://localhost:4000/categories/c++/CPP-02-install-eclipse.html">
 
 
-  <meta property="og:description" content="Eclipse IDE for C/C++ Developers">
+  <meta property="og:description" content="">
 
 
 
@@ -52,7 +52,7 @@
     "@context": "https://schema.org",
     
       "@type": "Person",
-      "name": "Kiho LEE",
+      "name": "로봇 창고",
       "url": "http://localhost:4000/"
     
   }
@@ -124,6 +124,8 @@
     <div class="masthead__menu">
       <nav id="site-nav" class="greedy-nav">
         
+          <a class="site-logo" href="/"><img src="/assets/img/memaker.png" alt=""></a>
+        
         <a class="site-title" href="/">
           로봇을 배우기 위한 지식 창고
           
@@ -135,6 +137,13 @@
             </li><li class="masthead__menu-item">
               <a href="/tags/" >Tags</a>
             </li></ul>
+        
+        <button class="search__toggle" type="button">
+          <span class="visually-hidden">Toggle search</span>
+          <svg class="icon" width="16" height="16" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15.99 16">
+            <path d="M15.5,13.12L13.19,10.8a1.69,1.69,0,0,0-1.28-.55l-0.06-.06A6.5,6.5,0,0,0,5.77,0,6.5,6.5,0,0,0,2.46,11.59a6.47,6.47,0,0,0,7.74.26l0.05,0.05a1.65,1.65,0,0,0,.5,1.24l2.38,2.38A1.68,1.68,0,0,0,15.5,13.12ZM6.4,2A4.41,4.41,0,1,1,2,6.4,4.43,4.43,0,0,1,6.4,2Z" transform="translate(-.01)"></path>
+          </svg>
+        </button>
         
         <button class="greedy-nav__toggle hidden" type="button">
           <span class="visually-hidden">토글 메뉴</span>
@@ -150,6 +159,52 @@
     <div class="initial-content">
       
 
+
+  
+    
+
+
+
+<nav class="breadcrumbs">
+  <ol itemscope itemtype="https://schema.org/BreadcrumbList">
+    
+    
+    
+      
+        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+          <a href="http://localhost:4000/" itemprop="item"><span itemprop="name">Home</span></a>
+          <meta itemprop="position" content="1" />
+        </li>
+        <span class="sep">/</span>
+      
+      
+        
+        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+          <a href="/categories/#categories" itemprop="item"><span itemprop="name">Categories</span></a>
+          <meta itemprop="position" content="2" />
+        </li>
+        <span class="sep">/</span>
+      
+    
+      
+      
+        
+        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+          <a href="/categories/#c++" itemprop="item"><span itemprop="name">C++</span></a>
+          <meta itemprop="position" content="3" />
+        </li>
+        <span class="sep">/</span>
+      
+    
+      
+      
+        <li class="current">02.C++ IDE Eclipse 설치하기</li>
+      
+    
+  </ol>
+</nav>
+
+  
 
 
 <div id="main" role="main">
@@ -189,6 +244,8 @@
             <li><a href="mailto:lsirikh@naver.com" rel="nofollow noopener noreferrer"><i class="fas fa-fw fa-envelope-square" aria-hidden="true"></i> Email</a></li>
           
         
+          
+            <li><a href="https://memaker.com" rel="nofollow noopener noreferrer"><i class="fas fa-fw fa-link" aria-hidden="true"></i> Website</a></li>
           
         
           
@@ -266,7 +323,7 @@
 
   <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
     <meta itemprop="headline" content="02.C++ IDE Eclipse 설치하기">
-    <meta itemprop="description" content="Eclipse IDE for C/C++ Developers">
+    <meta itemprop="description" content="">
     <meta itemprop="datePublished" content="December 08, 2019">
     
 
@@ -294,28 +351,37 @@
             <nav class="toc">
               <header><h4 class="nav__title"><i class="fas fa-cog"></i> My Table of Contents</h4></header>
               <ul class="toc__menu">
-  <li><a href="#eclipse-ide-for-cc-developers">Eclipse IDE for C/C++ Developers</a></li>
-  <li><a href="#1-자바-jdk-설치하기">1. 자바 JDK 설치하기</a></li>
-  <li><a href="#1-단계--우분투에-java-8-설치">1 단계 – 우분투에 Java 8 설치</a></li>
-  <li><a href="#2-단계--java-이탈-레이션-확인">2 단계 – Java 이탈 레이션 확인</a></li>
-  <li><a href="#3-단계--java_home-및-jre_home-변수-설정">3 단계 – JAVA_HOME 및 JRE_HOME 변수 설정</a></li>
-  <li><a href="#2-이클립스eclipse-ide-설치하기oxygen">2. 이클립스(Eclipse IDE) 설치하기(Oxygen)</a></li>
-  <li><a href="#1-단계--압축풀기">1 단계 – 압축풀기</a></li>
-  <li><a href="#2-단계--eclipse-폴더를-opt-폴더로-이동">2 단계 – Eclipse 폴더를 /opt 폴더로 이동</a></li>
-  <li><a href="#3-단계--터미널-실행-설정">3 단계 – 터미널 실행 설정</a></li>
-  <li><a href="#4-단계--x윈도우-바로가기-설정">4 단계 – X윈도우 바로가기 설정</a></li>
-  <li><a href="#5-단계---eclipse-cdt-설치">5 단계 - Eclipse CDT 설치</a></li>
+  <li><a href="#eclipse-ide-for-cc-developers">Eclipse IDE for C/C++ Developers</a>
+    <ul>
+      <li><a href="#1-자바-jdk-설치하기">1. 자바 JDK 설치하기</a>
+        <ul>
+          <li><a href="#1-단계--우분투에-java-8-설치">1 단계 – 우분투에 Java 8 설치</a></li>
+          <li><a href="#2-단계--java-이탈-레이션-확인">2 단계 – Java 이탈 레이션 확인</a></li>
+          <li><a href="#3-단계--java_home-및-jre_home-변수-설정">3 단계 – JAVA_HOME 및 JRE_HOME 변수 설정</a></li>
+        </ul>
+      </li>
+      <li><a href="#2-이클립스eclipse-ide-설치하기oxygen">2. 이클립스(Eclipse IDE) 설치하기(Oxygen)</a>
+        <ul>
+          <li><a href="#1-단계--압축풀기">1 단계 – 압축풀기</a></li>
+          <li><a href="#2-단계--eclipse-폴더를-opt-폴더로-이동">2 단계 – Eclipse 폴더를 /opt 폴더로 이동</a></li>
+          <li><a href="#3-단계--터미널-실행-설정">3 단계 – 터미널 실행 설정</a></li>
+          <li><a href="#4-단계--x윈도우-바로가기-설정">4 단계 – X윈도우 바로가기 설정</a></li>
+          <li><a href="#5-단계---eclipse-cdt-설치">5 단계 - Eclipse CDT 설치</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
 </ul>
             </nav>
           </aside>
         
-        <h5 id="eclipse-ide-for-cc-developers">Eclipse IDE for C/C++ Developers</h5>
+        <p><br /></p>
+
+<h1 id="eclipse-ide-for-cc-developers">Eclipse IDE for C/C++ Developers</h1>
 
 <p><br /></p>
 
-<h5 id="1-자바-jdk-설치하기">1. 자바 JDK 설치하기</h5>
-
-<hr />
+<h2 id="1-자바-jdk-설치하기">1. 자바 JDK 설치하기</h2>
 
 <p>사용 가능한 표준 설치 유형은 JDK와 JRE입니다. JDK (Java Development Kit)는 Java 컴파일러를 포함하여 새로운 Java 응용 프로그램을 개발할 수있는 기능을 제공합니다. JRE (Java Runtime Environment)는 애플릿이있는 Java 응용 프로그램에 대한 런타임 환경을 제공합니다. Java 개발자는 새로운 Java 응용 프로그램을 만들려면 시스템에 JDK와 JRE를 모두 설치해야했습니다.</p>
 
@@ -325,7 +391,7 @@
 
 <p>이 튜토리얼을 사용하여 PPA를 사용하여 Ubuntu 19.10, 18.04 LTS, 16.04 LTS, LinuxMint 19, 18에 OpenJDK Java 8을 설치하십시오. 명령 행을 통해 Ubuntu에 Java 8을 설치하려면 아래 단계를 따르십시오.</p>
 
-<h5 id="1-단계--우분투에-java-8-설치">1 단계 – 우분투에 Java 8 설치</h5>
+<h3 id="1-단계--우분투에-java-8-설치">1 단계 – 우분투에 Java 8 설치</h3>
 
 <p>OpenJDK 8은 기본 Apt 저장소에서 사용 가능합니다. 다음 명령을 사용하여 Ubuntu 시스템에 Java 8을 간단히 설치할 수 있습니다.</p>
 
@@ -335,14 +401,14 @@
 $ sudo apt install openjdk-8-jdk openjdk-8-jre
 </code></pre></div></div>
 
-<h5 id="2-단계--java-이탈-레이션-확인">2 단계 – Java 이탈 레이션 확인</h5>
+<h3 id="2-단계--java-이탈-레이션-확인">2 단계 – Java 이탈 레이션 확인</h3>
 
 <p>위의 단계를 사용하여 Oracle Java 8을 성공적으로 설치 한 후 다음 명령을 사용하여 설치된 버전을 확인하십시오.</p>
 
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ java -version
 </code></pre></div></div>
 
-<h5 id="3-단계--java_home-및-jre_home-변수-설정">3 단계 – JAVA_HOME 및 JRE_HOME 변수 설정</h5>
+<h3 id="3-단계--java_home-및-jre_home-변수-설정">3 단계 – JAVA_HOME 및 JRE_HOME 변수 설정</h3>
 
 <p>Linux 시스템에 Java를 설치 한 후 JAVA_HOME 및 JRE_HOME 환경 변수 를 설정해야합니다. JAVA_HOME 및 JRE_HOME 환경 변수는 많은 Java 응용 프로그램에서 런타임 중에 Java 라이브러리를 찾기 위해 사용합니다. 다음 명령을 사용하여 / etc / environment 파일 에서 이러한 변수를 설정할 수 있습니다 .</p>
 
@@ -357,13 +423,11 @@ $ sudo apt install openjdk-8-jdk openjdk-8-jre
 
 <p>모든 작업이 완료되었으며 Linux 시스템에 Java 8이 성공적으로 설치됐다.</p>
 
-<p>[출처]https://tecadmin.net/install-oracle-java-8-ubuntu-via-ppa/</p>
+<p>[출처]<a href="https://tecadmin.net/install-oracle-java-8-ubuntu-via-ppa/">tecadmin</a></p>
 
 <p><br /></p>
 
-<h5 id="2-이클립스eclipse-ide-설치하기oxygen">2. 이클립스(Eclipse IDE) 설치하기(Oxygen)</h5>
-
-<hr />
+<h2 id="2-이클립스eclipse-ide-설치하기oxygen">2. 이클립스(Eclipse IDE) 설치하기(Oxygen)</h2>
 
 <p>CPP IDE를 찾던 중 다양한 이야기가 있는데, 어떤 포럼에선 IDE를 받지 말고, vim + gcc 뭐 이런 조합으로 가라는 등의 이야기가 있었다. 하지만, 기존에 IDE를 쓰면서 워낙 장점이 많았던 것을 경험한 터라, 쉽게 커맨드 라인 기반의 시스템으로 가기 쉽지 않았다. 특히 vim은 사용하려면 에디팅 방법을 익혀야 하는 상당한 스트레스가 있다. 
 그래서 가장 익숙한 이클립스를 활용하여, 개발을 해보기로 한다.</p>
@@ -374,21 +438,21 @@ $ sudo apt install openjdk-8-jdk openjdk-8-jre
   <p>각자 시스템에 맞춰 다운로드를 합니다. 단, “Eclipse IDE for C/C++ Developers” 를 다운로드 하는 것을 잊지 말자.</p>
 </blockquote>
 
-<p><img src="/assets/img/cpp/eclipse01.png" width="80%" height="80%" title="이클립스 CPP 개발자 IDE 다운로드" /></p>
+<p><img src="/assets/img/cpp/eclipse01.png" title="이클립스 CPP 개발자 IDE 다운로드" /></p>
 
-<p><img src="/assets/img/cpp/eclipse02.png" width="80%" height="80%" title="이클립스 Oxygen 버전 받기" /></p>
+<p><img src="/assets/img/cpp/eclipse02.png" title="이클립스 Oxygen 버전 받기" /></p>
 
-<h5 id="1-단계--압축풀기">1 단계 – 압축풀기</h5>
+<h3 id="1-단계--압축풀기">1 단계 – 압축풀기</h3>
 
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ tar xvzf ./eclipse-cpp-oxygen-3a-linux-gtk-x86_64.tar.gz
 </code></pre></div></div>
 
-<h5 id="2-단계--eclipse-폴더를-opt-폴더로-이동">2 단계 – Eclipse 폴더를 /opt 폴더로 이동</h5>
+<h3 id="2-단계--eclipse-폴더를-opt-폴더로-이동">2 단계 – Eclipse 폴더를 /opt 폴더로 이동</h3>
 
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ sudo mv eclipse /opt
 </code></pre></div></div>
 
-<h5 id="3-단계--터미널-실행-설정">3 단계 – 터미널 실행 설정</h5>
+<h3 id="3-단계--터미널-실행-설정">3 단계 – 터미널 실행 설정</h3>
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ sudo gedit /usr/bin/eclipse
 </code></pre></div></div>
 
@@ -408,7 +472,7 @@ $ sudo apt install openjdk-8-jdk openjdk-8-jre
 </code></pre></div></div>
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ sudo chmod 755 /usr/bin/eclipse
 </code></pre></div></div>
-<h5 id="4-단계--x윈도우-바로가기-설정">4 단계 – X윈도우 바로가기 설정</h5>
+<h3 id="4-단계--x윈도우-바로가기-설정">4 단계 – X윈도우 바로가기 설정</h3>
 
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ sudo gedit /usr/share/applications/eclipse.desktop
 </code></pre></div></div>
@@ -437,15 +501,15 @@ $ sudo apt install openjdk-8-jdk openjdk-8-jre
 <span class="nv">StartupNotif</span><span class="o">=</span><span class="nb">true</span>
 </pre></td></tr></tbody></table></code></pre></figure>
 
-<p><img src="/assets/img/cpp/eclipse03.png" width="80%" height="80%" title="바로가기 설정" /></p>
+<p><img src="/assets/img/cpp/eclipse03.png" title="바로가기 설정" /></p>
 
-<h5 id="5-단계---eclipse-cdt-설치">5 단계 - Eclipse CDT 설치</h5>
+<h3 id="5-단계---eclipse-cdt-설치">5 단계 - Eclipse CDT 설치</h3>
 
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ eclipse
 </code></pre></div></div>
-<p><img src="/assets/img/cpp/eclipse04.png" width="80%" height="80%" title="바로가기 설정" /></p>
+<p><img src="/assets/img/cpp/eclipse04.png" title="바로가기 설정" /></p>
 
-<p><img src="/assets/img/cpp/eclipse05.png" width="80%" height="80%" title="바로가기 설정" /></p>
+<p><img src="/assets/img/cpp/eclipse05.png" title="바로가기 설정" /></p>
 
 <blockquote>
   <p>난 CDT를 설치하여 위에 작업 아이콘이 보인다. 하지만, 처음에 Eclipse를 설치하면 없기 때문에 설치를 해야한다.</p>
@@ -566,6 +630,14 @@ $ sudo apt install openjdk-8-jdk openjdk-8-jre
 <div class="grid__item">
   <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
     
+      <div class="archive__item-teaser">
+        <img src=
+          
+            "/assets/images/500x300.png"
+          
+          alt="">
+      </div>
+    
     <h2 class="archive__item-title" itemprop="headline">
       
         <a href="/categories/c++/CPP-01-introduction.html" rel="permalink">01.CPP 학습에 앞서 CPP란 어떤 프로그램 언어일까?
@@ -582,7 +654,7 @@ $ sudo apt install openjdk-8-jdk openjdk-8-jre
 
 </p>
     
-    <p class="archive__item-excerpt" itemprop="description">CPP란 어떤 프로그램 언어일까?
+    <p class="archive__item-excerpt" itemprop="description">
 </p>
   </article>
 </div>
@@ -594,6 +666,14 @@ $ sudo apt install openjdk-8-jdk openjdk-8-jre
 
 <div class="grid__item">
   <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src=
+          
+            "/assets/images/500x300.png"
+          
+          alt="">
+      </div>
     
     <h2 class="archive__item-title" itemprop="headline">
       
@@ -611,7 +691,7 @@ $ sudo apt install openjdk-8-jdk openjdk-8-jre
 
 </p>
     
-    <p class="archive__item-excerpt" itemprop="description">Git의 기초 - 수정하고 저장소에 저장하기
+    <p class="archive__item-excerpt" itemprop="description">
 </p>
   </article>
 </div>
@@ -623,6 +703,14 @@ $ sudo apt install openjdk-8-jdk openjdk-8-jre
 
 <div class="grid__item">
   <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src=
+          
+            "/assets/images/500x300.png"
+          
+          alt="">
+      </div>
     
     <h2 class="archive__item-title" itemprop="headline">
       
@@ -640,7 +728,7 @@ $ sudo apt install openjdk-8-jdk openjdk-8-jre
 
 </p>
     
-    <p class="archive__item-excerpt" itemprop="description">Git의 기초 - Git 저장소 만들기
+    <p class="archive__item-excerpt" itemprop="description">
 </p>
   </article>
 </div>
@@ -652,6 +740,14 @@ $ sudo apt install openjdk-8-jdk openjdk-8-jre
 
 <div class="grid__item">
   <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src=
+          
+            "/assets/images/500x300.png"
+          
+          alt="">
+      </div>
     
     <h2 class="archive__item-title" itemprop="headline">
       
@@ -669,7 +765,7 @@ $ sudo apt install openjdk-8-jdk openjdk-8-jre
 
 </p>
     
-    <p class="archive__item-excerpt" itemprop="description">Git을 사용하기 앞서 알면 좋은 내용
+    <p class="archive__item-excerpt" itemprop="description">
 </p>
   </article>
 </div>
@@ -683,6 +779,17 @@ $ sudo apt install openjdk-8-jdk openjdk-8-jre
 
     </div>
 
+    
+      <div class="search-content">
+        <div class="search-content__inner-wrap"><form class="search-content__form" onkeydown="return event.key != 'Enter';">
+    <label class="sr-only" for="search">
+      Enter your search term...
+    </label>
+    <input type="search" id="search" class="search-input" tabindex="-1" placeholder="검색어를 입력하세요..." />
+  </form>
+  <div id="results" class="results"></div></div>
+
+      </div>
     
 
     <div id="footer" class="page__footer">
@@ -716,7 +823,7 @@ $ sudo apt install openjdk-8-jdk openjdk-8-jre
   </ul>
 </div>
 
-<div class="page__footer-copyright">&copy; 2019 Kiho LEE. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+<div class="page__footer-copyright">&copy; 2019 로봇 창고. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
 
       </footer>
     </div>
@@ -727,6 +834,10 @@ $ sudo apt install openjdk-8-jdk openjdk-8-jre
 
 
 
+
+<script src="/assets/js/lunr/lunr.min.js"></script>
+<script src="/assets/js/lunr/lunr-store.js"></script>
+<script src="/assets/js/lunr/lunr-en.js"></script>
 
 
 

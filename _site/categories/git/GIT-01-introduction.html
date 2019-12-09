@@ -10,7 +10,7 @@
     <meta charset="utf-8">
 
 <!-- begin _includes/seo.html --><title>01.GIT이란 무엇인가? - 로봇을 배우기 위한 지식 창고</title>
-<meta name="description" content="Git 이란 무엇인가???">
+<meta name="description" content="1. Git 이란 무엇인가???">
 
 
   <meta name="author" content="Kiho Lee">
@@ -23,7 +23,7 @@
 <meta property="og:url" content="http://localhost:4000/categories/git/GIT-01-introduction.html">
 
 
-  <meta property="og:description" content="Git 이란 무엇인가???">
+  <meta property="og:description" content="1. Git 이란 무엇인가???">
 
 
 
@@ -31,7 +31,7 @@
 
 
 
-  <meta property="article:published_time" content="2019-12-06T19:17:13+00:00">
+  <meta property="article:published_time" content="2019-12-07T19:00:13+00:00">
 
 
 
@@ -52,7 +52,7 @@
     "@context": "https://schema.org",
     
       "@type": "Person",
-      "name": "Kiho LEE",
+      "name": "로봇 창고",
       "url": "http://localhost:4000/"
     
   }
@@ -124,6 +124,8 @@
     <div class="masthead__menu">
       <nav id="site-nav" class="greedy-nav">
         
+          <a class="site-logo" href="/"><img src="/assets/img/memaker.png" alt=""></a>
+        
         <a class="site-title" href="/">
           로봇을 배우기 위한 지식 창고
           
@@ -135,6 +137,13 @@
             </li><li class="masthead__menu-item">
               <a href="/tags/" >Tags</a>
             </li></ul>
+        
+        <button class="search__toggle" type="button">
+          <span class="visually-hidden">Toggle search</span>
+          <svg class="icon" width="16" height="16" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15.99 16">
+            <path d="M15.5,13.12L13.19,10.8a1.69,1.69,0,0,0-1.28-.55l-0.06-.06A6.5,6.5,0,0,0,5.77,0,6.5,6.5,0,0,0,2.46,11.59a6.47,6.47,0,0,0,7.74.26l0.05,0.05a1.65,1.65,0,0,0,.5,1.24l2.38,2.38A1.68,1.68,0,0,0,15.5,13.12ZM6.4,2A4.41,4.41,0,1,1,2,6.4,4.43,4.43,0,0,1,6.4,2Z" transform="translate(-.01)"></path>
+          </svg>
+        </button>
         
         <button class="greedy-nav__toggle hidden" type="button">
           <span class="visually-hidden">토글 메뉴</span>
@@ -150,6 +159,52 @@
     <div class="initial-content">
       
 
+
+  
+    
+
+
+
+<nav class="breadcrumbs">
+  <ol itemscope itemtype="https://schema.org/BreadcrumbList">
+    
+    
+    
+      
+        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+          <a href="http://localhost:4000/" itemprop="item"><span itemprop="name">Home</span></a>
+          <meta itemprop="position" content="1" />
+        </li>
+        <span class="sep">/</span>
+      
+      
+        
+        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+          <a href="/categories/#categories" itemprop="item"><span itemprop="name">Categories</span></a>
+          <meta itemprop="position" content="2" />
+        </li>
+        <span class="sep">/</span>
+      
+    
+      
+      
+        
+        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+          <a href="/categories/#git" itemprop="item"><span itemprop="name">Git</span></a>
+          <meta itemprop="position" content="3" />
+        </li>
+        <span class="sep">/</span>
+      
+    
+      
+      
+        <li class="current">01.GIT이란 무엇인가?</li>
+      
+    
+  </ol>
+</nav>
+
+  
 
 
 <div id="main" role="main">
@@ -189,6 +244,8 @@
             <li><a href="mailto:lsirikh@naver.com" rel="nofollow noopener noreferrer"><i class="fas fa-fw fa-envelope-square" aria-hidden="true"></i> Email</a></li>
           
         
+          
+            <li><a href="https://memaker.com" rel="nofollow noopener noreferrer"><i class="fas fa-fw fa-link" aria-hidden="true"></i> Website</a></li>
           
         
           
@@ -266,8 +323,8 @@
 
   <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
     <meta itemprop="headline" content="01.GIT이란 무엇인가?">
-    <meta itemprop="description" content="Git 이란 무엇인가???">
-    <meta itemprop="datePublished" content="December 06, 2019">
+    <meta itemprop="description" content="1. Git 이란 무엇인가???">
+    <meta itemprop="datePublished" content="December 07, 2019">
     
 
     <div class="page__inner-wrap">
@@ -294,22 +351,22 @@
             <nav class="toc">
               <header><h4 class="nav__title"><i class="fas fa-cog"></i> My Table of Contents</h4></header>
               <ul class="toc__menu">
-  <li><a href="#git-이란-무엇인가">Git 이란 무엇인가???</a></li>
-  <li><a href="#github의-허브">GitHub의 “허브”</a></li>
-  <li><a href="#repository-저장소">repository (저장소)</a></li>
-  <li><a href="#fork">Fork</a></li>
-  <li><a href="#pull">Pull</a></li>
-  <li><a href="#social-networking">Social networking</a></li>
-  <li><a href="#changelogs">Changelogs</a></li>
+  <li><a href="#1-git-이란-무엇인가">1. Git 이란 무엇인가???</a></li>
+  <li><a href="#2-github의-허브">2. GitHub의 “허브”</a></li>
+  <li><a href="#3-repository-저장소">3. repository (저장소)</a></li>
+  <li><a href="#4-fork">4. Fork</a></li>
+  <li><a href="#5-pull">5. Pull</a></li>
+  <li><a href="#6-social-networking">6. Social networking</a></li>
+  <li><a href="#7-changelogs">7. Changelogs</a></li>
 </ul>
             </nav>
           </aside>
         
-        <h5 id="git-이란-무엇인가">Git 이란 무엇인가???</h5>
+        <h2 id="1-git-이란-무엇인가">1. Git 이란 무엇인가???</h2>
 
 <p><img src="/assets/img/git/480px-Octocat_GitHub_Mascot.png" width="40%" height="40%" alt="image" /></p>
 
-<p><img src="/assets/img/git/git.png" width="60%" height="60%" alt="image" /></p>
+<p><img src="/assets/img/git/git.png" title="image" /></p>
 
 <p>GitHub를 이해하려면 먼저 Git을 이해해야합니다. Git은 리눅스를 만든 사람인 Linus Torvalds에 의해 시작된 오픈 소스 버전 관리 시스템입니다. Git은 Subversion , CVS 및 Mercurial 과 같은 다른 버전 제어 시스템과 유사합니다.</p>
 
@@ -325,35 +382,35 @@
 
 <p>Git은 사용 가능한 다른 시스템에 비해 여러 가지 장점이 있기 때문에 대부분의 개발자가 선호하는 버전 제어 시스템입니다. 파일 변경 사항을보다 효율적으로 저장하고 파일 무결성을 향상시킵니다. 세부 사항을 알고 싶다면  Git 기본 페이지  에 Git 작동 방식에 대한 자세한 설명이 있습니다.</p>
 
-<h5 id="github의-허브">GitHub의 “허브”</h5>
+<h2 id="2-github의-허브">2. GitHub의 “허브”</h2>
 
 <p>Git와 함께 사용하여 더 나은 버전 제어 시스템을 확립했습니다. 그렇다면 GitHub는 무엇일까요? Git은 명령 줄 도구이지만 Git revolve와 관련된 모든 것은 프로젝트와 관련된 내용을 저장하는 허브 (GitHub.com)입니다.</p>
 
-<h5 id="repository-저장소">repository (저장소)</h5>
+<h2 id="3-repository-저장소">3. repository (저장소)</h2>
 
 <p>repository (일반적으로 “repo”로 약칭)는 특정 프로젝트의 모든 파일이 저장되는 위치입니다. 각 프로젝트에는 자체 저장소가 있으며 고유 한 URL로 액세스 할 수 있습니다.</p>
 
-<p><img src="/assets/img/git/repository_example.png" width="80%" height="80%" alt="image" /></p>
+<p><img src="/assets/img/git/repository_example.png" title="리포지토리 저장소" /></p>
 
-<h5 id="fork">Fork</h5>
+<h2 id="4-fork">4. Fork</h2>
 
 <p>“Forking”(발음주의;뽀킹아님)은 이미 존재하는 다른 프로젝트를 기반으로 새 프로젝트를 만들 때 사용합니다. 이것은 프로그램 및 기타 프로젝트의 추가 개발을 손쉽게 할 수 있는 굉장히 놀라운 컨셉인 것 같습니다. GitHub에서 기여하고 싶은 프로젝트를 찾으면 저장소(Repo)를 Fork 하고 원하는대로 변경하고 수정 된 프로젝트를 새 Repo로 릴리스 할 수 있습니다. 새 프로젝트를 작성하기 위해 Fork(분기) 한 원래 저장소가 업데이트되면 해당 업데이트를 현재 분기에 쉽게 추가 할 수 있습니다. 분기 추가의 권한은 원천 개발자에게 있습니다.</p>
 
-<h5 id="pull">Pull</h5>
+<h2 id="5-pull">5. Pull</h2>
 
 <p>어떤 개발자가 Repository(repo)를 Fork(분기)하고 프로젝트를 크게 수정 한 후 원래 Repository 주인 혹은 개발자가 이를 인정해주고 원래 프로젝트에 참여시켜주기 원할 수도 있습니다. 그럴 경우 풀 요청을 하면 프로젝트에 참여가 가능합니다. 물론 원본 Repository(이하 리포지토리)의 작성자는 자신의 작업을보고 공식 프로젝트에 수락할지 여부를 선택할 수 있습니다. Pull 요청을 발행 할 때마다 GitHub는 사용자와 기본 프로젝트 관리자가 통신 할 수있는 완벽한 수단을 제공합니다.</p>
 
-<h5 id="social-networking">Social networking</h5>
+<h2 id="6-social-networking">6. Social networking</h2>
 
 <p>사회적 네트워킹 측면에서 GitHub가 가장 강력한 특징을 지닌듯 합니다. 특히, GitHub가 가지는 다양한 특징과 장점을 압도하는 가장 중요한 점이기도 합니다. GitHub의 각 사용자는 이력서처럼 작동하는 자체 프로필을 가지고 있으며 과거 작업 및 풀 요청을 통해 다른 프로젝트에 대한 기여를 보여줍니다. 한마디로 기여도에 무임승차자가 없고, 기여도로 평가할 수 있는 중요한 지표를 제공해줍니다.</p>
 
 <p>GitHub를 통해 프로젝트 revision은 공개적으로 논의 될 수 있고, 많은 전문가들이 해당 프로젝트를 발전시키기 위해 지식을 제공하고 협력 할 수 있습니다. GitHub가 등장하기 전에, 어떤 프로젝트에 관심이있는 개발자는 대개 프로젝트 리딩 개발자와 연락 할 수있는 방법을 수소문 한 후, 자신의 신뢰도와 신력을 입증하여야만 참여가능 했으리라 생각됩니다. 아마도 너무나 높은 난관과 진입장벽으로 협업은 거의 불가능 했던 것 같습니다. 그러나 GitHub는 일종의 협력과 상생의 헤게모니를 열었다는 측면에서 굉장한 사회적 충격을 주는 듯 합니다.</p>
 
-<h5 id="changelogs">Changelogs</h5>
+<h2 id="7-changelogs">7. Changelogs</h2>
 
 <p>여러 사람이 한 프로젝트에서 공동 작업 할 때 해당 파일이 저장되는 대상,시기 및 위치를 변경 한 수정본을 추적하기가 어렵습니다. GitHub는 리포지토리에 푸시 된 모든 변경 사항을 추적하여이 문제를 처리합니다.</p>
 
-<p>[출처] https://www.howtogeek.com/180167/htg-explains-what-is-github-and-what-do-geeks-use-it-for/</p>
+<p>[출처]<a href="https://www.howtogeek.com/180167/htg-explains-what-is-github-and-what-do-geeks-use-it-for/">howtogeek</a></p>
 
         
       </section>
@@ -406,7 +463,7 @@
 
 
         
-          <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> 업데이트:</strong> <time datetime="2019-12-06T19:17:13+00:00">December 06, 2019</time></p>
+          <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> 업데이트:</strong> <time datetime="2019-12-07T19:00:13+00:00">December 07, 2019</time></p>
         
       </footer>
 
@@ -426,11 +483,11 @@
       
   <nav class="pagination">
     
-      <a href="/categories/ros/ROS-02-ros-environmetal-settings.html" class="pagination--pager" title="02.ROS environmental settings for beginners ROS 환경설정 우분투 16.04 Kinetic Kame
+      <a href="/categories/ros/ROS-04-ros-roscore-qt-creator.html" class="pagination--pager" title="04.ROS를 GUI 기반 IDE 툴 qt creator 설치(우분투 16.04 Kinetic Kame)
 ">이전</a>
     
     
-      <a href="/categories/ros/ROS-03-ros-roscore-test.html" class="pagination--pager" title="03.ROS를 테스트 터틀봇 움직이기(우분투 16.04 Kinetic Kame)
+      <a href="/categories/git/GIT-02-initial-settings.html" class="pagination--pager" title="02.GIT 초기 설정하기
 ">다음</a>
     
   </nav>
@@ -462,6 +519,14 @@
 <div class="grid__item">
   <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
     
+      <div class="archive__item-teaser">
+        <img src=
+          
+            "/assets/images/500x300.png"
+          
+          alt="">
+      </div>
+    
     <h2 class="archive__item-title" itemprop="headline">
       
         <a href="/categories/c++/CPP-02-install-eclipse.html" rel="permalink">02.C++ IDE Eclipse 설치하기
@@ -478,7 +543,7 @@
 
 </p>
     
-    <p class="archive__item-excerpt" itemprop="description">Eclipse IDE for C/C++ Developers
+    <p class="archive__item-excerpt" itemprop="description">
 </p>
   </article>
 </div>
@@ -490,6 +555,14 @@
 
 <div class="grid__item">
   <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src=
+          
+            "/assets/images/500x300.png"
+          
+          alt="">
+      </div>
     
     <h2 class="archive__item-title" itemprop="headline">
       
@@ -507,7 +580,7 @@
 
 </p>
     
-    <p class="archive__item-excerpt" itemprop="description">CPP란 어떤 프로그램 언어일까?
+    <p class="archive__item-excerpt" itemprop="description">
 </p>
   </article>
 </div>
@@ -519,6 +592,14 @@
 
 <div class="grid__item">
   <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src=
+          
+            "/assets/images/500x300.png"
+          
+          alt="">
+      </div>
     
     <h2 class="archive__item-title" itemprop="headline">
       
@@ -536,7 +617,7 @@
 
 </p>
     
-    <p class="archive__item-excerpt" itemprop="description">Git의 기초 - 수정하고 저장소에 저장하기
+    <p class="archive__item-excerpt" itemprop="description">
 </p>
   </article>
 </div>
@@ -548,6 +629,14 @@
 
 <div class="grid__item">
   <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src=
+          
+            "/assets/images/500x300.png"
+          
+          alt="">
+      </div>
     
     <h2 class="archive__item-title" itemprop="headline">
       
@@ -565,7 +654,7 @@
 
 </p>
     
-    <p class="archive__item-excerpt" itemprop="description">Git의 기초 - Git 저장소 만들기
+    <p class="archive__item-excerpt" itemprop="description">
 </p>
   </article>
 </div>
@@ -579,6 +668,17 @@
 
     </div>
 
+    
+      <div class="search-content">
+        <div class="search-content__inner-wrap"><form class="search-content__form" onkeydown="return event.key != 'Enter';">
+    <label class="sr-only" for="search">
+      Enter your search term...
+    </label>
+    <input type="search" id="search" class="search-input" tabindex="-1" placeholder="검색어를 입력하세요..." />
+  </form>
+  <div id="results" class="results"></div></div>
+
+      </div>
     
 
     <div id="footer" class="page__footer">
@@ -612,7 +712,7 @@
   </ul>
 </div>
 
-<div class="page__footer-copyright">&copy; 2019 Kiho LEE. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+<div class="page__footer-copyright">&copy; 2019 로봇 창고. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
 
       </footer>
     </div>
@@ -623,6 +723,10 @@
 
 
 
+
+<script src="/assets/js/lunr/lunr.min.js"></script>
+<script src="/assets/js/lunr/lunr-store.js"></script>
+<script src="/assets/js/lunr/lunr-en.js"></script>
 
 
 
