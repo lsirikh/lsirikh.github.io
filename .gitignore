@@ -5,4 +5,5 @@
 #.jekyll-metadata
 #Gemfile.lock
 minimal-mistakes-jekyll.gemspec
+.editorconfig
 
