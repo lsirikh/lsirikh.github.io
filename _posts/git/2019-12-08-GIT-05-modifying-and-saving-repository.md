@@ -1,8 +1,8 @@
 ---
 layout: single
 title:  "05.GIT 저장소 수정하기와 저장하기"
-date:   2019-12-08 10:50:13 +0800
-permalink: /categories/GIT/5/
+date:   2019-12-08 10:50:13
+permalink: /categories/:categories/:title:output_ext
 taxonomy: {title}
 categories: GIT
 tags: GIT 기초 수정하기 저장하기

@@ -1,9 +1,9 @@
 ---
 layout: single
 title:  "01.CPP 학습에 앞서 CPP란 어떤 프로그램 언어일까?"
-permalink: /categories/C++/1/
+permalink: /categories/:categories/:title:output_ext
 taxonomy: {title}
-date:   2019-12-08 19:17:13 +0800
+date:   2019-12-08 19:17:13
 categories: C++
 tags: C++ introduction
 comments: true

@@ -9,8 +9,8 @@
   <head>
     <meta charset="utf-8">
 
-<!-- begin _includes/seo.html --><title>02.ROS environmental settings for beginners ROS 환경설정 우분투 16.04 Kinetic Kame | 로봇 제작을 위한 지식공간</title>
-<meta name="description" content="1. ROS 환경설정">
+<!-- begin _includes/seo.html --><title>04.ROS를 GUI 기반 IDE 툴 qt creator 설치(우분투 16.04 Kinetic Kame) | 로봇 제작을 위한 지식공간</title>
+<meta name="description" content="1. Qt Creator란?">
 
 
   <meta name="author" content="Kiho Lee">
@@ -19,19 +19,21 @@
 <meta property="og:type" content="article">
 <meta property="og:locale" content="ko_KR">
 <meta property="og:site_name" content="로봇 제작을 위한 지식공간">
-<meta property="og:title" content="02.ROS environmental settings for beginners ROS 환경설정 우분투 16.04 Kinetic Kame">
-<meta property="og:url" content="lsirikh.github.io/categories/ROS/2/">
+<meta property="og:title" content="04.ROS를 GUI 기반 IDE 툴 qt creator 설치(우분투 16.04 Kinetic Kame)">
+<meta property="og:url" content="http://localhost:4000/categories/ros/ROS-04-ros-roscore-qt-creator.html">
 
 
-  <meta property="og:description" content="1. ROS 환경설정">
-
-
-
+  <meta property="og:description" content="1. Qt Creator란?">
 
 
 
+  <meta property="og:image" content="http://localhost:4000/assets/img/memaker.png">
 
-  <meta property="article:published_time" content="2019-12-05T17:36:13+09:00">
+
+
+
+
+  <meta property="article:published_time" content="2019-12-07T07:12:13+09:00">
 
 
 
@@ -42,7 +44,7 @@
   
 
 
-<link rel="canonical" href="lsirikh.github.io/categories/ROS/2/">
+<link rel="canonical" href="http://localhost:4000/categories/ros/ROS-04-ros-roscore-qt-creator.html">
 
 
 
@@ -53,7 +55,7 @@
     
       "@type": "Person",
       "name": "Kiho Lee",
-      "url": "lsirikh.github.io/"
+      "url": "http://localhost:4000/"
     
   }
 </script>
@@ -129,11 +131,15 @@
           
         </a>
         <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="/portfolio/" >Portfolio</a>
+            </li><li class="masthead__menu-item">
               <a href="/year-archive/" >Posts</a>
             </li><li class="masthead__menu-item">
               <a href="/categories/" >Categories</a>
             </li><li class="masthead__menu-item">
               <a href="/tags/" >Tags</a>
+            </li><li class="masthead__menu-item">
+              <a href="/collection-archive/" >Collections</a>
             </li></ul>
         
         <button class="search__toggle" type="button">
@@ -170,7 +176,7 @@
     
       
         <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-          <a href="lsirikh.github.io/" itemprop="item"><span itemprop="name">Home</span></a>
+          <a href="http://localhost:4000/" itemprop="item"><span itemprop="name">Home</span></a>
           <meta itemprop="position" content="1" />
         </li>
         <span class="sep">/</span>
@@ -196,7 +202,7 @@
     
       
       
-        <li class="current">02.ROS environmental settings for beginners ROS 환경설정 우분투 16.04 Kinetic Kame</li>
+        <li class="current">04.ROS를 GUI 기반 IDE 툴 qt creator 설치(우분투 16.04 Kinetic Kame)</li>
       
     
   </ol>
@@ -246,6 +252,8 @@
 
       
         
+          
+            <li><a href="mailto:lsirikh@naver.com" rel="nofollow noopener noreferrer"><i class="fas fa-fw fa-envelope-square" aria-hidden="true"></i> lsirikh@naver.com</a></li>
           
         
           
@@ -324,15 +332,15 @@
 
 
   <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
-    <meta itemprop="headline" content="02.ROS environmental settings for beginners ROS 환경설정 우분투 16.04 Kinetic Kame">
-    <meta itemprop="description" content="1. ROS 환경설정">
-    <meta itemprop="datePublished" content="December 05, 2019">
+    <meta itemprop="headline" content="04.ROS를 GUI 기반 IDE 툴 qt creator 설치(우분투 16.04 Kinetic Kame)">
+    <meta itemprop="description" content="1. Qt Creator란?">
+    <meta itemprop="datePublished" content="December 07, 2019">
     
 
     <div class="page__inner-wrap">
       
         <header>
-          <h1 id="page-title" class="page__title" itemprop="headline">02.ROS environmental settings for beginners ROS 환경설정 우분투 16.04 Kinetic Kame
+          <h1 id="page-title" class="page__title" itemprop="headline">04.ROS를 GUI 기반 IDE 툴 qt creator 설치(우분투 16.04 Kinetic Kame)
 </h1>
           
             <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
@@ -340,7 +348,7 @@
 
 
 
-  1 분 소요
+  최대 1 분 소요
 
 </p>
           
@@ -353,118 +361,35 @@
             <nav class="toc">
               <header><h4 class="nav__title"><i class="fas fa-cog"></i> My Table of Contents</h4></header>
               <ul class="toc__menu">
-  <li><a href="#1-ros-환경설정">1. ROS 환경설정</a></li>
-  <li><a href="#11-ros-환경설정-내용-분석bashrc">1.1. ROS 환경설정 내용 분석(bashrc)</a></li>
-  <li><a href="#12-단축-명령어-분석bashrc">1.2. 단축 명령어 분석(bashrc)</a></li>
+  <li><a href="#1-qt-creator란">1. Qt Creator란?</a></li>
+  <li><a href="#2-qt-creator-설치하기">2. Qt Creator 설치하기</a></li>
 </ul>
             </nav>
           </aside>
         
-        <h5 id="1-ros-환경설정">1. ROS 환경설정</h5>
+        <h5 id="1-qt-creator란">1. Qt Creator란?</h5>
 
-<p>ROS 설치 과정에서 사용된 다음 명령어는 터미널 창을 실행할 때마다 계속 입력해야한다.</p>
+<p>Qt Creator는 Qt GUI 애플리케이션 개발 프레임 워크 용 SDK의 일부인 크로스 플랫폼 C ++, JavaScript 및 QML 통합 개발 환경입니다. 시각적 디버거와 통합 GUI 레이아웃 및 양식 디자이너가 포함되어 있습니다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ source /opt/ros/kinetic/setup.bash
-$ source ~/catkin_ws/devel/setup.bash
-</code></pre></div></div>
+<p><img src="/assets/img/ros/QtProject-creator-icon.png" alt="image" /></p>
 
-<p>이러한 번거로운 작업을 없애기 위해서 새로운 터미널 창을 열 때 마다 정해진 환경설정 파일을 읽어오도록 할 수 있다. 이외 ROS 네트워를 설정하고 자주 사용하는 명령어를 단축 명령어로 만들어 보자.</p>
+<p>Qt는 컴퓨터 프로그래밍에서 GUI 프로그램 개발에 널리 쓰이는 크로스 플랫폼 프레임워크이다. 서버용 콘솔과 명령 줄 도구와 같은 비GUI 프로그램 개발에도 사용된다. 그래픽 사용자 인터페이스를 사용하는 경우에는 Qt를 위젯 툴킷으로 분류한다. 회사 내부에서는 Qt를 “cute”로 발음하고 있으며 비공식적으로는 “큐티”로 발음한다. Qt는 KDE, Qtopia, OPIE에 이용되고 있다,</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ sudo gedit ~/.bashrc
-</code></pre></div></div>
+<p>노르웨이 회사 트롤텍에 의해서 개발되었다. 2008년 1월에는 노키아에 인수되었다.[2] 이후, 2012년 8월에 핀란드 회사 Digia에 인수되었다.[3]</p>
 
-<p>or</p>
+<p>Qt는 C++를 주로 사용하지만, 파이썬, 루비, C, 펄, 파스칼과도 연동된다. 수많은 플랫폼에서 동작하며, 상당히 좋은 국제화를 지원한다. SQL 데이터베이스 접근, XML 처리, 스레드 관리, 단일 크로스 플랫폼 파일 관리 API를 제공한다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ sudo nano ~/.bashrc
-</code></pre></div></div>
+<p>[출처] 위키백과 https://ko.wikipedia.org/wiki/Qt_(%ED%94%84%EB%A0%88%EC%9E%84%EC%9B%8C%ED%81%AC)</p>
 
-<p>잠깐!</p>
+<h5 id="2-qt-creator-설치하기">2. Qt Creator 설치하기</h5>
 
-<p>내 IP주소를 잠깐 확인해보자.</p>
+<pre><code>$ sudo apt-get install qtcreator
+</code></pre>
+<p>리눅스가 좋은 점은 바로 이런 apt-get install이란 간편한 방법으로 설치가 가능하다는 점이다.</p>
 
-<p>ROS 네트워크 설정을 위해서 IP 주소가 필요할 수 있다.</p>
+<p>일단 설치하고 실행하면 다음과 같이 나오는 것을 확인 할 수 있다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ ifconfig
-</code></pre></div></div>
-
-<p><img src="/assets/img/ros/ifconfig.png" width="40%" height="30%" alt="image" /></p>
-
-<p>wlp2s0(무선일 때)의  inet addr:xxx.xxx.xx.xx? 여기를 확인하자.<br />
-enp3s0(유선일 때)의  inet addr:xxx.xxx.xx.xx? 여기를 확인하자.</p>
-
-<blockquote>
-  <p>[참고]리눅스에서 자신의 IP를 확인하기 위해 ifconfig 명령어를 사용한다. 유선인 경우 enp3s0, 무선일 경우 wlp2s0의 inet addr에 자신의 IP 주소가 표시된다.</p>
-</blockquote>
-
-<p>다시 환경설정으로 돌아가서…</p>
-
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code># Set ROS Kinetic
-source /opt/ros/kinetic/setup.bash
-source ~/catkin_ws/devel/setup.bash
-
-# Set ROS Network
-export ROS_HOSTNAME = xxx.xxx.xxx.xxx
-export ROS_MASTER_URI = http://${ROS_HOSTNAME}:11311
-
-# Set ROS alias command
-alias cw='cd ~/catkin_ws'
-alias cs='cd ~/catkin_ws/src'
-alias cm='cd ~/catkin_ws &amp;&amp; catkin_make'
-</code></pre></div></div>
-
-<p>이제 터미널창을 열면 자동으로 환경설정이 실행된다.</p>
-
-<blockquote>
-  <p>(만약, 현재 터미널 창에 바로 반영을 하려면 아래와 같이 해보자)</p>
-</blockquote>
-
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ source ~/.bashrc
-</code></pre></div></div>
-
-<h5 id="11-ros-환경설정-내용-분석bashrc">1.1. ROS 환경설정 내용 분석(bashrc)</h5>
-
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
-2
-3
-</pre></td><td class="code"><pre><span class="c"># Set ROS Kinetic</span>
-<span class="nb">source</span> /opt/ros/kinetic/setup.bash
-<span class="nb">source</span> ~/catkin_ws/devel/setup.bash
-</pre></td></tr></tbody></table></code></pre></figure>
-
-<p>위 두 코드는 환경설정을 불러오는 명령이다.</p>
-
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
-2
-3
-</pre></td><td class="code"><pre><span class="c"># Set ROS Network</span>
-<span class="nb">export </span><span class="nv">ROS_HOSTNAME</span><span class="o">=</span>192.168.0.44
-<span class="nb">export </span><span class="nv">ROS_MASTER_URI</span><span class="o">=</span>http://<span class="o">{</span>ROS_HOSTNAME<span class="o">}</span>:11311
-</pre></td></tr></tbody></table></code></pre></figure>
-
-<p>ROS는 네트워크 통신 기반의 플랫폼이기 때문에 메세지 통신을 위해서 네트워크 설정은 반드시 선행되어야 합니다.</p>
-
-<h5 id="12-단축-명령어-분석bashrc">1.2. 단축 명령어 분석(bashrc)</h5>
-
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
-2
-3
-4
-</pre></td><td class="code"><pre><span class="c"># Set ROS alias command</span>
-<span class="nb">alias </span><span class="nv">cw</span><span class="o">=</span><span class="s1">'cd ~/catkin_ws'</span>
-<span class="nb">alias </span><span class="nv">cs</span><span class="o">=</span><span class="s1">'cd ~/catkin_ws/src'</span>
-<span class="nb">alias </span><span class="nv">cs</span><span class="o">=</span><span class="s1">'cd ~/catkin_ws &amp;&amp; catkin_make'</span>
-</pre></td></tr></tbody></table></code></pre></figure>
-
-<p>alias는 별명 혹은 숏컷 네이밍이라고 볼 수 있습니다. 따라서, 해당 키워드를 사용하면 =’‘에 들어있는 명령이 실행되는 거죠.</p>
-
-<blockquote>
-  <p>ROS 환경설정 확인 방법</p>
-</blockquote>
-
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ export | grep ROS
-</code></pre></div></div>
-<p><img src="/assets/img/ros/export_grep_ros.png" width="60%" height="60%" alt="image" /></p>
-
+<p><img src="/assets/img/ros/qtcreator_ide.png" width="60%" height="60%" alt="image" /></p>
 
         
       </section>
@@ -485,7 +410,11 @@ alias cm='cd ~/catkin_ws &amp;&amp; catkin_make'
     
       
       
-      <a href="/tags/#installation" class="page__taxonomy-item" rel="tag">installation</a><span class="sep">, </span>
+      <a href="/tags/#creator" class="page__taxonomy-item" rel="tag">creator</a><span class="sep">, </span>
+    
+      
+      
+      <a href="/tags/#qt" class="page__taxonomy-item" rel="tag">qt</a><span class="sep">, </span>
     
       
       
@@ -517,7 +446,7 @@ alias cm='cd ~/catkin_ws &amp;&amp; catkin_make'
 
 
         
-          <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> 업데이트:</strong> <time datetime="2019-12-05T17:36:13+09:00">December 05, 2019</time></p>
+          <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> 업데이트:</strong> <time datetime="2019-12-07T07:12:13+09:00">December 07, 2019</time></p>
         
       </footer>
 
@@ -526,51 +455,27 @@ alias cm='cd ~/catkin_ws &amp;&amp; catkin_make'
     <h4 class="page__share-title">공유하기</h4>
   
 
-  <a href="https://twitter.com/intent/tweet?text=02.ROS+environmental+settings+for+beginners+ROS+%ED%99%98%EA%B2%BD%EC%84%A4%EC%A0%95+%EC%9A%B0%EB%B6%84%ED%88%AC+16.04+Kinetic+Kame%20lsirikh.github.io%2Fcategories%2FROS%2F2%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+  <a href="https://twitter.com/intent/tweet?text=04.ROS%EB%A5%BC+GUI+%EA%B8%B0%EB%B0%98+IDE+%ED%88%B4+qt+creator+%EC%84%A4%EC%B9%98%28%EC%9A%B0%EB%B6%84%ED%88%AC+16.04+Kinetic+Kame%29%20http%3A%2F%2Flocalhost%3A4000%2Fcategories%2Fros%2FROS-04-ros-roscore-qt-creator.html" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
 
-  <a href="https://www.facebook.com/sharer/sharer.php?u=lsirikh.github.io%2Fcategories%2FROS%2F2%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2Fcategories%2Fros%2FROS-04-ros-roscore-qt-creator.html" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
 
-  <a href="https://www.linkedin.com/shareArticle?mini=true&url=lsirikh.github.io%2Fcategories%2FROS%2F2%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flocalhost%3A4000%2Fcategories%2Fros%2FROS-04-ros-roscore-qt-creator.html" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
 </section>
 
 
       
   <nav class="pagination">
     
-      <a href="/categories/ROS/1/" class="pagination--pager" title="01.ROS installation based from Ubuntu 16.04 Kinetic Kame
+      <a href="/categories/ros/ROS-03-ros-roscore-test.html" class="pagination--pager" title="03.ROS를 테스트 터틀봇 움직이기(우분투 16.04 Kinetic Kame)
 ">이전</a>
     
     
-      <a href="/categories/GIT/1/" class="pagination--pager" title="01.GIT이란 무엇인가?
+      <a href="/categories/git/GIT-02-initial-settings.html" class="pagination--pager" title="02.GIT 초기 설정하기
 ">다음</a>
     
   </nav>
 
     </div>
-
-    
-      
-lsirikh-github-io
-<div id="disqus_thread"></div>
-<script>
-
-/**
-*  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
-*  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
-/*
-var disqus_config = function () {
-this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
-this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
-};
-*/
-(function() { // DON'T EDIT BELOW THIS LINE
-var d = document, s = d.createElement('script');
-s.src = 'https://lsirikh.disqus.com/embed.js';
-s.setAttribute('data-timestamp', +new Date());
-(d.head || d.body).appendChild(s);
-})();
-</script>
-<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 
     
   </article>
@@ -590,7 +495,7 @@ s.setAttribute('data-timestamp', +new Date());
     
     <h2 class="archive__item-title" itemprop="headline">
       
-        <a href="/categories/C++/2/" rel="permalink">02.C++ IDE Eclipse 설치하기
+        <a href="/categories/c++/CPP-02-install-eclipse.html" rel="permalink">02.C++ IDE Eclipse 설치하기
 </a>
       
     </h2>
@@ -605,6 +510,7 @@ s.setAttribute('data-timestamp', +new Date());
 </p>
     
     <p class="archive__item-excerpt" itemprop="description">Eclipse IDE for C/C++ Developers
+
 </p>
   </article>
 </div>
@@ -619,7 +525,7 @@ s.setAttribute('data-timestamp', +new Date());
     
     <h2 class="archive__item-title" itemprop="headline">
       
-        <a href="/categories/C++/1/" rel="permalink">01.CPP 학습에 앞서 CPP란 어떤 프로그램 언어일까?
+        <a href="/categories/c++/CPP-01-introduction.html" rel="permalink">01.CPP 학습에 앞서 CPP란 어떤 프로그램 언어일까?
 </a>
       
     </h2>
@@ -634,6 +540,7 @@ s.setAttribute('data-timestamp', +new Date());
 </p>
     
     <p class="archive__item-excerpt" itemprop="description">CPP란 어떤 프로그램 언어일까?
+
 </p>
   </article>
 </div>
@@ -648,7 +555,7 @@ s.setAttribute('data-timestamp', +new Date());
     
     <h2 class="archive__item-title" itemprop="headline">
       
-        <a href="/categories/GIT/5/" rel="permalink">05.GIT 저장소 수정하기와 저장하기
+        <a href="/categories/git/GIT-05-modifying-and-saving-repository.html" rel="permalink">05.GIT 저장소 수정하기와 저장하기
 </a>
       
     </h2>
@@ -663,6 +570,7 @@ s.setAttribute('data-timestamp', +new Date());
 </p>
     
     <p class="archive__item-excerpt" itemprop="description">Git의 기초 - 수정하고 저장소에 저장하기
+
 </p>
   </article>
 </div>
@@ -677,7 +585,7 @@ s.setAttribute('data-timestamp', +new Date());
     
     <h2 class="archive__item-title" itemprop="headline">
       
-        <a href="/categories/GIT/4/" rel="permalink">04.GIT 저장소 만들기
+        <a href="/categories/git/GIT-04-creating-git-repository.html" rel="permalink">04.GIT 저장소 만들기
 </a>
       
     </h2>
@@ -692,6 +600,7 @@ s.setAttribute('data-timestamp', +new Date());
 </p>
     
     <p class="archive__item-excerpt" itemprop="description">Git의 기초 - Git 저장소 만들기
+
 </p>
   </article>
 </div>
@@ -771,8 +680,8 @@ s.setAttribute('data-timestamp', +new Date());
     
   <script>
     var disqus_config = function () {
-      this.page.url = "lsirikh.github.io/categories/ROS/2/";  // Replace PAGE_URL with your page's canonical URL variable
-      this.page.identifier = "/categories/ROS/ROS-02-ros-environmetal-settings"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+      this.page.url = "http://localhost:4000/categories/ros/ROS-04-ros-roscore-qt-creator.html";  // Replace PAGE_URL with your page's canonical URL variable
+      this.page.identifier = "/categories/ros/ROS-04-ros-roscore-qt-creator"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
     };
     (function() { // DON'T EDIT BELOW THIS LINE
       var d = document, s = d.createElement('script');

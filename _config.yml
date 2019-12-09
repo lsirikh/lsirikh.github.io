@@ -30,10 +30,11 @@ masthead_title           : # overrides the website title displayed in the masthe
 breadcrumbs              : true # true, false (default)
 words_per_minute         : 200
 
+
 comments:
   provider               : "disqus" # false (default), "disqus", "discourse", "facebook", "staticman", "staticman_v2", "utterances", "custom"
   disqus:
-    shortname            : "lsirikh" # https://help.disqus.com/customer/portal/articles/466208-what-s-a-shortname-
+    shortname            : lsirikh-github-io # https://help.disqus.com/customer/portal/articles/466208-what-s-a-shortname-
   discourse:
     server               : # https://meta.discourse.org/t/embedding-discourse-comments-via-javascript/31963 , e.g.: meta.discourse.org
   facebook:
@@ -90,7 +91,7 @@ facebook:
   username               :
   app_id                 :
   publisher              :
-og_image                 : # Open Graph/Twitter default site image
+og_image                 : "/assets/img/memaker.png" # Open Graph/Twitter default site image
 # For specifying social profiles
 # - https://developers.google.com/structured-data/customize/social-profiles
 social:
@@ -116,7 +117,7 @@ author:
   links:
     - label: "lsirikh@naver.com"
       icon: "fas fa-fw fa-envelope-square"
-      # url: mailto:your.name@email.com
+      url: mailto:lsirikh@naver.com
     - label: "Website"
       icon: "fas fa-fw fa-link"
       # url: "https://your-website.com"
@@ -133,13 +134,7 @@ author:
       icon: "fab fa-fw fa-instagram"
       # url: "https://instagram.com/"
 
-excerpt: "This post should display a **header with an overlay image**, if the theme supports it."
-header:
-  overlay_image: /assets/img/theme.png
-  caption: "Photo credit: [**Unsplash**](https://unsplash.com)"
-  actions:
-    - label: "More Info"
-      url: "https://unsplash.com"
+
 
 # Site Footer
 footer:
@@ -203,7 +198,7 @@ markdown_ext: "markdown,mkdown,mkdn,mkd,md"
 
 # Conversion
 markdown: kramdown
-highlighter: rouge
+highlighter: rougePosts
 lsi: false
 excerpt_separator: "\n\n"
 incremental: false
@@ -288,6 +283,8 @@ compress_html:
     envs: development
 
 
+
+
 # Defaults
 defaults:
   # _posts
@@ -302,5 +299,20 @@ defaults:
       share: true
       related: true
 
+  # _pages
+  - scope:
+      path: "_posts"
+      type: pages
+    values:
+      layout: single
+      author_profile: true
 
+  # _portfolio
+  - scope:
+      path: ""
+      type: portfolio
+    values:
+      layout: single
+      author_profile: false
+      share: true
 

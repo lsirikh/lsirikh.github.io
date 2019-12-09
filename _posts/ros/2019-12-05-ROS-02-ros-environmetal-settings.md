@@ -1,8 +1,8 @@
 ---
 layout: single
 title:  "02.ROS environmental settings for beginners ROS 환경설정 우분투 16.04 Kinetic Kame"
-date:   2019-12-05 16:36:13 +0800
-permalink: /categories/ROS/2/
+date:   2019-12-05 16:36:13 
+permalink: /categories/:categories/:title:output_ext
 taxonomy: {title}
 categories: ROS
 tags: ROS installation

@@ -9,8 +9,8 @@
   <head>
     <meta charset="utf-8">
 
-<!-- begin _includes/seo.html --><title>01.GIT이란 무엇인가? | 로봇 제작을 위한 지식공간</title>
-<meta name="description" content="Git 이란 무엇인가???">
+<!-- begin _includes/seo.html --><title>03.GIT 시작하기에 앞서 알면 좋은 것(도움말 보기) | 로봇 제작을 위한 지식공간</title>
+<meta name="description" content="Git을 사용하기 앞서 알면 좋은 내용">
 
 
   <meta name="author" content="Kiho Lee">
@@ -19,19 +19,21 @@
 <meta property="og:type" content="article">
 <meta property="og:locale" content="ko_KR">
 <meta property="og:site_name" content="로봇 제작을 위한 지식공간">
-<meta property="og:title" content="01.GIT이란 무엇인가?">
-<meta property="og:url" content="lsirikh.github.io/categories/GIT/1/">
+<meta property="og:title" content="03.GIT 시작하기에 앞서 알면 좋은 것(도움말 보기)">
+<meta property="og:url" content="http://localhost:4000/categories/git/GIT-03-how-to-use-help.html">
 
 
-  <meta property="og:description" content="Git 이란 무엇인가???">
-
-
-
+  <meta property="og:description" content="Git을 사용하기 앞서 알면 좋은 내용">
 
 
 
+  <meta property="og:image" content="http://localhost:4000/assets/img/memaker.png">
 
-  <meta property="article:published_time" content="2019-12-06T20:17:13+09:00">
+
+
+
+
+  <meta property="article:published_time" content="2019-12-08T18:30:13+09:00">
 
 
 
@@ -42,7 +44,7 @@
   
 
 
-<link rel="canonical" href="lsirikh.github.io/categories/GIT/1/">
+<link rel="canonical" href="http://localhost:4000/categories/git/GIT-03-how-to-use-help.html">
 
 
 
@@ -53,7 +55,7 @@
     
       "@type": "Person",
       "name": "Kiho Lee",
-      "url": "lsirikh.github.io/"
+      "url": "http://localhost:4000/"
     
   }
 </script>
@@ -129,11 +131,15 @@
           
         </a>
         <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="/portfolio/" >Portfolio</a>
+            </li><li class="masthead__menu-item">
               <a href="/year-archive/" >Posts</a>
             </li><li class="masthead__menu-item">
               <a href="/categories/" >Categories</a>
             </li><li class="masthead__menu-item">
               <a href="/tags/" >Tags</a>
+            </li><li class="masthead__menu-item">
+              <a href="/collection-archive/" >Collections</a>
             </li></ul>
         
         <button class="search__toggle" type="button">
@@ -170,7 +176,7 @@
     
       
         <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-          <a href="lsirikh.github.io/" itemprop="item"><span itemprop="name">Home</span></a>
+          <a href="http://localhost:4000/" itemprop="item"><span itemprop="name">Home</span></a>
           <meta itemprop="position" content="1" />
         </li>
         <span class="sep">/</span>
@@ -196,7 +202,7 @@
     
       
       
-        <li class="current">01.GIT이란 무엇인가?</li>
+        <li class="current">03.GIT 시작하기에 앞서 알면 좋은 것(도움말 보기)</li>
       
     
   </ol>
@@ -246,6 +252,8 @@
 
       
         
+          
+            <li><a href="mailto:lsirikh@naver.com" rel="nofollow noopener noreferrer"><i class="fas fa-fw fa-envelope-square" aria-hidden="true"></i> lsirikh@naver.com</a></li>
           
         
           
@@ -324,15 +332,15 @@
 
 
   <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
-    <meta itemprop="headline" content="01.GIT이란 무엇인가?">
-    <meta itemprop="description" content="Git 이란 무엇인가???">
-    <meta itemprop="datePublished" content="December 06, 2019">
+    <meta itemprop="headline" content="03.GIT 시작하기에 앞서 알면 좋은 것(도움말 보기)">
+    <meta itemprop="description" content="Git을 사용하기 앞서 알면 좋은 내용">
+    <meta itemprop="datePublished" content="December 08, 2019">
     
 
     <div class="page__inner-wrap">
       
         <header>
-          <h1 id="page-title" class="page__title" itemprop="headline">01.GIT이란 무엇인가?
+          <h1 id="page-title" class="page__title" itemprop="headline">03.GIT 시작하기에 앞서 알면 좋은 것(도움말 보기)
 </h1>
           
             <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
@@ -340,7 +348,7 @@
 
 
 
-  2 분 소요
+  1 분 소요
 
 </p>
           
@@ -353,66 +361,58 @@
             <nav class="toc">
               <header><h4 class="nav__title"><i class="fas fa-cog"></i> My Table of Contents</h4></header>
               <ul class="toc__menu">
-  <li><a href="#git-이란-무엇인가">Git 이란 무엇인가???</a></li>
-  <li><a href="#github의-허브">GitHub의 “허브”</a></li>
-  <li><a href="#repository-저장소">repository (저장소)</a></li>
-  <li><a href="#fork">Fork</a></li>
-  <li><a href="#pull">Pull</a></li>
-  <li><a href="#social-networking">Social networking</a></li>
-  <li><a href="#changelogs">Changelogs</a></li>
+  <li><a href="#git을-사용하기-앞서-알면-좋은-내용">Git을 사용하기 앞서 알면 좋은 내용</a></li>
+  <li><a href="#git-도움말-보기">Git 도움말 보기</a></li>
 </ul>
             </nav>
           </aside>
         
-        <h5 id="git-이란-무엇인가">Git 이란 무엇인가???</h5>
+        <h5 id="git을-사용하기-앞서-알면-좋은-내용">Git을 사용하기 앞서 알면 좋은 내용</h5>
 
-<p><img src="/assets/img/git/480px-Octocat_GitHub_Mascot.png" width="40%" height="40%" alt="image" /></p>
+<p><br /></p>
 
-<p><img src="/assets/img/git/git.png" width="60%" height="60%" alt="image" /></p>
+<h5 id="git-도움말-보기">Git 도움말 보기</h5>
 
-<p>GitHub를 이해하려면 먼저 Git을 이해해야합니다. Git은 리눅스를 만든 사람인 Linus Torvalds에 의해 시작된 오픈 소스 버전 관리 시스템입니다. Git은 Subversion , CVS 및 Mercurial 과 같은 다른 버전 제어 시스템과 유사합니다.</p>
+<hr />
 
-<p>Git은 버전 관리 시스템이지만 무엇일까?</p>
+<p>명령어에 대한 도움말이 필요할 때 도움말을 보는 방법은 두 가지로 동일한 결과를 볼 수 있다.</p>
 
-<blockquote>
-  <p>예를 들어, 개발자가 무언가 앱을 만들면 코드가 지속적으로 변경되어 첫 번째 공식 (베타 이외) 릴리스 이후에 새 버전이 릴리스됩니다.</p>
-</blockquote>
+<pre><code>$ git help &lt;verb&gt;
+$ man git-&lt;verb&gt;
+</code></pre>
 
-<p>버전 제어 시스템은 이러한 개정을 똑바로 유지하여 수정 사항을 중앙 저장소에 저장합니다. 이를 통해 개발자는 새로운 버전의 소프트웨어를 다운로드하고 변경하며 최신 버전을 업로드 할 수 있으므로 쉽게 협업 할 수 있습니다. 모든 개발자는 이러한 새로운 변경 사항을 보고 다운로드하여 제공 할 수 있습니다.</p>
+<p>예를 들어 아래와 같이 실행하면 <strong>git config</strong> 명령에 대한 도움말을 볼 수 있다.</p>
 
-<p>마찬가지로, 프로젝트 개발과 관련이 없는 사람들도 공개된 GIT ​​파일을 다운로드하여 사용할 수 있습니다. Git이 시작된 배경이 Linux 환경이기 때문에 Linux에서 좀 더 활용도가 용이 할 수 있지만, 현재 Windows나 OS X에도 많은 지원이 되는 관계로 이제는 크게 무관한 것으로 보입니다.</p>
+<pre><code>$ git help config
+</code></pre>
 
-<p>Git은 사용 가능한 다른 시스템에 비해 여러 가지 장점이 있기 때문에 대부분의 개발자가 선호하는 버전 제어 시스템입니다. 파일 변경 사항을보다 효율적으로 저장하고 파일 무결성을 향상시킵니다. 세부 사항을 알고 싶다면  Git 기본 페이지  에 Git 작동 방식에 대한 자세한 설명이 있습니다.</p>
+<p>도움말은 언제 어디서나 볼 수 있다. 오프라인으로도 볼 수 있다. 도움말과 이 책으로 부족하면 다른 사람의 도움을 받는 것이 필요하다. Freenode IRC 서버(irc.freenode.net)에 있는 <code>#git</code> 이나 <code>#github</code> 채널로 찾아가라. 이 채널에는 보통 수백 명의 사람이 접속해 있다. 모두 Git에 대해 잘 알고 있다. 기꺼이 도와줄 것이다.</p>
 
-<h5 id="github의-허브">GitHub의 “허브”</h5>
+<p>Git 명령을 사용하기 위해 매우 자세한 도움말 전체를 볼 필요 없이 각 명령에서 사용할 수 있는 옵션들에 대해서 간략히 살펴볼수도 있다. <code>-h</code>, <code>--help</code> 옵션을 사용하면 다음과 같이 Git 명령에서 사용할 수 있는 옵션들에 대한 간단한 도움말을 출력한다.</p>
 
-<p>Git와 함께 사용하여 더 나은 버전 제어 시스템을 확립했습니다. 그렇다면 GitHub는 무엇일까요? Git은 명령 줄 도구이지만 Git revolve와 관련된 모든 것은 프로젝트와 관련된 내용을 저장하는 허브 (GitHub.com)입니다.</p>
+<p><img src="/assets/img/git/git_help_config.png" width="100%" height="100%" title="git_help_config" /></p>
 
-<h5 id="repository-저장소">repository (저장소)</h5>
+<pre><code>$ git add -h
+usage: git add [&lt;options&gt;] [--] &lt;pathspec&gt;...
 
-<p>repository (일반적으로 “repo”로 약칭)는 특정 프로젝트의 모든 파일이 저장되는 위치입니다. 각 프로젝트에는 자체 저장소가 있으며 고유 한 URL로 액세스 할 수 있습니다.</p>
+    -n, --dry-run         dry run
+    -v, --verbose         be verbose
 
-<p><img src="/assets/img/git/repository_example.png" width="80%" height="80%" alt="image" /></p>
+    -i, --interactive     interactive picking
+    -p, --patch           select hunks interactively
+    -e, --edit            edit current diff and apply
+    -f, --force           allow adding otherwise ignored files
+    -u, --update          update tracked files
+    -N, --intent-to-add   record only the fact that the path will be added later
+    -A, --all             add changes from all tracked and untracked files
+    --ignore-removal      ignore paths removed in the working tree (same as --no-all)
+    --refresh             don't add, only refresh the index
+    --ignore-errors       just skip files which cannot be added because of errors
+    --ignore-missing      check if - even missing - files are ignored in dry run
+    --chmod &lt;(+/-)x&gt;      override the executable bit of the listed files
+</code></pre>
 
-<h5 id="fork">Fork</h5>
-
-<p>“Forking”(발음주의;뽀킹아님)은 이미 존재하는 다른 프로젝트를 기반으로 새 프로젝트를 만들 때 사용합니다. 이것은 프로그램 및 기타 프로젝트의 추가 개발을 손쉽게 할 수 있는 굉장히 놀라운 컨셉인 것 같습니다. GitHub에서 기여하고 싶은 프로젝트를 찾으면 저장소(Repo)를 Fork 하고 원하는대로 변경하고 수정 된 프로젝트를 새 Repo로 릴리스 할 수 있습니다. 새 프로젝트를 작성하기 위해 Fork(분기) 한 원래 저장소가 업데이트되면 해당 업데이트를 현재 분기에 쉽게 추가 할 수 있습니다. 분기 추가의 권한은 원천 개발자에게 있습니다.</p>
-
-<h5 id="pull">Pull</h5>
-
-<p>어떤 개발자가 Repository(repo)를 Fork(분기)하고 프로젝트를 크게 수정 한 후 원래 Repository 주인 혹은 개발자가 이를 인정해주고 원래 프로젝트에 참여시켜주기 원할 수도 있습니다. 그럴 경우 풀 요청을 하면 프로젝트에 참여가 가능합니다. 물론 원본 Repository(이하 리포지토리)의 작성자는 자신의 작업을보고 공식 프로젝트에 수락할지 여부를 선택할 수 있습니다. Pull 요청을 발행 할 때마다 GitHub는 사용자와 기본 프로젝트 관리자가 통신 할 수있는 완벽한 수단을 제공합니다.</p>
-
-<h5 id="social-networking">Social networking</h5>
-
-<p>사회적 네트워킹 측면에서 GitHub가 가장 강력한 특징을 지닌듯 합니다. 특히, GitHub가 가지는 다양한 특징과 장점을 압도하는 가장 중요한 점이기도 합니다. GitHub의 각 사용자는 이력서처럼 작동하는 자체 프로필을 가지고 있으며 과거 작업 및 풀 요청을 통해 다른 프로젝트에 대한 기여를 보여줍니다. 한마디로 기여도에 무임승차자가 없고, 기여도로 평가할 수 있는 중요한 지표를 제공해줍니다.</p>
-
-<p>GitHub를 통해 프로젝트 revision은 공개적으로 논의 될 수 있고, 많은 전문가들이 해당 프로젝트를 발전시키기 위해 지식을 제공하고 협력 할 수 있습니다. GitHub가 등장하기 전에, 어떤 프로젝트에 관심이있는 개발자는 대개 프로젝트 리딩 개발자와 연락 할 수있는 방법을 수소문 한 후, 자신의 신뢰도와 신력을 입증하여야만 참여가능 했으리라 생각됩니다. 아마도 너무나 높은 난관과 진입장벽으로 협업은 거의 불가능 했던 것 같습니다. 그러나 GitHub는 일종의 협력과 상생의 헤게모니를 열었다는 측면에서 굉장한 사회적 충격을 주는 듯 합니다.</p>
-
-<h5 id="changelogs">Changelogs</h5>
-
-<p>여러 사람이 한 프로젝트에서 공동 작업 할 때 해당 파일이 저장되는 대상,시기 및 위치를 변경 한 수정본을 추적하기가 어렵습니다. GitHub는 리포지토리에 푸시 된 모든 변경 사항을 추적하여이 문제를 처리합니다.</p>
-
-<p>[출처] https://www.howtogeek.com/180167/htg-explains-what-is-github-and-what-do-geeks-use-it-for/</p>
+<p>[출처]https://git-scm.com/book/ko/v2/%EC%8B%9C%EC%9E%91%ED%95%98%EA%B8%B0-%EB%8F%84%EC%9B%80%EB%A7%90-%EB%B3%B4%EA%B8%B0</p>
 
         
       </section>
@@ -437,7 +437,11 @@
     
       
       
-      <a href="/tags/#introduction" class="page__taxonomy-item" rel="tag">introduction</a>
+      <a href="/tags/#%EB%8F%84%EC%9B%80%EB%A7%90" class="page__taxonomy-item" rel="tag">도움말</a><span class="sep">, </span>
+    
+      
+      
+      <a href="/tags/#%EC%8B%9C%EC%9E%91%ED%95%98%EA%B8%B0" class="page__taxonomy-item" rel="tag">시작하기</a>
     
     </span>
   </p>
@@ -465,7 +469,7 @@
 
 
         
-          <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> 업데이트:</strong> <time datetime="2019-12-06T20:17:13+09:00">December 06, 2019</time></p>
+          <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> 업데이트:</strong> <time datetime="2019-12-08T18:30:13+09:00">December 08, 2019</time></p>
         
       </footer>
 
@@ -474,51 +478,27 @@
     <h4 class="page__share-title">공유하기</h4>
   
 
-  <a href="https://twitter.com/intent/tweet?text=01.GIT%EC%9D%B4%EB%9E%80+%EB%AC%B4%EC%97%87%EC%9D%B8%EA%B0%80%3F%20lsirikh.github.io%2Fcategories%2FGIT%2F1%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+  <a href="https://twitter.com/intent/tweet?text=03.GIT+%EC%8B%9C%EC%9E%91%ED%95%98%EA%B8%B0%EC%97%90+%EC%95%9E%EC%84%9C+%EC%95%8C%EB%A9%B4+%EC%A2%8B%EC%9D%80+%EA%B2%83%28%EB%8F%84%EC%9B%80%EB%A7%90+%EB%B3%B4%EA%B8%B0%29%20http%3A%2F%2Flocalhost%3A4000%2Fcategories%2Fgit%2FGIT-03-how-to-use-help.html" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
 
-  <a href="https://www.facebook.com/sharer/sharer.php?u=lsirikh.github.io%2Fcategories%2FGIT%2F1%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2Fcategories%2Fgit%2FGIT-03-how-to-use-help.html" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
 
-  <a href="https://www.linkedin.com/shareArticle?mini=true&url=lsirikh.github.io%2Fcategories%2FGIT%2F1%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flocalhost%3A4000%2Fcategories%2Fgit%2FGIT-03-how-to-use-help.html" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
 </section>
 
 
       
   <nav class="pagination">
     
-      <a href="/categories/ROS/2/" class="pagination--pager" title="02.ROS environmental settings for beginners ROS 환경설정 우분투 16.04 Kinetic Kame
+      <a href="/categories/git/GIT-02-initial-settings.html" class="pagination--pager" title="02.GIT 초기 설정하기
 ">이전</a>
     
     
-      <a href="/categories/ROS/3/" class="pagination--pager" title="03.ROS를 테스트 터틀봇 움직이기(우분투 16.04 Kinetic Kame)
+      <a href="/categories/git/GIT-04-creating-git-repository.html" class="pagination--pager" title="04.GIT 저장소 만들기
 ">다음</a>
     
   </nav>
 
     </div>
-
-    
-      
-lsirikh-github-io
-<div id="disqus_thread"></div>
-<script>
-
-/**
-*  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
-*  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
-/*
-var disqus_config = function () {
-this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
-this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
-};
-*/
-(function() { // DON'T EDIT BELOW THIS LINE
-var d = document, s = d.createElement('script');
-s.src = 'https://lsirikh.disqus.com/embed.js';
-s.setAttribute('data-timestamp', +new Date());
-(d.head || d.body).appendChild(s);
-})();
-</script>
-<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 
     
   </article>
@@ -538,7 +518,7 @@ s.setAttribute('data-timestamp', +new Date());
     
     <h2 class="archive__item-title" itemprop="headline">
       
-        <a href="/categories/C++/2/" rel="permalink">02.C++ IDE Eclipse 설치하기
+        <a href="/categories/c++/CPP-02-install-eclipse.html" rel="permalink">02.C++ IDE Eclipse 설치하기
 </a>
       
     </h2>
@@ -553,6 +533,7 @@ s.setAttribute('data-timestamp', +new Date());
 </p>
     
     <p class="archive__item-excerpt" itemprop="description">Eclipse IDE for C/C++ Developers
+
 </p>
   </article>
 </div>
@@ -567,7 +548,7 @@ s.setAttribute('data-timestamp', +new Date());
     
     <h2 class="archive__item-title" itemprop="headline">
       
-        <a href="/categories/C++/1/" rel="permalink">01.CPP 학습에 앞서 CPP란 어떤 프로그램 언어일까?
+        <a href="/categories/c++/CPP-01-introduction.html" rel="permalink">01.CPP 학습에 앞서 CPP란 어떤 프로그램 언어일까?
 </a>
       
     </h2>
@@ -582,6 +563,7 @@ s.setAttribute('data-timestamp', +new Date());
 </p>
     
     <p class="archive__item-excerpt" itemprop="description">CPP란 어떤 프로그램 언어일까?
+
 </p>
   </article>
 </div>
@@ -596,7 +578,7 @@ s.setAttribute('data-timestamp', +new Date());
     
     <h2 class="archive__item-title" itemprop="headline">
       
-        <a href="/categories/GIT/5/" rel="permalink">05.GIT 저장소 수정하기와 저장하기
+        <a href="/categories/git/GIT-05-modifying-and-saving-repository.html" rel="permalink">05.GIT 저장소 수정하기와 저장하기
 </a>
       
     </h2>
@@ -611,6 +593,7 @@ s.setAttribute('data-timestamp', +new Date());
 </p>
     
     <p class="archive__item-excerpt" itemprop="description">Git의 기초 - 수정하고 저장소에 저장하기
+
 </p>
   </article>
 </div>
@@ -625,7 +608,7 @@ s.setAttribute('data-timestamp', +new Date());
     
     <h2 class="archive__item-title" itemprop="headline">
       
-        <a href="/categories/GIT/4/" rel="permalink">04.GIT 저장소 만들기
+        <a href="/categories/git/GIT-04-creating-git-repository.html" rel="permalink">04.GIT 저장소 만들기
 </a>
       
     </h2>
@@ -640,6 +623,7 @@ s.setAttribute('data-timestamp', +new Date());
 </p>
     
     <p class="archive__item-excerpt" itemprop="description">Git의 기초 - Git 저장소 만들기
+
 </p>
   </article>
 </div>
@@ -719,8 +703,8 @@ s.setAttribute('data-timestamp', +new Date());
     
   <script>
     var disqus_config = function () {
-      this.page.url = "lsirikh.github.io/categories/GIT/1/";  // Replace PAGE_URL with your page's canonical URL variable
-      this.page.identifier = "/categories/GIT/GIT-01-introduction"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+      this.page.url = "http://localhost:4000/categories/git/GIT-03-how-to-use-help.html";  // Replace PAGE_URL with your page's canonical URL variable
+      this.page.identifier = "/categories/git/GIT-03-how-to-use-help"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
     };
     (function() { // DON'T EDIT BELOW THIS LINE
       var d = document, s = d.createElement('script');

@@ -1,8 +1,8 @@
 ---
 layout: single
 title:  "02.GIT 초기 설정하기"
-date:   2019-12-07 22:17:13 +0800
-permalink: /categories/GIT/2/
+date:   2019-12-07 22:17:13
+permalink: /categories/:categories/:title:output_ext
 taxonomy: {title}
 categories: GIT
 tags: GIT initial commit 초기 커밋

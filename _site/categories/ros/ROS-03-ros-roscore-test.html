@@ -9,8 +9,8 @@
   <head>
     <meta charset="utf-8">
 
-<!-- begin _includes/seo.html --><title>04.ROS를 GUI 기반 IDE 툴 qt creator 설치(우분투 16.04 Kinetic Kame) | 로봇 제작을 위한 지식공간</title>
-<meta name="description" content="1. Qt Creator란?">
+<!-- begin _includes/seo.html --><title>03.ROS를 테스트 터틀봇 움직이기(우분투 16.04 Kinetic Kame) | 로봇 제작을 위한 지식공간</title>
+<meta name="description" content="1. ROS 동작 테스트 해보기">
 
 
   <meta name="author" content="Kiho Lee">
@@ -19,19 +19,21 @@
 <meta property="og:type" content="article">
 <meta property="og:locale" content="ko_KR">
 <meta property="og:site_name" content="로봇 제작을 위한 지식공간">
-<meta property="og:title" content="04.ROS를 GUI 기반 IDE 툴 qt creator 설치(우분투 16.04 Kinetic Kame)">
-<meta property="og:url" content="lsirikh.github.io/categories/ROS/4/">
+<meta property="og:title" content="03.ROS를 테스트 터틀봇 움직이기(우분투 16.04 Kinetic Kame)">
+<meta property="og:url" content="http://localhost:4000/categories/ros/ROS-03-ros-roscore-test.html">
 
 
-  <meta property="og:description" content="1. Qt Creator란?">
-
-
-
+  <meta property="og:description" content="1. ROS 동작 테스트 해보기">
 
 
 
+  <meta property="og:image" content="http://localhost:4000/assets/img/memaker.png">
 
-  <meta property="article:published_time" content="2019-12-06T23:12:13+09:00">
+
+
+
+
+  <meta property="article:published_time" content="2019-12-07T05:50:13+09:00">
 
 
 
@@ -42,7 +44,7 @@
   
 
 
-<link rel="canonical" href="lsirikh.github.io/categories/ROS/4/">
+<link rel="canonical" href="http://localhost:4000/categories/ros/ROS-03-ros-roscore-test.html">
 
 
 
@@ -53,7 +55,7 @@
     
       "@type": "Person",
       "name": "Kiho Lee",
-      "url": "lsirikh.github.io/"
+      "url": "http://localhost:4000/"
     
   }
 </script>
@@ -129,11 +131,15 @@
           
         </a>
         <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="/portfolio/" >Portfolio</a>
+            </li><li class="masthead__menu-item">
               <a href="/year-archive/" >Posts</a>
             </li><li class="masthead__menu-item">
               <a href="/categories/" >Categories</a>
             </li><li class="masthead__menu-item">
               <a href="/tags/" >Tags</a>
+            </li><li class="masthead__menu-item">
+              <a href="/collection-archive/" >Collections</a>
             </li></ul>
         
         <button class="search__toggle" type="button">
@@ -170,7 +176,7 @@
     
       
         <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-          <a href="lsirikh.github.io/" itemprop="item"><span itemprop="name">Home</span></a>
+          <a href="http://localhost:4000/" itemprop="item"><span itemprop="name">Home</span></a>
           <meta itemprop="position" content="1" />
         </li>
         <span class="sep">/</span>
@@ -196,7 +202,7 @@
     
       
       
-        <li class="current">04.ROS를 GUI 기반 IDE 툴 qt creator 설치(우분투 16.04 Kinetic Kame)</li>
+        <li class="current">03.ROS를 테스트 터틀봇 움직이기(우분투 16.04 Kinetic Kame)</li>
       
     
   </ol>
@@ -246,6 +252,8 @@
 
       
         
+          
+            <li><a href="mailto:lsirikh@naver.com" rel="nofollow noopener noreferrer"><i class="fas fa-fw fa-envelope-square" aria-hidden="true"></i> lsirikh@naver.com</a></li>
           
         
           
@@ -324,15 +332,15 @@
 
 
   <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
-    <meta itemprop="headline" content="04.ROS를 GUI 기반 IDE 툴 qt creator 설치(우분투 16.04 Kinetic Kame)">
-    <meta itemprop="description" content="1. Qt Creator란?">
-    <meta itemprop="datePublished" content="December 06, 2019">
+    <meta itemprop="headline" content="03.ROS를 테스트 터틀봇 움직이기(우분투 16.04 Kinetic Kame)">
+    <meta itemprop="description" content="1. ROS 동작 테스트 해보기">
+    <meta itemprop="datePublished" content="December 07, 2019">
     
 
     <div class="page__inner-wrap">
       
         <header>
-          <h1 id="page-title" class="page__title" itemprop="headline">04.ROS를 GUI 기반 IDE 툴 qt creator 설치(우분투 16.04 Kinetic Kame)
+          <h1 id="page-title" class="page__title" itemprop="headline">03.ROS를 테스트 터틀봇 움직이기(우분투 16.04 Kinetic Kame)
 </h1>
           
             <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
@@ -340,7 +348,7 @@
 
 
 
-  최대 1 분 소요
+  1 분 소요
 
 </p>
           
@@ -353,35 +361,67 @@
             <nav class="toc">
               <header><h4 class="nav__title"><i class="fas fa-cog"></i> My Table of Contents</h4></header>
               <ul class="toc__menu">
-  <li><a href="#1-qt-creator란">1. Qt Creator란?</a></li>
-  <li><a href="#2-qt-creator-설치하기">2. Qt Creator 설치하기</a></li>
+  <li><a href="#1-ros-동작-테스트-해보기">1. ROS 동작 테스트 해보기</a></li>
+  <li><a href="#2-roscore-실행하기">2. roscore 실행하기</a></li>
+  <li><a href="#2-turtlesim-패키지의-turtlesim_node-실행하기">2. turtlesim 패키지의 turtlesim_node 실행하기</a></li>
+  <li><a href="#3-turtlesim_node를-콘트롤하기-위한-turtle_teleop_key-노드-실행하기">3. turtlesim_node를 콘트롤하기 위한 turtle_teleop_key 노드 실행하기</a></li>
+  <li><a href="#4-rqt_graph">4. rqt_graph</a></li>
 </ul>
             </nav>
           </aside>
         
-        <h5 id="1-qt-creator란">1. Qt Creator란?</h5>
+        <h5 id="1-ros-동작-테스트-해보기">1. ROS 동작 테스트 해보기</h5>
 
-<p>Qt Creator는 Qt GUI 애플리케이션 개발 프레임 워크 용 SDK의 일부인 크로스 플랫폼 C ++, JavaScript 및 QML 통합 개발 환경입니다. 시각적 디버거와 통합 GUI 레이아웃 및 양식 디자이너가 포함되어 있습니다.</p>
+<p>일단 ROS를 설치 했기 때문에 뭐라도 구동하여 ROS가 작동하는 원리를 보고 싶은 마음이 들 것이다. 나도 처음에 설치 했을 때, 로봇에 한 발자국 더 다가간 것 같았다.</p>
 
-<p><img src="/assets/img/ros/QtProject-creator-icon.png" alt="image" /></p>
+<p>일단 거북이라도 돌아다니는 걸 보고 싶다면 함께 해보는 것도 좋을 것 같다.</p>
 
-<p>Qt는 컴퓨터 프로그래밍에서 GUI 프로그램 개발에 널리 쓰이는 크로스 플랫폼 프레임워크이다. 서버용 콘솔과 명령 줄 도구와 같은 비GUI 프로그램 개발에도 사용된다. 그래픽 사용자 인터페이스를 사용하는 경우에는 Qt를 위젯 툴킷으로 분류한다. 회사 내부에서는 Qt를 “cute”로 발음하고 있으며 비공식적으로는 “큐티”로 발음한다. Qt는 KDE, Qtopia, OPIE에 이용되고 있다,</p>
+<h5 id="2-roscore-실행하기">2. roscore 실행하기</h5>
 
-<p>노르웨이 회사 트롤텍에 의해서 개발되었다. 2008년 1월에는 노키아에 인수되었다.[2] 이후, 2012년 8월에 핀란드 회사 Digia에 인수되었다.[3]</p>
+<pre><code>$ roscore
+</code></pre>
+<p><img src="/assets/img/ros/roscore_execution.png" width="60%" height="60%" alt="image" /></p>
 
-<p>Qt는 C++를 주로 사용하지만, 파이썬, 루비, C, 펄, 파스칼과도 연동된다. 수많은 플랫폼에서 동작하며, 상당히 좋은 국제화를 지원한다. SQL 데이터베이스 접근, XML 처리, 스레드 관리, 단일 크로스 플랫폼 파일 관리 API를 제공한다.</p>
+<p>ROS는 기본적으로 CORE를 기반으로 작동하는 시스템이다. 따라서, Supervisor인 Core가 없으면 동작하지 않는다.</p>
 
-<p>[출처] 위키백과 https://ko.wikipedia.org/wiki/Qt_(%ED%94%84%EB%A0%88%EC%9E%84%EC%9B%8C%ED%81%AC)</p>
+<h5 id="2-turtlesim-패키지의-turtlesim_node-실행하기">2. turtlesim 패키지의 turtlesim_node 실행하기</h5>
 
-<h5 id="2-qt-creator-설치하기">2. Qt Creator 설치하기</h5>
+<pre><code>$ rosrun turtlesim turtlesim_node
+</code></pre>
+<p>ROS의 노드는 실행하기 위하여 rosrun이라는 커맨드를 활용한다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ sudo apt-get install qtcreator
-</code></pre></div></div>
-<p>리눅스가 좋은 점은 바로 이런 apt-get install이란 간편한 방법으로 설치가 가능하다는 점이다.</p>
+<p>통신을 하기 위한 한 명의 노드 클라이언트를 등록했다. turtlesim_node는 turtlesim 패키지에 포함된 visual 기능을 갖고 있는 노드이다.</p>
 
-<p>일단 설치하고 실행하면 다음과 같이 나오는 것을 확인 할 수 있다.</p>
+<p>따라서, 화면에 보이는 거북이를 움직이기 위해서는 명령 신호를 보내주는 노드를 또 등록해야 한다.</p>
 
-<p><img src="/assets/img/ros/qtcreator_ide.png" width="60%" height="60%" alt="image" /></p>
+<p><img src="/assets/img/ros/turtlesim_node.png" width="60%" height="60%" alt="image" /></p>
+
+<p><img src="/assets/img/ros/turtlesim_image.png" alt="image" /></p>
+
+<h5 id="3-turtlesim_node를-콘트롤하기-위한-turtle_teleop_key-노드-실행하기">3. turtlesim_node를 콘트롤하기 위한 turtle_teleop_key 노드 실행하기</h5>
+
+<pre><code>$ rosrun turtlesim turtle_teleop_key
+</code></pre>
+
+<p><img src="/assets/img/ros/turtle_teleop_key.png" width="60%" height="60%" alt="image" /></p>
+
+<p>이제 키보드의 방향키를 움직여 보자.</p>
+
+<p>회전방향을 정하는 좌우 방향키와 병진속도(병신 아님)를 결정하는 앞뒤 방향키로 거북이를 컨트롤 할 수 있게 된다.</p>
+
+<p><img src="/assets/img/ros/controlled_turtle.png" alt="image" /></p>
+
+<h5 id="4-rqt_graph">4. rqt_graph</h5>
+
+<p>현재 ROS 시스템에 맞물려 있는 노드들의 관계와 메세지의 종류 등을 한눈에 이미지로 확인하는 좋은 툴은 ROS에서 제공을 해주고 있다.</p>
+
+<p>처음 ROS를 접하면 다소 투박해 보이는 이미지 일 수 있으나, 추후 많은 노드들 간의 관계를 파악하는데 많이 활용하게 된다.</p>
+
+<pre><code>$ rqt_graph
+</code></pre>
+<p><img src="/assets/img/ros/rqt_graph.png" alt="image" /></p>
+
+<p>이제 ROS의 시스템을 대충 이해할 수 있는 상태가 됐을 것 같다. 물론 거북이 움직였다고 ROS를 이해할 수 없겠지만, 뭔가 창이 많이 뜨고, 서로 신호를 보내고 받는 노드들 사이에 프로그래밍이겠구나 라는 이해를 말하는 것이다.</p>
 
         
       </section>
@@ -402,15 +442,15 @@
     
       
       
-      <a href="/tags/#creator" class="page__taxonomy-item" rel="tag">creator</a><span class="sep">, </span>
+      <a href="/tags/#ros" class="page__taxonomy-item" rel="tag">ROS</a><span class="sep">, </span>
     
       
       
-      <a href="/tags/#qt" class="page__taxonomy-item" rel="tag">qt</a><span class="sep">, </span>
+      <a href="/tags/#test" class="page__taxonomy-item" rel="tag">test</a><span class="sep">, </span>
     
       
       
-      <a href="/tags/#ros" class="page__taxonomy-item" rel="tag">ROS</a>
+      <a href="/tags/#turtlesim" class="page__taxonomy-item" rel="tag">turtlesim</a>
     
     </span>
   </p>
@@ -438,7 +478,7 @@
 
 
         
-          <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> 업데이트:</strong> <time datetime="2019-12-06T23:12:13+09:00">December 06, 2019</time></p>
+          <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> 업데이트:</strong> <time datetime="2019-12-07T05:50:13+09:00">December 07, 2019</time></p>
         
       </footer>
 
@@ -447,51 +487,27 @@
     <h4 class="page__share-title">공유하기</h4>
   
 
-  <a href="https://twitter.com/intent/tweet?text=04.ROS%EB%A5%BC+GUI+%EA%B8%B0%EB%B0%98+IDE+%ED%88%B4+qt+creator+%EC%84%A4%EC%B9%98%28%EC%9A%B0%EB%B6%84%ED%88%AC+16.04+Kinetic+Kame%29%20lsirikh.github.io%2Fcategories%2FROS%2F4%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+  <a href="https://twitter.com/intent/tweet?text=03.ROS%EB%A5%BC+%ED%85%8C%EC%8A%A4%ED%8A%B8+%ED%84%B0%ED%8B%80%EB%B4%87+%EC%9B%80%EC%A7%81%EC%9D%B4%EA%B8%B0%28%EC%9A%B0%EB%B6%84%ED%88%AC+16.04+Kinetic+Kame%29%20http%3A%2F%2Flocalhost%3A4000%2Fcategories%2Fros%2FROS-03-ros-roscore-test.html" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
 
-  <a href="https://www.facebook.com/sharer/sharer.php?u=lsirikh.github.io%2Fcategories%2FROS%2F4%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2Fcategories%2Fros%2FROS-03-ros-roscore-test.html" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
 
-  <a href="https://www.linkedin.com/shareArticle?mini=true&url=lsirikh.github.io%2Fcategories%2FROS%2F4%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flocalhost%3A4000%2Fcategories%2Fros%2FROS-03-ros-roscore-test.html" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
 </section>
 
 
       
   <nav class="pagination">
     
-      <a href="/categories/ROS/3/" class="pagination--pager" title="03.ROS를 테스트 터틀봇 움직이기(우분투 16.04 Kinetic Kame)
+      <a href="/categories/git/GIT-01-introduction.html" class="pagination--pager" title="01.GIT이란 무엇인가?
 ">이전</a>
     
     
-      <a href="/categories/GIT/2/" class="pagination--pager" title="02.GIT 초기 설정하기
+      <a href="/categories/ros/ROS-04-ros-roscore-qt-creator.html" class="pagination--pager" title="04.ROS를 GUI 기반 IDE 툴 qt creator 설치(우분투 16.04 Kinetic Kame)
 ">다음</a>
     
   </nav>
 
     </div>
-
-    
-      
-lsirikh-github-io
-<div id="disqus_thread"></div>
-<script>
-
-/**
-*  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
-*  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
-/*
-var disqus_config = function () {
-this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
-this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
-};
-*/
-(function() { // DON'T EDIT BELOW THIS LINE
-var d = document, s = d.createElement('script');
-s.src = 'https://lsirikh.disqus.com/embed.js';
-s.setAttribute('data-timestamp', +new Date());
-(d.head || d.body).appendChild(s);
-})();
-</script>
-<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 
     
   </article>
@@ -511,7 +527,7 @@ s.setAttribute('data-timestamp', +new Date());
     
     <h2 class="archive__item-title" itemprop="headline">
       
-        <a href="/categories/C++/2/" rel="permalink">02.C++ IDE Eclipse 설치하기
+        <a href="/categories/c++/CPP-02-install-eclipse.html" rel="permalink">02.C++ IDE Eclipse 설치하기
 </a>
       
     </h2>
@@ -526,6 +542,7 @@ s.setAttribute('data-timestamp', +new Date());
 </p>
     
     <p class="archive__item-excerpt" itemprop="description">Eclipse IDE for C/C++ Developers
+
 </p>
   </article>
 </div>
@@ -540,7 +557,7 @@ s.setAttribute('data-timestamp', +new Date());
     
     <h2 class="archive__item-title" itemprop="headline">
       
-        <a href="/categories/C++/1/" rel="permalink">01.CPP 학습에 앞서 CPP란 어떤 프로그램 언어일까?
+        <a href="/categories/c++/CPP-01-introduction.html" rel="permalink">01.CPP 학습에 앞서 CPP란 어떤 프로그램 언어일까?
 </a>
       
     </h2>
@@ -555,6 +572,7 @@ s.setAttribute('data-timestamp', +new Date());
 </p>
     
     <p class="archive__item-excerpt" itemprop="description">CPP란 어떤 프로그램 언어일까?
+
 </p>
   </article>
 </div>
@@ -569,7 +587,7 @@ s.setAttribute('data-timestamp', +new Date());
     
     <h2 class="archive__item-title" itemprop="headline">
       
-        <a href="/categories/GIT/5/" rel="permalink">05.GIT 저장소 수정하기와 저장하기
+        <a href="/categories/git/GIT-05-modifying-and-saving-repository.html" rel="permalink">05.GIT 저장소 수정하기와 저장하기
 </a>
       
     </h2>
@@ -584,6 +602,7 @@ s.setAttribute('data-timestamp', +new Date());
 </p>
     
     <p class="archive__item-excerpt" itemprop="description">Git의 기초 - 수정하고 저장소에 저장하기
+
 </p>
   </article>
 </div>
@@ -598,7 +617,7 @@ s.setAttribute('data-timestamp', +new Date());
     
     <h2 class="archive__item-title" itemprop="headline">
       
-        <a href="/categories/GIT/4/" rel="permalink">04.GIT 저장소 만들기
+        <a href="/categories/git/GIT-04-creating-git-repository.html" rel="permalink">04.GIT 저장소 만들기
 </a>
       
     </h2>
@@ -613,6 +632,7 @@ s.setAttribute('data-timestamp', +new Date());
 </p>
     
     <p class="archive__item-excerpt" itemprop="description">Git의 기초 - Git 저장소 만들기
+
 </p>
   </article>
 </div>
@@ -692,8 +712,8 @@ s.setAttribute('data-timestamp', +new Date());
     
   <script>
     var disqus_config = function () {
-      this.page.url = "lsirikh.github.io/categories/ROS/4/";  // Replace PAGE_URL with your page's canonical URL variable
-      this.page.identifier = "/categories/ROS/ROS-04-ros-roscore-qt-creator"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+      this.page.url = "http://localhost:4000/categories/ros/ROS-03-ros-roscore-test.html";  // Replace PAGE_URL with your page's canonical URL variable
+      this.page.identifier = "/categories/ros/ROS-03-ros-roscore-test"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
     };
     (function() { // DON'T EDIT BELOW THIS LINE
       var d = document, s = d.createElement('script');

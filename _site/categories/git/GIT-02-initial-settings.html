@@ -20,18 +20,20 @@
 <meta property="og:locale" content="ko_KR">
 <meta property="og:site_name" content="로봇 제작을 위한 지식공간">
 <meta property="og:title" content="02.GIT 초기 설정하기">
-<meta property="og:url" content="lsirikh.github.io/categories/GIT/2/">
+<meta property="og:url" content="http://localhost:4000/categories/git/GIT-02-initial-settings.html">
 
 
   <meta property="og:description" content="Git 시작하기 위한 설정하기">
 
 
 
+  <meta property="og:image" content="http://localhost:4000/assets/img/memaker.png">
 
 
 
 
-  <meta property="article:published_time" content="2019-12-07T23:17:13+09:00">
+
+  <meta property="article:published_time" content="2019-12-08T07:17:13+09:00">
 
 
 
@@ -42,7 +44,7 @@
   
 
 
-<link rel="canonical" href="lsirikh.github.io/categories/GIT/2/">
+<link rel="canonical" href="http://localhost:4000/categories/git/GIT-02-initial-settings.html">
 
 
 
@@ -53,7 +55,7 @@
     
       "@type": "Person",
       "name": "Kiho Lee",
-      "url": "lsirikh.github.io/"
+      "url": "http://localhost:4000/"
     
   }
 </script>
@@ -129,11 +131,15 @@
           
         </a>
         <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="/portfolio/" >Portfolio</a>
+            </li><li class="masthead__menu-item">
               <a href="/year-archive/" >Posts</a>
             </li><li class="masthead__menu-item">
               <a href="/categories/" >Categories</a>
             </li><li class="masthead__menu-item">
               <a href="/tags/" >Tags</a>
+            </li><li class="masthead__menu-item">
+              <a href="/collection-archive/" >Collections</a>
             </li></ul>
         
         <button class="search__toggle" type="button">
@@ -170,7 +176,7 @@
     
       
         <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-          <a href="lsirikh.github.io/" itemprop="item"><span itemprop="name">Home</span></a>
+          <a href="http://localhost:4000/" itemprop="item"><span itemprop="name">Home</span></a>
           <meta itemprop="position" content="1" />
         </li>
         <span class="sep">/</span>
@@ -246,6 +252,8 @@
 
       
         
+          
+            <li><a href="mailto:lsirikh@naver.com" rel="nofollow noopener noreferrer"><i class="fas fa-fw fa-envelope-square" aria-hidden="true"></i> lsirikh@naver.com</a></li>
           
         
           
@@ -326,7 +334,7 @@
   <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
     <meta itemprop="headline" content="02.GIT 초기 설정하기">
     <meta itemprop="description" content="Git 시작하기 위한 설정하기">
-    <meta itemprop="datePublished" content="December 07, 2019">
+    <meta itemprop="datePublished" content="December 08, 2019">
     
 
     <div class="page__inner-wrap">
@@ -400,9 +408,9 @@
 
 <p>Git을 설치하고 나서 가장 먼저 해야 하는 것은 사용자이름과 이메일 주소를 설정하는 것이다. Git은 커밋할 때마다 이 정보를 사용한다. 한 번 커밋한 후에는 정보를 변경할 수 없다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ git config --global user.name "lsirikh"
+<pre><code>$ git config --global user.name "lsirikh"
 $ git config --global user.email lsirikh@naver.com
-</code></pre></div></div>
+</code></pre>
 
 <p>다시 말하자면 <strong>–global</strong> 옵션으로 설정하는 것은 딱 한 번만 하면 된다. 해당 시스템에서 해당 사용자가 사용할 때는 이 정보를 사용한다. 만약 프로젝트마다 다른 이름과 이메일 주소를 사용하고 싶으면 <strong>–global</strong> 옵션을 빼고 명령을 실행한다.</p>
 
@@ -420,28 +428,28 @@ $ git config --global user.email lsirikh@naver.com
 
 <p><strong>꼭 이것을 쓰라는 얘기는 아니고 바꿀수 있는 참고로 활용</strong></p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ git config --global core.editor emacs
-</code></pre></div></div>
+<pre><code>$ git config --global core.editor emacs
+</code></pre>
 <p>Windows 사용자라면 다른 텍스트 편집기를 사용할 수 있다. 실행파일의 전체 경로를 설정해주면 된다. 실행파일의 전체 경로는 사용하는 편집기에 따라 다르다.</p>
 
 <p>Windows 환경에서 많이 사용되는 Notepad <strong>편집기의 경우 주로 32비트 버전을 사용하게 된다. 현재 기준으로 64비트 버전을 사용하면 동작하지 않는 플러그인이 많다. 32비트 Windows 시스템이거나, 64비트 Windows 시스템에서 64비트 Notepad</strong>을 설치했다면 다음과 같이 설정한다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ git config --global core.editor "'C:/Program Files/Notepad++/notepad++.exe' -multiInst -nosession"
-</code></pre></div></div>
-<p>64비트 Windows 시스템에서 32비트 Notepad++을 설치했다면 <code class="highlighter-rouge">C:\Program Files (x86)</code>에 설치된다.</p>
+<pre><code>$ git config --global core.editor "'C:/Program Files/Notepad++/notepad++.exe' -multiInst -nosession"
+</code></pre>
+<p>64비트 Windows 시스템에서 32비트 Notepad++을 설치했다면 <code>C:\Program Files (x86)</code>에 설치된다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ git config --global core.editor "'C:/Program Files (x86)/Notepad++/notepad++.exe' -multiInst -nosession"
-</code></pre></div></div>
+<pre><code>$ git config --global core.editor "'C:/Program Files (x86)/Notepad++/notepad++.exe' -multiInst -nosession"
+</code></pre>
 <p><br /></p>
 
 <table>
   <tbody>
     <tr>
-      <td><code class="highlighter-rouge">Note</code></td>
+      <td><code>Note</code></td>
       <td>Vim과 Emacs, Notepad++은 꽤 인기 있는 편집기로 개발자들이 즐겨 사용한다. Mac이나 Linux 같은 Unix 시스템, Windows 시스템에서 사용 가능하다. 여기서 소개하는 편집기들이 불편해서 다른 편집기를 사용하고자 한다면 해당 편집기를 Git 편집기로 설정하는 방법을 찾아봐야 한다.</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">Warning</code></td>
+      <td><code>Warning</code></td>
       <td>자신의 편집기를 설정하지 않으면 갑자기 실행된 편집기에 당황할 수 있다. 그땐 당황하지 말고 편집기를 그냥 종료하면 Git 명령을 취소할 수 있다.</td>
     </tr>
   </tbody>
@@ -455,7 +463,7 @@ $ git config --global user.email lsirikh@naver.com
 
 <p><strong>git config –list</strong> 명령을 실행하면 설정한 모든 것을 보여주어 바로 확인할 수 있다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ git config --list
+<pre><code>$ git config --list
 user.name=John Doe
 user.email=johndoe@example.com
 color.status=auto
@@ -463,28 +471,28 @@ color.branch=auto
 color.interactive=auto
 color.diff=auto
 ...
-</code></pre></div></div>
+</code></pre>
 
 <p>Git은 같은 키를 여러 파일(<strong>/etc/gitconfig</strong> 와 <strong>~/.gitconfig</strong> 같은)에서 읽기 때문에 같은 키가 여러 개 있을 수도 있다. 그러면 Git은 나중 값을 사용한다.</p>
 
 <p><strong>git config &lt;key&gt;</strong> 명령으로 Git이 특정 Key에 대해 어떤 값을 사용하는지 확인할 수 있다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ git config user.name
+<pre><code>$ git config user.name
 lsirikh
-</code></pre></div></div>
+</code></pre>
 
 <table>
   <tbody>
     <tr>
-      <td><code class="highlighter-rouge">Note</code></td>
+      <td><code>Note</code></td>
       <td>Git이 설정된 값을 읽을 때 여러 파일에서 동일한 키에 대해 다른 값을 설정하고 있을 수 있다. 값이 기대한 값과 다를 수 있는데 값만 보고 쉽게 그 원인을 찾을 수 없다. 이 때 키에 설정된 값이 어디에서 설정되었는지 확인할 수 있는데 다음과 같은 명령으로 어떤 파일로부터 설정된 값인지를 확인할 수 있다.</td>
     </tr>
   </tbody>
 </table>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ git config --show-origin rerere.autoUpdate
+<pre><code>$ git config --show-origin rerere.autoUpdate
 file:/home/lsirikh/.gitconfig	false
-</code></pre></div></div>
+</code></pre>
 <p>[출처]https://git-scm.com/book/ko/v2/%EC%8B%9C%EC%9E%91%ED%95%98%EA%B8%B0-Git-%EC%B5%9C%EC%B4%88-%EC%84%A4%EC%A0%95</p>
 
         
@@ -550,7 +558,7 @@ file:/home/lsirikh/.gitconfig	false
 
 
         
-          <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> 업데이트:</strong> <time datetime="2019-12-07T23:17:13+09:00">December 07, 2019</time></p>
+          <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> 업데이트:</strong> <time datetime="2019-12-08T07:17:13+09:00">December 08, 2019</time></p>
         
       </footer>
 
@@ -559,51 +567,27 @@ file:/home/lsirikh/.gitconfig	false
     <h4 class="page__share-title">공유하기</h4>
   
 
-  <a href="https://twitter.com/intent/tweet?text=02.GIT+%EC%B4%88%EA%B8%B0+%EC%84%A4%EC%A0%95%ED%95%98%EA%B8%B0%20lsirikh.github.io%2Fcategories%2FGIT%2F2%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+  <a href="https://twitter.com/intent/tweet?text=02.GIT+%EC%B4%88%EA%B8%B0+%EC%84%A4%EC%A0%95%ED%95%98%EA%B8%B0%20http%3A%2F%2Flocalhost%3A4000%2Fcategories%2Fgit%2FGIT-02-initial-settings.html" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
 
-  <a href="https://www.facebook.com/sharer/sharer.php?u=lsirikh.github.io%2Fcategories%2FGIT%2F2%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2Fcategories%2Fgit%2FGIT-02-initial-settings.html" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
 
-  <a href="https://www.linkedin.com/shareArticle?mini=true&url=lsirikh.github.io%2Fcategories%2FGIT%2F2%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flocalhost%3A4000%2Fcategories%2Fgit%2FGIT-02-initial-settings.html" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
 </section>
 
 
       
   <nav class="pagination">
     
-      <a href="/categories/ROS/4/" class="pagination--pager" title="04.ROS를 GUI 기반 IDE 툴 qt creator 설치(우분투 16.04 Kinetic Kame)
+      <a href="/categories/ros/ROS-04-ros-roscore-qt-creator.html" class="pagination--pager" title="04.ROS를 GUI 기반 IDE 툴 qt creator 설치(우분투 16.04 Kinetic Kame)
 ">이전</a>
     
     
-      <a href="/categories/GIT/3/" class="pagination--pager" title="03.GIT 시작하기에 앞서 알면 좋은 것(도움말 보기)
+      <a href="/categories/git/GIT-03-how-to-use-help.html" class="pagination--pager" title="03.GIT 시작하기에 앞서 알면 좋은 것(도움말 보기)
 ">다음</a>
     
   </nav>
 
     </div>
-
-    
-      
-lsirikh-github-io
-<div id="disqus_thread"></div>
-<script>
-
-/**
-*  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
-*  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
-/*
-var disqus_config = function () {
-this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
-this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
-};
-*/
-(function() { // DON'T EDIT BELOW THIS LINE
-var d = document, s = d.createElement('script');
-s.src = 'https://lsirikh.disqus.com/embed.js';
-s.setAttribute('data-timestamp', +new Date());
-(d.head || d.body).appendChild(s);
-})();
-</script>
-<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 
     
   </article>
@@ -623,7 +607,7 @@ s.setAttribute('data-timestamp', +new Date());
     
     <h2 class="archive__item-title" itemprop="headline">
       
-        <a href="/categories/C++/2/" rel="permalink">02.C++ IDE Eclipse 설치하기
+        <a href="/categories/c++/CPP-02-install-eclipse.html" rel="permalink">02.C++ IDE Eclipse 설치하기
 </a>
       
     </h2>
@@ -638,6 +622,7 @@ s.setAttribute('data-timestamp', +new Date());
 </p>
     
     <p class="archive__item-excerpt" itemprop="description">Eclipse IDE for C/C++ Developers
+
 </p>
   </article>
 </div>
@@ -652,7 +637,7 @@ s.setAttribute('data-timestamp', +new Date());
     
     <h2 class="archive__item-title" itemprop="headline">
       
-        <a href="/categories/C++/1/" rel="permalink">01.CPP 학습에 앞서 CPP란 어떤 프로그램 언어일까?
+        <a href="/categories/c++/CPP-01-introduction.html" rel="permalink">01.CPP 학습에 앞서 CPP란 어떤 프로그램 언어일까?
 </a>
       
     </h2>
@@ -667,6 +652,7 @@ s.setAttribute('data-timestamp', +new Date());
 </p>
     
     <p class="archive__item-excerpt" itemprop="description">CPP란 어떤 프로그램 언어일까?
+
 </p>
   </article>
 </div>
@@ -681,7 +667,7 @@ s.setAttribute('data-timestamp', +new Date());
     
     <h2 class="archive__item-title" itemprop="headline">
       
-        <a href="/categories/GIT/5/" rel="permalink">05.GIT 저장소 수정하기와 저장하기
+        <a href="/categories/git/GIT-05-modifying-and-saving-repository.html" rel="permalink">05.GIT 저장소 수정하기와 저장하기
 </a>
       
     </h2>
@@ -696,6 +682,7 @@ s.setAttribute('data-timestamp', +new Date());
 </p>
     
     <p class="archive__item-excerpt" itemprop="description">Git의 기초 - 수정하고 저장소에 저장하기
+
 </p>
   </article>
 </div>
@@ -710,7 +697,7 @@ s.setAttribute('data-timestamp', +new Date());
     
     <h2 class="archive__item-title" itemprop="headline">
       
-        <a href="/categories/GIT/4/" rel="permalink">04.GIT 저장소 만들기
+        <a href="/categories/git/GIT-04-creating-git-repository.html" rel="permalink">04.GIT 저장소 만들기
 </a>
       
     </h2>
@@ -725,6 +712,7 @@ s.setAttribute('data-timestamp', +new Date());
 </p>
     
     <p class="archive__item-excerpt" itemprop="description">Git의 기초 - Git 저장소 만들기
+
 </p>
   </article>
 </div>
@@ -804,8 +792,8 @@ s.setAttribute('data-timestamp', +new Date());
     
   <script>
     var disqus_config = function () {
-      this.page.url = "lsirikh.github.io/categories/GIT/2/";  // Replace PAGE_URL with your page's canonical URL variable
-      this.page.identifier = "/categories/GIT/GIT-02-initial-settings"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+      this.page.url = "http://localhost:4000/categories/git/GIT-02-initial-settings.html";  // Replace PAGE_URL with your page's canonical URL variable
+      this.page.identifier = "/categories/git/GIT-02-initial-settings"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
     };
     (function() { // DON'T EDIT BELOW THIS LINE
       var d = document, s = d.createElement('script');

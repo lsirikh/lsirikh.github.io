@@ -1,8 +1,8 @@
 ---
 layout: single
 title:  "03.ROS를 테스트 터틀봇 움직이기(우분투 16.04 Kinetic Kame)"
-date:   2019-12-06 20:50:13 +0800
-permalink: /categories/ROS/3/
+date:   2019-12-06 20:50:13 
+permalink: /categories/:categories/:title:output_ext
 taxonomy: {title}
 categories: ROS
 tags: ROS turtlesim test

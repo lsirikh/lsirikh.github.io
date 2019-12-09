@@ -1,5 +1,7 @@
 # main links
 main:
+  - title: "Portfolio"
+    url: /portfolio/
   - title: "Posts"
     url: /year-archive/
   - title: "Categories"
@@ -8,7 +10,7 @@ main:
     url: /tags/
   # - title: "Pages"
   #   url: /page-archive/
-  # - title: "Collections"
-  #   url: /collection-archive/
+  - title: "Collections"
+    url: /collection-archive/
   # - title: "Sitemap"
   #   url: /sitemap/
