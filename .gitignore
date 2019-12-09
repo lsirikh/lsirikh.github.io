@@ -1,6 +1,8 @@
 ### Jekyll ###
 #_site
-.sass-cache
-.jekyll-cache/
-.jekyll-metadata
-Gemfile.lock
+#.sass-cache
+#.jekyll-cache/
+#.jekyll-metadata
+#Gemfile.lock
+minimal-mistakes-jekyll.gemspec
+
