@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.0.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2019-12-12T06:21:25+00:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">로봇을 배우기 위한 지식 창고</title><subtitle>로봇을 배우기 위한 지식 창고</subtitle><author><name>Kiho Lee</name></author><entry><title type="html">06.GIT 파일 트랙킹 중지 및 재시작</title><link href="http://localhost:4000/categories/git/GIT-06-git-tracking-abort.html" rel="alternate" type="text/html" title="06.GIT 파일 트랙킹 중지 및 재시작" /><published>2019-12-12T00:00:00+00:00</published><updated>2019-12-12T00:00:00+00:00</updated><id>http://localhost:4000/categories/git/GIT-06-git-tracking-abort</id><content type="html" xml:base="http://localhost:4000/categories/git/GIT-06-git-tracking-abort.html">&lt;h2 id=&quot;1-들어가며&quot;&gt;1. 들어가며&lt;/h2&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.0.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2019-12-12T07:36:19+00:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">로봇을 배우기 위한 지식 창고</title><subtitle>로봇을 배우기 위한 지식 창고</subtitle><author><name>Kiho Lee</name></author><entry><title type="html">06.GIT 파일 트랙킹 중지 및 재시작</title><link href="http://localhost:4000/categories/git/GIT-06-git-tracking-abort.html" rel="alternate" type="text/html" title="06.GIT 파일 트랙킹 중지 및 재시작" /><published>2019-12-12T00:00:00+00:00</published><updated>2019-12-12T00:00:00+00:00</updated><id>http://localhost:4000/categories/git/GIT-06-git-tracking-abort</id><content type="html" xml:base="http://localhost:4000/categories/git/GIT-06-git-tracking-abort.html">&lt;h2 id=&quot;1-들어가며&quot;&gt;1. 들어가며&lt;/h2&gt;
 
 &lt;p&gt;git을 쓰면서 트랙킹되고 있는 파일 즉, git의 인덱스에 등록된 파일을 &lt;strong&gt;.gitignore&lt;/strong&gt;로 등록해도 작동이 안되는 경우가 있다. 사실 gitignore와 다른 개념이기 때문에 이 명령어가 작동 안되는 것이다.&lt;/p&gt;
 
@@ -28,7 +28,7 @@
 &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ touch .gitignore
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;파일이 이미 체크인되어 있고 무시하려는 경우 나중에 규칙을 추가해도 Git 은 파일을 무시하지 않는다. 이 경우 터미널에서 다음 명령을 실행하여 파일을 먼저 추적 해제해야합니다.&lt;/p&gt;
+&lt;p&gt;파일이 이미 체크인되어 있고 무시하려는 경우 나중에 규칙을 추가해도 Git 은 파일을 무시하지 않는다. 이 경우 터미널에서 다음 명령을 실행하여 파일을 먼저 추적 해제해야 한다.&lt;/p&gt;
 
 &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ git rm --cached FILENAME
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
@@ -79,6 +79,9 @@
 &lt;p&gt;로봇은 매우 복잡한 센서와 모듈들이 통합되어 있어서, 통신을 지속적으로 연결하고 있으면 리소스의 낭비가 심각해질 수 있지만, 이러한 통신 방식은 자원을 효율적으로 활용할 수 있도록 돕니다. 게다가 XMLRPC는 매우 가볍고, 다양한 프로그래밍 언어를 지원하기 때문에 여러 종류의 하드웨어와 언어를 지원해야 하는 ROS에 매우 적합하다고 볼 수 있다.&lt;/p&gt;
 
 &lt;p&gt;설정시 유의해야 할 점은 ROS를 구동하면서 마스터는 사용자가 정해 놓은 ROS_MASTER_URI 변수에 기재된 URI 주소와 포트를 가진다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/ros/ros_communication3.jpeg&quot; title=&quot;ROS 통신 개념&quot; /&gt;
+출처:&lt;a href=&quot;https://robertchoi.gitbook.io/ros/untitled-2&quot;&gt;ROS 하루에 입문하기&lt;/a&gt;&lt;/p&gt;
 
 &lt;h2 id=&quot;3-노드&quot;&gt;3. 노드&lt;/h2&gt;
 
@@ -244,6 +247,9 @@ ROS의 응용프로그램은 패키지 단위로 개발되며 패키지는 최�
 
 &lt;p&gt;만약 특별한 설정이 없으면, localhost를 활용하게 되고, 포트번호는 11311을 활용하게 된다.&lt;/p&gt;
 
+&lt;p&gt;&lt;img src=&quot;/assets/img/ros/ros_communication2.jpeg&quot; title=&quot;ROS 통신 개념&quot; /&gt;
+출처:&lt;a href=&quot;https://robertchoi.gitbook.io/ros/untitled-2&quot;&gt;ROS 하루에 입문하기&lt;/a&gt;&lt;/p&gt;
+
 &lt;h2 id=&quot;20-rosrun&quot;&gt;20. rosrun&lt;/h2&gt;
 
 &lt;p&gt;rosrun은 ROS의 기본 실행 명령어이다. 패키지에서 하나의 노드를 실행할 때 사용하게 된다. 
@@ -294,11 +300,63 @@ roslaunch는 여러 노드를 실행하는 개념이라고 볼 수 있다.&lt;/p
 
 &lt;p&gt;노드, 파라미터, 토픽, 서비스, 액션 등 모두 네임(name)을 갖고 있고, 이를 활용하게 된다. 각 네임은 ROS 마스터에 등록하고, 통신을 할 때 이름을 기반으로 검색하거나 메시지를 전송하게 된다.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/assets/img/ros/ros_communication2.jpeg&quot; title=&quot;ROS 통신 개념&quot; /&gt;
-출처:&lt;a href=&quot;https://robertchoi.gitbook.io/ros/untitled-2&quot;&gt;ROS 하루에 입문하기&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&quot;27-클라이언트-라이브러리&quot;&gt;27. 클라이언트 라이브러리&lt;/h2&gt;
 
-&lt;p&gt;&lt;img src=&quot;/assets/img/ros/ros_communication3.jpeg&quot; title=&quot;ROS 통신 개념&quot; /&gt;
-출처:&lt;a href=&quot;https://robertchoi.gitbook.io/ros/untitled-2&quot;&gt;ROS 하루에 입문하기&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;ROS는 개발 언어의 의존성을 줄이기 위한 방법으로 클라이언트 라이브러리(client library)로 각종 언어의 개발환경을 제공하고 있다.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;C++&lt;/strong&gt; - roscpp&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Python&lt;/strong&gt; - rospy&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Lips&lt;/strong&gt; - roslips&lt;/li&gt;
+  &lt;li&gt;Java - rosjava&lt;/li&gt;
+  &lt;li&gt;Lua - roslua&lt;/li&gt;
+  &lt;li&gt;.NET - roscs&lt;/li&gt;
+  &lt;li&gt;EusLisp - roseus&lt;/li&gt;
+  &lt;li&gt;R - rosR&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;28-uri&quot;&gt;28. URI&lt;/h2&gt;
+
+&lt;p&gt;URI(Uniform Resource Identifier, 통합 자원 식별자)는 인터넷에 있는 자원을 나타내는 유일한 주소이다.&lt;/p&gt;
+
+&lt;h2 id=&quot;29-md5&quot;&gt;29. MD5&lt;/h2&gt;
+
+&lt;p&gt;MD5(Message-Digest algorithm 5)는 128bit 암호화 해시 함수이다. 주로 프로그램이나 파일이 송신된 원본과 같은지 무결성을 검사하기 위해서 활용된다.&lt;/p&gt;
+
+&lt;h2 id=&quot;30-rpc&quot;&gt;30. RPC&lt;/h2&gt;
+
+&lt;p&gt;RPC(Remote Procedure Call)란 &lt;strong&gt;원격 컴퓨터의 프로그램이 다른 컴퓨터에 있는 서브 프로그램(Procedure)을 불러내는(Call) 것&lt;/strong&gt;을 의미한다. TCP/IP, IPX 등의 전송 프로토콜 기술을 활용한다.&lt;/p&gt;
+
+&lt;h2 id=&quot;31-xml&quot;&gt;31. XML&lt;/h2&gt;
+
+&lt;p&gt;XML(Extensible Markup Language)은 W3C에서 다른 특수 목적의 마크텁 언어를 만드는 용도로 권장하는 다목적 마크업 언어(markup language)이다.
+ROS에서 *.launch, *.urdf, package.xml 등 다양한 부분에서 사용되고 있다.&lt;/p&gt;
+
+&lt;h2 id=&quot;32-xmlrpc&quot;&gt;32. XMLRPC&lt;/h2&gt;
+
+&lt;p&gt;XMLRPC(XML-Remote Procedure Call)는 RPC 프로토콜의 일종으로, 인코딩 형식에서는 XML을 채택하고, 전송방식은 접속상태를 유지하지 않고 점검하지 않는 요청과 응답 방식의 HTTP 프로토콜을 사용한다.&lt;/p&gt;
+
+&lt;h2 id=&quot;33-tcpip&quot;&gt;33. TCP/IP&lt;/h2&gt;
+
+&lt;p&gt;TCP(Transmission Control Protocol)는 전송 제어 프로토콜이다.
+인터넷 프로토콜 계층으로 보면 IP(Internet Protocol)를 기반으로 전송 제어 프로토콜인 TCP를 사용하여 데이터의 전달을 보증하고 보낸 순서대로 송수신한다.&lt;/p&gt;
+
+&lt;p&gt;TCPROS 메시지 및 서비스에서 사용되는 TCP/IP 기반의 메시지 방식을 TCPROS라고 하고 UDPROS는 UDP기반이다.&lt;/p&gt;
+
+&lt;h2 id=&quot;34-cmakeliststxt&quot;&gt;34. CMakeLists.txt&lt;/h2&gt;
+
+&lt;p&gt;ROS의 빌드 시스템인 Catkin은 기본적으로 CMake를 이용하고 있고, CMakeLists.txt는 빌드를 할 데이터의 빌드 환경을 기술하고 있다.&lt;/p&gt;
+
+&lt;h2 id=&quot;35-packagexml&quot;&gt;35. package.xml&lt;/h2&gt;
+
+&lt;p&gt;패키지의 정보를 담은 XML 파일로 패키지의 이름, 저작권, 라이선스, 의존성 패키지 등을 기술하고 있다.&lt;/p&gt;
+
+&lt;p&gt;출처:[ROS 로봇프로그래밍 저)표윤석, 조한철, 정려운, 임태훈]&lt;/p&gt;
+
+&lt;h2 id=&quot;36-tftranform&quot;&gt;36. TF(Tranform)&lt;/h2&gt;
+
+&lt;p&gt;구동하는 로봇의 각 조인트(joint)들의 상대좌표 변환으로 물리적 이미지를 표현
+트리(tree) 형태로 조인트들 간의 관계도를 표시함&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;/assets/img/ros/ros_TF.jpeg&quot; title=&quot;TF 개념&quot; /&gt;
 출처:&lt;a href=&quot;https://robertchoi.gitbook.io/ros/untitled-2&quot;&gt;ROS 하루에 입문하기&lt;/a&gt;&lt;/p&gt;</content><author><name>Kiho Lee</name></author><category term="ROS" /><category term="words" /><category term="concept" /><summary type="html">1. ROS 란?</summary></entry><entry><title type="html">02.C++ IDE Eclipse 설치하기</title><link href="http://localhost:4000/categories/c++/CPP-02-install-eclipse.html" rel="alternate" type="text/html" title="02.C++ IDE Eclipse 설치하기" /><published>2019-12-08T22:17:13+00:00</published><updated>2019-12-08T22:17:13+00:00</updated><id>http://localhost:4000/categories/c++/CPP-02-install-eclipse</id><content type="html" xml:base="http://localhost:4000/categories/c++/CPP-02-install-eclipse.html">&lt;p&gt;&lt;br /&gt;&lt;/p&gt;

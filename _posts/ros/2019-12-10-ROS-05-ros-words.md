@@ -35,6 +35,10 @@ roscore
 
 설정시 유의해야 할 점은 ROS를 구동하면서 마스터는 사용자가 정해 놓은 ROS_MASTER_URI 변수에 기재된 URI 주소와 포트를 가진다.
 
+
+<img src="/assets/img/ros/ros_communication3.jpeg" title="ROS 통신 개념">
+출처:[ROS 하루에 입문하기](https://robertchoi.gitbook.io/ros/untitled-2)
+
 ## 3. 노드
 
 노드(node)는 ROS에서 실행되는 최소 단위의 프로세서를 지칭한다. 즉, 최소 단위의 실행 가능한 프로그램으로 반드시 roscore가 등록된 이후에 실행을 시켜야 한다.
@@ -180,6 +184,10 @@ export ROS_MASTER_URI=http://{ROS_HOSTNAME}:11311
 
 만약 특별한 설정이 없으면, localhost를 활용하게 되고, 포트번호는 11311을 활용하게 된다.
 
+
+<img src="/assets/img/ros/ros_communication2.jpeg" title="ROS 통신 개념">
+출처:[ROS 하루에 입문하기](https://robertchoi.gitbook.io/ros/untitled-2)
+
 ## 20. rosrun
 
 rosrun은 ROS의 기본 실행 명령어이다. 패키지에서 하나의 노드를 실행할 때 사용하게 된다. 
@@ -230,23 +238,62 @@ ROS에서 실행한 다양한 노드와 통신 관계(토픽, 서비스, 액션)
 노드, 파라미터, 토픽, 서비스, 액션 등 모두 네임(name)을 갖고 있고, 이를 활용하게 된다. 각 네임은 ROS 마스터에 등록하고, 통신을 할 때 이름을 기반으로 검색하거나 메시지를 전송하게 된다.
 
 
+## 27. 클라이언트 라이브러리
+
+ROS는 개발 언어의 의존성을 줄이기 위한 방법으로 클라이언트 라이브러리(client library)로 각종 언어의 개발환경을 제공하고 있다.
+
+* **C++** - roscpp
+* **Python** - rospy
+* **Lips** - roslips
+* Java - rosjava
+* Lua - roslua
+* .NET - roscs
+* EusLisp - roseus
+* R - rosR
+
+## 28. URI
+
+URI(Uniform Resource Identifier, 통합 자원 식별자)는 인터넷에 있는 자원을 나타내는 유일한 주소이다.
+
+## 29. MD5
+
+MD5(Message-Digest algorithm 5)는 128bit 암호화 해시 함수이다. 주로 프로그램이나 파일이 송신된 원본과 같은지 무결성을 검사하기 위해서 활용된다.
+
+## 30. RPC
+
+RPC(Remote Procedure Call)란 **원격 컴퓨터의 프로그램이 다른 컴퓨터에 있는 서브 프로그램(Procedure)을 불러내는(Call) 것**을 의미한다. TCP/IP, IPX 등의 전송 프로토콜 기술을 활용한다.
+
+## 31. XML
+
+XML(Extensible Markup Language)은 W3C에서 다른 특수 목적의 마크텁 언어를 만드는 용도로 권장하는 다목적 마크업 언어(markup language)이다.
+ROS에서 *.launch, *.urdf, package.xml 등 다양한 부분에서 사용되고 있다.
+
+## 32. XMLRPC
+
+XMLRPC(XML-Remote Procedure Call)는 RPC 프로토콜의 일종으로, 인코딩 형식에서는 XML을 채택하고, 전송방식은 접속상태를 유지하지 않고 점검하지 않는 요청과 응답 방식의 HTTP 프로토콜을 사용한다. 
+
+## 33. TCP/IP
+
+TCP(Transmission Control Protocol)는 전송 제어 프로토콜이다.
+인터넷 프로토콜 계층으로 보면 IP(Internet Protocol)를 기반으로 전송 제어 프로토콜인 TCP를 사용하여 데이터의 전달을 보증하고 보낸 순서대로 송수신한다.
+
+TCPROS 메시지 및 서비스에서 사용되는 TCP/IP 기반의 메시지 방식을 TCPROS라고 하고 UDPROS는 UDP기반이다.
+
+## 34. CMakeLists.txt
+
+ROS의 빌드 시스템인 Catkin은 기본적으로 CMake를 이용하고 있고, CMakeLists.txt는 빌드를 할 데이터의 빌드 환경을 기술하고 있다.
+
+## 35. package.xml
+
+패키지의 정보를 담은 XML 파일로 패키지의 이름, 저작권, 라이선스, 의존성 패키지 등을 기술하고 있다.
+
+출처:[ROS 로봇프로그래밍 저)표윤석, 조한철, 정려운, 임태훈]
 
 
+## 36. TF(Tranform)
 
-
-
-<img src="/assets/img/ros/ros_communication2.jpeg" title="ROS 통신 개념">
-출처:[ROS 하루에 입문하기](https://robertchoi.gitbook.io/ros/untitled-2)
-
-
-
-
-<img src="/assets/img/ros/ros_communication3.jpeg" title="ROS 통신 개념">
-출처:[ROS 하루에 입문하기](https://robertchoi.gitbook.io/ros/untitled-2)
-
-
-
-
+구동하는 로봇의 각 조인트(joint)들의 상대좌표 변환으로 물리적 이미지를 표현
+트리(tree) 형태로 조인트들 간의 관계도를 표시함
 
 <img src="/assets/img/ros/ros_TF.jpeg" title="TF 개념">
 출처:[ROS 하루에 입문하기](https://robertchoi.gitbook.io/ros/untitled-2)
