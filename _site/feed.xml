@@ -1,4 +1,61 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.0.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2019-12-12T05:42:13+00:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">로봇을 배우기 위한 지식 창고</title><subtitle>로봇을 배우기 위한 지식 창고</subtitle><author><name>Kiho Lee</name></author><entry><title type="html">05.ROS 용어 정리 및 개념</title><link href="http://localhost:4000/categories/ros/ROS-05-ros-words.html" rel="alternate" type="text/html" title="05.ROS 용어 정리 및 개념" /><published>2019-12-10T00:00:00+00:00</published><updated>2019-12-10T00:00:00+00:00</updated><id>http://localhost:4000/categories/ros/ROS-05-ros-words</id><content type="html" xml:base="http://localhost:4000/categories/ros/ROS-05-ros-words.html">&lt;h2 id=&quot;1-ros-란&quot;&gt;1. ROS 란?&lt;/h2&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.0.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2019-12-12T06:21:25+00:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">로봇을 배우기 위한 지식 창고</title><subtitle>로봇을 배우기 위한 지식 창고</subtitle><author><name>Kiho Lee</name></author><entry><title type="html">06.GIT 파일 트랙킹 중지 및 재시작</title><link href="http://localhost:4000/categories/git/GIT-06-git-tracking-abort.html" rel="alternate" type="text/html" title="06.GIT 파일 트랙킹 중지 및 재시작" /><published>2019-12-12T00:00:00+00:00</published><updated>2019-12-12T00:00:00+00:00</updated><id>http://localhost:4000/categories/git/GIT-06-git-tracking-abort</id><content type="html" xml:base="http://localhost:4000/categories/git/GIT-06-git-tracking-abort.html">&lt;h2 id=&quot;1-들어가며&quot;&gt;1. 들어가며&lt;/h2&gt;
+
+&lt;p&gt;git을 쓰면서 트랙킹되고 있는 파일 즉, git의 인덱스에 등록된 파일을 &lt;strong&gt;.gitignore&lt;/strong&gt;로 등록해도 작동이 안되는 경우가 있다. 사실 gitignore와 다른 개념이기 때문에 이 명령어가 작동 안되는 것이다.&lt;/p&gt;
+
+&lt;p&gt;지금같은 경우는 &lt;code class=&quot;highlighter-rouge&quot;&gt;로컬에 파일은 있지만, 이 파일을 리모트로 올리지 않겠다(리모트는 있으면 삭제됨)&lt;/code&gt;가 아니라, &lt;code class=&quot;highlighter-rouge&quot;&gt;로컬의 파일과 리모트의 파일의 내용을 다르게 유지하고 싶은 경우&lt;/code&gt;에 해당한다.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;git add .
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;이렇게 쓰면, 기존에 해당 폴더에 있는 모든 파일과 하위 폴더 내용이 모두 git index에 등록이 된다.&lt;/p&gt;
+
+&lt;p&gt;그래서 우리는 .gitignore라는 파일을 활용하게 되는데, 이미 등록이 된 경우 인덱스에서 빠져나오지 않는다.&lt;/p&gt;
+
+&lt;h2 id=&quot;2-gitignore-만들기-참고&quot;&gt;2. .gitignore 만들기 (참고)&lt;/h2&gt;
+
+&lt;p&gt;이 경우는 사실 로컬 디렉토리에는 존재하는 파일이지만, 리모트(github)에는 올리고 싶지 않은 *.log파일이나 기타 파일들에 해당할 수 있다.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;로컬 &lt;strong&gt;.gitignore&lt;/strong&gt;를 만듭니다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;저장소에 &lt;strong&gt;.gitignore&lt;/strong&gt; 라는 파일을 생성하면 Git은 커밋하기 전에 파일을 사용하여 무시할 파일과 디렉토리를 결정한다.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;.gitignore&lt;/strong&gt;의 파일은 저장소로 &lt;strong&gt;git add&lt;/strong&gt;를 수행할 때, 추적하지 않고, &lt;strong&gt;git commit&lt;/strong&gt;을 통해 인덱싱 되지 않고, &lt;strong&gt;git push&lt;/strong&gt;를 통해 리모트 리포지토리에도 저장되지 않는다.&lt;/p&gt;
+
+&lt;h3 id=&quot;1-터미널에서-git-저장소의-위치로-이동&quot;&gt;(1) 터미널에서 Git 저장소의 위치로 이동&lt;/h3&gt;
+&lt;h3 id=&quot;2-gitignore-파일-생성&quot;&gt;(2) .gitignore 파일 생성&lt;/h3&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ touch .gitignore
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;파일이 이미 체크인되어 있고 무시하려는 경우 나중에 규칙을 추가해도 Git 은 파일을 무시하지 않는다. 이 경우 터미널에서 다음 명령을 실행하여 파일을 먼저 추적 해제해야합니다.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ git rm --cached FILENAME
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;이렇게 하면 git index에서 파일이 삭제되고, 디스크 상에 파일은 존재한다. 이후  commit과 push를 하면, 리모트에 존재하는 파일도 사라지게 된다.&lt;/p&gt;
+
+&lt;p&gt;[출처]&lt;a href=&quot;https://help.github.com/en/github/using-git/ignoring-files&quot;&gt;GitHub Help&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;3-리모트-파일과-로컬-파일-다르게-유지하기&quot;&gt;3. 리모트 파일과 로컬 파일 다르게 유지하기&lt;/h2&gt;
+
+&lt;p&gt;작업을 하다보면, 서버로 올라가서 작동하는 파일이 개발자가 로컬에서 테스트하는 환경과 다르게 유지해야 되는 경우가 비일비재하다.
+그럴 경우, 로컬에서 파일을 테스트하고 올리기 전에 세팅파일을 변경해서 커밋하는 번거로움을 중단하고, git index에서 추적을 중단시켜 놓는 방법이 있다. 즉, git의 index에서 파일 트래킹을 중지 시키는 것이다.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;git update-index --assume-unchanged &amp;lt;file&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;만약 다시 트랙킹이 필요할 경우 아래 명령어로 트래킹 유지로 복구 시킬 수 있다.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;git update-index --no-assume-unchanged &amp;lt;file&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;만약 폴더 자체를 트래킹 중지를 하고자 하면,&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;git ls-files -z .settings | xargs -0 git update-index --assume-unchanged
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;[출처]&lt;a href=&quot;https://seotory.tistory.com/5&quot;&gt;seotory&lt;/a&gt;&lt;/p&gt;</content><author><name>Kiho Lee</name></author><category term="GIT" /><category term="트래킹중지" /><category term="트래킹재시작" /><summary type="html">1. 들어가며</summary></entry><entry><title type="html">05.ROS 용어 정리 및 개념</title><link href="http://localhost:4000/categories/ros/ROS-05-ros-words.html" rel="alternate" type="text/html" title="05.ROS 용어 정리 및 개념" /><published>2019-12-10T00:00:00+00:00</published><updated>2019-12-10T00:00:00+00:00</updated><id>http://localhost:4000/categories/ros/ROS-05-ros-words</id><content type="html" xml:base="http://localhost:4000/categories/ros/ROS-05-ros-words.html">&lt;h2 id=&quot;1-ros-란&quot;&gt;1. ROS 란?&lt;/h2&gt;
 
 &lt;p&gt;ROS는 로봇의 응용프로그램을 개발하기 위한 운영체제와 같은 로봇 소프트웨어 플랫폼이다. ROS는 로봇 응용프로그램을 개발할 때 필요한 하드웨어 추상화, 디바이스 제어, 센싱 및 인식, SLAM 등 다양한 기능을 라이브러리 형태로 제공하고 있으며, 디버깅 도구 및 시뮬레이션 도구를 제공하는 메타 OS이다.&lt;/p&gt;
 
@@ -1269,55 +1326,4 @@ file:/home/lsirikh/.gitconfig	false
 
 &lt;p&gt;일단 설치하고 실행하면 다음과 같이 나오는 것을 확인 할 수 있다.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/assets/img/ros/qtcreator_ide.png&quot; title=&quot;Qt 크리에이터 실행화면&quot; /&gt;&lt;/p&gt;</content><author><name>Kiho Lee</name></author><category term="ROS" /><category term="qt" /><category term="creator" /><summary type="html">1. Qt Creator란?</summary></entry><entry><title type="html">03.ROS를 테스트 터틀봇 움직이기(우분투 16.04 Kinetic Kame)</title><link href="http://localhost:4000/categories/ros/ROS-03-ros-roscore-test.html" rel="alternate" type="text/html" title="03.ROS를 테스트 터틀봇 움직이기(우분투 16.04 Kinetic Kame)" /><published>2019-12-06T20:50:13+00:00</published><updated>2019-12-06T20:50:13+00:00</updated><id>http://localhost:4000/categories/ros/ROS-03-ros-roscore-test</id><content type="html" xml:base="http://localhost:4000/categories/ros/ROS-03-ros-roscore-test.html">&lt;h2 id=&quot;1-ros-동작-테스트-해보기&quot;&gt;1. ROS 동작 테스트 해보기&lt;/h2&gt;
-
-&lt;p&gt;일단 ROS를 설치 했기 때문에 뭐라도 구동하여 ROS가 작동하는 원리를 보고 싶은 마음이 들 것이다. 나도 처음에 설치 했을 때, 로봇에 한 발자국 더 다가간 것 같았다.&lt;/p&gt;
-
-&lt;p&gt;일단 거북이라도 돌아다니는 걸 보고 싶다면 함께 해보는 것도 좋을 것 같다.&lt;/p&gt;
-
-&lt;h2 id=&quot;2-roscore-실행하기&quot;&gt;2. roscore 실행하기&lt;/h2&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ roscore
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;&lt;img src=&quot;/assets/img/ros/roscore_execution.png&quot; title=&quot;image&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;ROS는 기본적으로 CORE를 기반으로 작동하는 시스템이다. 따라서, Supervisor인 Core가 없으면 동작하지 않는다.&lt;/p&gt;
-
-&lt;h2 id=&quot;3-turtlesim-패키지의-turtlesim_node-실행하기&quot;&gt;3. turtlesim 패키지의 turtlesim_node 실행하기&lt;/h2&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ rosrun turtlesim turtlesim_node
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;ROS의 노드는 실행하기 위하여 rosrun이라는 커맨드를 활용한다.&lt;/p&gt;
-
-&lt;p&gt;통신을 하기 위한 한 명의 노드 클라이언트를 등록했다. turtlesim_node는 turtlesim 패키지에 포함된 visual 기능을 갖고 있는 노드이다.&lt;/p&gt;
-
-&lt;p&gt;따라서, 화면에 보이는 거북이를 움직이기 위해서는 명령 신호를 보내주는 노드를 또 등록해야 한다.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/img/ros/turtlesim_node.png&quot; title=&quot;image&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/img/ros/turtlesim_image.png&quot; title=&quot;image&quot; /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;4-turtlesim_node를-콘트롤하기-위한-turtle_teleop_key-노드-실행하기&quot;&gt;4. turtlesim_node를 콘트롤하기 위한 turtle_teleop_key 노드 실행하기&lt;/h2&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ rosrun turtlesim turtle_teleop_key
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/img/ros/turtle_teleop_key.png&quot; title=&quot;image&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;이제 키보드의 방향키를 움직여 보자.&lt;/p&gt;
-
-&lt;p&gt;회전방향을 정하는 좌우 방향키와 병진속도(병신 아님)를 결정하는 앞뒤 방향키로 거북이를 컨트롤 할 수 있게 된다.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/img/ros/controlled_turtle.png&quot; title=&quot;image&quot; /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;5-rqt_graph&quot;&gt;5. rqt_graph&lt;/h2&gt;
-
-&lt;p&gt;현재 ROS 시스템에 맞물려 있는 노드들의 관계와 메세지의 종류 등을 한눈에 이미지로 확인하는 좋은 툴은 ROS에서 제공을 해주고 있다.&lt;/p&gt;
-
-&lt;p&gt;처음 ROS를 접하면 다소 투박해 보이는 이미지 일 수 있으나, 추후 많은 노드들 간의 관계를 파악하는데 많이 활용하게 된다.&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ rqt_graph
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;&lt;img src=&quot;/assets/img/ros/rqt_graph.png&quot; title=&quot;image&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;이제 ROS의 시스템을 대충 이해할 수 있는 상태가 됐을 것 같다. 물론 거북이 움직였다고 ROS를 이해할 수 없겠지만, 뭔가 창이 많이 뜨고, 서로 신호를 보내고 받는 노드들 사이에 프로그래밍이겠구나 라는 이해를 말하는 것이다.&lt;/p&gt;</content><author><name>Kiho Lee</name></author><category term="ROS" /><category term="turtlesim" /><category term="test" /><summary type="html">1. ROS 동작 테스트 해보기</summary></entry></feed>
+&lt;p&gt;&lt;img src=&quot;/assets/img/ros/qtcreator_ide.png&quot; title=&quot;Qt 크리에이터 실행화면&quot; /&gt;&lt;/p&gt;</content><author><name>Kiho Lee</name></author><category term="ROS" /><category term="qt" /><category term="creator" /><summary type="html">1. Qt Creator란?</summary></entry></feed>
