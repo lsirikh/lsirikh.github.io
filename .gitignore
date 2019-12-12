@@ -4,7 +4,7 @@
 #.jekyll-cache/
 #.jekyll-metadata
 #Gemfile.lock
-_config.yml
-minimal-mistakes-jekyll.gemspec
-.editorconfig
+./_config.yml
+./minimal-mistakes-jekyll.gemspec
+./.editorconfig
 
