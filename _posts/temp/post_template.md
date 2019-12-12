@@ -30,6 +30,7 @@ you want an ordered list?
 1. whatever
 
 <img src="/assets/img/" width="40%" height="30%" alt="Kinetic Kame">
+<img src="/assets/img/" title="">
 
 
 ```
