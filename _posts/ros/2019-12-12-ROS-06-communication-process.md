@@ -1,6 +1,6 @@
 ---
 layout: single
-title:  "06.메시지 통신의 흐름"
+title:  "06.ROS 메시지 통신의 흐름"
 permalink: /categories/:categories/:title:output_ext
 taxonomy: {title}
 categories: ROS
