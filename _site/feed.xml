@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.0.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2019-12-13T14:39:00+00:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">로봇을 배우기 위한 지식 창고</title><subtitle>로봇을 배우기 위한 지식 창고</subtitle><author><name>Kiho Lee</name></author><entry><title type="html">07.ROS 메시지 더 알아보기</title><link href="http://localhost:4000/categories/ros/ROS-07-message.html" rel="alternate" type="text/html" title="07.ROS 메시지 더 알아보기" /><published>2019-12-13T00:00:00+00:00</published><updated>2019-12-13T00:00:00+00:00</updated><id>http://localhost:4000/categories/ros/ROS-07-message</id><content type="html" xml:base="http://localhost:4000/categories/ros/ROS-07-message.html">&lt;h2 id=&quot;1-메시지란&quot;&gt;1. 메시지란?&lt;/h2&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.0.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2019-12-13T14:53:08+00:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">로봇을 배우기 위한 지식 창고</title><subtitle>로봇을 배우기 위한 지식 창고</subtitle><author><name>Kiho Lee</name></author><entry><title type="html">07.ROS 메시지 더 알아보기</title><link href="http://localhost:4000/categories/ros/ROS-07-message.html" rel="alternate" type="text/html" title="07.ROS 메시지 더 알아보기" /><published>2019-12-13T00:00:00+00:00</published><updated>2019-12-13T00:00:00+00:00</updated><id>http://localhost:4000/categories/ros/ROS-07-message</id><content type="html" xml:base="http://localhost:4000/categories/ros/ROS-07-message.html">&lt;h2 id=&quot;1-메시지란&quot;&gt;1. 메시지란?&lt;/h2&gt;
 
 &lt;p&gt;메시지는 노드 간 데이터 교환에 사용되는 데이터 모음이다. 토픽, 서비스 및 액션에는 메시지를 사용하여 통신한다.&lt;/p&gt;
 
@@ -471,7 +471,25 @@ re-run the profile with --zombie-only
 
 &lt;p&gt;&lt;img src=&quot;/assets/img/ros/rqt_image_view_uvc_camera.png&quot; title=&quot;uvc_camera 화면&quot; /&gt;&lt;br /&gt;&lt;/p&gt;
 
-&lt;p&gt;색감조절이 필요할 듯하지만, 일단 화면이 나오는 것은 확인할 수 있다.&lt;/p&gt;</content><author><name>Kiho Lee</name></author><category term="ROS" /><category term="카메라" /><category term="uvc_camera" /><category term="웹캠" /><summary type="html">1. 카메라 확인</summary></entry><entry><title type="html">06.GIT 파일 트랙킹 중지 및 재시작</title><link href="http://localhost:4000/categories/git/GIT-06-git-tracking-abort.html" rel="alternate" type="text/html" title="06.GIT 파일 트랙킹 중지 및 재시작" /><published>2019-12-12T00:00:00+00:00</published><updated>2019-12-12T00:00:00+00:00</updated><id>http://localhost:4000/categories/git/GIT-06-git-tracking-abort</id><content type="html" xml:base="http://localhost:4000/categories/git/GIT-06-git-tracking-abort.html">&lt;h2 id=&quot;1-들어가며&quot;&gt;1. 들어가며&lt;/h2&gt;
+&lt;p&gt;색감조절이 필요할 듯하지만, 일단 화면이 나오는 것은 확인할 수 있다.&lt;/p&gt;
+
+&lt;h2 id=&quot;7-roscore와-rosrun-활용더-좋은-화면-제공&quot;&gt;7. roscore와 rosrun 활용(더 좋은 화면 제공)&lt;/h2&gt;
+
+&lt;p&gt;기존에 roslaunch를 활용하면 색감이 좀 나간 것 처럼 나오는 효과가 있어서, roscore를 활용해 보았다.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ roscore
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;그리고, 퍼블리셔 노드를 실행해줘야 한다.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ rosrun uvc_camera uvc_camera_node _device:=/dev/video0
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;이제 서브스크라이버 역할을 할 rqt_image_view 를 실행해보자&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ rqt_image_view
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/img/ros/rqt_image_uvc_camera2.png&quot; title=&quot;uvc_camera roscore rosrun 실행시&quot; /&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;당연히 rosrun과 rosluanch 상관없이 몇 가지 옵션을 손 보면 더 좋은 화면과 이미지가 제공될 수 있을 것이다.&lt;/p&gt;</content><author><name>Kiho Lee</name></author><category term="ROS" /><category term="카메라" /><category term="uvc_camera" /><category term="웹캠" /><summary type="html">1. 카메라 확인</summary></entry><entry><title type="html">06.GIT 파일 트랙킹 중지 및 재시작</title><link href="http://localhost:4000/categories/git/GIT-06-git-tracking-abort.html" rel="alternate" type="text/html" title="06.GIT 파일 트랙킹 중지 및 재시작" /><published>2019-12-12T00:00:00+00:00</published><updated>2019-12-12T00:00:00+00:00</updated><id>http://localhost:4000/categories/git/GIT-06-git-tracking-abort</id><content type="html" xml:base="http://localhost:4000/categories/git/GIT-06-git-tracking-abort.html">&lt;h2 id=&quot;1-들어가며&quot;&gt;1. 들어가며&lt;/h2&gt;
 
 &lt;p&gt;git을 쓰면서 트랙킹되고 있는 파일 즉, git의 인덱스에 등록된 파일을 &lt;strong&gt;.gitignore&lt;/strong&gt;로 등록해도 작동이 안되는 경우가 있다. 사실 gitignore와 다른 개념이기 때문에 이 명령어가 작동 안되는 것이다.&lt;/p&gt;
 

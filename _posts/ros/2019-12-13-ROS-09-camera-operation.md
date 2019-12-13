@@ -139,6 +139,31 @@ launch 파일이 저장된 위치로 열심히 이동을 한다.
 
 
 
+## 7. roscore와 rosrun 활용(더 좋은 화면 제공)
+
+기존에 roslaunch를 활용하면 색감이 좀 나간 것 처럼 나오는 효과가 있어서, roscore를 활용해 보았다.
+
+
+```
+$ roscore
+```
+그리고, 퍼블리셔 노드를 실행해줘야 한다.
+
+```
+$ rosrun uvc_camera uvc_camera_node _device:=/dev/video0
+```
+이제 서브스크라이버 역할을 할 rqt_image_view 를 실행해보자
+
+
+```
+$ rqt_image_view
+```
+<img src="/assets/img/ros/rqt_image_uvc_camera2.png"  title="uvc_camera roscore rosrun 실행시"><br>
+
+
+당연히 rosrun과 rosluanch 상관없이 몇 가지 옵션을 손 보면 더 좋은 화면과 이미지가 제공될 수 있을 것이다. 
+
+
 
 
 

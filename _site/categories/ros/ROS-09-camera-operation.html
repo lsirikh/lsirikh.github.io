@@ -357,6 +357,7 @@
   <li><a href="#4-launch-파일-편집하기">4. launch 파일 편집하기</a></li>
   <li><a href="#5-실행">5. 실행</a></li>
   <li><a href="#6-rqt_image_view-실행">6. rqt_image_view 실행</a></li>
+  <li><a href="#7-roscore와-rosrun-활용더-좋은-화면-제공">7. roscore와 rosrun 활용(더 좋은 화면 제공)</a></li>
 </ul>
             </nav>
           </aside>
@@ -471,6 +472,24 @@ re-run the profile with --zombie-only
 <p><img src="/assets/img/ros/rqt_image_view_uvc_camera.png" title="uvc_camera 화면" /><br /></p>
 
 <p>색감조절이 필요할 듯하지만, 일단 화면이 나오는 것은 확인할 수 있다.</p>
+
+<h2 id="7-roscore와-rosrun-활용더-좋은-화면-제공">7. roscore와 rosrun 활용(더 좋은 화면 제공)</h2>
+
+<p>기존에 roslaunch를 활용하면 색감이 좀 나간 것 처럼 나오는 효과가 있어서, roscore를 활용해 보았다.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ roscore
+</code></pre></div></div>
+<p>그리고, 퍼블리셔 노드를 실행해줘야 한다.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ rosrun uvc_camera uvc_camera_node _device:=/dev/video0
+</code></pre></div></div>
+<p>이제 서브스크라이버 역할을 할 rqt_image_view 를 실행해보자</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ rqt_image_view
+</code></pre></div></div>
+<p><img src="/assets/img/ros/rqt_image_uvc_camera2.png" title="uvc_camera roscore rosrun 실행시" /><br /></p>
+
+<p>당연히 rosrun과 rosluanch 상관없이 몇 가지 옵션을 손 보면 더 좋은 화면과 이미지가 제공될 수 있을 것이다.</p>
 
 
         
