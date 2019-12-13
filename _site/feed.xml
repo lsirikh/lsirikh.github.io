@@ -1,4 +1,252 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.0.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2019-12-13T07:34:52+00:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">로봇을 배우기 위한 지식 창고</title><subtitle>로봇을 배우기 위한 지식 창고</subtitle><author><name>Kiho Lee</name></author><entry><title type="html">06.GIT 파일 트랙킹 중지 및 재시작</title><link href="http://localhost:4000/categories/git/GIT-06-git-tracking-abort.html" rel="alternate" type="text/html" title="06.GIT 파일 트랙킹 중지 및 재시작" /><published>2019-12-12T00:00:00+00:00</published><updated>2019-12-12T00:00:00+00:00</updated><id>http://localhost:4000/categories/git/GIT-06-git-tracking-abort</id><content type="html" xml:base="http://localhost:4000/categories/git/GIT-06-git-tracking-abort.html">&lt;h2 id=&quot;1-들어가며&quot;&gt;1. 들어가며&lt;/h2&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.0.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2019-12-13T09:50:52+00:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">로봇을 배우기 위한 지식 창고</title><subtitle>로봇을 배우기 위한 지식 창고</subtitle><author><name>Kiho Lee</name></author><entry><title type="html">07.ROS 메시지 더 알아보기</title><link href="http://localhost:4000/categories/ros/ROS-07-message.html" rel="alternate" type="text/html" title="07.ROS 메시지 더 알아보기" /><published>2019-12-13T00:00:00+00:00</published><updated>2019-12-13T00:00:00+00:00</updated><id>http://localhost:4000/categories/ros/ROS-07-message</id><content type="html" xml:base="http://localhost:4000/categories/ros/ROS-07-message.html">&lt;h2 id=&quot;1-메시지란&quot;&gt;1. 메시지란?&lt;/h2&gt;
+
+&lt;p&gt;메시지는 노드 간 데이터 교환에 사용되는 데이터 모음이다. 토픽, 서비스 및 액션에는 메시지를 사용하여 통신한다.&lt;/p&gt;
+
+&lt;p&gt;메시지에는 정수, 부동 소수점, 부울과 같은 기본 데이터 유형과 ‘float32 [] ranges’, ‘Point32 [10] points’와 같은 메시지 배열이 포함될 수 있다.&lt;/p&gt;
+
+&lt;p&gt;이러한 메시지는 아래와 같이 필드 유형 및 필드 이름으로 설명 할 수 있다.&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+2
+3
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;fieldtype1 fieldname1
+fieldtype2 fieldname2
+fieldtype3 fieldname3
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;필드타입에는 아래 표와 같이 ROS 자료형을 기입하게 되고, 필드네임에는 데이터를 의미하는 이름을 적어주게 된다.&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+2
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;int32 x
+int32 y
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;ROS Data Type&lt;/th&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;Serialization&lt;/th&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;C++ Data Type&lt;/th&gt;
+      &lt;th&gt;Python Data Type&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;bool&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;unsigned 8-bit int&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;uint8_t&lt;/td&gt;
+      &lt;td&gt;bool&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;int8&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;signed 8-bit int&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;int8_t&lt;/td&gt;
+      &lt;td&gt;int&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;uint8&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;unsigned 8-bit int&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;uint8_t&lt;/td&gt;
+      &lt;td&gt;int&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;int16&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;signed 16-bit int&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;int16_t&lt;/td&gt;
+      &lt;td&gt;int&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;uint16&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;unsigned 16-bit int&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;uint16_t&lt;/td&gt;
+      &lt;td&gt;int&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;int32&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;signed 32-bit int&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;int32_t&lt;/td&gt;
+      &lt;td&gt;int&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;uint32&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;unsigned 32-bit int&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;uint32_t&lt;/td&gt;
+      &lt;td&gt;int&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;int64&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;signed 64-bit int&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;int64_t&lt;/td&gt;
+      &lt;td&gt;long&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;uint64&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;unsigned 64-bit int&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;uint64_t&lt;/td&gt;
+      &lt;td&gt;long&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;float32&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;32-bit IEEE float&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;float&lt;/td&gt;
+      &lt;td&gt;float&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;float64&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;64-bit IEEE float&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;double&lt;/td&gt;
+      &lt;td&gt;float&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;string&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;ascii string&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;std::string&lt;/td&gt;
+      &lt;td&gt;str&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;time&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;secs/nsecs unsigned 32-bit ints&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;ros::time&lt;/td&gt;
+      &lt;td&gt;rospy.Time&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;duration&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;secs/nsecs signed 32-bit ints&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;ros::Duration&lt;/td&gt;
+      &lt;td&gt;rospy.Duration&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;&lt;small&gt;[표7-1] ROS의 기본 메시지 자료형&lt;/small&gt;&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;ROS Data Type&lt;/th&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;Serialization&lt;/th&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;C++ Data Type&lt;/th&gt;
+      &lt;th&gt;Python Data Type&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;fixed-length&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;no extra serialization&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;boost::array, std::vector&lt;/td&gt;
+      &lt;td&gt;tuple&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;variable-length&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;uint32 length prefix&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;std::vector&lt;/td&gt;
+      &lt;td&gt;tuple&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;uint8[]&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;uint32 length prefix&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;std::vector&lt;/td&gt;
+      &lt;td&gt;bytes&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;bool[]&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;uint32 length prefix&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;std::vector&amp;lt;uint8_t&amp;gt;&lt;/td&gt;
+      &lt;td&gt;list of bool&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;&lt;small&gt;[표7-2] ROS의 메시지 자료형에서 배열처럼 사용하는 방법&lt;small&gt;&lt;/small&gt;&lt;/small&gt;&lt;/p&gt;
+
+&lt;p&gt;ROS에서 일반적으로 사용되는 헤더 (std_msgs / Header)도 메시지로 사용할 수 있다. std_msgs의 Header.msg 파일에는 시퀀스 ID, 타임 스탬프 및 프레임 ID가 포함되어 있으며 이를 사용하여 메시지를 조사하거나 시간을 측정한다.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;std_msgs/Header.msg&lt;/strong&gt;&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+2
+3
+4
+5
+6
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;c&quot;&gt;# Sequence ID: Messages are sequentially incremented by 1.&lt;/span&gt;
+uint32 &lt;span class=&quot;nb&quot;&gt;seq&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# Timestamp: Has two child attributes, the stamp.sec for second and the stamp.nsec for nanosecond.&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;time &lt;/span&gt;stamp
+&lt;span class=&quot;c&quot;&gt;# Stores the Frame ID&lt;/span&gt;
+string frame_id
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;다음은 실제로 ROS 프로그램에서 메시지를 사용하는 방법이다.
+turtlesim 패키지의 ‘teleop_turtle_key’ 노드의 경우 변환 속도 (미터/초) 및 회전 속도 (라디안/초)가 다음과 같이 turtlesim 노드에 메시지로 전송된다. 키보드에서 입력 한 방향키 (←, →, ↑, ↓)로 TurtleBot는 수신 된 속도 값을 사용하여 화면에서 움직인다. 
+현재 사용되는 메시지는‘geometry_msgs’의‘twist’ 메시지이다.&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+2
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;Vector3 linear
+Vector3 angular
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;위의 메시지 구조에서 &lt;code class=&quot;highlighter-rouge&quot;&gt;linear&lt;/code&gt;및 &lt;code class=&quot;highlighter-rouge&quot;&gt;radian&lt;/code&gt;값은 Vector3 유형으로 선언된다.&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+2
+3
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;float64 x
+float64 y
+float64 z
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;다시 말해 &lt;code class=&quot;highlighter-rouge&quot;&gt;teleop_turtle_key&lt;/code&gt;노드에서 퍼블리시 된 6개의 토픽은 linear.x, linear.y, linear.z, angular.x, angular.y 및 angular.z 이다. 모두는 ROS에 설명 된 기본 데이터 유형 중 하나 인 float64 유형이다. 이러한 데이터를 사용하여 키보드의 화살표 키를 이동 속도 (미터/초) 및 회전 속도 (라디안/초) 메시지로 변환 할 수 있다.&lt;/p&gt;
+
+&lt;h2 id=&quot;2-msg-파일&quot;&gt;2. msg 파일&lt;/h2&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;msg&lt;/code&gt; 파일은 주제가 사용하는 메시지 파일이며 파일 확장자는 &lt;code class=&quot;highlighter-rouge&quot;&gt;* .msg&lt;/code&gt;입니다. 위에서 설명한 &lt;code class=&quot;highlighter-rouge&quot;&gt;geometry_msgs&lt;/code&gt;의 &lt;code class=&quot;highlighter-rouge&quot;&gt;Twist&lt;/code&gt; 메시지는 메시지의 예다. 이러한 msg 파일은 필드 유형과 필드 이름으로 구성된다.&lt;/p&gt;
+
+&lt;h2 id=&quot;3-srv-파일&quot;&gt;3. srv 파일&lt;/h2&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;srv&lt;/code&gt;파일은 파일 확장자가 &lt;code class=&quot;highlighter-rouge&quot;&gt;* .srv&lt;/code&gt;인 서비스에서 사용하는 메시지 파일이다.
+예를 들어, &lt;code class=&quot;highlighter-rouge&quot;&gt;sensor_msgs&lt;/code&gt;의 &lt;code class=&quot;highlighter-rouge&quot;&gt;SetCameraInfo&lt;/code&gt; 메시지는 일반적인 srv 파일이다. msg 파일과의 주요 차이점은 일련의 세 개의 하이픈 (&lt;strong&gt;---&lt;/strong&gt;)이 구분 기호로 사용된다는 것이다. 상위 메시지는 서비스 요청 메시지이고 하위 메시지는 서비스 응답 메시지이다.&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+2
+3
+4
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;sensor_msgs/CameraInfo camera_info
+&lt;span class=&quot;nt&quot;&gt;---&lt;/span&gt;
+bool success
+string status_message
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;h2 id=&quot;4-action-파일&quot;&gt;4. action 파일&lt;/h2&gt;
+
+&lt;p&gt;액션 메시지 파일은 액션에서 사용하는 메시지 파일이며 파일 확장자는 ‘* .action’이다.
+msg 및 srv와 달리 비교적 드문 메시지 파일이므로 메시지 파일의 일반적인 예는 없지만 다음 예와 같이 사용할 수 있다. 
+msg 및 srv 파일과의 주요 차이점은 일련의 3 개의 하이픈 (&lt;strong&gt;---&lt;/strong&gt;)이 구분 기호로 두 위치에서 사용된다는 것이다.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;첫 번째는 목표(goal) 메시지&lt;/li&gt;
+  &lt;li&gt;두 번째는 결과(result) 메시지,&lt;/li&gt;
+  &lt;li&gt;세 번째는 &lt;strong&gt;피드백(feedback)&lt;/strong&gt; 메시지&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;액션 파일의 가장 큰 차이점은 피드백 메시지 기능이다. 액션 파일의 목표 메시지 및 결과 메시지는 위에서 언급 한 srv 파일의 요청 및 응답 메시지와 비교 될 수 있지만 지정된 프로세스가 수행되는 동안 액션 파일의 추가 피드백 메시지가 피드백을 보내는 데 사용된다.
+다음 예에서 설명하는 것처럼 로봇의 시작 위치 ‘start_pose’와 목표 ‘goal_pose’가 요청 값으로 전송되면 로봇은 수신 된 목표 위치로 이동하여 ‘result_pose’를 반환한다. 로봇이 목표 위치로 이동하는 동안 ‘percent_complete’ 메시지는 주기적으로 도달한 목표 지점의 백분율 형식으로 진행률을 나타내는 피드백 값을 전송한다.&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+2
+3
+4
+5
+6
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;geometry_msgs/PoseStamped start_pose
+geometry_msgs/PoseStamped goal_pose
+&lt;span class=&quot;nt&quot;&gt;---&lt;/span&gt;
+geometry_msgs/PoseStamped result_pose
+&lt;span class=&quot;nt&quot;&gt;---&lt;/span&gt;
+float32 percent_complete
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;</content><author><name>Kiho Lee</name></author><category term="ROS" /><category term="메시지" /><summary type="html">1. 메시지란?</summary></entry><entry><title type="html">06.GIT 파일 트랙킹 중지 및 재시작</title><link href="http://localhost:4000/categories/git/GIT-06-git-tracking-abort.html" rel="alternate" type="text/html" title="06.GIT 파일 트랙킹 중지 및 재시작" /><published>2019-12-12T00:00:00+00:00</published><updated>2019-12-12T00:00:00+00:00</updated><id>http://localhost:4000/categories/git/GIT-06-git-tracking-abort</id><content type="html" xml:base="http://localhost:4000/categories/git/GIT-06-git-tracking-abort.html">&lt;h2 id=&quot;1-들어가며&quot;&gt;1. 들어가며&lt;/h2&gt;
 
 &lt;p&gt;git을 쓰면서 트랙킹되고 있는 파일 즉, git의 인덱스에 등록된 파일을 &lt;strong&gt;.gitignore&lt;/strong&gt;로 등록해도 작동이 안되는 경우가 있다. 사실 gitignore와 다른 개념이기 때문에 이 명령어가 작동 안되는 것이다.&lt;/p&gt;
 
@@ -65,7 +313,7 @@
 &lt;p&gt;&lt;img src=&quot;/assets/img/ros/Selection_004.png&quot; title=&quot;메시지통신 종류와 특징&quot; /&gt;
 출처:[ROS_Robot_Programming_EN]&lt;/p&gt;
 
-&lt;h2 id=&quot;2-메시지-통신의-흐름&quot;&gt;2. 메시지 통신의 흐름&lt;/h2&gt;
+&lt;h2 id=&quot;2-토픽-메시지-통신의-흐름&quot;&gt;2. 토픽 메시지 통신의 흐름&lt;/h2&gt;
 
 &lt;p&gt;마스터는 노드의 정보를 관리하고 각 노드는 필요에 따라 다른 노드를 연결하고 통신한다.&lt;/p&gt;
 
@@ -113,10 +361,48 @@ $ roslaunch PACKAGE_NAME LAUNCH_NAME
 
 &lt;h3 id=&quot;6-퍼블리셔-노드의-연결-응답&quot;&gt;(6) 퍼블리셔 노드의 연결 응답&lt;/h3&gt;
 
-&lt;p&gt;퍼블리셔 노드는 서브스크라이버 노드의 연결 요청에 대한 응답으로 TCP 서버의 URI 주소와 포트 번호를 보냅니다.&lt;/p&gt;
+&lt;p&gt;퍼블리셔 노드는 서브스크라이버 노드의 연결 요청에 대한 응답으로 TCP 서버의 URI 주소와 포트 번호를 보낸다.&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;/assets/img/ros/ros_publisher_response.png&quot; title=&quot;퍼블리셔 노드의 연결 응답&quot; /&gt;&lt;br /&gt;
-출처:[ROS_Robot_Programming_EN]&lt;/p&gt;</content><author><name>Kiho Lee</name></author><category term="ROS" /><category term="메시지통신" /><category term="통신프로세스" /><category term="메시지" /><summary type="html">1. 들어가며</summary></entry><entry><title type="html">05.ROS 용어 정리 및 개념</title><link href="http://localhost:4000/categories/ros/ROS-05-ros-words.html" rel="alternate" type="text/html" title="05.ROS 용어 정리 및 개념" /><published>2019-12-10T00:00:00+00:00</published><updated>2019-12-10T00:00:00+00:00</updated><id>http://localhost:4000/categories/ros/ROS-05-ros-words</id><content type="html" xml:base="http://localhost:4000/categories/ros/ROS-05-ros-words.html">&lt;h2 id=&quot;1-ros-란&quot;&gt;1. ROS 란?&lt;/h2&gt;
+출처:[ROS_Robot_Programming_EN]&lt;/p&gt;
+
+&lt;h3 id=&quot;7-tcpros-connection&quot;&gt;(7) TCPROS Connection&lt;/h3&gt;
+
+&lt;p&gt;서브스크라이버 노드는 TCPROS를 사용하여 퍼블리셔 노드에 대한 클라이언트를 생성하고 퍼블리셔 노드에 연결한다. 이 시점에서 노드 간 통신은 TCPROS라는 TCP/IP 기반 프로토콜을 사용한다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/ros/ros_tcpros_connection.png&quot; title=&quot;TCPROS 연결&quot; /&gt;&lt;br /&gt;
+출처:[ROS_Robot_Programming_EN]&lt;/p&gt;
+
+&lt;h3 id=&quot;8-메시지-전송&quot;&gt;(8) 메시지 전송&lt;/h3&gt;
+
+&lt;p&gt;퍼블리셔 노드는 미리 설정된 메시지를 서브스크라이버 노드로 송신하게 된다. 이 둘 사이의 연결은 TCPROS 연결 방식을 활용하게 된다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/ros/ros_message_trasmit.png&quot; title=&quot;TCPROS 메시지 전송&quot; /&gt;&lt;br /&gt;
+출처:[ROS_Robot_Programming_EN]&lt;/p&gt;
+
+&lt;h2 id=&quot;3-서비스-메시지-통신의-흐름&quot;&gt;3. 서비스 메시지 통신의 흐름&lt;/h2&gt;
+
+&lt;p&gt;서비스에는 두 노드를 중심으로 통신이 이루어 진다.&lt;/p&gt;
+
+&lt;p&gt;서비스 클라이언트 : 서비스 요청 및 응답 받기
+서비스 서버 : 서비스를 받고 지정된 작업을 실행하고 응답을 반환&lt;/p&gt;
+
+&lt;p&gt;서비스 서버와 클라이언트 간의 연결은 위에서 설명한 퍼블리셔 및 서브스크라이버의 TCPROS 연결과 동일하다. 토픽(Topic)과 달리 요청(request) 및 응답(response)이 성공하면 서비스가 연결을 종료합니다. 추가 요청이 필요한 경우 연결 절차를 다시 수행한다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/ros/ros_service_ex.png&quot; title=&quot;서비스의 메시지 전송&quot; /&gt;&lt;br /&gt;
+출처:[ROS_Robot_Programming_EN]&lt;/p&gt;
+
+&lt;h2 id=&quot;4-액션-메시지-통신의-흐름&quot;&gt;4. 액션 메시지 통신의 흐름&lt;/h2&gt;
+
+&lt;p&gt;액션은 피드백이라는 추가 메시지가 있는 서비스 요청 및 응답과 유사하게 보일 수 있다.
+피드백 메시지는 요청(목표)과 응답(결과) 사이에 중간 결과를 제공하지만 실제로는 토픽과 비슷하다. 실제로 ‘rostopic’명령을 사용하여 주제를 나열하는 경우 액션에 사용되는 목표, 상태, 취소, 결과 및 피드백과 같은 5 가지 토픽이 있다. 액션 서버와 클라이언트 간의 연결은 퍼블리셔 및 서브스크라이버의 TCPROS 연결과 유사하지만 사용법이 약간 다르다. 예를 들어, 액션 클라이언트가 취소 명령을 보내거나 서버가 결과 값을 보내면 연결이 종료된다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/ros/ros_action_ex.png&quot; title=&quot;액션의 메시지 전송&quot; /&gt;&lt;br /&gt;
+출처:[ROS_Robot_Programming_EN]&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;ROS 로봇 프로그래밍 책이 한국어판은 3만 2천원에 판매하는데, 영문 판은 무료로 다운로드 가능하다. 번역비용 치고 좀 비싸다는 생각이 들긴 하지만, 한 권정도 갖고 있으면 괜찮을 듯 싶다. 관련된 내용은 대체로 wiki.ros.org에서 확인할 수 있는 듯 하다.&lt;/p&gt;
+&lt;/blockquote&gt;</content><author><name>Kiho Lee</name></author><category term="ROS" /><category term="메시지통신" /><category term="통신프로세스" /><category term="메시지" /><summary type="html">1. 들어가며</summary></entry><entry><title type="html">05.ROS 용어 정리 및 개념</title><link href="http://localhost:4000/categories/ros/ROS-05-ros-words.html" rel="alternate" type="text/html" title="05.ROS 용어 정리 및 개념" /><published>2019-12-10T00:00:00+00:00</published><updated>2019-12-10T00:00:00+00:00</updated><id>http://localhost:4000/categories/ros/ROS-05-ros-words</id><content type="html" xml:base="http://localhost:4000/categories/ros/ROS-05-ros-words.html">&lt;h2 id=&quot;1-ros-란&quot;&gt;1. ROS 란?&lt;/h2&gt;
 
 &lt;p&gt;ROS는 로봇의 응용프로그램을 개발하기 위한 운영체제와 같은 로봇 소프트웨어 플랫폼이다. ROS는 로봇 응용프로그램을 개발할 때 필요한 하드웨어 추상화, 디바이스 제어, 센싱 및 인식, SLAM 등 다양한 기능을 라이브러리 형태로 제공하고 있으며, 디버깅 도구 및 시뮬레이션 도구를 제공하는 메타 OS이다.&lt;/p&gt;
 
@@ -1375,52 +1661,4 @@ lsirikh
 &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ git config --show-origin rerere.autoUpdate
 file:/home/lsirikh/.gitconfig	false
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;[출처]&lt;a href=&quot;https://git-scm.com/book/ko/v2/%EC%8B%9C%EC%9E%91%ED%95%98%EA%B8%B0-Git-%EC%B5%9C%EC%B4%88-%EC%84%A4%EC%A0%95&quot;&gt;git-scm&lt;/a&gt;&lt;/p&gt;</content><author><name>Kiho Lee</name></author><category term="GIT" /><category term="initial" /><category term="commit" /><category term="초기" /><category term="커밋" /><summary type="html"></summary></entry><entry><title type="html">01.GIT이란 무엇인가?</title><link href="http://localhost:4000/categories/git/GIT-01-introduction.html" rel="alternate" type="text/html" title="01.GIT이란 무엇인가?" /><published>2019-12-07T19:00:13+00:00</published><updated>2019-12-07T19:00:13+00:00</updated><id>http://localhost:4000/categories/git/GIT-01-introduction</id><content type="html" xml:base="http://localhost:4000/categories/git/GIT-01-introduction.html">&lt;h2 id=&quot;1-git-이란-무엇인가&quot;&gt;1. Git 이란 무엇인가???&lt;/h2&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/img/git/480px-Octocat_GitHub_Mascot.png&quot; width=&quot;40%&quot; height=&quot;40%&quot; alt=&quot;image&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/img/git/git.png&quot; title=&quot;image&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;GitHub를 이해하려면 먼저 Git을 이해해야합니다. Git은 리눅스를 만든 사람인 Linus Torvalds에 의해 시작된 오픈 소스 버전 관리 시스템입니다. Git은 Subversion , CVS 및 Mercurial 과 같은 다른 버전 제어 시스템과 유사합니다.&lt;/p&gt;
-
-&lt;p&gt;Git은 버전 관리 시스템이지만 무엇일까?&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;예를 들어, 개발자가 무언가 앱을 만들면 코드가 지속적으로 변경되어 첫 번째 공식 (베타 이외) 릴리스 이후에 새 버전이 릴리스됩니다.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;버전 제어 시스템은 이러한 개정을 똑바로 유지하여 수정 사항을 중앙 저장소에 저장합니다. 이를 통해 개발자는 새로운 버전의 소프트웨어를 다운로드하고 변경하며 최신 버전을 업로드 할 수 있으므로 쉽게 협업 할 수 있습니다. 모든 개발자는 이러한 새로운 변경 사항을 보고 다운로드하여 제공 할 수 있습니다.&lt;/p&gt;
-
-&lt;p&gt;마찬가지로, 프로젝트 개발과 관련이 없는 사람들도 공개된 GIT ​​파일을 다운로드하여 사용할 수 있습니다. Git이 시작된 배경이 Linux 환경이기 때문에 Linux에서 좀 더 활용도가 용이 할 수 있지만, 현재 Windows나 OS X에도 많은 지원이 되는 관계로 이제는 크게 무관한 것으로 보입니다.&lt;/p&gt;
-
-&lt;p&gt;Git은 사용 가능한 다른 시스템에 비해 여러 가지 장점이 있기 때문에 대부분의 개발자가 선호하는 버전 제어 시스템입니다. 파일 변경 사항을보다 효율적으로 저장하고 파일 무결성을 향상시킵니다. 세부 사항을 알고 싶다면  Git 기본 페이지  에 Git 작동 방식에 대한 자세한 설명이 있습니다.&lt;/p&gt;
-
-&lt;h2 id=&quot;2-github의-허브&quot;&gt;2. GitHub의 “허브”&lt;/h2&gt;
-
-&lt;p&gt;Git와 함께 사용하여 더 나은 버전 제어 시스템을 확립했습니다. 그렇다면 GitHub는 무엇일까요? Git은 명령 줄 도구이지만 Git revolve와 관련된 모든 것은 프로젝트와 관련된 내용을 저장하는 허브 (GitHub.com)입니다.&lt;/p&gt;
-
-&lt;h2 id=&quot;3-repository-저장소&quot;&gt;3. repository (저장소)&lt;/h2&gt;
-
-&lt;p&gt;repository (일반적으로 “repo”로 약칭)는 특정 프로젝트의 모든 파일이 저장되는 위치입니다. 각 프로젝트에는 자체 저장소가 있으며 고유 한 URL로 액세스 할 수 있습니다.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/img/git/repository_example.png&quot; title=&quot;리포지토리 저장소&quot; /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;4-fork&quot;&gt;4. Fork&lt;/h2&gt;
-
-&lt;p&gt;“Forking”(발음주의;뽀킹아님)은 이미 존재하는 다른 프로젝트를 기반으로 새 프로젝트를 만들 때 사용합니다. 이것은 프로그램 및 기타 프로젝트의 추가 개발을 손쉽게 할 수 있는 굉장히 놀라운 컨셉인 것 같습니다. GitHub에서 기여하고 싶은 프로젝트를 찾으면 저장소(Repo)를 Fork 하고 원하는대로 변경하고 수정 된 프로젝트를 새 Repo로 릴리스 할 수 있습니다. 새 프로젝트를 작성하기 위해 Fork(분기) 한 원래 저장소가 업데이트되면 해당 업데이트를 현재 분기에 쉽게 추가 할 수 있습니다. 분기 추가의 권한은 원천 개발자에게 있습니다.&lt;/p&gt;
-
-&lt;h2 id=&quot;5-pull&quot;&gt;5. Pull&lt;/h2&gt;
-
-&lt;p&gt;어떤 개발자가 Repository(repo)를 Fork(분기)하고 프로젝트를 크게 수정 한 후 원래 Repository 주인 혹은 개발자가 이를 인정해주고 원래 프로젝트에 참여시켜주기 원할 수도 있습니다. 그럴 경우 풀 요청을 하면 프로젝트에 참여가 가능합니다. 물론 원본 Repository(이하 리포지토리)의 작성자는 자신의 작업을보고 공식 프로젝트에 수락할지 여부를 선택할 수 있습니다. Pull 요청을 발행 할 때마다 GitHub는 사용자와 기본 프로젝트 관리자가 통신 할 수있는 완벽한 수단을 제공합니다.&lt;/p&gt;
-
-&lt;h2 id=&quot;6-social-networking&quot;&gt;6. Social networking&lt;/h2&gt;
-
-&lt;p&gt;사회적 네트워킹 측면에서 GitHub가 가장 강력한 특징을 지닌듯 합니다. 특히, GitHub가 가지는 다양한 특징과 장점을 압도하는 가장 중요한 점이기도 합니다. GitHub의 각 사용자는 이력서처럼 작동하는 자체 프로필을 가지고 있으며 과거 작업 및 풀 요청을 통해 다른 프로젝트에 대한 기여를 보여줍니다. 한마디로 기여도에 무임승차자가 없고, 기여도로 평가할 수 있는 중요한 지표를 제공해줍니다.&lt;/p&gt;
-
-&lt;p&gt;GitHub를 통해 프로젝트 revision은 공개적으로 논의 될 수 있고, 많은 전문가들이 해당 프로젝트를 발전시키기 위해 지식을 제공하고 협력 할 수 있습니다. GitHub가 등장하기 전에, 어떤 프로젝트에 관심이있는 개발자는 대개 프로젝트 리딩 개발자와 연락 할 수있는 방법을 수소문 한 후, 자신의 신뢰도와 신력을 입증하여야만 참여가능 했으리라 생각됩니다. 아마도 너무나 높은 난관과 진입장벽으로 협업은 거의 불가능 했던 것 같습니다. 그러나 GitHub는 일종의 협력과 상생의 헤게모니를 열었다는 측면에서 굉장한 사회적 충격을 주는 듯 합니다.&lt;/p&gt;
-
-&lt;h2 id=&quot;7-changelogs&quot;&gt;7. Changelogs&lt;/h2&gt;
-
-&lt;p&gt;여러 사람이 한 프로젝트에서 공동 작업 할 때 해당 파일이 저장되는 대상,시기 및 위치를 변경 한 수정본을 추적하기가 어렵습니다. GitHub는 리포지토리에 푸시 된 모든 변경 사항을 추적하여이 문제를 처리합니다.&lt;/p&gt;
-
-&lt;p&gt;[출처]&lt;a href=&quot;https://www.howtogeek.com/180167/htg-explains-what-is-github-and-what-do-geeks-use-it-for/&quot;&gt;howtogeek&lt;/a&gt;&lt;/p&gt;</content><author><name>Kiho Lee</name></author><category term="GIT" /><category term="introduction" /><summary type="html">1. Git 이란 무엇인가???</summary></entry></feed>
+&lt;p&gt;[출처]&lt;a href=&quot;https://git-scm.com/book/ko/v2/%EC%8B%9C%EC%9E%91%ED%95%98%EA%B8%B0-Git-%EC%B5%9C%EC%B4%88-%EC%84%A4%EC%A0%95&quot;&gt;git-scm&lt;/a&gt;&lt;/p&gt;</content><author><name>Kiho Lee</name></author><category term="GIT" /><category term="initial" /><category term="commit" /><category term="초기" /><category term="커밋" /><summary type="html"></summary></entry></feed>

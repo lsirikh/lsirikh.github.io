@@ -1,0 +1,954 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.17.2 by Michael Rose
+  Copyright 2013-2019 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="ko" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>07.ROS 메시지 더 알아보기 - 로봇을 배우기 위한 지식 창고</title>
+<meta name="description" content="1. 메시지란?">
+
+
+  <meta name="author" content="Kiho Lee">
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:site_name" content="로봇을 배우기 위한 지식 창고">
+<meta property="og:title" content="07.ROS 메시지 더 알아보기">
+<meta property="og:url" content="http://localhost:4000/categories/ros/ROS-07-message.html">
+
+
+  <meta property="og:description" content="1. 메시지란?">
+
+
+
+
+
+
+
+  <meta property="article:published_time" content="2019-12-13T00:00:00+00:00">
+
+
+
+
+
+  
+
+  
+
+
+<link rel="canonical" href="http://localhost:4000/categories/ros/ROS-07-message.html">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": "로봇을 배우기 위한 지식 창고",
+      "url": "http://localhost:4000/"
+    
+  }
+</script>
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+<link href="/feed.xml" type="application/atom+xml" rel="alternate" title="로봇을 배우기 위한 지식 창고 Feed">
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+
+<!--[if IE]>
+  <style>
+    /* old IE unsupported flexbox fixes */
+    .greedy-nav .site-title {
+      padding-right: 3em;
+    }
+    .greedy-nav button {
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: 100%;
+    }
+  </style>
+<![endif]-->
+
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+<link rel="icon" type="image/png" href="/robot2.png", size="32x32">
+  </head>
+
+  <body class="layout--single">
+    <nav class="skip-links">
+  <h2 class="screen-reader-text">Skip links</h2>
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+          <a class="site-logo" href="/"><img src="/assets/img/memaker.png" alt=""></a>
+        
+        <a class="site-title" href="/">
+          로봇을 배우기 위한 지식 창고
+          
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="/categories/" >Category</a>
+            </li><li class="masthead__menu-item">
+              <a href="/year-archive/" >Posts</a>
+            </li><li class="masthead__menu-item">
+              <a href="/tags/" >Tags</a>
+            </li></ul>
+        
+        <button class="search__toggle" type="button">
+          <span class="visually-hidden">Toggle search</span>
+          <svg class="icon" width="16" height="16" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15.99 16">
+            <path d="M15.5,13.12L13.19,10.8a1.69,1.69,0,0,0-1.28-.55l-0.06-.06A6.5,6.5,0,0,0,5.77,0,6.5,6.5,0,0,0,2.46,11.59a6.47,6.47,0,0,0,7.74.26l0.05,0.05a1.65,1.65,0,0,0,.5,1.24l2.38,2.38A1.68,1.68,0,0,0,15.5,13.12ZM6.4,2A4.41,4.41,0,1,1,2,6.4,4.43,4.43,0,0,1,6.4,2Z" transform="translate(-.01)"></path>
+          </svg>
+        </button>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">토글 메뉴</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+
+  
+    
+
+
+
+<nav class="breadcrumbs">
+  <ol itemscope itemtype="https://schema.org/BreadcrumbList">
+    
+    
+    
+      
+        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+          <a href="http://localhost:4000/" itemprop="item"><span itemprop="name">Home</span></a>
+          <meta itemprop="position" content="1" />
+        </li>
+        <span class="sep">/</span>
+      
+      
+        
+        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+          <a href="/categories/#categories" itemprop="item"><span itemprop="name">Categories</span></a>
+          <meta itemprop="position" content="2" />
+        </li>
+        <span class="sep">/</span>
+      
+    
+      
+      
+        
+        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+          <a href="/categories/#ros" itemprop="item"><span itemprop="name">Ros</span></a>
+          <meta itemprop="position" content="3" />
+        </li>
+        <span class="sep">/</span>
+      
+    
+      
+      
+        <li class="current">07.ROS 메시지 더 알아보기</li>
+      
+    
+  </ol>
+</nav>
+
+  
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+
+
+<div itemscope itemtype="https://schema.org/Person">
+
+  
+
+  <div class="author__content">
+    
+      <h3 class="author__name" itemprop="name">Kiho Lee</h3>
+    
+    
+      <div class="author__bio" itemprop="description">
+        <p>I am an engineer and programmer</p>
+
+      </div>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">팔로우</button>
+    <ul class="author__urls social-icons">
+      
+        <li itemprop="homeLocation" itemscope itemtype="https://schema.org/Place">
+          <i class="fas fa-fw fa-map-marker-alt" aria-hidden="true"></i> <span itemprop="name">Seoul/South Korea</span>
+        </li>
+      
+
+      
+        
+          
+            <li><a href="mailto:lsirikh@naver.com" rel="nofollow noopener noreferrer"><i class="fas fa-fw fa-envelope-square" aria-hidden="true"></i> Email</a></li>
+          
+        
+          
+            <li><a href="https://memaker.com" rel="nofollow noopener noreferrer"><i class="fas fa-fw fa-link" aria-hidden="true"></i> Website</a></li>
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+
+  
+  </div>
+
+
+  <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="07.ROS 메시지 더 알아보기">
+    <meta itemprop="description" content="1. 메시지란?">
+    <meta itemprop="datePublished" content="December 13, 2019">
+    
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title" itemprop="headline">07.ROS 메시지 더 알아보기
+</h1>
+          
+            <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+  3 분 소요
+
+</p>
+          
+        </header>
+      
+
+      <section class="page__content" itemprop="text">
+        
+          <aside class="sidebar__right ">
+            <nav class="toc">
+              <header><h4 class="nav__title"><i class="fas fa-cog"></i> My Table of Contents</h4></header>
+              <ul class="toc__menu">
+  <li><a href="#1-메시지란">1. 메시지란?</a></li>
+  <li><a href="#2-msg-파일">2. msg 파일</a></li>
+  <li><a href="#3-srv-파일">3. srv 파일</a></li>
+  <li><a href="#4-action-파일">4. action 파일</a></li>
+</ul>
+            </nav>
+          </aside>
+        
+        <h2 id="1-메시지란">1. 메시지란?</h2>
+
+<p>메시지는 노드 간 데이터 교환에 사용되는 데이터 모음이다. 토픽, 서비스 및 액션에는 메시지를 사용하여 통신한다.</p>
+
+<p>메시지에는 정수, 부동 소수점, 부울과 같은 기본 데이터 유형과 ‘float32 [] ranges’, ‘Point32 [10] points’와 같은 메시지 배열이 포함될 수 있다.</p>
+
+<p>이러한 메시지는 아래와 같이 필드 유형 및 필드 이름으로 설명 할 수 있다.</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+3
+</pre></td><td class="code"><pre>fieldtype1 fieldname1
+fieldtype2 fieldname2
+fieldtype3 fieldname3
+</pre></td></tr></tbody></table></code></pre></figure>
+
+<p>필드타입에는 아래 표와 같이 ROS 자료형을 기입하게 되고, 필드네임에는 데이터를 의미하는 이름을 적어주게 된다.</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+</pre></td><td class="code"><pre>int32 x
+int32 y
+</pre></td></tr></tbody></table></code></pre></figure>
+
+<table>
+  <thead>
+    <tr>
+      <th>ROS Data Type</th>
+      <th style="text-align: center">Serialization</th>
+      <th style="text-align: center">C++ Data Type</th>
+      <th>Python Data Type</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>bool</td>
+      <td style="text-align: center">unsigned 8-bit int</td>
+      <td style="text-align: center">uint8_t</td>
+      <td>bool</td>
+    </tr>
+    <tr>
+      <td>int8</td>
+      <td style="text-align: center">signed 8-bit int</td>
+      <td style="text-align: center">int8_t</td>
+      <td>int</td>
+    </tr>
+    <tr>
+      <td>uint8</td>
+      <td style="text-align: center">unsigned 8-bit int</td>
+      <td style="text-align: center">uint8_t</td>
+      <td>int</td>
+    </tr>
+    <tr>
+      <td>int16</td>
+      <td style="text-align: center">signed 16-bit int</td>
+      <td style="text-align: center">int16_t</td>
+      <td>int</td>
+    </tr>
+    <tr>
+      <td>uint16</td>
+      <td style="text-align: center">unsigned 16-bit int</td>
+      <td style="text-align: center">uint16_t</td>
+      <td>int</td>
+    </tr>
+    <tr>
+      <td>int32</td>
+      <td style="text-align: center">signed 32-bit int</td>
+      <td style="text-align: center">int32_t</td>
+      <td>int</td>
+    </tr>
+    <tr>
+      <td>uint32</td>
+      <td style="text-align: center">unsigned 32-bit int</td>
+      <td style="text-align: center">uint32_t</td>
+      <td>int</td>
+    </tr>
+    <tr>
+      <td>int64</td>
+      <td style="text-align: center">signed 64-bit int</td>
+      <td style="text-align: center">int64_t</td>
+      <td>long</td>
+    </tr>
+    <tr>
+      <td>uint64</td>
+      <td style="text-align: center">unsigned 64-bit int</td>
+      <td style="text-align: center">uint64_t</td>
+      <td>long</td>
+    </tr>
+    <tr>
+      <td>float32</td>
+      <td style="text-align: center">32-bit IEEE float</td>
+      <td style="text-align: center">float</td>
+      <td>float</td>
+    </tr>
+    <tr>
+      <td>float64</td>
+      <td style="text-align: center">64-bit IEEE float</td>
+      <td style="text-align: center">double</td>
+      <td>float</td>
+    </tr>
+    <tr>
+      <td>string</td>
+      <td style="text-align: center">ascii string</td>
+      <td style="text-align: center">std::string</td>
+      <td>str</td>
+    </tr>
+    <tr>
+      <td>time</td>
+      <td style="text-align: center">secs/nsecs unsigned 32-bit ints</td>
+      <td style="text-align: center">ros::time</td>
+      <td>rospy.Time</td>
+    </tr>
+    <tr>
+      <td>duration</td>
+      <td style="text-align: center">secs/nsecs signed 32-bit ints</td>
+      <td style="text-align: center">ros::Duration</td>
+      <td>rospy.Duration</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><small>[표7-1] ROS의 기본 메시지 자료형</small></p>
+
+<table>
+  <thead>
+    <tr>
+      <th>ROS Data Type</th>
+      <th style="text-align: center">Serialization</th>
+      <th style="text-align: center">C++ Data Type</th>
+      <th>Python Data Type</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>fixed-length</td>
+      <td style="text-align: center">no extra serialization</td>
+      <td style="text-align: center">boost::array, std::vector</td>
+      <td>tuple</td>
+    </tr>
+    <tr>
+      <td>variable-length</td>
+      <td style="text-align: center">uint32 length prefix</td>
+      <td style="text-align: center">std::vector</td>
+      <td>tuple</td>
+    </tr>
+    <tr>
+      <td>uint8[]</td>
+      <td style="text-align: center">uint32 length prefix</td>
+      <td style="text-align: center">std::vector</td>
+      <td>bytes</td>
+    </tr>
+    <tr>
+      <td>bool[]</td>
+      <td style="text-align: center">uint32 length prefix</td>
+      <td style="text-align: center">std::vector&lt;uint8_t&gt;</td>
+      <td>list of bool</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><small>[표7-2] ROS의 메시지 자료형에서 배열처럼 사용하는 방법<small></small></small></p>
+
+<p>ROS에서 일반적으로 사용되는 헤더 (std_msgs / Header)도 메시지로 사용할 수 있다. std_msgs의 Header.msg 파일에는 시퀀스 ID, 타임 스탬프 및 프레임 ID가 포함되어 있으며 이를 사용하여 메시지를 조사하거나 시간을 측정한다.</p>
+
+<p><strong>std_msgs/Header.msg</strong></p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+</pre></td><td class="code"><pre><span class="c"># Sequence ID: Messages are sequentially incremented by 1.</span>
+uint32 <span class="nb">seq</span>
+<span class="c"># Timestamp: Has two child attributes, the stamp.sec for second and the stamp.nsec for nanosecond.</span>
+<span class="nb">time </span>stamp
+<span class="c"># Stores the Frame ID</span>
+string frame_id
+</pre></td></tr></tbody></table></code></pre></figure>
+
+<p>다음은 실제로 ROS 프로그램에서 메시지를 사용하는 방법이다.
+turtlesim 패키지의 ‘teleop_turtle_key’ 노드의 경우 변환 속도 (미터/초) 및 회전 속도 (라디안/초)가 다음과 같이 turtlesim 노드에 메시지로 전송된다. 키보드에서 입력 한 방향키 (←, →, ↑, ↓)로 TurtleBot는 수신 된 속도 값을 사용하여 화면에서 움직인다. 
+현재 사용되는 메시지는‘geometry_msgs’의‘twist’ 메시지이다.</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+</pre></td><td class="code"><pre>Vector3 linear
+Vector3 angular
+</pre></td></tr></tbody></table></code></pre></figure>
+
+<p>위의 메시지 구조에서 <code class="highlighter-rouge">linear</code>및 <code class="highlighter-rouge">radian</code>값은 Vector3 유형으로 선언된다.</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+3
+</pre></td><td class="code"><pre>float64 x
+float64 y
+float64 z
+</pre></td></tr></tbody></table></code></pre></figure>
+
+<p>다시 말해 <code class="highlighter-rouge">teleop_turtle_key</code>노드에서 퍼블리시 된 6개의 토픽은 linear.x, linear.y, linear.z, angular.x, angular.y 및 angular.z 이다. 모두는 ROS에 설명 된 기본 데이터 유형 중 하나 인 float64 유형이다. 이러한 데이터를 사용하여 키보드의 화살표 키를 이동 속도 (미터/초) 및 회전 속도 (라디안/초) 메시지로 변환 할 수 있다.</p>
+
+<h2 id="2-msg-파일">2. msg 파일</h2>
+
+<p><code class="highlighter-rouge">msg</code> 파일은 주제가 사용하는 메시지 파일이며 파일 확장자는 <code class="highlighter-rouge">* .msg</code>입니다. 위에서 설명한 <code class="highlighter-rouge">geometry_msgs</code>의 <code class="highlighter-rouge">Twist</code> 메시지는 메시지의 예다. 이러한 msg 파일은 필드 유형과 필드 이름으로 구성된다.</p>
+
+<h2 id="3-srv-파일">3. srv 파일</h2>
+
+<p><code class="highlighter-rouge">srv</code>파일은 파일 확장자가 <code class="highlighter-rouge">* .srv</code>인 서비스에서 사용하는 메시지 파일이다.
+예를 들어, <code class="highlighter-rouge">sensor_msgs</code>의 <code class="highlighter-rouge">SetCameraInfo</code> 메시지는 일반적인 srv 파일이다. msg 파일과의 주요 차이점은 일련의 세 개의 하이픈 (<strong>---</strong>)이 구분 기호로 사용된다는 것이다. 상위 메시지는 서비스 요청 메시지이고 하위 메시지는 서비스 응답 메시지이다.</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+3
+4
+</pre></td><td class="code"><pre>sensor_msgs/CameraInfo camera_info
+<span class="nt">---</span>
+bool success
+string status_message
+</pre></td></tr></tbody></table></code></pre></figure>
+
+<h2 id="4-action-파일">4. action 파일</h2>
+
+<p>액션 메시지 파일은 액션에서 사용하는 메시지 파일이며 파일 확장자는 ‘* .action’이다.
+msg 및 srv와 달리 비교적 드문 메시지 파일이므로 메시지 파일의 일반적인 예는 없지만 다음 예와 같이 사용할 수 있다. 
+msg 및 srv 파일과의 주요 차이점은 일련의 3 개의 하이픈 (<strong>---</strong>)이 구분 기호로 두 위치에서 사용된다는 것이다.</p>
+
+<ul>
+  <li>첫 번째는 목표(goal) 메시지</li>
+  <li>두 번째는 결과(result) 메시지,</li>
+  <li>세 번째는 <strong>피드백(feedback)</strong> 메시지</li>
+</ul>
+
+<p>액션 파일의 가장 큰 차이점은 피드백 메시지 기능이다. 액션 파일의 목표 메시지 및 결과 메시지는 위에서 언급 한 srv 파일의 요청 및 응답 메시지와 비교 될 수 있지만 지정된 프로세스가 수행되는 동안 액션 파일의 추가 피드백 메시지가 피드백을 보내는 데 사용된다.
+다음 예에서 설명하는 것처럼 로봇의 시작 위치 ‘start_pose’와 목표 ‘goal_pose’가 요청 값으로 전송되면 로봇은 수신 된 목표 위치로 이동하여 ‘result_pose’를 반환한다. 로봇이 목표 위치로 이동하는 동안 ‘percent_complete’ 메시지는 주기적으로 도달한 목표 지점의 백분율 형식으로 진행률을 나타내는 피드백 값을 전송한다.</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+</pre></td><td class="code"><pre>geometry_msgs/PoseStamped start_pose
+geometry_msgs/PoseStamped goal_pose
+<span class="nt">---</span>
+geometry_msgs/PoseStamped result_pose
+<span class="nt">---</span>
+float32 percent_complete
+</pre></td></tr></tbody></table></code></pre></figure>
+
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+  
+
+
+  
+  
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> 태그: </strong>
+    <span itemprop="keywords">
+    
+      
+      
+      <a href="/tags/#ros" class="page__taxonomy-item" rel="tag">ROS</a><span class="sep">, </span>
+    
+      
+      
+      <a href="/tags/#%EB%A9%94%EC%8B%9C%EC%A7%80" class="page__taxonomy-item" rel="tag">메시지</a>
+    
+    </span>
+  </p>
+
+
+
+
+  
+
+
+  
+  
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> 카테고리: </strong>
+    <span itemprop="keywords">
+    
+      
+      
+      <a href="/categories/#ros" class="page__taxonomy-item" rel="tag">ROS</a>
+    
+    </span>
+  </p>
+
+
+        
+          <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> 업데이트:</strong> <time datetime="2019-12-13T00:00:00+00:00">December 13, 2019</time></p>
+        
+      </footer>
+
+      <section class="page__share">
+  
+    <h4 class="page__share-title">공유하기</h4>
+  
+
+  <a href="https://twitter.com/intent/tweet?text=07.ROS+%EB%A9%94%EC%8B%9C%EC%A7%80+%EB%8D%94+%EC%95%8C%EC%95%84%EB%B3%B4%EA%B8%B0%20http%3A%2F%2Flocalhost%3A4000%2Fcategories%2Fros%2FROS-07-message.html" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2Fcategories%2Fros%2FROS-07-message.html" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flocalhost%3A4000%2Fcategories%2Fros%2FROS-07-message.html" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+</section>
+
+
+      
+  <nav class="pagination">
+    
+      <a href="/categories/ros/ROS-06-communication-process.html" class="pagination--pager" title="06.ROS 메시지 통신의 흐름
+">이전</a>
+    
+    
+      <a href="#" class="pagination--pager disabled">다음</a>
+    
+  </nav>
+
+    </div>
+
+    
+      <div class="page__comments">
+  
+  
+      <h4 class="page__comments-title">댓글남기기</h4>
+      <section id="disqus_thread"></section>
+    
+</div>
+
+    
+  </article>
+
+  
+  
+    <div class="page__related">
+      <h4 class="page__related-title">참고</h4>
+      <div class="grid__wrapper">
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src=
+          
+            "/assets/images/500x300.png"
+          
+          alt="">
+      </div>
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/categories/ros/ROS-06-communication-process.html" rel="permalink">06.ROS 메시지 통신의 흐름
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+  2 분 소요
+
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">1. 들어가며
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src=
+          
+            "/assets/images/500x300.png"
+          
+          alt="">
+      </div>
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/categories/git/GIT-06-git-tracking-abort.html" rel="permalink">06.GIT 파일 트랙킹 중지 및 재시작
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+  1 분 소요
+
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">1. 들어가며
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src=
+          
+            "/assets/images/500x300.png"
+          
+          alt="">
+      </div>
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/categories/ros/ROS-05-ros-words.html" rel="permalink">05.ROS 용어 정리 및 개념
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+  8 분 소요
+
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">1. ROS 란?
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src=
+          
+            "/assets/images/500x300.png"
+          
+          alt="">
+      </div>
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/categories/c++/CPP-02-install-eclipse.html" rel="permalink">02.C++ IDE Eclipse 설치하기
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+  2 분 소요
+
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">
+</p>
+  </article>
+</div>
+
+        
+      </div>
+    </div>
+  
+  
+</div>
+
+    </div>
+
+    
+      <div class="search-content">
+        <div class="search-content__inner-wrap"><form class="search-content__form" onkeydown="return event.key != 'Enter';">
+    <label class="sr-only" for="search">
+      Enter your search term...
+    </label>
+    <input type="search" id="search" class="search-input" tabindex="-1" placeholder="검색어를 입력하세요..." />
+  </form>
+  <div id="results" class="results"></div></div>
+
+      </div>
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>팔로우:</strong></li>
+    
+
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+
+    <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> 피드</a></li>
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2019 로봇을 배우기 위한 지식 창고. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+  <script src="https://kit.fontawesome.com/4eee35f757.js"></script>
+
+
+
+
+<script src="/assets/js/lunr/lunr.min.js"></script>
+<script src="/assets/js/lunr/lunr-store.js"></script>
+<script src="/assets/js/lunr/lunr-en.js"></script>
+
+
+
+
+    
+  <script>
+    var disqus_config = function () {
+      this.page.url = "http://localhost:4000/categories/ros/ROS-07-message.html";  // Replace PAGE_URL with your page's canonical URL variable
+      this.page.identifier = "/categories/ros/ROS-07-message"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
+    (function() { // DON'T EDIT BELOW THIS LINE
+      var d = document, s = d.createElement('script');
+      s.src = 'https://lsirikh-github-io.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  </script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+
+  
+
+
+
+
+
+  </body>
+</html>

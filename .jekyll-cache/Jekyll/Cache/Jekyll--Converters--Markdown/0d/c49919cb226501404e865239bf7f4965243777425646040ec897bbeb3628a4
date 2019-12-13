@@ -1,0 +1,22 @@
+I"6<h2 id="1">1.</h2>
+
+<p>| ROS Data Type | Serialization | C++ Data Type | Python Data Type |
+|—|:—:|:—:|—|</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>값</th>
+      <th style="text-align: center">의미</th>
+      <th style="text-align: right">기본값</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="highlighter-rouge">static</code></td>
+      <td style="text-align: center">유형(기준) 없음 / 배치 불가능</td>
+      <td style="text-align: right"><code class="highlighter-rouge">static</code></td>
+    </tr>
+  </tbody>
+</table>
+:ET

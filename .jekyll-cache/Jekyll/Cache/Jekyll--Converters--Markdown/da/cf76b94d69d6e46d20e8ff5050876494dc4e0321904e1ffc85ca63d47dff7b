@@ -1,0 +1,209 @@
+I"�<h2 id="1-메시지란">1. 메시지란?</h2>
+
+<p>메시지는 노드 간 데이터 교환에 사용되는 데이터 모음이다. 토픽, 서비스 및 액션에는 메시지를 사용하여 통신한다.</p>
+
+<p>메시지에는 정수, 부동 소수점, 부울과 같은 기본 데이터 유형과 ‘float32 [] ranges’, ‘Point32 [10] points’와 같은 메시지 배열이 포함될 수 있다.</p>
+
+<p>이러한 메시지는 아래와 같이 필드 유형 및 필드 이름으로 설명 할 수 있다.</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+3
+</pre></td><td class="code"><pre>fieldtype1 fieldname1
+fieldtype2 fieldname2
+fieldtype3 fieldname3
+</pre></td></tr></tbody></table></code></pre></figure>
+
+<p>필드타입에는 아래 표와 같이 ROS 자료형을 기입하게 되고, 필드네임에는 데이터를 의미하는 이름을 적어주게 된다.</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+</pre></td><td class="code"><pre>int32 x
+int32 y
+</pre></td></tr></tbody></table></code></pre></figure>
+
+<table>
+  <thead>
+    <tr>
+      <th>ROS Data Type</th>
+      <th style="text-align: center">Serialization</th>
+      <th style="text-align: center">C++ Data Type</th>
+      <th>Python Data Type</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>bool</td>
+      <td style="text-align: center">unsigned 8-bit int</td>
+      <td style="text-align: center">uint8_t</td>
+      <td>bool</td>
+    </tr>
+    <tr>
+      <td>int8</td>
+      <td style="text-align: center">signed 8-bit int</td>
+      <td style="text-align: center">int8_t</td>
+      <td>int</td>
+    </tr>
+    <tr>
+      <td>uint8</td>
+      <td style="text-align: center">unsigned 8-bit int</td>
+      <td style="text-align: center">uint8_t</td>
+      <td>int</td>
+    </tr>
+    <tr>
+      <td>int16</td>
+      <td style="text-align: center">signed 16-bit int</td>
+      <td style="text-align: center">int16_t</td>
+      <td>int</td>
+    </tr>
+    <tr>
+      <td>uint16</td>
+      <td style="text-align: center">unsigned 16-bit int</td>
+      <td style="text-align: center">uint16_t</td>
+      <td>int</td>
+    </tr>
+    <tr>
+      <td>int32</td>
+      <td style="text-align: center">signed 32-bit int</td>
+      <td style="text-align: center">int32_t</td>
+      <td>int</td>
+    </tr>
+    <tr>
+      <td>uint32</td>
+      <td style="text-align: center">unsigned 32-bit int</td>
+      <td style="text-align: center">uint32_t</td>
+      <td>int</td>
+    </tr>
+    <tr>
+      <td>int64</td>
+      <td style="text-align: center">signed 64-bit int</td>
+      <td style="text-align: center">int64_t</td>
+      <td>long</td>
+    </tr>
+    <tr>
+      <td>uint64</td>
+      <td style="text-align: center">unsigned 64-bit int</td>
+      <td style="text-align: center">uint64_t</td>
+      <td>long</td>
+    </tr>
+    <tr>
+      <td>float32</td>
+      <td style="text-align: center">32-bit IEEE float</td>
+      <td style="text-align: center">float</td>
+      <td>float</td>
+    </tr>
+    <tr>
+      <td>float64</td>
+      <td style="text-align: center">64-bit IEEE float</td>
+      <td style="text-align: center">double</td>
+      <td>float</td>
+    </tr>
+    <tr>
+      <td>string</td>
+      <td style="text-align: center">ascii string</td>
+      <td style="text-align: center">std::string</td>
+      <td>str</td>
+    </tr>
+    <tr>
+      <td>time</td>
+      <td style="text-align: center">secs/nsecs unsigned 32-bit ints</td>
+      <td style="text-align: center">ros::time</td>
+      <td>rospy.Time</td>
+    </tr>
+    <tr>
+      <td>duration</td>
+      <td style="text-align: center">secs/nsecs signed 32-bit ints</td>
+      <td style="text-align: center">ros::Duration</td>
+      <td>rospy.Duration</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><small>[표7-1] ROS의 기본 메시지 자료형</small></p>
+
+<table>
+  <thead>
+    <tr>
+      <th>ROS Data Type</th>
+      <th style="text-align: center">Serialization</th>
+      <th style="text-align: center">C++ Data Type</th>
+      <th>Python Data Type</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>fixed-length</td>
+      <td style="text-align: center">no extra serialization</td>
+      <td style="text-align: center">boost::array, std::vector</td>
+      <td>tuple</td>
+    </tr>
+    <tr>
+      <td>variable-length</td>
+      <td style="text-align: center">uint32 length prefix</td>
+      <td style="text-align: center">std::vector</td>
+      <td>tuple</td>
+    </tr>
+    <tr>
+      <td>uint8[]</td>
+      <td style="text-align: center">uint32 length prefix</td>
+      <td style="text-align: center">std::vector</td>
+      <td>bytes</td>
+    </tr>
+    <tr>
+      <td>bool[]</td>
+      <td style="text-align: center">uint32 length prefix</td>
+      <td style="text-align: center">std::vector&lt;uint8_t&gt;</td>
+      <td>list of bool</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><small>[표7-2] ROS의 메시지 자료형에서 배열처럼 사용하는 방법<small></small></small></p>
+
+<p>ROS에서 일반적으로 사용되는 헤더 (std_msgs / Header)도 메시지로 사용할 수 있다. std_msgs의 Header.msg 파일에는 시퀀스 ID, 타임 스탬프 및 프레임 ID가 포함되어 있으며 이를 사용하여 메시지를 조사하거나 시간을 측정한다.</p>
+
+<p><strong>std_msgs/Header.msg</strong></p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+</pre></td><td class="code"><pre><span class="c"># Sequence ID: Messages are sequentially incremented by 1.</span>
+uint32 <span class="nb">seq</span>
+<span class="c"># Timestamp: Has two child attributes, the stamp.sec for second and the stamp.nsec for nanosecond.</span>
+<span class="nb">time </span>stamp
+<span class="c"># Stores the Frame ID</span>
+string frame_id
+</pre></td></tr></tbody></table></code></pre></figure>
+
+<p>다음은 실제로 ROS 프로그램에서 메시지를 사용하는 방법이다.
+turtlesim 패키지의 ‘teleop_turtle_key’ 노드의 경우 변환 속도 (미터/초) 및 회전 속도 (라디안/초)가 다음과 같이 turtlesim 노드에 메시지로 전송된다. 키보드에서 입력 한 방향키 (←, →, ↑, ↓)로 TurtleBot는 수신 된 속도 값을 사용하여 화면에서 움직인다. 
+현재 사용되는 메시지는‘geometry_msgs’의‘twist’ 메시지이다.</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+</pre></td><td class="code"><pre>Vector3 linear
+Vector3 angular
+</pre></td></tr></tbody></table></code></pre></figure>
+
+<p>위의 메시지 구조에서 ‘linear’및 ‘radian’값은 Vector3 유형으로 선언된다.</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+3
+</pre></td><td class="code"><pre>float64 x
+float64 y
+float64 z
+</pre></td></tr></tbody></table></code></pre></figure>
+
+<p>다시 말해 ‘teleop_turtle_key’노드에서 퍼블리시 된 6개의 토픽은 linear.x, linear.y, linear.z, angular.x, angular.y 및 angular.z 이다. 모두는 ROS에 설명 된 기본 데이터 유형 중 하나 인 float64 유형이다. 이러한 데이터를 사용하여 키보드의 화살표 키를 이동 속도 (미터/초) 및 회전 속도 (라디안/초) 메시지로 변환 할 수 있다.</p>
+
+<h2 id="2-msg-파일">2. msg 파일</h2>
+
+<h2 id="3-srv-파일">3. srv 파일</h2>
+
+<h2 id="4-action-파일">4. action 파일</h2>
+
+:ET

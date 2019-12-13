@@ -1,0 +1,21 @@
+I"�<h2 id="1">1.</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>ROS Data Type</th>
+      <th style="text-align: center">Serialization</th>
+      <th style="text-align: center">C++ Data Type</th>
+      <th>Python Data Type</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>ㅇ</td>
+      <td style="text-align: center">ㅇ</td>
+      <td style="text-align: center">ㅇ</td>
+      <td>ㅇ</td>
+    </tr>
+  </tbody>
+</table>
+:ET
