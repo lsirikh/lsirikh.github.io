@@ -9,8 +9,8 @@
   <head>
     <meta charset="utf-8">
 
-<!-- begin _includes/seo.html --><title>04.ROS를 GUI 기반 IDE 툴 qt creator 설치(우분투 16.04 Kinetic Kame) - 로봇을 배우기 위한 지식 창고</title>
-<meta name="description" content="1. Qt Creator란?">
+<!-- begin _includes/seo.html --><title>09.ROS 웹캠 실행 해보기 - 로봇을 배우기 위한 지식 창고</title>
+<meta name="description" content="1. 카메라 확인">
 
 
   <meta name="author" content="Kiho Lee">
@@ -19,30 +19,30 @@
 <meta property="og:type" content="article">
 <meta property="og:locale" content="ko_KR">
 <meta property="og:site_name" content="로봇을 배우기 위한 지식 창고">
-<meta property="og:title" content="04.ROS를 GUI 기반 IDE 툴 qt creator 설치(우분투 16.04 Kinetic Kame)">
-<meta property="og:url" content="http://localhost:4000/categories/ros/ROS-04-ros-roscore-qt-creator-copy.html">
+<meta property="og:title" content="09.ROS 웹캠 실행 해보기">
+<meta property="og:url" content="http://localhost:4000/categories/ros/ROS-09-camera-operation.html">
 
 
-  <meta property="og:description" content="1. Qt Creator란?">
-
-
-
-
-
-
-
-  <meta property="article:published_time" content="2019-12-06T22:12:13+00:00">
+  <meta property="og:description" content="1. 카메라 확인">
 
 
 
 
 
-  
+
+
+  <meta property="article:published_time" content="2019-12-13T00:00:00+00:00">
+
+
+
+
 
   
 
+  
 
-<link rel="canonical" href="http://localhost:4000/categories/ros/ROS-04-ros-roscore-qt-creator-copy.html">
+
+<link rel="canonical" href="http://localhost:4000/categories/ros/ROS-09-camera-operation.html">
 
 
 
@@ -198,7 +198,7 @@
     
       
       
-        <li class="current">04.ROS를 GUI 기반 IDE 툴 qt creator 설치(우분투 16.04 Kinetic Kame)</li>
+        <li class="current">09.ROS 웹캠 실행 해보기</li>
       
     
   </ol>
@@ -322,15 +322,15 @@
 
 
   <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
-    <meta itemprop="headline" content="04.ROS를 GUI 기반 IDE 툴 qt creator 설치(우분투 16.04 Kinetic Kame)">
-    <meta itemprop="description" content="1. Qt Creator란?">
-    <meta itemprop="datePublished" content="December 06, 2019">
+    <meta itemprop="headline" content="09.ROS 웹캠 실행 해보기">
+    <meta itemprop="description" content="1. 카메라 확인">
+    <meta itemprop="datePublished" content="December 13, 2019">
     
 
     <div class="page__inner-wrap">
       
         <header>
-          <h1 id="page-title" class="page__title" itemprop="headline">04.ROS를 GUI 기반 IDE 툴 qt creator 설치(우분투 16.04 Kinetic Kame)
+          <h1 id="page-title" class="page__title" itemprop="headline">09.ROS 웹캠 실행 해보기
 </h1>
           
             <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
@@ -338,7 +338,7 @@
 
 
 
-  최대 1 분 소요
+  1 분 소요
 
 </p>
           
@@ -351,35 +351,127 @@
             <nav class="toc">
               <header><h4 class="nav__title"><i class="fas fa-cog"></i> My Table of Contents</h4></header>
               <ul class="toc__menu">
-  <li><a href="#1-qt-creator란">1. Qt Creator란?</a></li>
-  <li><a href="#2-qt-creator-설치하기">2. Qt Creator 설치하기</a></li>
+  <li><a href="#1-카메라-확인">1. 카메라 확인</a></li>
+  <li><a href="#2-패키지-설치">2. 패키지 설치</a></li>
+  <li><a href="#3-패키지-빌드">3. 패키지 빌드</a></li>
+  <li><a href="#4-launch-파일-편집하기">4. launch 파일 편집하기</a></li>
+  <li><a href="#5-실행">5. 실행</a></li>
+  <li><a href="#6-rqt_image_view-실행">6. rqt_image_view 실행</a></li>
 </ul>
             </nav>
           </aside>
         
-        <h2 id="1-qt-creator란">1. Qt Creator란?</h2>
+        <h2 id="1-카메라-확인">1. 카메라 확인</h2>
 
-<p>Qt Creator는 Qt GUI 애플리케이션 개발 프레임 워크 용 SDK의 일부인 크로스 플랫폼 C ++, JavaScript 및 QML 통합 개발 환경입니다. 시각적 디버거와 통합 GUI 레이아웃 및 양식 디자이너가 포함되어 있습니다.</p>
+<p>일단 삼성 USB camera를 USB 포트에 연결 하고, 아래의 명령어를 입력하면 다음과 같이 확인 할 수 있다.</p>
 
-<p><img src="/assets/img/ros/QtProject-creator-icon.png" title="QT logo" /></p>
+<p><img src="/assets/img/ros/samsung_web_cam.png" title="삼성 웹캠 화면" /><br /></p>
 
-<p>Qt는 컴퓨터 프로그래밍에서 GUI 프로그램 개발에 널리 쓰이는 크로스 플랫폼 프레임워크이다. 서버용 콘솔과 명령 줄 도구와 같은 비GUI 프로그램 개발에도 사용된다. 그래픽 사용자 인터페이스를 사용하는 경우에는 Qt를 위젯 툴킷으로 분류한다. 회사 내부에서는 Qt를 “cute”로 발음하고 있으며 비공식적으로는 “큐티”로 발음한다. Qt는 KDE, Qtopia, OPIE에 이용되고 있다,</p>
-
-<p>노르웨이 회사 트롤텍에 의해서 개발되었다. 2008년 1월에는 노키아에 인수되었다.[2] 이후, 2012년 8월에 핀란드 회사 Digia에 인수되었다.[3]</p>
-
-<p>Qt는 C++를 주로 사용하지만, 파이썬, 루비, C, 펄, 파스칼과도 연동된다. 수많은 플랫폼에서 동작하며, 상당히 좋은 국제화를 지원한다. SQL 데이터베이스 접근, XML 처리, 스레드 관리, 단일 크로스 플랫폼 파일 관리 API를 제공한다.</p>
-
-<p>[출처] <a href="https://ko.wikipedia.org/wiki/Qt_(%ED%94%84%EB%A0%88%EC%9E%84%EC%9B%8C%ED%81%AC)">위키백과</a></p>
-
-<h2 id="2-qt-creator-설치하기">2. Qt Creator 설치하기</h2>
-
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ sudo apt-get install qtcreator
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ ls -ltr /dev/video*
 </code></pre></div></div>
-<p>리눅스가 좋은 점은 바로 이런 apt-get install이란 간편한 방법으로 설치가 가능하다는 점이다.</p>
+<p><img src="/assets/img/ros/camera_device.png" title="USB 카메라 장치" /><br /></p>
 
-<p>일단 설치하고 실행하면 다음과 같이 나오는 것을 확인 할 수 있다.</p>
+<h2 id="2-패키지-설치">2. 패키지 설치</h2>
 
-<p><img src="/assets/img/ros/qtcreator_ide.png" title="Qt 크리에이터 실행화면" /></p>
+<p>이제부터 활용할 ROS 패키지는 uvc_camera 라는 것이다.</p>
+
+<p><img src="/assets/img/ros/uvc_camera_wiki.png" title="uvc_camera package" /><br />
+출처:<a href="http://wiki.ros.org/uvc_camera">uvc_camera</a></p>
+
+<p>cs를 하여 catkin_ws/src로 이동하자.(환경설정에서 다루었던 내용)</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ cs
+~/catkin_ws/src$ git clone https://github.com/ros-drivers/camera_umd
+</code></pre></div></div>
+<p>git으로 데이터 패키지를 다운받고 받은 폴더를 ls를 이용하여 확인해보자</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>~/catkin_ws/src$ ls
+camera_umd      my_first_ros_pkg  turtlebot3_msgs
+CMakeLists.txt  turtlebot3        turtlebot3_simulations
+</code></pre></div></div>
+<h2 id="3-패키지-빌드">3. 패키지 빌드</h2>
+
+<p>이제 패키지를 빌드해보자.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>~/catkin_ws/src$ cm
+</code></pre></div></div>
+<p><img src="/assets/img/ros/ros_uvc_install_fail.png" title="uvc_camera package 설치실패" /><br /></p>
+
+<p><em>젠장 에러뜬다.</em></p>
+
+<p>의존성 문제로 해당 문제를 해결하기 위해서는 아래의 커멘드를 입력해야 한다.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>rosdep install --from-paths src --ignore-src --rosdistro=kinetic -y
+</code></pre></div></div>
+
+<p><img src="/assets/img/ros/ros_uvc_install_success.png" title="uvc_camera package 설치성공" /><br /></p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>~/catkin_ws$ rospack profile
+Full tree crawl took 0.045761 seconds.
+Directories marked with (*) contain no manifest.  You may
+want to delete these directories.
+To get just of list of directories without manifests,
+re-run the profile with --zombie-only
+-------------------------------------------------------------
+0.037673   /opt/ros/kinetic/share
+0.005741   /home/memaker/catkin_ws/src
+0.002084   /home/memaker/catkin_ws/src/turtlebot3
+0.001374   /home/memaker/catkin_ws/src/camera_umd
+0.000856   /home/memaker/catkin_ws/src/turtlebot3_simulations
+0.000228 * /opt/ros/kinetic/share/OpenCV-3.3.1-dev
+0.000049 * /opt/ros/kinetic/share/OpenCV-3.3.1-dev/haarcascades
+0.000049 * /opt/ros/kinetic/share/doc
+0.000021 * /opt/ros/kinetic/share/OpenCV-3.3.1-dev/lbpcascades
+0.000009 * /opt/ros/kinetic/share/doc/liborocos-kdl
+</code></pre></div></div>
+
+<h2 id="4-launch-파일-편집하기">4. launch 파일 편집하기</h2>
+
+<p>launch 파일이 저장된 위치로 열심히 이동을 한다.
+카메라 스펙에 맞게 몇가지 항목을 변경 할 필요가 있다.(<strong>물론 그냥 실행해도 무관하다고 봄</strong>)</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>~/catkin_ws$ cd ./src/camera_umd/uvc_camera/launch/
+~/catkin_ws/src/camera_umd/uvc_camera/launch$ gedit ./camera_node.launch
+</code></pre></div></div>
+
+<p>카메라에 따라 해상도 지원하는 스펙이 다를 수 있다. 확인하고 설정하자.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;launch&gt;
+  &lt;node pkg="uvc_camera" type="uvc_camera_node" name="uvc_camera" output="screen"&gt;
+    &lt;param name="width" type="int" value="640" /&gt;
+    &lt;param name="height" type="int" value="480" /&gt;
+    &lt;param name="fps" type="int" value="30" /&gt;
+    &lt;param name="frame" type="string" value="wide_stereo" /&gt;
+
+    &lt;param name="auto_focus" type="bool" value="False" /&gt;
+    &lt;param name="focus_absolute" type="int" value="0" /&gt;
+    &lt;!-- other supported params: auto_exposure, exposure_absolute, brightness, power_line_frequency --&gt;
+
+    &lt;param name="device" type="string" value="/dev/video0" /&gt;
+    &lt;param name="camera_info_url" type="string" value="file://$(find uvc_camera)/example.yaml" /&gt;
+  &lt;/node&gt;
+&lt;/launch&gt;
+</code></pre></div></div>
+<p>편집하고 꼭 저장을 하자.</p>
+
+<h2 id="5-실행">5. 실행</h2>
+
+<p>실행해보자.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>~/catkin_ws/src/camera_umd/uvc_camera/launch$ cw
+~/catkin_ws$ roslaunch uvc_camera camera_node.launch
+</code></pre></div></div>
+
+<h2 id="6-rqt_image_view-실행">6. rqt_image_view 실행</h2>
+
+<p>퍼블리셔 노드를 roslaucn로 실행했기 때문에 서브스크라이버로 rqt_image_view를 이용해서 확인해보자.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>~/catkin_ws$ rqt_image_view
+</code></pre></div></div>
+
+<p><img src="/assets/img/ros/rqt_image_view_uvc_camera.png" title="uvc_camera 화면" /><br /></p>
+
+<p>색감조절이 필요할 듯하지만, 일단 화면이 나오는 것은 확인할 수 있다.</p>
+
 
         
       </section>
@@ -400,15 +492,19 @@
     
       
       
-      <a href="/tags/#creator" class="page__taxonomy-item" rel="tag">creator</a><span class="sep">, </span>
+      <a href="/tags/#ros" class="page__taxonomy-item" rel="tag">ROS</a><span class="sep">, </span>
     
       
       
-      <a href="/tags/#qt" class="page__taxonomy-item" rel="tag">qt</a><span class="sep">, </span>
+      <a href="/tags/#uvc-camera" class="page__taxonomy-item" rel="tag">uvc_camera</a><span class="sep">, </span>
     
       
       
-      <a href="/tags/#ros" class="page__taxonomy-item" rel="tag">ROS</a>
+      <a href="/tags/#%EC%9B%B9%EC%BA%A0" class="page__taxonomy-item" rel="tag">웹캠</a><span class="sep">, </span>
+    
+      
+      
+      <a href="/tags/#%EC%B9%B4%EB%A9%94%EB%9D%BC" class="page__taxonomy-item" rel="tag">카메라</a>
     
     </span>
   </p>
@@ -436,7 +532,7 @@
 
 
         
-          <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> 업데이트:</strong> <time datetime="2019-12-06T22:12:13+00:00">December 06, 2019</time></p>
+          <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> 업데이트:</strong> <time datetime="2019-12-13T00:00:00+00:00">December 13, 2019</time></p>
         
       </footer>
 
@@ -445,23 +541,22 @@
     <h4 class="page__share-title">공유하기</h4>
   
 
-  <a href="https://twitter.com/intent/tweet?text=04.ROS%EB%A5%BC+GUI+%EA%B8%B0%EB%B0%98+IDE+%ED%88%B4+qt+creator+%EC%84%A4%EC%B9%98%28%EC%9A%B0%EB%B6%84%ED%88%AC+16.04+Kinetic+Kame%29%20http%3A%2F%2Flocalhost%3A4000%2Fcategories%2Fros%2FROS-04-ros-roscore-qt-creator-copy.html" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+  <a href="https://twitter.com/intent/tweet?text=09.ROS+%EC%9B%B9%EC%BA%A0+%EC%8B%A4%ED%96%89+%ED%95%B4%EB%B3%B4%EA%B8%B0%20http%3A%2F%2Flocalhost%3A4000%2Fcategories%2Fros%2FROS-09-camera-operation.html" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
 
-  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2Fcategories%2Fros%2FROS-04-ros-roscore-qt-creator-copy.html" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2Fcategories%2Fros%2FROS-09-camera-operation.html" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
 
-  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flocalhost%3A4000%2Fcategories%2Fros%2FROS-04-ros-roscore-qt-creator-copy.html" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flocalhost%3A4000%2Fcategories%2Fros%2FROS-09-camera-operation.html" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
 </section>
 
 
       
   <nav class="pagination">
     
-      <a href="/categories/ros/ROS-03-ros-roscore-test.html" class="pagination--pager" title="03.ROS를 테스트 터틀봇 움직이기(우분투 16.04 Kinetic Kame)
+      <a href="/categories/ros/ROS-08-name.html" class="pagination--pager" title="08.ROS 네임(Name)
 ">이전</a>
     
     
-      <a href="/categories/git/GIT-01-introduction.html" class="pagination--pager" title="01.GIT이란 무엇인가?
-">다음</a>
+      <a href="#" class="pagination--pager disabled">다음</a>
     
   </nav>
 
@@ -484,43 +579,6 @@
     <div class="page__related">
       <h4 class="page__related-title">참고</h4>
       <div class="grid__wrapper">
-        
-          
-
-
-
-<div class="grid__item">
-  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
-    
-      <div class="archive__item-teaser">
-        <img src=
-          
-            "/assets/images/500x300.png"
-          
-          alt="">
-      </div>
-    
-    <h2 class="archive__item-title" itemprop="headline">
-      
-        <a href="/categories/ros/ROS-09-camera-operation.html" rel="permalink">09.ROS 웹캠 실행 해보기
-</a>
-      
-    </h2>
-    
-      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
-
-
-
-
-  1 분 소요
-
-</p>
-    
-    <p class="archive__item-excerpt" itemprop="description">1. 카메라 확인
-</p>
-  </article>
-</div>
-
         
           
 
@@ -633,6 +691,43 @@
 </div>
 
         
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src=
+          
+            "/assets/images/500x300.png"
+          
+          alt="">
+      </div>
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/categories/git/GIT-06-git-tracking-abort.html" rel="permalink">06.GIT 파일 트랙킹 중지 및 재시작
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+  1 분 소요
+
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">1. 들어가며
+</p>
+  </article>
+</div>
+
+        
       </div>
     </div>
   
@@ -707,8 +802,8 @@
     
   <script>
     var disqus_config = function () {
-      this.page.url = "http://localhost:4000/categories/ros/ROS-04-ros-roscore-qt-creator-copy.html";  // Replace PAGE_URL with your page's canonical URL variable
-      this.page.identifier = "/categories/ros/ROS-04-ros-roscore-qt-creator copy"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+      this.page.url = "http://localhost:4000/categories/ros/ROS-09-camera-operation.html";  // Replace PAGE_URL with your page's canonical URL variable
+      this.page.identifier = "/categories/ros/ROS-09-camera-operation"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
     };
     (function() { // DON'T EDIT BELOW THIS LINE
       var d = document, s = d.createElement('script');
