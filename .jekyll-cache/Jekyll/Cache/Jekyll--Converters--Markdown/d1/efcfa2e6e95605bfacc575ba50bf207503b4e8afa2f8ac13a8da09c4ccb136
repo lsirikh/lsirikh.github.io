@@ -1,0 +1,80 @@
+I"�<h2 id="1-개념">1. 개념</h2>
+
+<p>ROS에는 기본 개념으로 <strong>그래프</strong>라는 추상 데이터 유형이 있다. 이 그래프는 각 노드 간의 연결 관계와 화살표로 보내고받는 메시지 (데이터)의 관계를 보여준다. 이를 위해 ROS의 노드, 토픽 및 서비스에 사용되는 메시지 및 매개 변수는 모두 고유 한 이름을 갖습니다.</p>
+
+<h2 id="2-종류">2. 종류</h2>
+
+<ul>
+  <li>글로벌(global)</li>
+  <li>프라이빗(private)</li>
+</ul>
+
+<figure class="highlight"><pre><code class="language-c" data-lang="c"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+</pre></td><td class="code"><pre><span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">int</span> <span class="n">argc</span><span class="p">,</span> <span class="kt">char</span> <span class="o">**</span><span class="n">argv</span><span class="p">)</span> 		
+<span class="c1">// Node Main Function</span>
+<span class="p">{</span>
+<span class="n">ros</span><span class="o">::</span><span class="n">init</span><span class="p">(</span><span class="n">argc</span><span class="p">,</span> <span class="n">argv</span><span class="p">,</span> <span class="s">"node1"</span><span class="p">);</span> 		 <span class="c1">// Node Name Initialization</span>
+<span class="n">ros</span><span class="o">::</span><span class="n">NodeHandle</span> <span class="n">nh</span><span class="p">;</span> 			 <span class="c1">// Node Handle Declaration</span>
+<span class="c1">// Publisher Declaration, Topic Name = bar</span>
+<span class="n">ros</span><span class="o">::</span><span class="n">Publisher</span> <span class="n">node1_pub</span> <span class="o">=</span> <span class="n">nh</span><span class="p">.</span><span class="n">advertise</span><span class="o">&lt;</span><span class="n">std_msg</span><span class="o">::</span><span class="n">Int32</span><span class="o">&gt;</span><span class="p">(</span><span class="s">"bar"</span><span class="p">,</span> <span class="mi">10</span><span class="p">);</span>
+</pre></td></tr></tbody></table></code></pre></figure>
+
+<p>위 예에서 노드 이름은 <code class="highlighter-rouge">/node1</code>이다. 퍼블리셔가 기호없이 <code class="highlighter-rouge">bar</code>로 선언 된 경우 주제의 상대 이름은 <code class="highlighter-rouge">/bar</code>이다. 슬래시 (<code class="highlighter-rouge">/</code>) 문자를 사용하여 전역으로 선언하더라도 토픽 이름은 여전히 <code class="highlighter-rouge">/bar</code>이다.</p>
+
+<ul>
+  <li>글로벌</li>
+</ul>
+
+<figure class="highlight"><pre><code class="language-c" data-lang="c"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+</pre></td><td class="code"><pre><span class="n">ros</span><span class="o">::</span><span class="n">Publisher</span> <span class="n">node1_pub</span> <span class="o">=</span> <span class="n">nh</span><span class="p">.</span><span class="n">advertise</span><span class="o">&lt;</span><span class="n">std_msg</span><span class="o">::</span><span class="n">Int32</span><span class="o">&gt;</span><span class="p">(</span><span class="s">"/bar"</span><span class="p">,</span> <span class="mi">10</span><span class="p">);</span>
+</pre></td></tr></tbody></table></code></pre></figure>
+
+<p>그러나 프라이빗(<code class="highlighter-rouge">~</code>)으로 선언한 경우 토픽 네임이 <code class="highlighter-rouge">/node1/var</code>가 된다.</p>
+
+<ul>
+  <li>프라이빗</li>
+</ul>
+
+<figure class="highlight"><pre><code class="language-c" data-lang="c"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+</pre></td><td class="code"><pre><span class="n">ros</span><span class="o">::</span><span class="n">Publisher</span> <span class="n">node1_pub</span> <span class="o">=</span> <span class="n">nh</span><span class="p">.</span><span class="n">advertise</span><span class="o">&lt;</span><span class="n">std_msg</span><span class="o">::</span><span class="n">Int32</span><span class="o">&gt;</span><span class="p">(</span><span class="s">"~bar"</span><span class="p">,</span> <span class="mi">10</span><span class="p">);</span>
+</pre></td></tr></tbody></table></code></pre></figure>
+
+<table>
+  <thead>
+    <tr>
+      <th>Node</th>
+      <th>Relative(Default)</th>
+      <th>Global</th>
+      <th>Private</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>/node1</td>
+      <td>bar → /bar</td>
+      <td>/bar → /bar</td>
+      <td>~bar → /node1/bar</td>
+    </tr>
+    <tr>
+      <td>/wg/node2</td>
+      <td>bar → /wg/bar</td>
+      <td>/bar → /bar</td>
+      <td>~bar → /wg/node2/bar</td>
+    </tr>
+    <tr>
+      <td>/wg/node3</td>
+      <td>foo/bar → /wg/foo/bar</td>
+      <td>/foo/bar → /foo/bar</td>
+      <td>~foo/bar → /wg/node3/foo/bar</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><small>[표8-1]네이밍 규칭</small></p>
+:ET

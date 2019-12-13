@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.0.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2019-12-13T09:50:52+00:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">로봇을 배우기 위한 지식 창고</title><subtitle>로봇을 배우기 위한 지식 창고</subtitle><author><name>Kiho Lee</name></author><entry><title type="html">07.ROS 메시지 더 알아보기</title><link href="http://localhost:4000/categories/ros/ROS-07-message.html" rel="alternate" type="text/html" title="07.ROS 메시지 더 알아보기" /><published>2019-12-13T00:00:00+00:00</published><updated>2019-12-13T00:00:00+00:00</updated><id>http://localhost:4000/categories/ros/ROS-07-message</id><content type="html" xml:base="http://localhost:4000/categories/ros/ROS-07-message.html">&lt;h2 id=&quot;1-메시지란&quot;&gt;1. 메시지란?&lt;/h2&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.0.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2019-12-13T14:32:51+00:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">로봇을 배우기 위한 지식 창고</title><subtitle>로봇을 배우기 위한 지식 창고</subtitle><author><name>Kiho Lee</name></author><entry><title type="html">07.ROS 메시지 더 알아보기</title><link href="http://localhost:4000/categories/ros/ROS-07-message.html" rel="alternate" type="text/html" title="07.ROS 메시지 더 알아보기" /><published>2019-12-13T00:00:00+00:00</published><updated>2019-12-13T00:00:00+00:00</updated><id>http://localhost:4000/categories/ros/ROS-07-message</id><content type="html" xml:base="http://localhost:4000/categories/ros/ROS-07-message.html">&lt;h2 id=&quot;1-메시지란&quot;&gt;1. 메시지란?&lt;/h2&gt;
 
 &lt;p&gt;메시지는 노드 간 데이터 교환에 사용되는 데이터 모음이다. 토픽, 서비스 및 액션에는 메시지를 사용하여 통신한다.&lt;/p&gt;
 
@@ -246,7 +246,221 @@ geometry_msgs/PoseStamped goal_pose
 geometry_msgs/PoseStamped result_pose
 &lt;span class=&quot;nt&quot;&gt;---&lt;/span&gt;
 float32 percent_complete
-&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;</content><author><name>Kiho Lee</name></author><category term="ROS" /><category term="메시지" /><summary type="html">1. 메시지란?</summary></entry><entry><title type="html">06.GIT 파일 트랙킹 중지 및 재시작</title><link href="http://localhost:4000/categories/git/GIT-06-git-tracking-abort.html" rel="alternate" type="text/html" title="06.GIT 파일 트랙킹 중지 및 재시작" /><published>2019-12-12T00:00:00+00:00</published><updated>2019-12-12T00:00:00+00:00</updated><id>http://localhost:4000/categories/git/GIT-06-git-tracking-abort</id><content type="html" xml:base="http://localhost:4000/categories/git/GIT-06-git-tracking-abort.html">&lt;h2 id=&quot;1-들어가며&quot;&gt;1. 들어가며&lt;/h2&gt;
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;</content><author><name>Kiho Lee</name></author><category term="ROS" /><category term="메시지" /><summary type="html">1. 메시지란?</summary></entry><entry><title type="html">08.ROS 네임(Name)</title><link href="http://localhost:4000/categories/ros/ROS-08-name.html" rel="alternate" type="text/html" title="08.ROS 네임(Name)" /><published>2019-12-13T00:00:00+00:00</published><updated>2019-12-13T00:00:00+00:00</updated><id>http://localhost:4000/categories/ros/ROS-08-name</id><content type="html" xml:base="http://localhost:4000/categories/ros/ROS-08-name.html">&lt;h2 id=&quot;1-개념&quot;&gt;1. 개념&lt;/h2&gt;
+
+&lt;p&gt;ROS에는 기본 개념으로 &lt;strong&gt;그래프&lt;/strong&gt;라는 추상 데이터 유형이 있다. 이 그래프는 각 노드 간의 연결 관계와 화살표로 보내고받는 메시지 (데이터)의 관계를 보여준다. 이를 위해 ROS의 노드, 토픽 및 서비스에 사용되는 메시지 및 매개 변수는 모두 고유 한 이름을 갖습니다.&lt;/p&gt;
+
+&lt;h2 id=&quot;2-종류&quot;&gt;2. 종류&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;글로벌(global)&lt;/li&gt;
+  &lt;li&gt;프라이빗(private)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-c&quot; data-lang=&quot;c&quot;&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+2
+3
+4
+5
+6
+7
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;argc&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;char&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;**&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;argv&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; 		
+&lt;span class=&quot;c1&quot;&gt;// Node Main Function&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;ros&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;init&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;argc&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;argv&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;node1&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt; 		 &lt;span class=&quot;c1&quot;&gt;// Node Name Initialization&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;ros&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;NodeHandle&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;nh&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; 			 &lt;span class=&quot;c1&quot;&gt;// Node Handle Declaration&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;// Publisher Declaration, Topic Name = bar&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;ros&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Publisher&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;node1_pub&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;nh&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;advertise&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;std_msg&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Int32&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;bar&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;위 예에서 노드 이름은 &lt;code class=&quot;highlighter-rouge&quot;&gt;/node1&lt;/code&gt;이다. 퍼블리셔가 기호없이 &lt;code class=&quot;highlighter-rouge&quot;&gt;bar&lt;/code&gt;로 선언 된 경우 주제의 상대 이름은 &lt;code class=&quot;highlighter-rouge&quot;&gt;/bar&lt;/code&gt;이다. 슬래시 (&lt;code class=&quot;highlighter-rouge&quot;&gt;/&lt;/code&gt;) 문자를 사용하여 전역으로 선언하더라도 토픽 이름은 여전히 &lt;code class=&quot;highlighter-rouge&quot;&gt;/bar&lt;/code&gt;이다.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;글로벌&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-c&quot; data-lang=&quot;c&quot;&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;n&quot;&gt;ros&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Publisher&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;node1_pub&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;nh&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;advertise&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;std_msg&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Int32&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;/bar&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;그러나 프라이빗(&lt;code class=&quot;highlighter-rouge&quot;&gt;~&lt;/code&gt;)으로 선언한 경우 토픽 네임이 &lt;code class=&quot;highlighter-rouge&quot;&gt;/node1/var&lt;/code&gt;가 된다.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;프라이빗&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-c&quot; data-lang=&quot;c&quot;&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;n&quot;&gt;ros&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Publisher&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;node1_pub&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;nh&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;advertise&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;std_msg&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Int32&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;~bar&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;/wg&lt;/code&gt;는 네임 스페이스가 변경된 것을 의미한다.&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Node&lt;/th&gt;
+      &lt;th&gt;Relative(Default)&lt;/th&gt;
+      &lt;th&gt;Global&lt;/th&gt;
+      &lt;th&gt;Private&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;/node1&lt;/td&gt;
+      &lt;td&gt;bar → /bar&lt;/td&gt;
+      &lt;td&gt;/bar → /bar&lt;/td&gt;
+      &lt;td&gt;~bar → /node1/bar&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;/wg/node2&lt;/td&gt;
+      &lt;td&gt;bar → /wg/bar&lt;/td&gt;
+      &lt;td&gt;/bar → /bar&lt;/td&gt;
+      &lt;td&gt;~bar → /wg/node2/bar&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;/wg/node3&lt;/td&gt;
+      &lt;td&gt;foo/bar → /wg/foo/bar&lt;/td&gt;
+      &lt;td&gt;/foo/bar → /foo/bar&lt;/td&gt;
+      &lt;td&gt;~foo/bar → /wg/node3/foo/bar&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;&lt;small&gt;[표8-1]네이밍 규칭&lt;/small&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;3-네이밍-활용&quot;&gt;3. 네이밍 활용&lt;/h2&gt;
+
+&lt;p&gt;&lt;em&gt;두 대의 카메라를 어떻게 실행할 수 있을까?&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;ROS에 고유 한 이름이 있어야하기 때문에 관련 노드를 두 번 실행하면 이전에 실행 된 노드가 종료된다. 그러나 두 대의 카메라를 실행하기 위해 별도의 프로그램을 실행하거나 소스 코드를 변경하지 않아도된다. 네임 스페이스를 사용하거나 리매핑을 활용하여 노드를 실행할 때 간단히 노드 이름을 변경하면된다.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;이해를 돕기 위해 가상 &lt;code class=&quot;highlighter-rouge&quot;&gt;camera_package&lt;/code&gt;가 있다고 가정해보자. &lt;code class=&quot;highlighter-rouge&quot;&gt;camera_package&lt;/code&gt;의 &lt;code class=&quot;highlighter-rouge&quot;&gt;camera_node&lt;/code&gt;가 실행될 때 카메라 노드가 실행되었다고 가정하면, 이를 실행하는 방법은 다음과 같을 것이다.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$rosrun camera_package camera_node
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;camera_node&lt;/code&gt;가 image 토픽을 통해 카메라의 이미지 데이터를 전송하면 다음과 같이 &lt;code class=&quot;highlighter-rouge&quot;&gt;rqt_image_view&lt;/code&gt;를 사용하여이 image 토픽을 수신 할 수 있다(가정).&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$rosrun rqt_image_view rqt_image_view
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;이제 리매핑하여 이러한 노드의 토픽 값을 수정해보자. 다음 명령은 토픽 이름을 &lt;code class=&quot;highlighter-rouge&quot;&gt;/front/image&lt;/code&gt;로 변경한다. 아래 명령에서 &lt;code class=&quot;highlighter-rouge&quot;&gt;image&lt;/code&gt;는 &lt;code class=&quot;highlighter-rouge&quot;&gt;camera_node&lt;/code&gt;의 토픽 이름이고 아래 예는 실행 명령에서 옵션을 설정하여 토픽 이름을 변경하는 방법을 보여준다.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ rosrun camera_package camera_node image:=front/image
+$ rosrun rqt_image_view rqt_image_view image:=front/image
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;예를 들어, front, left 및 right와 같은 세 개의 카메라가있는 경우 여러 노드가 동일한 이름으로 실행될 때 이름이 충돌하여 이전에 실행 된 노드가 종료된다. 따라서, 이름이 같은 노드는 다음과 같은 방식으로 실행할 수 있다. 아래에서 이름 옵션 뒤에 연속 밑줄 (&lt;em&gt;_)이 온다.
+&lt;code class=&quot;highlighter-rouge&quot;&gt;__ns&lt;/code&gt;,&lt;code class=&quot;highlighter-rouge&quot;&gt;__name&lt;/code&gt;,&lt;code class=&quot;highlighter-rouge&quot;&gt;__log&lt;/code&gt;,&lt;code class=&quot;highlighter-rouge&quot;&gt;__ip&lt;/code&gt;,&lt;code class=&quot;highlighter-rouge&quot;&gt;__hostname&lt;/code&gt; 및 &lt;code class=&quot;highlighter-rouge&quot;&gt;__master&lt;/code&gt;와 같은 옵션은 노드를 실행할 때 사용되는 특수 옵션이다. 또한, 단일 밑줄 (&lt;/em&gt;)은 프라이빗으로 사용될 경우 토픽 이름 앞에 배치된다.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ rosrun camera_package camera_node __name:=front _device:=/dev/video0
+$ rosrun camera_package camera_node __name:=left _device:=/dev/video1
+$ rosrun camera_package camera_node __name:=right _device:=/dev/video2
+$ rosrun rqt_image_view rqt_image_view
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;하나의 네임스페이스(namespace)로 묶어주고 싶다면 아래와 같이 할 수 있다.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ rosrun camera_package camera_node __ns:=back
+$ rosrun rqt_imgae_view rqt_imgae_view __ns:=back
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;4-실제로-구동하기&quot;&gt;4. 실제로 구동하기&lt;/h2&gt;
+
+&lt;p&gt;일단 삼성 USB camera를 USB 포트에 연결 하고, 아래의 명령어를 입력하면 다음과 같이 확인 할 수 있다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/ros/samsung_web_cam.png&quot; title=&quot;삼성 웹캠 화면&quot; /&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ ls -ltr /dev/video*
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/img/ros/camera_device.png&quot; title=&quot;USB 카메라 장치&quot; /&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;이제부터 활용할 ROS 패키지는 uvc_camera 라는 것이다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/ros/uvc_camera_wiki.png&quot; title=&quot;uvc_camera package&quot; /&gt;&lt;br /&gt;
+출처:&lt;a href=&quot;http://wiki.ros.org/uvc_camera&quot;&gt;uvc_camera&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;cs를 하여 catkin_ws/src로 이동하자.(환경설정에서 다루었던 내용)&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ cs
+~/catkin_ws/src$ git clone https://github.com/ros-drivers/camera_umd
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;git으로 데이터 패키지를 다운받고 받은 폴더를 ls를 이용하여 확인해보자&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;~/catkin_ws/src$ ls
+camera_umd      my_first_ros_pkg  turtlebot3_msgs
+CMakeLists.txt  turtlebot3        turtlebot3_simulations
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;이제 패키지를 빌드해보자.&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;~/catkin_ws/src$ cm
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/img/ros/ros_uvc_install_fail.png&quot; title=&quot;uvc_camera package 설치실패&quot; /&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;젠장 에러뜬다.&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;의존성 문제로 해당 문제를 해결하기 위해서는 아래의 커멘드를 입력해야 한다.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;rosdep install --from-paths src --ignore-src --rosdistro=kinetic -y
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/ros/ros_uvc_install_success.png&quot; title=&quot;uvc_camera package 설치성공&quot; /&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;~/catkin_ws$ rospack profile
+Full tree crawl took 0.045761 seconds.
+Directories marked with (*) contain no manifest.  You may
+want to delete these directories.
+To get just of list of directories without manifests,
+re-run the profile with --zombie-only
+-------------------------------------------------------------
+0.037673   /opt/ros/kinetic/share
+0.005741   /home/memaker/catkin_ws/src
+0.002084   /home/memaker/catkin_ws/src/turtlebot3
+0.001374   /home/memaker/catkin_ws/src/camera_umd
+0.000856   /home/memaker/catkin_ws/src/turtlebot3_simulations
+0.000228 * /opt/ros/kinetic/share/OpenCV-3.3.1-dev
+0.000049 * /opt/ros/kinetic/share/OpenCV-3.3.1-dev/haarcascades
+0.000049 * /opt/ros/kinetic/share/doc
+0.000021 * /opt/ros/kinetic/share/OpenCV-3.3.1-dev/lbpcascades
+0.000009 * /opt/ros/kinetic/share/doc/liborocos-kdl
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;열심히 해당 폴더로 이동을 한다.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;~/catkin_ws$ cd ./src/camera_umd/uvc_camera/launch/
+~/catkin_ws/src/camera_umd/uvc_camera/launch$ gedit ./camera_node.launch
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;카메라에 따라 해상도 지원하는 스펙이 다를 수 있다. 확인하고 설정하자.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;lt;launch&amp;gt;
+  &amp;lt;node pkg=&quot;uvc_camera&quot; type=&quot;uvc_camera_node&quot; name=&quot;uvc_camera&quot; output=&quot;screen&quot;&amp;gt;
+    &amp;lt;param name=&quot;width&quot; type=&quot;int&quot; value=&quot;640&quot; /&amp;gt;
+    &amp;lt;param name=&quot;height&quot; type=&quot;int&quot; value=&quot;480&quot; /&amp;gt;
+    &amp;lt;param name=&quot;fps&quot; type=&quot;int&quot; value=&quot;30&quot; /&amp;gt;
+    &amp;lt;param name=&quot;frame&quot; type=&quot;string&quot; value=&quot;wide_stereo&quot; /&amp;gt;
+
+    &amp;lt;param name=&quot;auto_focus&quot; type=&quot;bool&quot; value=&quot;False&quot; /&amp;gt;
+    &amp;lt;param name=&quot;focus_absolute&quot; type=&quot;int&quot; value=&quot;0&quot; /&amp;gt;
+    &amp;lt;!-- other supported params: auto_exposure, exposure_absolute, brightness, power_line_frequency --&amp;gt;
+
+    &amp;lt;param name=&quot;device&quot; type=&quot;string&quot; value=&quot;/dev/video0&quot; /&amp;gt;
+    &amp;lt;param name=&quot;camera_info_url&quot; type=&quot;string&quot; value=&quot;file://$(find uvc_camera)/example.yaml&quot; /&amp;gt;
+  &amp;lt;/node&amp;gt;
+&amp;lt;/launch&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;편집하고 꼭 저장을 하자.&lt;/p&gt;
+
+&lt;p&gt;실행해보자.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;~/catkin_ws/src/camera_umd/uvc_camera/launch$ cw
+~/catkin_ws$ roslaunch uvc_camera camera_node.launch
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;퍼블리셔 노드를 roslaucn로 실행했기 때문에 서브스크라이버로 rqt_image_view를 이용해서 확인해보자.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;~/catkin_ws$ rqt_image_view
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/ros/rqt_image_view_uvc_camera.png&quot; title=&quot;uvc_camera 화면&quot; /&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;색감조절이 필요할 듯하지만, 일단 화면이 나오는 것은 확인할 수 있다.&lt;/p&gt;</content><author><name>Kiho Lee</name></author><category term="ROS" /><category term="네임" /><category term="name" /><summary type="html">1. 개념</summary></entry><entry><title type="html">06.GIT 파일 트랙킹 중지 및 재시작</title><link href="http://localhost:4000/categories/git/GIT-06-git-tracking-abort.html" rel="alternate" type="text/html" title="06.GIT 파일 트랙킹 중지 및 재시작" /><published>2019-12-12T00:00:00+00:00</published><updated>2019-12-12T00:00:00+00:00</updated><id>http://localhost:4000/categories/git/GIT-06-git-tracking-abort</id><content type="html" xml:base="http://localhost:4000/categories/git/GIT-06-git-tracking-abort.html">&lt;h2 id=&quot;1-들어가며&quot;&gt;1. 들어가며&lt;/h2&gt;
 
 &lt;p&gt;git을 쓰면서 트랙킹되고 있는 파일 즉, git의 인덱스에 등록된 파일을 &lt;strong&gt;.gitignore&lt;/strong&gt;로 등록해도 작동이 안되는 경우가 있다. 사실 gitignore와 다른 개념이기 때문에 이 명령어가 작동 안되는 것이다.&lt;/p&gt;
 
@@ -1546,119 +1760,4 @@ usage: git add [&amp;lt;options&amp;gt;] [--] &amp;lt;pathspec&amp;gt;...
     --chmod &amp;lt;(+/-)x&amp;gt;      override the executable bit of the listed files
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;[출처]&lt;a href=&quot;https://git-scm.com/book/ko/v2/%EC%8B%9C%EC%9E%91%ED%95%98%EA%B8%B0-%EB%8F%84%EC%9B%80%EB%A7%90-%EB%B3%B4%EA%B8%B0&quot;&gt;git-scm&lt;/a&gt;&lt;/p&gt;</content><author><name>Kiho Lee</name></author><category term="GIT" /><category term="시작하기" /><category term="도움말" /><summary type="html"></summary></entry><entry><title type="html">02.GIT 초기 설정하기</title><link href="http://localhost:4000/categories/git/GIT-02-initial-settings.html" rel="alternate" type="text/html" title="02.GIT 초기 설정하기" /><published>2019-12-07T22:17:13+00:00</published><updated>2019-12-07T22:17:13+00:00</updated><id>http://localhost:4000/categories/git/GIT-02-initial-settings</id><content type="html" xml:base="http://localhost:4000/categories/git/GIT-02-initial-settings.html">&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h1 id=&quot;git-시작하기-위한-설정하기&quot;&gt;Git 시작하기 위한 설정하기&lt;/h1&gt;
-
-&lt;h2 id=&quot;1-git-최초-설정&quot;&gt;1. Git 최초 설정&lt;/h2&gt;
-
-&lt;p&gt;Git을 설치하고 나면 Git의 사용 환경을 적절하게 설정해 주어야 한다. 환경 설정은 한 컴퓨터에서 한 번만 하면 된다. 설정한 내용은 Git을 업그레이드해도 유지된다. 언제든지 다시 바꿀 수 있는 명령어도 있다.&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;‘git config’라는 도구로 설정 내용을 확인하고 변경할 수 있다. Git은 이 설정에 따라 동작한다. 이때 사용하는 설정 파일은 세 가지나 된다.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;/etc/gitconfig 파일: 시스템의 모든 사용자와 모든 저장소에 적용되는 설정이다. git config –system 옵션으로 이 파일을 읽고 쓸 수 있다. (이 파일은 시스템 전체 설정파일이기 때문에 수정하려면 시스템의 관리자 권한이 필요하다.)&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;~/.gitconfig, ~/.config/git/config 파일: 특정 사용자(즉 현재 사용자)에게만 적용되는 설정이다. git config –global 옵션으로 이 파일을 읽고 쓸 수 있다. 특정 사용자의 모든 저장소 설정에 적용된다.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;.git/config : 이 파일은 Git 디렉토리에 있고 특정 저장소(혹은 현재 작업 중인 프로젝트)에만 적용된다. –local 옵션을 사용하면 이 파일을 사용하도록 지정할 수 있다. 하지만 기본적으로 이 옵션이 적용되어 있다. (당연히, 이 옵션을 적용하려면 Git 저장소인 디렉토리로 이동 한 후 적용할 수 있다.)&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;각 설정은 역순으로 우선시 된다. 그래서 &lt;strong&gt;.git/config&lt;/strong&gt; 가 &lt;strong&gt;/etc/gitconfig&lt;/strong&gt; 보다 우선한다.&lt;/p&gt;
-
-&lt;p&gt;Windows에서는 &lt;strong&gt;$HOME&lt;/strong&gt; 디렉토리에서 &lt;strong&gt;.gitconfig&lt;/strong&gt; 파일을 찾는다(아마도 &lt;strong&gt;C:\Users\$USER&lt;/strong&gt; 디렉토리). Windows에서도 &lt;strong&gt;/etc/gitconfig&lt;/strong&gt; 파일은 그 경로에서 찾는다. 이 경로는 아마도 MSys 루트의 상대경로일 텐데, MSys 루트는 인스톨러로 Git을 Windows에 설치할 때 결정된다. Git for Windows 2.x 버전에서는 조금 다르다. Windows XP 사용자는 &lt;strong&gt;C:\Documents and Settings\All Users\Application Data\Git\config&lt;/strong&gt; 디렉토리에서 찾을 수 있고 Windows Vista 이후 버전 사용자는 &lt;strong&gt;C:\ProgramData\Git\config&lt;/strong&gt; 에서 찾을 수 있다. 이 시스템 설정 파일의 경로는 &lt;strong&gt;git config -f &amp;lt;file&amp;gt;&lt;/strong&gt; 명령으로 변경할 수 있다. 관리자 권한이 필요하다.&lt;/p&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;2--사용자-정보-설정&quot;&gt;2.  사용자 정보 설정&lt;/h2&gt;
-
-&lt;p&gt;Git을 설치하고 나서 가장 먼저 해야 하는 것은 사용자이름과 이메일 주소를 설정하는 것이다. Git은 커밋할 때마다 이 정보를 사용한다. 한 번 커밋한 후에는 정보를 변경할 수 없다.&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ git config --global user.name &quot;lsirikh&quot;
-$ git config --global user.email lsirikh@naver.com
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;다시 말하자면 &lt;strong&gt;–global&lt;/strong&gt; 옵션으로 설정하는 것은 딱 한 번만 하면 된다. 해당 시스템에서 해당 사용자가 사용할 때는 이 정보를 사용한다. 만약 프로젝트마다 다른 이름과 이메일 주소를 사용하고 싶으면 &lt;strong&gt;–global&lt;/strong&gt; 옵션을 빼고 명령을 실행한다.&lt;/p&gt;
-
-&lt;p&gt;[GUI 도구들은 처음 실행할 때 이 설정을 묻는다.]&lt;/p&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;3-편집기-설정&quot;&gt;3. 편집기 설정&lt;/h2&gt;
-
-&lt;p&gt;사용자 정보를 설정하고 나면 Git에서 사용할 텍스트 편집기를 고른다. 기본적으로 Git은 시스템의 기본 편집기를 사용한다.&lt;/p&gt;
-
-&lt;p&gt;하지만, Emacs 같은 다른 텍스트 편집기를 사용할 수 있고 아래와 같이 실행하면 된다.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;꼭 이것을 쓰라는 얘기는 아니고 바꿀수 있는 참고로 활용&lt;/strong&gt;&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ git config --global core.editor emacs
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;Windows 사용자라면 다른 텍스트 편집기를 사용할 수 있다. 실행파일의 전체 경로를 설정해주면 된다. 실행파일의 전체 경로는 사용하는 편집기에 따라 다르다.&lt;/p&gt;
-
-&lt;p&gt;Windows 환경에서 많이 사용되는 Notepad &lt;strong&gt;편집기의 경우 주로 32비트 버전을 사용하게 된다. 현재 기준으로 64비트 버전을 사용하면 동작하지 않는 플러그인이 많다. 32비트 Windows 시스템이거나, 64비트 Windows 시스템에서 64비트 Notepad&lt;/strong&gt;을 설치했다면 다음과 같이 설정한다.&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ git config --global core.editor &quot;'C:/Program Files/Notepad++/notepad++.exe' -multiInst -nosession&quot;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;64비트 Windows 시스템에서 32비트 Notepad++을 설치했다면 &lt;code class=&quot;highlighter-rouge&quot;&gt;C:\Program Files (x86)&lt;/code&gt;에 설치된다.&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ git config --global core.editor &quot;'C:/Program Files (x86)/Notepad++/notepad++.exe' -multiInst -nosession&quot;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;table&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;td&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Note&lt;/code&gt;&lt;/td&gt;
-      &lt;td&gt;Vim과 Emacs, Notepad++은 꽤 인기 있는 편집기로 개발자들이 즐겨 사용한다. Mac이나 Linux 같은 Unix 시스템, Windows 시스템에서 사용 가능하다. 여기서 소개하는 편집기들이 불편해서 다른 편집기를 사용하고자 한다면 해당 편집기를 Git 편집기로 설정하는 방법을 찾아봐야 한다.&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Warning&lt;/code&gt;&lt;/td&gt;
-      &lt;td&gt;자신의 편집기를 설정하지 않으면 갑자기 실행된 편집기에 당황할 수 있다. 그땐 당황하지 말고 편집기를 그냥 종료하면 Git 명령을 취소할 수 있다.&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;4-설정-확인&quot;&gt;4. 설정 확인&lt;/h2&gt;
-
-&lt;p&gt;&lt;strong&gt;git config –list&lt;/strong&gt; 명령을 실행하면 설정한 모든 것을 보여주어 바로 확인할 수 있다.&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ git config --list
-user.name=John Doe
-user.email=johndoe@example.com
-color.status=auto
-color.branch=auto
-color.interactive=auto
-color.diff=auto
-...
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;Git은 같은 키를 여러 파일(&lt;strong&gt;/etc/gitconfig&lt;/strong&gt; 와 &lt;strong&gt;~/.gitconfig&lt;/strong&gt; 같은)에서 읽기 때문에 같은 키가 여러 개 있을 수도 있다. 그러면 Git은 나중 값을 사용한다.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;git config &amp;lt;key&amp;gt;&lt;/strong&gt; 명령으로 Git이 특정 Key에 대해 어떤 값을 사용하는지 확인할 수 있다.&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ git config user.name
-lsirikh
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;table&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;td&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Note&lt;/code&gt;&lt;/td&gt;
-      &lt;td&gt;Git이 설정된 값을 읽을 때 여러 파일에서 동일한 키에 대해 다른 값을 설정하고 있을 수 있다. 값이 기대한 값과 다를 수 있는데 값만 보고 쉽게 그 원인을 찾을 수 없다. 이 때 키에 설정된 값이 어디에서 설정되었는지 확인할 수 있는데 다음과 같은 명령으로 어떤 파일로부터 설정된 값인지를 확인할 수 있다.&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ git config --show-origin rerere.autoUpdate
-file:/home/lsirikh/.gitconfig	false
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;[출처]&lt;a href=&quot;https://git-scm.com/book/ko/v2/%EC%8B%9C%EC%9E%91%ED%95%98%EA%B8%B0-Git-%EC%B5%9C%EC%B4%88-%EC%84%A4%EC%A0%95&quot;&gt;git-scm&lt;/a&gt;&lt;/p&gt;</content><author><name>Kiho Lee</name></author><category term="GIT" /><category term="initial" /><category term="commit" /><category term="초기" /><category term="커밋" /><summary type="html"></summary></entry></feed>
+&lt;p&gt;[출처]&lt;a href=&quot;https://git-scm.com/book/ko/v2/%EC%8B%9C%EC%9E%91%ED%95%98%EA%B8%B0-%EB%8F%84%EC%9B%80%EB%A7%90-%EB%B3%B4%EA%B8%B0&quot;&gt;git-scm&lt;/a&gt;&lt;/p&gt;</content><author><name>Kiho Lee</name></author><category term="GIT" /><category term="시작하기" /><category term="도움말" /><summary type="html"></summary></entry></feed>
