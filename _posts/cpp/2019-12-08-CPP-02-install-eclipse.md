@@ -38,7 +38,7 @@ $ sudo apt update
 $ sudo apt install openjdk-8-jdk openjdk-8-jre
 ```
 
-### 2 단계 – Java 이탈 레이션 확인
+### 2 단계 – Java 버전 확인
 
 위의 단계를 사용하여 Oracle Java 8을 성공적으로 설치 한 후 다음 명령을 사용하여 설치된 버전을 확인하십시오.
 
@@ -150,7 +150,13 @@ $ eclipse
 
 > 난 CDT를 설치하여 위에 작업 아이콘이 보인다. 하지만, 처음에 Eclipse를 설치하면 없기 때문에 설치를 해야한다.
 
+<img src="/assets/img/cpp/Menu_011.png"  title="Install New Software">
 
 
+<img src="/assets/img/cpp/cpp_cdt.png"  title="CDT설치 1단계">
+
+<img src="/assets/img/cpp/cpp_cdt02.png"  title="CDT설치 2단계 설정">
+
+<img src="/assets/img/cpp/cpp_cdt03.png"  title="CDT설치 3단계 설정">
 
 
