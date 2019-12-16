@@ -1,0 +1,36 @@
+I"p<h2 id="1-좌표-변환tf란">1. 좌표 변환(TF)란?</h2>
+
+<p>로봇의 팔 자세를 설명 할 때 각 관절의 상대 좌표 변환으로 설명 할 수 있다.
+로봇이 걷고있을 때, 로봇 손의 좌표는 각각의 상관 된 관절의 상대 좌표 변환에 따라 움직인다.
+로봇 프로그래밍에서 각 로봇의 관절(또는 회전축이 있는 바퀴)의 위치는 매우 중요한 요소이며, ROS에서는 TF (변형)로 표시된다.</p>
+
+<p><img src="/assets/img/ros/ros_tf.png" title="좌표변환" /><br /></p>
+
+<p>ROS에서 좌표변환 TF는 장애물과 물체뿐만 아니라 로봇의 구성 요소를 설명 할 때 가장 유용한 개념 중 하나이다.</p>
+
+<h2 id="2-좌표-변환-구성">2. 좌표 변환 구성</h2>
+
+<p>이들은 자세(pose)라 하여 위치(position)와 방향(orientation)으로 기술할 수 있다. 여기서, 위치는 x, y, z과 같이 3개의 벡터로 설명하고 방향은 사원수라 일컫는 쿼티니언(quaternion) 형태의 x, y, z, w를 이용한다.</p>
+
+<p>TF는 메시지와 같이 다음과 같은 형태를 취하고 있다.</p>
+
+<p>변환된 시간을 기록할 목적으로 Header를 사용하며, 하위 좌표를 명시하기 위하여 child_frame_id라는 이름의 메시지를 사용한다. 그리고 상대 좌표 변환값을 알려주기 위하여</p>
+<ul>
+  <li>transform.translation.x</li>
+  <li>transform.translation.y</li>
+  <li>transform.translation.z</li>
+  <li>transform.rotation.x</li>
+  <li>transform.rotation.y</li>
+  <li>transform.rotation.z</li>
+  <li>transform.rotation.w</li>
+</ul>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+3
+</pre></td><td class="code"><pre>Header header
+string child_frame_id
+Transform transform
+</pre></td></tr></tbody></table></code></pre></figure>
+
+:ET

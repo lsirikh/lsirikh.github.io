@@ -1,0 +1,155 @@
+I"D<h2 id="1-좌표-변환tf란">1. 좌표 변환(TF)란?</h2>
+
+<p>로봇의 팔 자세를 설명 할 때 각 관절의 상대 좌표 변환으로 설명 할 수 있다.
+로봇이 걷고있을 때, 로봇 손의 좌표는 각각의 상관 된 관절의 상대 좌표 변환에 따라 움직인다.
+로봇 프로그래밍에서 각 로봇의 관절(또는 회전축이 있는 바퀴)의 위치는 매우 중요한 요소이며, ROS에서는 TF (변형)로 표시된다.</p>
+
+<p><img src="/assets/img/ros/ros_tf.png" title="좌표변환" /><br /></p>
+
+<p>ROS에서 좌표변환 TF는 장애물과 물체뿐만 아니라 로봇의 구성 요소를 설명 할 때 가장 유용한 개념 중 하나이다.</p>
+
+<p>이들은 자세(pose)라 하여 위치(position)와 방향(orientation)으로 기술할 수 있다. 여기서, 위치는 x, y, z과 같이 3개의 벡터로 설명하고 방향은 사원수라 일컫는 쿼티니언(quaternion) 형태의 x, y, z, w를 이용한다.</p>
+
+<p>TF는 메시지와 같이 다음과 같은 형태를 취하고 있다.</p>
+
+<p>변환된 시간을 기록할 목적으로 Header를 사용하며, 하위 좌표를 명시하기 위하여 child_frame_id라는 이름의 메시지를 사용한다. 그리고 상대 좌표 변환값을 알려주기 위하여</p>
+<ul>
+  <li>transform.translation.x</li>
+  <li>transform.translation.y</li>
+  <li>transform.translation.z</li>
+  <li>transform.rotation.x</li>
+  <li>transform.rotation.y</li>
+  <li>transform.rotation.z</li>
+  <li>transform.rotation.w</li>
+</ul>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+3
+</pre></td><td class="code"><pre>Header header
+string child_frame_id
+Transform transform
+</pre></td></tr></tbody></table></code></pre></figure>
+
+<p><img src="/assets/img/ros/camera_device.png" title="USB 카메라 장치" /><br /></p>
+
+<h2 id="2-패키지-설치">2. 패키지 설치</h2>
+
+<p>이제부터 활용할 ROS 패키지는 uvc_camera 라는 것이다.</p>
+
+<p><img src="/assets/img/ros/uvc_camera_wiki.png" title="uvc_camera package" /><br />
+출처:<a href="http://wiki.ros.org/uvc_camera">uvc_camera</a></p>
+
+<p>cs를 하여 catkin_ws/src로 이동하자.(환경설정에서 다루었던 내용)</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ cs
+~/catkin_ws/src$ git clone https://github.com/ros-drivers/camera_umd
+</code></pre></div></div>
+<p>git으로 데이터 패키지를 다운받고 받은 폴더를 ls를 이용하여 확인해보자</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>~/catkin_ws/src$ ls
+camera_umd      my_first_ros_pkg  turtlebot3_msgs
+CMakeLists.txt  turtlebot3        turtlebot3_simulations
+</code></pre></div></div>
+<h2 id="3-패키지-빌드">3. 패키지 빌드</h2>
+
+<p>이제 패키지를 빌드해보자.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>~/catkin_ws/src$ cm
+</code></pre></div></div>
+<p><img src="/assets/img/ros/ros_uvc_install_fail.png" title="uvc_camera package 설치실패" /><br /></p>
+
+<p><em>젠장 에러뜬다.</em></p>
+
+<p>의존성 문제로 해당 문제를 해결하기 위해서는 아래의 커멘드를 입력해야 한다.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>rosdep install --from-paths src --ignore-src --rosdistro=kinetic -y
+</code></pre></div></div>
+
+<p><img src="/assets/img/ros/ros_uvc_install_success.png" title="uvc_camera package 설치성공" /><br /></p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>~/catkin_ws$ rospack profile
+Full tree crawl took 0.045761 seconds.
+Directories marked with (*) contain no manifest.  You may
+want to delete these directories.
+To get just of list of directories without manifests,
+re-run the profile with --zombie-only
+-------------------------------------------------------------
+0.037673   /opt/ros/kinetic/share
+0.005741   /home/memaker/catkin_ws/src
+0.002084   /home/memaker/catkin_ws/src/turtlebot3
+0.001374   /home/memaker/catkin_ws/src/camera_umd
+0.000856   /home/memaker/catkin_ws/src/turtlebot3_simulations
+0.000228 * /opt/ros/kinetic/share/OpenCV-3.3.1-dev
+0.000049 * /opt/ros/kinetic/share/OpenCV-3.3.1-dev/haarcascades
+0.000049 * /opt/ros/kinetic/share/doc
+0.000021 * /opt/ros/kinetic/share/OpenCV-3.3.1-dev/lbpcascades
+0.000009 * /opt/ros/kinetic/share/doc/liborocos-kdl
+</code></pre></div></div>
+
+<h2 id="4-launch-파일-편집하기">4. launch 파일 편집하기</h2>
+
+<p>launch 파일이 저장된 위치로 열심히 이동을 한다.
+카메라 스펙에 맞게 몇가지 항목을 변경 할 필요가 있다.(<strong>물론 그냥 실행해도 무관하다고 봄</strong>)</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>~/catkin_ws$ cd ./src/camera_umd/uvc_camera/launch/
+~/catkin_ws/src/camera_umd/uvc_camera/launch$ gedit ./camera_node.launch
+</code></pre></div></div>
+
+<p>카메라에 따라 해상도 지원하는 스펙이 다를 수 있다. 확인하고 설정하자.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;launch&gt;
+  &lt;node pkg="uvc_camera" type="uvc_camera_node" name="uvc_camera" output="screen"&gt;
+    &lt;param name="width" type="int" value="640" /&gt;
+    &lt;param name="height" type="int" value="480" /&gt;
+    &lt;param name="fps" type="int" value="30" /&gt;
+    &lt;param name="frame" type="string" value="wide_stereo" /&gt;
+
+    &lt;param name="auto_focus" type="bool" value="False" /&gt;
+    &lt;param name="focus_absolute" type="int" value="0" /&gt;
+    &lt;!-- other supported params: auto_exposure, exposure_absolute, brightness, power_line_frequency --&gt;
+
+    &lt;param name="device" type="string" value="/dev/video0" /&gt;
+    &lt;param name="camera_info_url" type="string" value="file://$(find uvc_camera)/example.yaml" /&gt;
+  &lt;/node&gt;
+&lt;/launch&gt;
+</code></pre></div></div>
+<p>편집하고 꼭 저장을 하자.</p>
+
+<h2 id="5-실행">5. 실행</h2>
+
+<p>실행해보자.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>~/catkin_ws/src/camera_umd/uvc_camera/launch$ cw
+~/catkin_ws$ roslaunch uvc_camera camera_node.launch
+</code></pre></div></div>
+
+<h2 id="6-rqt_image_view-실행">6. rqt_image_view 실행</h2>
+
+<p>퍼블리셔 노드를 roslaucn로 실행했기 때문에 서브스크라이버로 rqt_image_view를 이용해서 확인해보자.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>~/catkin_ws$ rqt_image_view
+</code></pre></div></div>
+
+<p><img src="/assets/img/ros/rqt_image_view_uvc_camera.png" title="uvc_camera 화면" /><br /></p>
+
+<p>색감조절이 필요할 듯하지만, 일단 화면이 나오는 것은 확인할 수 있다.</p>
+
+<h2 id="7-roscore와-rosrun-활용더-좋은-화면-제공">7. roscore와 rosrun 활용(더 좋은 화면 제공)</h2>
+
+<p>기존에 roslaunch를 활용하면 색감이 좀 나간 것 처럼 나오는 효과가 있어서, roscore를 활용해 보았다.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ roscore
+</code></pre></div></div>
+<p>그리고, 퍼블리셔 노드를 실행해줘야 한다.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ rosrun uvc_camera uvc_camera_node _device:=/dev/video0
+</code></pre></div></div>
+<p>이제 서브스크라이버 역할을 할 rqt_image_view 를 실행해보자</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ rqt_image_view
+</code></pre></div></div>
+<p><img src="/assets/img/ros/rqt_image_uvc_camera2.png" title="uvc_camera roscore rosrun 실행시" /><br /></p>
+
+<p>당연히 rosrun과 rosluanch 상관없이 몇 가지 옵션을 손 보면 더 좋은 화면과 이미지가 제공될 수 있을 것이다.</p>
+
+:ET

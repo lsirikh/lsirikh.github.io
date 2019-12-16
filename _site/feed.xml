@@ -1,4 +1,61 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.0.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2019-12-13T14:53:08+00:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">로봇을 배우기 위한 지식 창고</title><subtitle>로봇을 배우기 위한 지식 창고</subtitle><author><name>Kiho Lee</name></author><entry><title type="html">07.ROS 메시지 더 알아보기</title><link href="http://localhost:4000/categories/ros/ROS-07-message.html" rel="alternate" type="text/html" title="07.ROS 메시지 더 알아보기" /><published>2019-12-13T00:00:00+00:00</published><updated>2019-12-13T00:00:00+00:00</updated><id>http://localhost:4000/categories/ros/ROS-07-message</id><content type="html" xml:base="http://localhost:4000/categories/ros/ROS-07-message.html">&lt;h2 id=&quot;1-메시지란&quot;&gt;1. 메시지란?&lt;/h2&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.0.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2019-12-16T11:31:35+00:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">로봇을 배우기 위한 지식 창고</title><subtitle>로봇을 배우기 위한 지식 창고</subtitle><author><name>Kiho Lee</name></author><entry><title type="html">10.ROS 좌표변환(TF-Transform)</title><link href="http://localhost:4000/categories/ros/ROS-10-TF.html" rel="alternate" type="text/html" title="10.ROS 좌표변환(TF-Transform)" /><published>2019-12-16T00:00:00+00:00</published><updated>2019-12-16T00:00:00+00:00</updated><id>http://localhost:4000/categories/ros/ROS-10-TF</id><content type="html" xml:base="http://localhost:4000/categories/ros/ROS-10-TF.html">&lt;h2 id=&quot;1-좌표-변환tf란&quot;&gt;1. 좌표 변환(TF)란?&lt;/h2&gt;
+
+&lt;p&gt;로봇의 팔 자세를 설명 할 때 각 관절의 상대 좌표 변환으로 설명 할 수 있다.
+로봇이 걷고있을 때, 로봇 손의 좌표는 각각의 상관 된 관절의 상대 좌표 변환에 따라 움직인다.
+로봇 프로그래밍에서 각 로봇의 관절(또는 회전축이 있는 바퀴)의 위치는 매우 중요한 요소이며, ROS에서는 TF (변형)로 표시된다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/ros/ros_tf.png&quot; title=&quot;좌표변환&quot; /&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;ROS에서 좌표변환 TF는 장애물과 물체뿐만 아니라 로봇의 구성 요소를 설명 할 때 가장 유용한 개념 중 하나이다.&lt;/p&gt;
+
+&lt;h2 id=&quot;2-좌표-변환-구성&quot;&gt;2. 좌표 변환 구성&lt;/h2&gt;
+
+&lt;p&gt;이들은 자세(pose)라 하여 위치(position)와 방향(orientation)으로 기술할 수 있다. 여기서, 위치는 x, y, z과 같이 3개의 벡터로 설명하고 방향은 사원수라 일컫는 쿼티니언(quaternion) 형태의 x, y, z, w를 이용한다.&lt;/p&gt;
+
+&lt;p&gt;TF는 메시지와 같이 다음과 같은 형태를 취하고 있다.&lt;/p&gt;
+
+&lt;p&gt;변환된 시간을 기록할 목적으로 Header를 사용하며, 하위 좌표를 명시하기 위하여 child_frame_id라는 이름의 메시지를 사용한다. 그리고 상대 좌표 변환값을 알려주기 위하여&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;transform.translation.x&lt;/li&gt;
+  &lt;li&gt;transform.translation.y&lt;/li&gt;
+  &lt;li&gt;transform.translation.z&lt;/li&gt;
+  &lt;li&gt;transform.rotation.x&lt;/li&gt;
+  &lt;li&gt;transform.rotation.y&lt;/li&gt;
+  &lt;li&gt;transform.rotation.z&lt;/li&gt;
+  &lt;li&gt;transform.rotation.w&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+2
+3
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;Header header
+string child_frame_id
+Transform transform
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;추후에 좀 더 다양한 프로젝트를 구성해서 다뤄보도록 하자.&lt;/p&gt;</content><author><name>Kiho Lee</name></author><category term="ROS" /><category term="좌표변환" /><category term="TF" /><category term="transform" /><summary type="html">1. 좌표 변환(TF)란?</summary></entry><entry><title type="html">11.ROS 추가적 특징(라이브러리, 이기종 디바이스 통신)</title><link href="http://localhost:4000/categories/ros/ROS-11-additional-feature.html" rel="alternate" type="text/html" title="11.ROS 추가적 특징(라이브러리, 이기종 디바이스 통신)" /><published>2019-12-16T00:00:00+00:00</published><updated>2019-12-16T00:00:00+00:00</updated><id>http://localhost:4000/categories/ros/ROS-11-additional-feature</id><content type="html" xml:base="http://localhost:4000/categories/ros/ROS-11-additional-feature.html">&lt;h2 id=&quot;1-클라이언트-라이브러리&quot;&gt;1. 클라이언트 라이브러리&lt;/h2&gt;
+
+&lt;p&gt;ROS는 다양한 언어들을 활용하여 목적에 맞게 개발할 수 있도록 지원하고 있다.&lt;/p&gt;
+
+&lt;p&gt;노드는 각각의 언어로 작성이 가능하고 노드 간의 메시지 통신을 통해 정보를 교환하는 방법을 이용하고 있다. 이처럼 각각의 언어로 작성 가능하게 해주는 소프트웨어 모듈이 클라이언트 라이브러리(client library)이다.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;C++ - roscpp&lt;/li&gt;
+  &lt;li&gt;Python - rospy&lt;/li&gt;
+  &lt;li&gt;LISP - roslisp&lt;/li&gt;
+  &lt;li&gt;Java - rosjava&lt;/li&gt;
+  &lt;li&gt;etc&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;그 외에도 많은 언어에 대한 클라이언트 라이브러리를 지원하고 있다.&lt;/p&gt;
+
+&lt;h2 id=&quot;2-이기종-디바이스-통신&quot;&gt;2. 이기종 디바이스 통신&lt;/h2&gt;
+
+&lt;p&gt;ROS가 설치되어 사용하는 운영체제의 종류와도 상관없고, 사용하는 프로그래밍 언어도 상관없이 ROS가 설치되어 각 노드가 개발되어있다면 각 노드들 간의 통신은 매우 쉽게 이용 가능하다.&lt;/p&gt;
+
+&lt;p&gt;예를 들어 Linux 배포판 인 Ubuntu가 로봇에 설치되어 있어도 MacOS에서 로봇의 상태를 모니터링 할 수 있다. 동시에 사용자는 Android 기반 앱에서 로봇에게 명령을 내릴 수 있다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/ros/ros_cross_platform.png&quot; title=&quot;이기종 디바이스 통신&quot; /&gt;&lt;br /&gt;&lt;/p&gt;</content><author><name>Kiho Lee</name></author><category term="ROS" /><category term="라이브러리" /><category term="이기종디바이스통신" /><summary type="html">1. 클라이언트 라이브러리</summary></entry><entry><title type="html">07.ROS 메시지 더 알아보기</title><link href="http://localhost:4000/categories/ros/ROS-07-message.html" rel="alternate" type="text/html" title="07.ROS 메시지 더 알아보기" /><published>2019-12-13T00:00:00+00:00</published><updated>2019-12-13T00:00:00+00:00</updated><id>http://localhost:4000/categories/ros/ROS-07-message</id><content type="html" xml:base="http://localhost:4000/categories/ros/ROS-07-message.html">&lt;h2 id=&quot;1-메시지란&quot;&gt;1. 메시지란?&lt;/h2&gt;
 
 &lt;p&gt;메시지는 노드 간 데이터 교환에 사용되는 데이터 모음이다. 토픽, 서비스 및 액션에는 메시지를 사용하여 통신한다.&lt;/p&gt;
 
@@ -1175,575 +1232,4 @@ Expression Templates: 디자인 패턴의 일종인 Proxy pattern 기반의 Lazy
   &lt;p&gt;기존의 C에 대해서 얇팍하게 알았던 지식은 C++을 학습할 때 크게 도움이 되지 않을 것 같다. 오히려 C언어를 자세히 알지 못하는게 C++을 학습하는 데 더 도움이 될 수 있지 않을까 생각도 한다. ROS 및 로봇을 개발 하기 위해서는 C/C++언어에 상당히 익숙해 질 필요가 있다.&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;p&gt;[출처]&lt;a href=&quot;https://namu.wiki/w/C%2B%2B&quot;&gt;나무위키&lt;/a&gt;&lt;/p&gt;</content><author><name>Kiho Lee</name></author><category term="C++" /><category term="introduction" /><summary type="html"></summary></entry><entry><title type="html">05.GIT 저장소 수정하기와 저장하기</title><link href="http://localhost:4000/categories/git/GIT-05-modifying-and-saving-repository.html" rel="alternate" type="text/html" title="05.GIT 저장소 수정하기와 저장하기" /><published>2019-12-08T10:50:13+00:00</published><updated>2019-12-08T10:50:13+00:00</updated><id>http://localhost:4000/categories/git/GIT-05-modifying-and-saving-repository</id><content type="html" xml:base="http://localhost:4000/categories/git/GIT-05-modifying-and-saving-repository.html">&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h1 id=&quot;git의-기초---수정하고-저장소에-저장하기&quot;&gt;Git의 기초 - 수정하고 저장소에 저장하기&lt;/h1&gt;
-
-&lt;p&gt;실제 존재하는 Git 저장소를 하나 만들었고 워킹 디렉토리에 Checkout도 했다. 이제는 파일을 수정하고 파일의 스냅샷을 커밋해 보자. 파일을 수정하다가 저장하고 싶으면 스냅샷을 커밋한다.&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;Checkout은 처음 Git을 접하면 생소할 수 있다. Git은 스냅샷을 기반으로 데이터의 내용을 저장하고 추적한다. Checkout이 되어있는 디렉토리란(워킹디렉토리)는 현재 .git 폴더에서 관리하는 워킹 트리에 데이터가 업데이트 되어 워킹트리, 워킹트리의 선택 브랜치, 워킹 디렉토리 모두 최신화 되어 있는 상태를 말한다. (이렇게 설명하면 처음 접하는 사람은 더 헷갈릴 수 있을 것 같네…)&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;&lt;em&gt;이제부터 설명하는 내용이 Git에 매우 중요한 내용이지만, 이해하기 쉽지 않을 수 있다. 차근차근 보도록 해보자.&lt;/em&gt;&lt;/p&gt;
-
-&lt;p&gt;워킹 디렉토리의 모든 파일은 크게 Tracked(관리대상임)와 Untracked(관리대상이 아님)로 나눈다. Tracked 파일은 이미 스냅샷에 포함돼 있던 파일이다. Tracked 파일은 또 Unmodified(수정하지 않음)와 Modified(수정함) 그리고 Staged(커밋으로 저장소에 기록할) 상태 중 하나이다. 간단히 말하자면 Git이 알고 있는 파일이라는 것이다.&lt;/p&gt;
-
-&lt;p&gt;그리고 나머지 파일은 모두 Untracked 파일이다. Untracked 파일은 워킹 디렉토리에 있는 파일 중 스냅샷에도 Staging Area에도 포함되지 않은 파일이다. 처음 저장소를 Clone 하면 모든 파일은 Tracked이면서 Unmodified 상태이다. 파일을 Checkout 하고 나서 아무것도 수정하지 않았기 때문에 그렇다.&lt;/p&gt;
-
-&lt;p&gt;마지막 커밋 이후 아직 아무것도 수정하지 않은 상태에서 어떤 파일을 수정하면 Git은 그 파일을 Modified 상태로 인식한다. 실제로 커밋을 하기 위해서는 이 수정한 파일을 Staged 상태로 만들고, Staged 상태의 파일을 커밋한다. 이런 라이프사이클을 계속 반복한다.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/img/git/git-lifecycle.png&quot; title=&quot;Git 파일의 라이프 사이클&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;1-파일의-상태-확인하기&quot;&gt;1. 파일의 상태 확인하기&lt;/h2&gt;
-
-&lt;p&gt;파일의 상태를 확인하려면 보통 &lt;strong&gt;git status&lt;/strong&gt; 명령을 사용한다. Clone 한 후에 바로 이 명령을 실행하면 아래과 같은 메시지를 볼 수 있다.&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ git status
-On branch master
-Your branch is up-to-date with 'origin/master'.
-nothing to commit, working directory clean
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;위의 내용은 파일을 하나도 수정하지 않았다는 것을 말해준다. Tracked 파일은 하나도 수정되지 않았다는 의미다. Untracked 파일은 아직 없어서 목록에 나타나지 않는다. 그리고 현재 작업 중인 브랜치를 알려주며 서버의 같은 브랜치로부터 진행된 작업이 없는 것을 나타낸다. 기본 브랜치가 master이기 때문에 현재 브랜치 이름이 “master” 로 나온다. 브랜치 관련 내용은 차차 알아가자. Git 브랜치 에서 브랜치와 Refs에 대해 자세히 다룬다.&lt;/p&gt;
-
-&lt;p&gt;프로젝트에 &lt;strong&gt;README&lt;/strong&gt; 파일을 만들어보자. &lt;strong&gt;README&lt;/strong&gt; 파일은 새로 만든 파일이기 때문에 &lt;strong&gt;git status&lt;/strong&gt; 를 실행하면 &lt;code class=&quot;highlighter-rouge&quot;&gt;Untracked files&lt;/code&gt;에 들어 있다:&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ echo 'My Project' &amp;gt; README
-$ git status
-On branch master
-Your branch is up-to-date with 'origin/master'.
-Untracked files:
-  (use &quot;git add &amp;lt;file&amp;gt;...&quot; to include in what will be committed)
-
-    README
-
-nothing added to commit but untracked files present (use &quot;git add&quot; to track)
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;&lt;strong&gt;README&lt;/strong&gt; 파일은 “Untracked files” 부분에 속해 있는데 이것은 &lt;strong&gt;README&lt;/strong&gt; 파일이 Untracked 상태라는 것을 말한다. Git은 Untracked 파일을 아직 스냅샷(커밋)에 넣어지지 않은 파일이라고 본다. 파일이 Tracked 상태가 되기 전까지는 Git은 절대 그 파일을 커밋하지 않는다. 그래서 일하면서 생성하는 바이너리 파일 같은 것을 커밋하는 실수는 하지 않게 된다. &lt;strong&gt;README&lt;/strong&gt; 파일을 추가해서 직접 Tracked 상태로 만들어 보자.&lt;/p&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;2-파일을-새로-추적하기&quot;&gt;2. 파일을 새로 추적하기&lt;/h2&gt;
-
-&lt;p&gt;&lt;strong&gt;git add&lt;/strong&gt; 명령으로 파일을 새로 추적할 수 있다. 아래 명령을 실행하면 Git은 README 파일을 추적한다.&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ git add README
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;&lt;strong&gt;git status&lt;/strong&gt; 명령을 다시 실행하면 README 파일이 Tracked 상태이면서 커밋에 추가될 Staged 상태라는 것을 확인할 수 있다.&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ git status
-On branch master
-Your branch is up-to-date with 'origin/master'.
-Changes to be committed:
-  (use &quot;git reset HEAD &amp;lt;file&amp;gt;...&quot; to unstage)
-
-    new file:   README
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;“Changes to be committed” 에 들어 있는 파일은 Staged 상태라는 것을 의미한다. 커밋하면 git add 를 실행한 시점의 파일이 커밋되어 저장소 히스토리에 남는다. 앞에서 git init 명령을 실행한 후, git add (files) 명령을 실행했던 걸 기억할 것이다. 이 명령을 통해 디렉토리에 있는 파일을 추적하고 관리하도록 한다. git add 명령은 파일 또는 디렉토리의 경로를 아규먼트로 받는다. 디렉토리면 아래에 있는 모든 파일들까지 재귀적으로 추가한다.&lt;/p&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;3-modified-상태의-파일을-stage-하기&quot;&gt;3. Modified 상태의 파일을 Stage 하기&lt;/h2&gt;
-
-&lt;p&gt;이미 Tracked 상태인 파일을 수정하는 법을 알아보자. &lt;strong&gt;CONTRIBUTING.md&lt;/strong&gt; 라는 파일을 수정하고 나서 &lt;strong&gt;git status&lt;/strong&gt; 명령을 다시 실행하면 결과는 아래와 같다.&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ git status
-On branch master
-Your branch is up-to-date with 'origin/master'.
-Changes to be committed:
-  (use &quot;git reset HEAD &amp;lt;file&amp;gt;...&quot; to unstage)
-
-    new file:   README
-
-Changes not staged for commit:
-  (use &quot;git add &amp;lt;file&amp;gt;...&quot; to update what will be committed)
-  (use &quot;git checkout -- &amp;lt;file&amp;gt;...&quot; to discard changes in working directory)
-
-    modified:   CONTRIBUTING.md
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;이 &lt;strong&gt;CONTRIBUTING.md&lt;/strong&gt; 파일은 “Changes not staged for commit” 에 있다. 이것은 수정한 파일이 Tracked 상태이지만 아직 Staged 상태는 아니라는 것이다. Staged 상태로 만들려면 &lt;strong&gt;git add&lt;/strong&gt; 명령을 실행해야 한다. &lt;strong&gt;git add&lt;/strong&gt; 명령은 파일을 새로 추적할 때도 사용하고 수정한 파일을 Staged 상태로 만들 때도 사용한다. Merge 할 때 충돌난 상태의 파일을 Resolve 상태로 만들때도 사용한다. add의 의미는 프로젝트에 파일을 추가한다기 보다는 다음 커밋에 추가한다고 받아들이는게 좋다. &lt;strong&gt;git add&lt;/strong&gt; 명령을 실행하여 &lt;strong&gt;CONTRIBUTING.md&lt;/strong&gt; 파일을 Staged 상태로 만들고 &lt;strong&gt;git status&lt;/strong&gt; 명령으로 결과를 확인해보자.&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ git add CONTRIBUTING.md
-$ git status
-On branch master
-Your branch is up-to-date with 'origin/master'.
-Changes to be committed:
-  (use &quot;git reset HEAD &amp;lt;file&amp;gt;...&quot; to unstage)
-
-    new file:   README
-    modified:   CONTRIBUTING.md
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;두 파일 모두 Staged 상태이므로 다음 커밋에 포함된다. 하지만 아직 더 수정해야 한다는 것을 알게 되어 바로 커밋하지 못하는 상황이 되었다고 생각해보자. 이 상황에서 CONTRIBUTING.md 파일을 열고 수정한다. 이제 커밋할 준비가 다 됐다고 생각할 테지만, Git은 그렇지 않다. git status 명령으로 파일의 상태를 다시 확인해보자.&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;사실 이 부분이 어떻게 보면 복잡하게 staged 상태를 구분하는 이유가 생기는 큰 원인일 수 있다. 직접 만들어서 비교해보면 그 차이를 쉽게 이해할 수 있을 것 같다.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ vim CONTRIBUTING.md
-$ git status
-On branch master
-Your branch is up-to-date with 'origin/master'.
-Changes to be committed:
-  (use &quot;git reset HEAD &amp;lt;file&amp;gt;...&quot; to unstage)
-
-    new file:   README
-    modified:   CONTRIBUTING.md
-
-Changes not staged for commit:
-  (use &quot;git add &amp;lt;file&amp;gt;...&quot; to update what will be committed)
-  (use &quot;git checkout -- &amp;lt;file&amp;gt;...&quot; to discard changes in working directory)
-
-    modified:   CONTRIBUTING.md
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;[참고]본래 출처에서 사용한 에디터 도구는 vim이라는 툴이고 매우 유명한 툴이지만, 사용법이 다소 복잡하여 처음 리눅스 환경을 적응해야하는 사람들에게는 다소 어려울 수 있다. 따라서, gedit나 nano와 같은 툴을 사용하는 게 훨씬 수월 할 수 있다. gedit는 윈도우 환경에서 notepad(매모장)과 같은 에디터라고 볼 수 있다.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;헉! &lt;strong&gt;CONTRIBUTING.md&lt;/strong&gt; 가 Staged 상태이면서 동시에 Unstaged 상태로 나온다. 어떻게 이런 일이 가능할까? &lt;strong&gt;git add&lt;/strong&gt; 명령을 실행하면 Git은 파일을 바로 Staged 상태로 만든다. 지금 이 시점에서 커밋을 하면 &lt;strong&gt;git commit&lt;/strong&gt; 명령을 실행하는 시점의 버전이 커밋되는 것이 아니라 마지막으로 &lt;strong&gt;git add&lt;/strong&gt; 명령을 실행했을 때의 버전이 커밋된다. 그러니까 &lt;strong&gt;git add&lt;/strong&gt; 명령을 실행한 후에 또 파일을 수정하면 &lt;strong&gt;git add&lt;/strong&gt; 명령을 다시 실행해서 최신 버전을 Staged 상태로 만들어야 한다.&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ git add CONTRIBUTING.md
-$ git status
-On branch master
-Your branch is up-to-date with 'origin/master'.
-Changes to be committed:
-  (use &quot;git reset HEAD &amp;lt;file&amp;gt;...&quot; to unstage)
-
-    new file:   README
-    modified:   CONTRIBUTING.md
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;4-파일-상태를-짤막하게-확인하기&quot;&gt;4. 파일 상태를 짤막하게 확인하기&lt;/h2&gt;
-
-&lt;p&gt;&lt;strong&gt;git status&lt;/strong&gt; 명령으로 확인할 수 있는 내용이 좀 많아 보일 수 있다. 사실 그렇다. 좀 더 간단하게 변경 내용을 보여주는 옵션이 있다. &lt;strong&gt;git status -s&lt;/strong&gt; 또는 &lt;strong&gt;git status –short&lt;/strong&gt; 처럼 옵션을 주면 현재 변경한 상태를 짤막하게 보여준다.&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ git status -s
-M README
-MM Rakefile
-A  lib/git.rb
-M  lib/simplegit.rb
-?? LICENSE.txt
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;아직 추적하지 않는 새 파일 앞에는 ?? 표시가 붙는다. Staged 상태로 추가한 파일 중 새로 생성한 파일 앞에는 &lt;strong&gt;A&lt;/strong&gt; 표시가, 수정한 파일 앞에는 &lt;strong&gt;M&lt;/strong&gt; 표시가 붙는다. 위 명령의 결과에서 상태정보 컬럼에는 두 가지 정보를 보여준다. 왼쪽에는 Staging Area에서의 상태를, 오른쪽에는 Working Tree에서의 상태를 표시한다. &lt;strong&gt;README&lt;/strong&gt; 파일 같은 경우 내용을 변경했지만 아직 Staged 상태로 추가하지는 않았다. &lt;strong&gt;lib/simplegit.rb&lt;/strong&gt; 파일은 내용을 변경하고 Staged 상태로 추가까지 한 상태이다. 위 결과에서 차이점을 비교해보자. &lt;strong&gt;Rakefile&lt;/strong&gt; 은 변경하고 Staged 상태로 추가한 후 또 내용을 변경해서 Staged 이면서 Unstaged 상태인 파일이다.&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;위의 설명을 들으면서 내용을 이해하면 사실 더 이해가 안될 수도 있다. &lt;strong&gt;Rakefile&lt;/strong&gt;만 하더라도 Staged상태이면서 Unstaged상태라는 놀라운 설명이… 다시말해, &lt;strong&gt;Rakefile&lt;/strong&gt;을 수정하고, &lt;strong&gt;add Rakefile&lt;/strong&gt;이 된 후, 또, &lt;strong&gt;Rakefile&lt;/strong&gt;을 수정했다는 얘기다.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;5-파일-무시하기&quot;&gt;5. 파일 무시하기&lt;/h2&gt;
-
-&lt;p&gt;어떤 파일은 Git이 관리할 필요가 없다. 보통 로그 파일이나 빌드 시스템이 자동으로 생성한 파일이 그렇다. 그런 파일을 무시하려면 &lt;strong&gt;.gitignore&lt;/strong&gt; 파일을 만들고 그 안에 무시할 파일 패턴을 적는다. 아래는 &lt;strong&gt;.gitignore&lt;/strong&gt; 파일의 예이다.&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ cat .gitignore
-*.[oa]
-*~
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;첫번째 라인은 확장자가 “.o” 나 “.a” 인 파일을 Git이 무시하라는 것이고 둘째 라인은 &lt;strong&gt;~&lt;/strong&gt; 로 끝나는 모든 파일을 무시하라는 것이다. 보통 대부분의 텍스트 편집기에서 임시파일로 사용하는 파일 이름이기 때문이다. “.o” 와 “.a” 는 각각 빌드 시스템이 만들어내는 오브젝트와 아카이브 파일이고 &lt;strong&gt;~&lt;/strong&gt; 로 끝나는 파일은 Emacs나 VI 같은 텍스트 편집기가 임시로 만들어내는 파일이다. 또 log, tmp, pid 같은 디렉토리나, 자동으로 생성하는 문서 같은 것들도 추가할 수 있다. &lt;strong&gt;.gitignore&lt;/strong&gt; 파일은 보통 처음에 만들어 두는 것이 편리하다. 그래서 Git 저장소에 커밋하고 싶지 않은 파일을 실수로 커밋하는 일을 방지할 수 있다.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;.gitignore 파일에 입력하는 패턴은 아래 규칙을 따른다.&lt;/strong&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;아무것도 없는 라인이나, &lt;code class=&quot;highlighter-rouge&quot;&gt;#&lt;/code&gt;로 시작하는 라인은 무시한다.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;표준 Glob 패턴을 사용한다. 이는 프로젝트 전체에 적용된다.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;슬래시(/)로 시작하면 하위 디렉토리에 적용되지(Recursivity) 않는다.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;디렉토리는 슬래시(/)를 끝에 사용하는 것으로 표현한다.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;느낌표(!)로 시작하는 패턴의 파일은 무시하지 않는다.&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Glob 패턴은 &lt;strong&gt;정규표현식&lt;/strong&gt;을 단순하게 만든 것으로 생각하면 되고 보통 쉘에서 많이 사용한다. 애스터리스크(&lt;strong&gt;*&lt;/strong&gt;)는 문자가 하나도 없거나 하나 이상을 의미하고, &lt;strong&gt;[abc]&lt;/strong&gt; 는 중괄호 안에 있는 문자 중 하나를 의미한다(그러니까 이 경우에는 a, b, c). 물음표(?)는 문자 하나를 말하고, &lt;strong&gt;[0-9]&lt;/strong&gt; 처럼 중괄호 안의 캐릭터 사이에 하이픈(-)을 사용하면 그 캐릭터 사이에 있는 문자 하나를 말한다. 애스터리스크 2개를 사용하여 디렉토리 안의 디렉토리 까지 지정할 수 있다. &lt;strong&gt;a/**/z&lt;/strong&gt; 패턴은 &lt;strong&gt;a/z, a/b/z, a/b/c/z&lt;/strong&gt; 디렉토리에 사용할 수 있다.&lt;/p&gt;
-
-&lt;p&gt;아래는 &lt;strong&gt;.gitignore&lt;/strong&gt;파일의 예이다.&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;# 확장자가 .a인 파일 무시
-*.a
-
-# 윗 라인에서 확장자가 .a인 파일은 무시하게 했지만 lib.a는 무시하지 않음
-!lib.a
-
-# 현재 디렉토리에 있는 TODO파일은 무시하고 subdir/TODO처럼 하위디렉토리에 있는 파일은 무시하지 않음
-/TODO
-
-# build/ 디렉토리에 있는 모든 파일은 무시
-build/
-
-# doc/notes.txt 파일은 무시하고 doc/server/arch.txt 파일은 무시하지 않음
-doc/*.txt
-
-# doc 디렉토리 아래의 모든 .pdf 파일을 무시
-doc/**/*.pdf
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;table&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;td&gt;&lt;strong&gt;Tip&lt;/strong&gt;&lt;/td&gt;
-      &lt;td&gt;GitHub은 다양한 프로젝트에서 자주 사용하는 .gitignore 예제를 관리하고 있다. 어떤 내용을 넣을지 막막하다면 &lt;strong&gt;https://github.com/github/gitignore&lt;/strong&gt; 사이트에서 적당한 예제를 찾을 수 있다.&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;&lt;strong&gt;Note&lt;/strong&gt;&lt;/td&gt;
-      &lt;td&gt;&lt;strong&gt;.gitignore&lt;/strong&gt;를 사용하는 간단한 방식은 하나의 &lt;strong&gt;.gitignore&lt;/strong&gt; 파일을 최상위 디렉토리에 하나 두고 모든 하위 디렉토리에까지 적용시키는 방식이다. 물론 &lt;strong&gt;.gitignore&lt;/strong&gt; 파일을 하나만 두는 것이 아니라 하위 디렉토리에도 추가로 둘 수도 있다. &lt;strong&gt;.gitignore&lt;/strong&gt; 정책은 현재 &lt;strong&gt;.gitignore&lt;/strong&gt; 파일이 위치한 디렉토리와 그 하위 디렉토리에 적용된다. (리눅스 커널 소스 저장소에는 &lt;strong&gt;.gitignore&lt;/strong&gt; 파일이 206개나 있음)&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
-
-&lt;p&gt;다수의 &lt;strong&gt;.gitignore&lt;/strong&gt; 파일을 두고 정책을 적용하는 부분은 이 책에서 다루는 범위를 벗어난다. 자세한 내용은 &lt;code class=&quot;highlighter-rouge&quot;&gt;man gitignore&lt;/code&gt;에서 확인할 수 있다.&lt;/p&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;6-staged와-unstaged-상태의-변경-내용을-보기&quot;&gt;6. Staged와 Unstaged 상태의 변경 내용을 보기&lt;/h2&gt;
-
-&lt;p&gt;단순히 파일이 변경됐다는 사실이 아니라 어떤 내용이 변경됐는지 살펴보려면 git status 명령이 아니라 git diff 명령을 사용해야 한다. 보통 우리는 ‘수정했지만, 아직 Staged 파일이 아닌 것?’과 ‘어떤 파일이 Staged 상태인지?’가 궁금하기 때문에 git status 명령으로도 충분하다. 더 자세하게 볼 때는 git diff 명령을 사용하는데 Patch처럼 어떤 라인을 추가했고 삭제했는지가 궁금할 때 사용한다. git diff 는 나중에 더 자세히 다룬다.&lt;/p&gt;
-
-&lt;p&gt;README 파일을 수정해서 Staged 상태로 만들고 CONTRIBUTING.md 파일은 그냥 수정만 해둔다. 이 상태에서 git status 명령을 실행하면 아래와 같은 메시지를 볼 수 있다.&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ git status
-On branch master
-Your branch is up-to-date with 'origin/master'.
-Changes to be committed:
-  (use &quot;git reset HEAD &amp;lt;file&amp;gt;...&quot; to unstage)
-
-    modified:   README
-
-Changes not staged for commit:
-  (use &quot;git add &amp;lt;file&amp;gt;...&quot; to update what will be committed)
-  (use &quot;git checkout -- &amp;lt;file&amp;gt;...&quot; to discard changes in working directory)
-
-    modified:   CONTRIBUTING.md
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;git diff 명령을 실행하면 수정했지만 아직 staged 상태가 아닌 파일을 비교해 볼 수 있다.&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;err&quot;&gt;$&lt;/span&gt; git diff
-&lt;span class=&quot;gh&quot;&gt;diff --git a/CONTRIBUTING.md b/CONTRIBUTING.md
-index 8ebb991..643e24f 100644
-&lt;/span&gt;&lt;span class=&quot;gd&quot;&gt;--- a/CONTRIBUTING.md
-&lt;/span&gt;&lt;span class=&quot;gi&quot;&gt;+++ b/CONTRIBUTING.md
-&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;@@ -65,7 +65,8 @@&lt;/span&gt; branch directly, things can get messy.
- Please include a nice description of your changes when you submit your PR;
- if we have to read the whole diff to figure out why you're contributing
- in the first place, you're less likely to get feedback and have your change
-&lt;span class=&quot;gd&quot;&gt;-merged in.
-&lt;/span&gt;&lt;span class=&quot;gi&quot;&gt;+merged in. Also, split your changes into comprehensive chunks if your patch is
-+longer than a dozen lines.
-&lt;/span&gt;
- If you are starting to work on a particular area, feel free to submit a PR
- that highlights your work in progress (and note in the PR title that it's
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;이 명령은 워킹 디렉토리에 있는 것과 Staging Area에 있는 것을 비교한다. 그래서 수정하고 아직 Stage 하지 않은 것을 보여준다.&lt;/p&gt;
-
-&lt;p&gt;만약 커밋하려고 Staging Area에 넣은 파일의 변경 부분을 보고 싶으면 git diff –staged 옵션을 사용한다. 이 명령은 저장소에 커밋한 것과 Staging Area에 있는 것을 비교한다.&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;err&quot;&gt;$&lt;/span&gt; git diff --staged
-&lt;span class=&quot;gh&quot;&gt;diff --git a/README b/README
-&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;new file mode 100644
-&lt;/span&gt;&lt;span class=&quot;gh&quot;&gt;index 0000000..03902a1
-&lt;/span&gt;&lt;span class=&quot;gd&quot;&gt;--- /dev/null
-&lt;/span&gt;&lt;span class=&quot;gi&quot;&gt;+++ b/README
-&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;@@ -0,0 +1 @@&lt;/span&gt;
-&lt;span class=&quot;gi&quot;&gt;+My Project
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;꼭 잊지 말아야 할 것이 있는데 git diff 명령은 마지막으로 커밋한 후에 수정한 것들 전부를 보여주지 않는다. git diff 는 Unstaged 상태인 것들만 보여준다. 수정한 파일을 모두 Staging Area에 넣었다면 git diff 명령은 아무것도 출력하지 않는다.&lt;/p&gt;
-
-&lt;p&gt;CONTRIBUTING.md 파일을 Stage 한 후에 다시 수정해도 git diff 명령을 사용할 수 있다. 이때는 Staged 상태인 것과 Unstaged 상태인 것을 비교한다.&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ git add CONTRIBUTING.md
-$ echo '# test line' &amp;gt;&amp;gt; CONTRIBUTING.md
-$ git status
-On branch master
-Your branch is up-to-date with 'origin/master'.
-Changes to be committed:
-  (use &quot;git reset HEAD &amp;lt;file&amp;gt;...&quot; to unstage)
-
-    modified:   CONTRIBUTING.md
-
-Changes not staged for commit:
-  (use &quot;git add &amp;lt;file&amp;gt;...&quot; to update what will be committed)
-  (use &quot;git checkout -- &amp;lt;file&amp;gt;...&quot; to discard changes in working directory)
-
-    modified:   CONTRIBUTING.md
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;git diff 명령으로 Unstaged 상태인 변경 부분을 확인할 수 있다.&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;err&quot;&gt;$&lt;/span&gt; git diff
-&lt;span class=&quot;gh&quot;&gt;diff --git a/CONTRIBUTING.md b/CONTRIBUTING.md
-index 643e24f..87f08c8 100644
-&lt;/span&gt;&lt;span class=&quot;gd&quot;&gt;--- a/CONTRIBUTING.md
-&lt;/span&gt;&lt;span class=&quot;gi&quot;&gt;+++ b/CONTRIBUTING.md
-&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;@@ -119,3 +119,4 @@&lt;/span&gt; at the
- ## Starter Projects
-
- See our [projects list](https://github.com/libgit2/libgit2/blob/development/PROJECTS.md).
-&lt;span class=&quot;gi&quot;&gt;+# test line
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;Staged 상태인 파일은 git diff –cached 옵션으로 확인한다. –staged 와 –cached 는 같은 옵션이다.&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;err&quot;&gt;$&lt;/span&gt; git diff --cached
-&lt;span class=&quot;gh&quot;&gt;diff --git a/CONTRIBUTING.md b/CONTRIBUTING.md
-index 8ebb991..643e24f 100644
-&lt;/span&gt;&lt;span class=&quot;gd&quot;&gt;--- a/CONTRIBUTING.md
-&lt;/span&gt;&lt;span class=&quot;gi&quot;&gt;+++ b/CONTRIBUTING.md
-&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;@@ -65,7 +65,8 @@&lt;/span&gt; branch directly, things can get messy.
- Please include a nice description of your changes when you submit your PR;
- if we have to read the whole diff to figure out why you're contributing
- in the first place, you're less likely to get feedback and have your change
-&lt;span class=&quot;gd&quot;&gt;-merged in.
-&lt;/span&gt;&lt;span class=&quot;gi&quot;&gt;+merged in. Also, split your changes into comprehensive chunks if your patch is
-+longer than a dozen lines.
-&lt;/span&gt;
- If you are starting to work on a particular area, feel free to submit a PR
- that highlights your work in progress (and note in the PR title that it's
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;table&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;td&gt;&lt;strong&gt;Note&lt;/strong&gt;&lt;/td&gt;
-      &lt;td&gt;&lt;strong&gt;외부 도구로 비교하기&lt;/strong&gt;&lt;br /&gt;이 책에서는 계속 &lt;strong&gt;git diff&lt;/strong&gt; 명령으로 여기저기서 써 먹는다. 즐겨 쓰거나 결과를 아름답게 보여주는 Diff 도구가 있으면 사용할 수 있다. &lt;strong&gt;git diff&lt;/strong&gt; 대신 &lt;strong&gt;git difftool&lt;/strong&gt; 명령을 사용해서 &lt;strong&gt;emerge&lt;/strong&gt;, &lt;strong&gt;vimdiff&lt;/strong&gt; 같은 도구로 비교할 수 있다. 상용 제품도 사용할 수 있다. &lt;strong&gt;git difftool –tool-help&lt;/strong&gt; 라는 명령은 사용가능한 도구를 보여준다.&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;7-변경사항-커밋하기&quot;&gt;7. 변경사항 커밋하기&lt;/h2&gt;
-
-&lt;p&gt;수정한 것을 커밋하기 위해 Staging Area에 파일을 정리했다. Unstaged 상태의 파일은 커밋되지 않는다는 것을 기억해야 한다. Git은 생성하거나 수정하고 나서 git add 명령으로 추가하지 않은 파일은 커밋하지 않는다. 그 파일은 여전히 Modified 상태로 남아 있다. 커밋하기 전에 git status 명령으로 모든 것이 Staged 상태인지 확인할 수 있다. 그 후에 git commit 을 실행하여 커밋한다.&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ git commit
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;Git 설정에 지정된 편집기가 실행되고, 아래와 같은 텍스트가 자동으로 포함된다 (아래 예제는 Vim 편집기의 화면이다. 이 편집기는 쉘의 EDITOR 환경 변수에 등록된 편집기이고 보통은 Vim이나 Emacs을 사용한다. 또 시작하기 에서 설명했듯이 git config –global core.editor 명령으로 어떤 편집기를 사용할지 설정할 수 있다).&lt;/p&gt;
-
-&lt;p&gt;편집기는 아래와 같은 내용을 표시한다(아래 예제는 Vim 편집기).&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;# Please enter the commit message for your changes. Lines starting
-# with '#' will be ignored, and an empty message aborts the commit.
-# On branch master
-# Your branch is up-to-date with 'origin/master'.
-#
-# Changes to be committed:
-#	new file:   README
-#	modified:   CONTRIBUTING.md
-#
-~
-~
-~
-&quot;.git/COMMIT_EDITMSG&quot; 9L, 283C
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;자동으로 생성되는 커밋 메시지의 첫 라인은 비어 있고 둘째 라인부터 git status 명령의 결과가 채워진다. 커밋한 내용을 쉽게 기억할 수 있도록 이 메시지를 포함할 수도 있고 메시지를 전부 지우고 새로 작성할 수 있다 (정확히 뭘 수정했는지도 보여줄 수 있는데, git commit 에 -v 옵션을 추가하면 편집기에 diff 메시지도 추가된다). 내용을 저장하고 편집기를 종료하면 Git은 입력된 내용(#로 시작하는 내용을 제외한)으로 새 커밋을 하나 완성한다.&lt;/p&gt;
-
-&lt;p&gt;메시지를 인라인으로 첨부할 수도 있다. commit 명령을 실행할 때 아래와 같이 -m 옵션을 사용한다.&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ git commit -m &quot;Story 182: Fix benchmarks for speed&quot;
-[master 463dc4f] Story 182: Fix benchmarks for speed
- 2 files changed, 2 insertions(+)
- create mode 100644 README
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;이렇게 첫번째 커밋을 작성해보았다. commit 명령은 몇 가지 정보를 출력하는데 위 예제는 (master) 브랜치에 커밋했고 체크섬은 (463dc4f)이라고 알려준다. 그리고 수정한 파일이 몇 개이고 삭제됐거나 추가된 라인이 몇 라인인지 알려준다.&lt;/p&gt;
-
-&lt;p&gt;Git은 Staging Area에 속한 스냅샷을 커밋한다는 것을 기억해야 한다. 수정은 했지만, 아직 Staging Area에 넣지 않은 것은 다음에 커밋할 수 있다. 커밋할 때마다 프로젝트의 스냅샷을 기록하기 때문에 나중에 스냅샷끼리 비교하거나 예전 스냅샷으로 되돌릴 수 있다.&lt;/p&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;8-staging-area-생략하기&quot;&gt;8. Staging Area 생략하기&lt;/h2&gt;
-
-&lt;p&gt;Staging Area는 커밋할 파일을 정리한다는 점에서 매우 유용하지만 복잡하기만 하고 필요하지 않은 때도 있다. 아주 쉽게 Staging Area를 생략할 수 있다. git commit 명령을 실행할 때 -a 옵션을 추가하면 Git은 Tracked 상태의 파일을 자동으로 Staging Area에 넣는다. 그래서 git add 명령을 실행하는 수고를 덜 수 있다.&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ git status
-On branch master
-Your branch is up-to-date with 'origin/master'.
-Changes not staged for commit:
-  (use &quot;git add &amp;lt;file&amp;gt;...&quot; to update what will be committed)
-  (use &quot;git checkout -- &amp;lt;file&amp;gt;...&quot; to discard changes in working directory)
-
-    modified:   CONTRIBUTING.md
-
-no changes added to commit (use &quot;git add&quot; and/or &quot;git commit -a&quot;)
-$ git commit -a -m 'added new benchmarks'
-[master 83e38c7] added new benchmarks
- 1 file changed, 5 insertions(+), 0 deletions(-)
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;이 예제에서는 커밋하기 전에 git add 명령으로 CONTRIBUTING.md 파일을 추가하지 않았다는 점을 눈여겨보자. -a 옵션을 사용하면 모든 파일이 자동으로 추가된다. 편리한 옵션이긴 하지만 주의 깊게 사용해야 한다. 생각 없이 이 옵션을 사용하다 보면 추가하지 말아야 할 변경사항도 추가될 수 있기 때문이다.&lt;/p&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;9-파일-삭제하기&quot;&gt;9. 파일 삭제하기&lt;/h2&gt;
-
-&lt;p&gt;Git에서 파일을 제거하려면 git rm 명령으로 Tracked 상태의 파일을 삭제한 후에(정확하게는 Staging Area에서 삭제하는 것) 커밋해야 한다. 이 명령은 워킹 디렉토리에 있는 파일도 삭제하기 때문에 실제로 파일도 지워진다.&lt;/p&gt;
-
-&lt;p&gt;Git 명령을 사용하지 않고 단순히 워킹 디렉터리에서 파일을 삭제하고 git status 명령으로 상태를 확인하면 Git은 현재 “Changes not staged for commit” (즉, Unstaged 상태)라고 표시해준다.&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ rm PROJECTS.md
-$ git status
-On branch master
-Your branch is up-to-date with 'origin/master'.
-Changes not staged for commit:
-  (use &quot;git add/rm &amp;lt;file&amp;gt;...&quot; to update what will be committed)
-  (use &quot;git checkout -- &amp;lt;file&amp;gt;...&quot; to discard changes in working directory)
-
-        deleted:    PROJECTS.md
-
-no changes added to commit (use &quot;git add&quot; and/or &quot;git commit -a&quot;)
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;그리고 git rm 명령을 실행하면 삭제한 파일은 Staged 상태가 된다.&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ git rm PROJECTS.md
-rm 'PROJECTS.md'
-$ git status
-On branch master
-Your branch is up-to-date with 'origin/master'.
-Changes to be committed:
-  (use &quot;git reset HEAD &amp;lt;file&amp;gt;...&quot; to unstage)
-
-    deleted:    PROJECTS.md
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;커밋하면 파일은 삭제되고 Git은 이 파일을 더는 추적하지 않는다. 이미 파일을 수정했거나 Staging Area에(역주 - Git Index라고도 부른다) 추가했다면 -f 옵션을 주어 강제로 삭제해야 한다. 이 점은 실수로 데이터를 삭제하지 못하도록 하는 안전장치다. 커밋 하지 않고 수정한 데이터는 Git으로 복구할 수 없기 때문이다.&lt;/p&gt;
-
-&lt;p&gt;또 Staging Area에서만 제거하고 워킹 디렉토리에 있는 파일은 지우지 않고 남겨둘 수 있다. 다시 말해서 하드디스크에 있는 파일은 그대로 두고 Git만 추적하지 않게 한다. 이것은 .gitignore 파일에 추가하는 것을 빼먹었거나 대용량 로그 파일이나 컴파일된 파일인 .a 파일 같은 것을 실수로 추가했을 때 쓴다. –cached 옵션을 사용하여 명령을 실행한다.&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ git rm --cached README
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;여러 개의 파일이나 디렉토리를 한꺼번에 삭제할 수도 있다. 아래와 같이 git rm 명령에 file-glob 패턴을 사용한다.&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ git rm log/\*.log
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;&lt;strong&gt;*&lt;/strong&gt; 앞에 \ 을 사용한 것을 기억하자. 파일명 확장 기능은 쉘에만 있는 것이 아니라 Git 자체에도 있기 때문에 필요하다. 이 명령은 log/ 디렉토리에 있는 .log 파일을 모두 삭제한다. 아래의 예제처럼 할 수도 있다.&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ git rm \*~
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;이 명령은 ~ 로 끝나는 파일을 모두 삭제한다.&lt;/p&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;10-파일-이름-변경하기&quot;&gt;10. 파일 이름 변경하기&lt;/h2&gt;
-
-&lt;p&gt;Git은 다른 VCS 시스템과는 달리 파일 이름의 변경이나 파일의 이동을 명시적으로 관리하지 않는다. 다시 말해서 파일 이름이 변경됐다는 별도의 정보를 저장하지 않는다. Git은 똑똑해서 굳이 파일 이름이 변경되었다는 것을 추적하지 않아도 아는 방법이 있다. 파일의 이름이 변경된 것을 Git이 어떻게 알아내는지 살펴보자.&lt;/p&gt;
-
-&lt;p&gt;이렇게 말하고 Git에 mv 명령이 있는 게 좀 이상하겠지만, 아래와 같이 파일 이름을 변경할 수 있다.&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ git mv file_from file_to
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;잘 동작한다. 이 명령을 실행하고 Git의 상태를 확인해보면 Git은 이름이 바뀐 사실을 알고 있다.&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ git mv README.md README
-$ git status
-On branch master
-Your branch is up-to-date with 'origin/master'.
-Changes to be committed:
-  (use &quot;git reset HEAD &amp;lt;file&amp;gt;...&quot; to unstage)
-
-    renamed:    README.md -&amp;gt; README
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;사실 git mv 명령은 아래 명령어를 수행한 것과 완전 똑같다.&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ mv README.md README
-$ git rm README.md
-$ git add README
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;git mv 명령은 일종의 단축 명령어이다. 이 명령으로 파일 이름을 바꿔도 되고 mv 명령으로 파일 이름을 직접 바꿔도 된다. 단지 git mv 명령은 편리하게 명령을 세 번 실행해주는 것 뿐이다. 어떤 도구로 이름을 바꿔도 상관없다. 중요한 것은 이름을 변경하고 나서 꼭 rm/add 명령을 실행해야 한다는 것 뿐이다.&lt;/p&gt;
-
-&lt;p&gt;[출처]&lt;a href=&quot;https://git-scm.com/book/ko/v2/Git%EC%9D%98-%EA%B8%B0%EC%B4%88-%EC%88%98%EC%A0%95%ED%95%98%EA%B3%A0-%EC%A0%80%EC%9E%A5%EC%86%8C%EC%97%90-%EC%A0%80%EC%9E%A5%ED%95%98%EA%B8%B0&quot;&gt;git-scm&lt;/a&gt;&lt;/p&gt;</content><author><name>Kiho Lee</name></author><category term="GIT" /><category term="기초" /><category term="수정하기" /><category term="저장하기" /><summary type="html"></summary></entry><entry><title type="html">04.GIT 저장소 만들기</title><link href="http://localhost:4000/categories/git/GIT-04-creating-git-repository.html" rel="alternate" type="text/html" title="04.GIT 저장소 만들기" /><published>2019-12-08T10:17:13+00:00</published><updated>2019-12-08T10:17:13+00:00</updated><id>http://localhost:4000/categories/git/GIT-04-creating-git-repository</id><content type="html" xml:base="http://localhost:4000/categories/git/GIT-04-creating-git-repository.html">&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h1 id=&quot;git의-기초---git-저장소-만들기&quot;&gt;Git의 기초 - Git 저장소 만들기&lt;/h1&gt;
-
-&lt;p&gt;Git에서 자주 사용하는 명령어는 모두 이후에 올리게 될 것이다. 추후 업데이트 되는 내용을 다 읽으면 저장소를 만들고 설정하는 방법, 파일을 추적하거나(Track) 추적을 그만두는 방법, 변경 내용을 Stage 하고 커밋하는 방법을 알게 된다. 파일이나 파일 패턴을 무시하도록 Git을 설정하는 방법, 실수를 쉽고 빠르게 만회하는 방법, 프로젝트 히스토리를 조회하고 커밋을 비교하는 방법, 리모트 저장소에 Push 하고 Pull 하는 방법을 살펴본다.&lt;/p&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;1-git-저장소-만들기&quot;&gt;1. Git 저장소 만들기&lt;/h2&gt;
-
-&lt;p&gt;주로 다음 주 가지 중 한 가지 방법으로 Git 저장소를 쓰기 시작한다.&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;
-    &lt;p&gt;아직 버전관리를 하지 않는 로컬 디렉토리 하나를 선택해서 Git 저장소를 적용하는 방법&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;다른 어딘가에서 Git 저장소를 &lt;strong&gt;Clone&lt;/strong&gt; 하는 방법&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;어떤 방법을 사용하든 로컬 디렉토리에 Git 저장소가 준비되면 이제 뭔가 해볼 수 있다.&lt;/p&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;11-기존-디렉토리를-git-저장소로-만들기&quot;&gt;1.1. 기존 디렉토리를 “Git 저장소”로 만들기&lt;/h3&gt;
-
-&lt;p&gt;버전관리를 하지 아니하는 기존 프로젝트를 Git으로 관리하고 싶은 경우 우선 프로젝트의 디렉토리로 이동한다. 이러한 과정을 처음 해보는 것이라면 시스템마다 조금 다른 점을 주의하자.&lt;/p&gt;
-
-&lt;p&gt;Linux:&lt;/p&gt;
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ cd /home/user/my_project
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;Mac:&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ cd /Users/user/my_project
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;Windows:&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ cd /c/user/my_project
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;그리고 아래와 같은 명령을 실행한다:&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ git init
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;이 명령은 &lt;strong&gt;.git&lt;/strong&gt; 이라는 하위 디렉토리를 만든다. &lt;strong&gt;.git&lt;/strong&gt; 디렉토리에는 저장소에 필요한 뼈대 파일(Skeleton)이 들어 있다. 이 명령만으로는 아직 프로젝트의 어떤 파일도 관리하지 않는다. (&lt;strong&gt;.git&lt;/strong&gt; 디렉토리가 막 만들어진 직후에 정확히 어떤 파일이 있는지에 대한 내용은 &lt;strong&gt;Git의 내부&lt;/strong&gt;에서 다룬다)&lt;/p&gt;
-
-&lt;p&gt;Git이 파일을 관리하게 하려면 저장소에 파일을 추가하고 커밋해야 한다. &lt;strong&gt;git add&lt;/strong&gt; 명령으로 파일을 추가하고 &lt;strong&gt;git commit&lt;/strong&gt; 명령으로 커밋한다:&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ git add *.c
-$ git add LICENSE
-$ git commit -m 'initial project version'
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;blockquote&gt;
-  &lt;p&gt;위의 명령어를 통해 *.c로 된 파일을 추가하고, LICENSE 파일을 추가하는 작업을 한 후 에 git commit이 이루어진 것이다. 해당 폴더의 모든 파일을 추가할 경우 아래와 같이 하는 경우가 내 경우에는 더 많다. (단, 제외 파일 목록 관리를 잘해야한다. 추후에 다루겠다.)&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ git add .
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;명령어 몇 개로 순식간에 Git 저장소를 만들고 파일 버전 관리를 시작했다.&lt;/p&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;12-기존-저장소를-clone-하기&quot;&gt;1.2. 기존 저장소를 Clone 하기&lt;/h3&gt;
-
-&lt;p&gt;다른 프로젝트에 참여하려거나(Contribute) Git 저장소를 복사하고 싶을 때 &lt;strong&gt;git clone&lt;/strong&gt; 명령을 사용한다. 이미 Subversion 같은 VCS에 익숙한 사용자에게는 “checkout” 이 아니라 “clone” 이라는 점이 도드라져 보일 것이다. Git이 Subversion과 다른 가장 큰 차이점은 서버에 있는 거의 모든 데이터를 복사한다는 것이다. &lt;strong&gt;git clone&lt;/strong&gt; 을 실행하면 프로젝트 히스토리를 전부 받아온다. 실제로 서버의 디스크가 망가져도 클라이언트 저장소 중에서 아무거나 하나 가져다가 복구하면 된다(서버에만 적용했던 설정은 복구하지 못하지만 모든 데이터는 복구된다 - 서버에 Git 설치하기에서 좀 더 자세히 다룬다).&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;git clone &amp;lt;url&amp;gt;&lt;/strong&gt; 명령으로 저장소를 Clone 한다. &lt;strong&gt;libgit2&lt;/strong&gt; 라이브러리 소스코드를 Clone 하려면 아래과 같이 실행한다.&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ git clone https://github.com/libgit2/libgit2
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;이 명령은 “libgit2” 라는 디렉토리를 만들고 그 안에 &lt;strong&gt;.git&lt;/strong&gt; 디렉토리를 만든다. 그리고 저장소의 데이터를 모두 가져와서 자동으로 가장 최신 버전을 Checkout 해 놓는다. &lt;strong&gt;libgit2&lt;/strong&gt; 디렉토리로 이동하면 Checkout으로 생성한 파일을 볼 수 있고 당장 하고자 하는 일을 시작할 수 있다.&lt;/p&gt;
-
-&lt;p&gt;아래과 같은 명령을 사용하여 저장소를 Clone 하면 &lt;code class=&quot;highlighter-rouge&quot;&gt;libgit2&lt;/code&gt;이 아니라 다른 디렉토리 이름으로 Clone 할 수 있다.&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ git clone https://github.com/libgit2/libgit2 mylibgit
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;디렉토리 이름이 &lt;strong&gt;mylibgit&lt;/strong&gt; 이라는 것만 빼면 이 명령의 결과와 앞선 명령의 결과는 같다.&lt;/p&gt;
-
-&lt;p&gt;Git은 다양한 프로토콜을 지원한다. 이제까지는 &lt;strong&gt;https://&lt;/strong&gt; 프로토콜을 사용했지만 &lt;strong&gt;git://&lt;/strong&gt; 를 사용할 수도 있고 &lt;strong&gt;user@server:path/to/repo.git&lt;/strong&gt; 처럼 SSH 프로토콜을 사용할 수도 있다. 자세한 내용은 서버에 Git 설치하기에서 다루며 각 프로토콜의 장단점과 Git 저장소에 접근하는 방법을 설명한다.&lt;/p&gt;
-
-&lt;p&gt;&lt;span style=&quot;color:red;font-size:20px;&quot;&gt; &lt;strong&gt;Git을 시작하기에 매우 중요한 내용이기 때문에 이 내용을 모르고 Git을 시작한다는 것은 거의 불가능하다. 따라서, 본 내용을 반드시 숙지하는 것이 좋다.&lt;/strong&gt; &lt;/span&gt;&lt;/p&gt;
-
-&lt;p&gt;[출처]&lt;a href=&quot;https://git-scm.com/book/ko/v2/Git%EC%9D%98-%EA%B8%B0%EC%B4%88-Git-%EC%A0%80%EC%9E%A5%EC%86%8C-%EB%A7%8C%EB%93%A4%EA%B8%B0&quot;&gt;git-scm&lt;/a&gt;&lt;/p&gt;</content><author><name>Kiho Lee</name></author><category term="GIT" /><category term="기초" /><category term="저장소" /><summary type="html"></summary></entry></feed>
+&lt;p&gt;[출처]&lt;a href=&quot;https://namu.wiki/w/C%2B%2B&quot;&gt;나무위키&lt;/a&gt;&lt;/p&gt;</content><author><name>Kiho Lee</name></author><category term="C++" /><category term="introduction" /><summary type="html"></summary></entry></feed>
