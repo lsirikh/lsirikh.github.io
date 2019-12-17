@@ -1,0 +1,197 @@
+I"�'<h2 id="1-들어가며">1. 들어가며</h2>
+
+<p>ROS 빌드 시스템은 기본적으로 CMake(Cross Platform Make)를 사용하며, 빌드 환경은 패키지 폴더의 <code class="highlighter-rouge">CMakeLists.txt</code>파일에 설명되어 있다.</p>
+
+<p>ROS에서 CMake를 사용하는 이유는 여러 플랫폼에서 ROS 패키지를 빌드 할 수 있기 때문이다.</p>
+
+<h2 id="2-패키지-만들기">2. 패키지 만들기</h2>
+
+<p>다음과 같은 명령어를 통해 패키지를 생성할 수 있다.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ catkin_create_pkg [PACKAGE_NAME] [DEPENDENT_PACKAGE_1] [DEPENDENT_PACKAGE_N]
+</code></pre></div></div>
+
+<p><code class="highlighter-rouge">catkin_create_pkg</code>명령은 Cake빌드 시스템에 필요한 <code class="highlighter-rouge">CMakeLists.txt</code>및 <code class="highlighter-rouge">package.xml</code>파일이 포함 된 패키지 폴더를 만든다.</p>
+
+<p>다음과 같이 입력하고, 실행하면, 패키지를 생성할 수 있다.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ cs
+~/catkin_ws/src$ 
+~/catkin_ws/src$ catkin_create_pkg my_first_ros_pkg std_msgs roscpp
+</code></pre></div></div>
+
+<blockquote>
+  <p>만들 패키지 이름은‘my_first_ros_pkg’이다. ROS의 패키지 이름은 모두 소문자 여야하며 공백을 포함해서는 안된다. 이름 지정 지침에서는 대시(-) 또는 공백 대신 각 단어 사이에 <strong>밑줄(_)</strong>을 사용한다.</p>
+</blockquote>
+
+<p><code class="highlighter-rouge">std_msgs</code> 및 <code class="highlighter-rouge">roscpp</code>는 이전에 선택적 종속 패키지로 추가되었다.
+명령. 즉, ROS의 표준 메시지 패키지 인 <code class="highlighter-rouge">std_msgs</code>와 ROS에서 C/C++를 사용하는 데 필요한 클라이언트 라이브러리 인 <code class="highlighter-rouge">roscpp</code>가 패키지를 작성하기 전에 설치되어 있어야한다.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>~/catkin_ws/src$ cd my_first_ros_pkg
+~/catkin_ws/src$ ls
+include 			 → Include Folder
+src 				 → Source Code Folder
+CMakeLists.txt 		 → Build Configuration File
+package.xml 		 → Package Configuration File
+</code></pre></div></div>
+
+<p><img src="/assets/img/ros/ros_my_first_package.png" title="ROS 패키지 생성 " /><br /></p>
+
+<h2 id="3-패키지-내용-살펴보기">3. 패키지 내용 살펴보기</h2>
+
+<p>ROS의 필수 설정 파일 중 하나인 <code class="highlighter-rouge">package.xml</code>은 패키지의 정보를 담는 XML 파일로 패키지의 이름, 저작자, 라이센스, 의존성 패키지 등을 기술하고 있다.</p>
+
+<p>다음은 생성된 <code class="highlighter-rouge">package.xml</code>파일을 그대로 가져온 내용이다.</p>
+
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+</pre></td><td class="code"><pre><span class="cp">&lt;?xml version="1.0"?&gt;</span>
+<span class="nt">&lt;package</span> <span class="na">format=</span><span class="s">"2"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;name&gt;</span>my_first_ros_pkg<span class="nt">&lt;/name&gt;</span>
+  <span class="nt">&lt;version&gt;</span>0.0.0<span class="nt">&lt;/version&gt;</span>
+  <span class="nt">&lt;description&gt;</span>The my_first_ros_pkg package<span class="nt">&lt;/description&gt;</span>
+
+  <span class="c">&lt;!-- One maintainer tag required, multiple allowed, one person per tag --&gt;</span>
+  <span class="c">&lt;!-- Example:  --&gt;</span>
+  <span class="c">&lt;!-- &lt;maintainer email="jane.doe@example.com"&gt;Jane Doe&lt;/maintainer&gt; --&gt;</span>
+  <span class="nt">&lt;maintainer</span> <span class="na">email=</span><span class="s">"memaker@todo.todo"</span><span class="nt">&gt;</span>memaker<span class="nt">&lt;/maintainer&gt;</span>
+
+
+  <span class="c">&lt;!-- One license tag required, multiple allowed, one license per tag --&gt;</span>
+  <span class="c">&lt;!-- Commonly used license strings: --&gt;</span>
+  <span class="c">&lt;!--   BSD, MIT, Boost Software License, GPLv2, GPLv3, LGPLv2.1, LGPLv3 --&gt;</span>
+  <span class="nt">&lt;license&gt;</span>TODO<span class="nt">&lt;/license&gt;</span>
+
+
+  <span class="c">&lt;!-- Url tags are optional, but multiple are allowed, one per tag --&gt;</span>
+  <span class="c">&lt;!-- Optional attribute type can be: website, bugtracker, or repository --&gt;</span>
+  <span class="c">&lt;!-- Example: --&gt;</span>
+  <span class="c">&lt;!-- &lt;url type="website"&gt;http://wiki.ros.org/my_first_ros_pkg&lt;/url&gt; --&gt;</span>
+
+
+  <span class="c">&lt;!-- Author tags are optional, multiple are allowed, one per tag --&gt;</span>
+  <span class="c">&lt;!-- Authors do not have to be maintainers, but could be --&gt;</span>
+  <span class="c">&lt;!-- Example: --&gt;</span>
+  <span class="c">&lt;!-- &lt;author email="jane.doe@example.com"&gt;Jane Doe&lt;/author&gt; --&gt;</span>
+
+
+  <span class="c">&lt;!-- The *depend tags are used to specify dependencies --&gt;</span>
+  <span class="c">&lt;!-- Dependencies can be catkin packages or system dependencies --&gt;</span>
+  <span class="c">&lt;!-- Examples: --&gt;</span>
+  <span class="c">&lt;!-- Use depend as a shortcut for packages that are both build and exec dependencies --&gt;</span>
+  <span class="c">&lt;!--   &lt;depend&gt;roscpp&lt;/depend&gt; --&gt;</span>
+  <span class="c">&lt;!--   Note that this is equivalent to the following: --&gt;</span>
+  <span class="c">&lt;!--   &lt;build_depend&gt;roscpp&lt;/build_depend&gt; --&gt;</span>
+  <span class="c">&lt;!--   &lt;exec_depend&gt;roscpp&lt;/exec_depend&gt; --&gt;</span>
+  <span class="c">&lt;!-- Use build_depend for packages you need at compile time: --&gt;</span>
+  <span class="c">&lt;!--   &lt;build_depend&gt;message_generation&lt;/build_depend&gt; --&gt;</span>
+  <span class="c">&lt;!-- Use build_export_depend for packages you need in order to build against this package: --&gt;</span>
+  <span class="c">&lt;!--   &lt;build_export_depend&gt;message_generation&lt;/build_export_depend&gt; --&gt;</span>
+  <span class="c">&lt;!-- Use buildtool_depend for build tool packages: --&gt;</span>
+  <span class="c">&lt;!--   &lt;buildtool_depend&gt;catkin&lt;/buildtool_depend&gt; --&gt;</span>
+  <span class="c">&lt;!-- Use exec_depend for packages you need at runtime: --&gt;</span>
+  <span class="c">&lt;!--   &lt;exec_depend&gt;message_runtime&lt;/exec_depend&gt; --&gt;</span>
+  <span class="c">&lt;!-- Use test_depend for packages you need only for testing: --&gt;</span>
+  <span class="c">&lt;!--   &lt;test_depend&gt;gtest&lt;/test_depend&gt; --&gt;</span>
+  <span class="c">&lt;!-- Use doc_depend for packages you need only for building documentation: --&gt;</span>
+  <span class="c">&lt;!--   &lt;doc_depend&gt;doxygen&lt;/doc_depend&gt; --&gt;</span>
+  <span class="nt">&lt;buildtool_depend&gt;</span>catkin<span class="nt">&lt;/buildtool_depend&gt;</span>
+  <span class="nt">&lt;build_depend&gt;</span>roscpp<span class="nt">&lt;/build_depend&gt;</span>
+  <span class="nt">&lt;build_depend&gt;</span>std_msgs<span class="nt">&lt;/build_depend&gt;</span>
+  <span class="nt">&lt;build_export_depend&gt;</span>roscpp<span class="nt">&lt;/build_export_depend&gt;</span>
+  <span class="nt">&lt;build_export_depend&gt;</span>std_msgs<span class="nt">&lt;/build_export_depend&gt;</span>
+  <span class="nt">&lt;exec_depend&gt;</span>roscpp<span class="nt">&lt;/exec_depend&gt;</span>
+  <span class="nt">&lt;exec_depend&gt;</span>std_msgs<span class="nt">&lt;/exec_depend&gt;</span>
+
+
+  <span class="c">&lt;!-- The export tag contains other, unspecified, tags --&gt;</span>
+  <span class="nt">&lt;export&gt;</span>
+    <span class="c">&lt;!-- Other tools can request additional information be placed here --&gt;</span>
+
+  <span class="nt">&lt;/export&gt;</span>
+<span class="nt">&lt;/package&gt;</span>
+</pre></td></tr></tbody></table></code></pre></figure>
+
+<ul>
+  <li>&lt;?xml&gt;                - 문서 문법을 정의하는 문구로 아래의 내용은 xml 버전 1.0을 따르고 있다는 것을 표시한다.</li>
+  <li>&lt;package&gt;             - 이 구문부터 맨 끝의 &lt;/package&gt; 까지가 ROS 패키지 설정 부분이다.</li>
+  <li>&lt;name&gt;                - 패키지의 이름이다. 패키지를 생성할 때 입력한 패키지의 이름이 사용된다. 다른 옵션도 마찬가지지만 이는 사용자가 원할 때 언제든지 바꿀 수 있다.</li>
+  <li>&lt;version&gt;             - 패키지의 버전이다. 역시 자유롭게 변경 가능하다.</li>
+  <li>&lt;description&gt;         - 패키지의 간단한 설명을 기술 할 수 있다. 보통 2~3 무장으로 기술하고 있다.</li>
+  <li>&lt;maintainer&gt;          - 패키지의 관리자의 이름과 메일 주소를 작성한다.</li>
+  <li>&lt;license&gt;             - 라이선스를 작성한다. BSD, MIT, Apache, GPLv3, LGPLv3 등을 기재하면 된다.</li>
+  <li>&lt;url&gt;                 - 패키지를 설명하는 웹 페이지 또는 버그 관리, 저장소 등의 주소를 기재한다. 이 종류에 따라 type에 website, bugtracker, repository를 대입하면 된다.</li>
+  <li>&lt;author&gt;              - 패키지 개발에 참여한 개발자의 이름과 이메일 주소를 적는다. 복수의 개발자가 참여한 경우에는 바로 다음줄에 /<autor> 태그를 이용하여 추가하면 된다.</autor></li>
+  <li>&lt;buildtool_depend&gt;    -</li>
+  <li>&lt;build_depend&gt;        -</li>
+  <li>&lt;run_depend&gt;          -</li>
+  <li>&lt;test_depend&gt;         -</li>
+  <li>&lt;export&gt;              -</li>
+  <li>&lt;metapackage&gt;         -</li>
+</ul>
+
+<p>출처:[ROS_Robot_Programming_EN]</p>
+:ET

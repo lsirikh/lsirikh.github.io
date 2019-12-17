@@ -81,6 +81,14 @@
 <lastmod>2019-12-16T00:00:00+00:00</lastmod>
 </url>
 <url>
+<loc>http://localhost:4000/categories/ros/ROS-12-file-system.html</loc>
+<lastmod>2019-12-17T00:00:00+00:00</lastmod>
+</url>
+<url>
+<loc>http://localhost:4000/categories/ros/ROS-13-build-system.html</loc>
+<lastmod>2019-12-17T00:00:00+00:00</lastmod>
+</url>
+<url>
 <loc>http://localhost:4000/archive-layout-with-content/</loc>
 </url>
 <url>
@@ -152,5 +160,8 @@
 </url>
 <url>
 <loc>http://localhost:4000/page4/</loc>
+</url>
+<url>
+<loc>http://localhost:4000/page5/</loc>
 </url>
 </urlset>

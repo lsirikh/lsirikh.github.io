@@ -1,0 +1,58 @@
+I"<h2 id="1-파일-구성">1. 파일 구성</h2>
+
+<p>ROS에서 소프트웨어 구성을 위한 기본 단위는 패키지(package)로써 ROS의 응용프로그램은 패키지 단위로 개발된다.</p>
+
+<p>각 패키지에는 이름, 작성자, 라이센스 및 종속 패키지를 포함하여 패키지에 대한 정보가 들어있는 XML 파일인 <code class="highlighter-rouge">package.xml</code>이 포함되어 있다. 또한, ROS 빌드 시스템 인 Catkin은  CMake를 이용하고 있어서 패키지 폴더의 <code class="highlighter-rouge">CMakeLists.txt</code>를 사용하여 빌드 환경을 설명한다. 그리고 패키지는 노드의 소스 코드와 노드 간의 메시지 통신을 위한 메시지 파일로 구성된다.</p>
+
+<blockquote>
+  <p>ROS 패키지를 설치하는 방법에는 두 가지가 있다. 첫 번째는 빌드 프로세스없이 즉시 실행할 수 있는 바이너리 형식으로 제공된 패키지를 설치하는 것이다. 두 번째는 사용자가 패키지의 소스 코드를 다운로드하여 설치하기 전에 빌드하는 것이다. 패키지를 수정하거나 소스 코드의 내용을 확인하려면 두 번째 설치 방법을 사용할 수 있다.</p>
+</blockquote>
+
+<p>다음은 TurtleBot3 패키지의 예이며 두 가지 설치 방법의 차이점을 설명한다.</p>
+
+<ul>
+  <li>바이너리 설치 방법
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ sudo apt-get install ros-kinetic-turtlebot3
+</code></pre></div>    </div>
+  </li>
+  <li>소스코드 설치 방법
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ cd ~/catkin_ws/src
+$ git clone https://github.com/ROBOTIS-GIT/turtlebot3.git
+$ git clone https://github.com/ROBOTIS-GIT/turtlebot3_msgs.git
+$ cd ~/catkin_ws/
+$ catkin_make
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<h2 id="2-설치-폴더">2. 설치 폴더</h2>
+
+<p>ROS는 다음과 같은 폴더에 설치를 하게 된다.</p>
+
+<p><code class="highlighter-rouge">opt/ros/[버전이름]</code></p>
+
+<blockquote>
+  <p>kinetic kame 버전은 ‘/opt/ros/kinetic’</p>
+</blockquote>
+
+<ul>
+  <li>디렉토리 및 파일 구성</li>
+</ul>
+
+<p><img src="/assets/img/ros/ros_install_folder_configuration.png" title="ROS 디렉토리 및 파일 구성 " /><br /></p>
+
+<ul>
+  <li>디렉토리 특징</li>
+</ul>
+
+<ol>
+  <li>/bin         실행 가능한 바이너리 파일</li>
+  <li>/etc         ROS 및 catkin 관련 설정 파일</li>
+  <li>/include     헤더 파일</li>
+</ol>
+
+<p><img src="/assets/img/ros/ros_workspace_folder_configuration.png" title="ROS workspace 디렉토리 및 파일 구성 " /><br /></p>
+
+<p><img src="/assets/img/ros/ros_user_package_folder_configuration.png" title="ROS 사용자 패키지 디렉토리 및 파일 구성 " /><br /></p>
+
+:ET

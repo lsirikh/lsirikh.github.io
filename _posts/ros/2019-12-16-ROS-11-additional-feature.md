@@ -36,3 +36,4 @@ ROS가 설치되어 사용하는 운영체제의 종류와도 상관없고, 사�
 
 <img src="/assets/img/ros/ros_cross_platform.png"  title="이기종 디바이스 통신"><br>
 
+출처:[ROS_Robot_Programming_EN]

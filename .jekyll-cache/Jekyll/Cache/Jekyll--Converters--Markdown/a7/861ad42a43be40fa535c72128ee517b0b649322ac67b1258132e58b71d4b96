@@ -1,0 +1,9 @@
+I"=<h2 id="1-파일-구성">1. 파일 구성</h2>
+
+<p>ROS에서 소프트웨어 구성을 위한 기본 단위는 패키지(package)로써 ROS의 응용프로그램은 패키지 단위로 개발된다.</p>
+
+<p>각 패키지에는 이름, 작성자, 라이센스 및 종속 패키지를 포함하여 패키지에 대한 정보가 들어있는 XML 파일인 ‘package.xml’이 포함되어 있다. 또한, ROS 빌드 시스템 인 Catkin은  CMake를 이용하고 있어서 패키지 폴더의 <code class="highlighter-rouge">CMakeLists.txt</code>를 사용하여 빌드 환경을 설명합니다. 또한 패키지는 노드의 소스 코드와 노드 간의 메시지 통신을위한 메시지 파일로 구성됩니다.</p>
+
+<p><img src="/assets/img/ros/ros_cross_platform.png" title="이기종 디바이스 통신" /><br /></p>
+
+:ET
