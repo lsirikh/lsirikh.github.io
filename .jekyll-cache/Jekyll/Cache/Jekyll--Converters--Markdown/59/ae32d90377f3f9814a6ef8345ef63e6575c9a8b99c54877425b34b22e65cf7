@@ -1,0 +1,159 @@
+I"�<p><br /></p>
+
+<h2 id="1-네임스페이스">1. 네임스페이스</h2>
+
+<p>C++에서 가장 먼저 접하게 되는 개념이 바로 네임스페이스다. 
+처음 Hello Wordl를 출력할 때, 의미도 모른채 <code class="highlighter-rouge">using namespace std</code>를 쓴 기억이 있을 것이다.</p>
+
+<p>네임스페이스는 단어 그래도 지정한 라이브러리를 사용할 수 있도록 소속을 알리는 역할을 한다.</p>
+
+<figure class="highlight"><pre><code class="language-c" data-lang="c"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+</pre></td><td class="code"><pre><span class="n">using</span> <span class="n">namespace</span> <span class="n">std</span><span class="p">;</span>
+</pre></td></tr></tbody></table></code></pre></figure>
+
+<p>이렇게 사용하게 되면, std라는 라이브러리가 더 이상 소속과 기능을 같이 쓰지 않아도 된다. 이게 무슨말이냐하면,</p>
+
+<figure class="highlight"><pre><code class="language-c" data-lang="c"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+</pre></td><td class="code"><pre><span class="c1">//일반적을 namespace를 선언 안한 경우</span>
+<span class="cp">#include &lt;iostream&gt;
+</span>
+<span class="kt">int</span> <span class="nf">main</span><span class="p">(){</span>
+
+    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"Hello Wolrd"</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></td></tr></tbody></table></code></pre></figure>
+
+<h2 id="2-네임스페이스-범위-지정에-따른-차이비교">2. 네임스페이스 범위 지정에 따른 차이비교</h2>
+
+<ul>
+  <li>using namespace std 경우</li>
+</ul>
+
+<figure class="highlight"><pre><code class="language-c" data-lang="c"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+</pre></td><td class="code"><pre><span class="cp">#include &lt;iostream&gt;
+</span>
+<span class="n">using</span> <span class="n">namespace</span> <span class="n">std</span><span class="p">;</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">i</span><span class="p">;</span> <span class="c1">//숫자 키보드 입력받기</span>
+    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">i</span><span class="p">;</span> <span class="c1">//입력 받은 숫자를 화면에 출력하기</span>
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></td></tr></tbody></table></code></pre></figure>
+
+<ul>
+  <li>using namespace std의 부분을 설정한 경우</li>
+</ul>
+
+<figure class="highlight"><pre><code class="language-c" data-lang="c"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+</pre></td><td class="code"><pre><span class="cp">#include &lt;iostream&gt;
+</span>
+<span class="n">using</span> <span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="p">;</span> <span class="c1">//cout으로 범위를 좁혀서 namespace 지정</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">i</span><span class="p">;</span> <span class="c1">//컴파일 오류 발생</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">i</span><span class="p">;</span> <span class="c1">//정상적으로 실행 가능한 코드</span>
+    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">i</span><span class="p">;</span> <span class="c1">//입력 받은 숫자를 화면에 출력하기</span>
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></td></tr></tbody></table></code></pre></figure>
+
+<p>두 코드에서 알 수 있듯이, namespace는 범위를 지정해서 사용할 수 있고, 범위를 지정하면 다른 라이브러리의 다른 기능을 사용할 때 선별적으로 접근 할 수 있다.</p>
+
+<h2 id="3-namespace-직접-정의">3. namespace 직접 정의</h2>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>namespace 네임스페이스명
+{
+    선언 내용:(클래스, 함수, 변수 등을 정의)
+}
+</code></pre></div></div>
+
+<p>이와 같은 방식으로 namespace를 지정 할 수 있다.</p>
+
+<ul>
+  <li>변수를 사용한 네임스페이스 설정</li>
+</ul>
+
+<figure class="highlight"><pre><code class="language-c" data-lang="c"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+</pre></td><td class="code"><pre><span class="cp">#include &lt;iostream&gt;
+</span>
+<span class="n">using</span> <span class="n">namespace</span> <span class="n">std</span><span class="p">;</span>
+
+<span class="c1">//first 네임스페이스 정의</span>
+<span class="n">namespace</span> <span class="n">first</span>
+<span class="p">{</span>
+    <span class="kt">int</span> <span class="n">value</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c1">//second 네임스페이스 정의</span>
+<span class="n">namespace</span> <span class="n">second</span>
+<span class="p">{</span>
+    <span class="kt">int</span> <span class="n">value</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">first</span><span class="o">::</span><span class="n">value</span><span class="p">;</span> <span class="c1">// 1을 출력</span>
+    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">second</span><span class="o">::</span><span class="n">value</span><span class="p">;</span> <span class="c1">// 2를 출력</span>
+
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></td></tr></tbody></table></code></pre></figure>
+
+<p>[출처:최신 표준 C++로 쉽고 빠르게 안내하는 모던 C++ 프로그래밍]</p>
+:ET

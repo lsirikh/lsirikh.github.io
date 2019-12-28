@@ -1,4 +1,701 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.0.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2019-12-17T14:31:02+00:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">로봇을 배우기 위한 지식 창고</title><subtitle>로봇을 배우기 위한 지식 창고</subtitle><author><name>Kiho Lee</name></author><entry><title type="html">12.ROS 파일 시스템</title><link href="http://localhost:4000/categories/ros/ROS-12-file-system.html" rel="alternate" type="text/html" title="12.ROS 파일 시스템" /><published>2019-12-17T00:00:00+00:00</published><updated>2019-12-17T00:00:00+00:00</updated><id>http://localhost:4000/categories/ros/ROS-12-file-system</id><content type="html" xml:base="http://localhost:4000/categories/ros/ROS-12-file-system.html">&lt;h2 id=&quot;1-파일-구성&quot;&gt;1. 파일 구성&lt;/h2&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.0.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2019-12-28T16:15:57+00:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">로봇을 배우기 위한 지식 창고</title><subtitle>로봇을 배우기 위한 지식 창고</subtitle><author><name>Kiho Lee</name></author><entry><title type="html">04.C++ 객체 지향 개념 살펴보기</title><link href="http://localhost:4000/categories/c++/CPP-04-cpp-concept.html" rel="alternate" type="text/html" title="04.C++ 객체 지향 개념 살펴보기" /><published>2019-12-28T00:00:00+00:00</published><updated>2019-12-28T00:00:00+00:00</updated><id>http://localhost:4000/categories/c++/CPP-04-cpp-concept</id><content type="html" xml:base="http://localhost:4000/categories/c++/CPP-04-cpp-concept.html">&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;1-객체-지향이란&quot;&gt;1. 객체 지향이란?&lt;/h2&gt;
+
+&lt;p&gt;객체 지향이란 인간의 기준으로 일어나는 생활의 개념을 많이 차용한 프로그래밍 설계 기법이라고 볼 수 있다.
+C++에서 객체지향은&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;객체(object): 객체란, 실세계에서 정의할 수 있는 모던 형태이며, ‘속성(data)’과 ‘기능(action)’을 포함한다.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;사실 이렇게 말하면 아무도 객체를 이해할 수 없을 것 같다.&lt;/p&gt;
+
+&lt;p&gt;그래서 가상의 인물을 통해서 객체의 개념을 이해해보자&lt;/p&gt;
+
+&lt;h2 id=&quot;2-객체-지향-개념화&quot;&gt;2. 객체 지향 개념화&lt;/h2&gt;
+
+&lt;p&gt;우리는 이제부터 한 가족의 생활을 객체 지향 개념으로 변화시켜볼 예정이다.&lt;/p&gt;
+
+&lt;p&gt;민수: 84년 생이며, 한 가족의 가장이고, 남자이다. 직업은 엔지니어이고, 직급은 차장이다. 취미는 프라모델 제작이고, 영화감상, 독서이다. 일주일에 3번 정도 헬스장에 간다.
+성격은 꾸준하고, 적극적이며, 호기심이 많아 다양한 기술 분야에 관심을 갖고 있다.&lt;/p&gt;
+
+&lt;p&gt;영애: 86년 생이며, 한 가족의 아내이며, 여자이다. 직업은 사업가이다. 취미는 유투브 보기와 산책, 여행이다. 일주일에 2번 이상 자전거 타기 운동을 한다. 성격은 여유로우며, 근면하고, 꼼꼼하고, 호기심과 모험심이 많다. 쇼핑하는 것을 좋아하여, 이마트나 노브랜드에 자주간다. 한 번 가면 쇼핑카트에 물건을 가득 담는다.&lt;/p&gt;
+
+&lt;p&gt;영호: 2017년 생이며, 민수와 영애의 아들이다. 성격은 영애를 닮았고, 재능은 민수를 닮았다.&lt;/p&gt;
+
+&lt;h3 id=&quot;21-객체의-구분&quot;&gt;2.1 객체의 구분&lt;/h3&gt;
+
+&lt;p&gt;위에서 예시를 통해 우리는 객체를 기본적으로 민수, 영애, 영호 3개로 만들 수 있다. 또한, 프로그래머 관점에 따라 추가적으로 더 많은 대상을 객체화 시킬 수 있다.&lt;/p&gt;
+
+&lt;h3 id=&quot;22-속성과-기능-구분&quot;&gt;2.2 속성과 기능 구분&lt;/h3&gt;
+
+&lt;p&gt;객체를 구분했으니 이제 객체마다 속성과 기능을 찾아야 한다.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;속성이란? 객체가 가진 상태 또는 특징을 말한다. 기능은 객체가 할 수 있는 행동을 의미한다.&lt;/p&gt;
+  &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;자동차를 객체로 보면, 
+속성: 바퀴, 엔진 상태, 배기량
+기능: 달린다, 멈춘다 등
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;  &lt;/div&gt;
+&lt;/blockquote&gt;
+
+&lt;h2 id=&quot;3-adtabstract-data-type-객체-지향-모델링&quot;&gt;3. ADT(Abstract Data Type) 객체 지향 모델링&lt;/h2&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;객체이름&lt;/th&gt;
+      &lt;th&gt;속성&lt;/th&gt;
+      &lt;th&gt;기능&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;민수&lt;/td&gt;
+      &lt;td&gt;이름:민수&lt;/td&gt;
+      &lt;td&gt;먹기&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt;생년:84년&lt;/td&gt;
+      &lt;td&gt;잠자기&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt;성별:남자&lt;/td&gt;
+      &lt;td&gt;운전하기&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt;직업:엔지니어&lt;/td&gt;
+      &lt;td&gt;일하기&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt;직급:차장&lt;/td&gt;
+      &lt;td&gt;만들기&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt;결혼여부:Y&lt;/td&gt;
+      &lt;td&gt;탐구하기&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt;배우자:영애&lt;/td&gt;
+      &lt;td&gt;영화보기&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt;성격1:근면한&lt;/td&gt;
+      &lt;td&gt;책보기&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt;성격2:적극적인&lt;/td&gt;
+      &lt;td&gt;운동하기&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt;성격3:호기심 많은&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;영애&lt;/td&gt;
+      &lt;td&gt;이름:영애&lt;/td&gt;
+      &lt;td&gt;먹기&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt;생년:86년&lt;/td&gt;
+      &lt;td&gt;잠자기&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt;성별:여자&lt;/td&gt;
+      &lt;td&gt;운전하기&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt;직업:사업가&lt;/td&gt;
+      &lt;td&gt;일하기&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt;직급:사장&lt;/td&gt;
+      &lt;td&gt;여행하기&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt;결혼여부:Y&lt;/td&gt;
+      &lt;td&gt;유투브보기&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt;배우자:민수&lt;/td&gt;
+      &lt;td&gt;책보기&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt;성격1:근면한&lt;/td&gt;
+      &lt;td&gt;운동하기&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt;성격2:여유로운&lt;/td&gt;
+      &lt;td&gt;쇼핑하기&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt;성격3:호기심 많은&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt;성격4:모험심 많은&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;영호&lt;/td&gt;
+      &lt;td&gt;이름:영호&lt;/td&gt;
+      &lt;td&gt;민수 기능상속&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt;생년:2017년&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;쇼핑카트&lt;/td&gt;
+      &lt;td&gt;제품명&lt;/td&gt;
+      &lt;td&gt;N/A&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt;가격&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt;프로모션&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;ADT란 무엇인가? 
+객체와 속성, 기능을 도출하는 과정을 모델링이라하고, 이를 추상화하여 설계하는 과정을 ADT(Abstract Data Type)라 부른다.
+이 과정이 마무리되면 C++의 헤더파일이 산출물로 나온다.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;상위수준의 명세서이므로 코드를 이해하기 쉽다.&lt;/li&gt;
+  &lt;li&gt;구현 전에 충분히 검증할 수 있으며 쉽게 변경할 수 있다.&lt;/li&gt;
+  &lt;li&gt;추상적인 기술이므로 다른 프로젝트에 재사용 할 수 있다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;4-네임스페이스namespace&quot;&gt;4. 네임스페이스(namespace)&lt;/h2&gt;
+
+&lt;p&gt;네임스페이스는 이름공간으로 해석하는 경우가 많은데, 이는 정말 의미없는 해석이라 생각한다. 사람으로 본다면, 가문으로 볼 수 있고, &lt;code class=&quot;highlighter-rouge&quot;&gt;객체들의 카테고리 구분&lt;/code&gt; 정도로 해석할 수 있을 것 같다.
+이를 사용하여, 다양한 변수나 함수의 이름을 통일하여 사용할 수 있고 네임스페이스로 구분 할 수 있게 된다. (유지보수가 좋아 질 수 있음)&lt;/p&gt;
+
+&lt;p&gt;네임스페이스는 &lt;code class=&quot;highlighter-rouge&quot;&gt;::&lt;/code&gt; 범위 지정자라는 것을 통해서 표현하게 된다.&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;네임스페이스&lt;/th&gt;
+      &lt;th&gt;객체&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;집(기본)&lt;/td&gt;
+      &lt;td&gt;민수&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt;영애&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt;영호&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;마트&lt;/td&gt;
+      &lt;td&gt;쇼핑카트&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h2 id=&quot;5-객체-지향-프로그램-예시&quot;&gt;5. 객체 지향 프로그램 예시&lt;/h2&gt;
+
+&lt;p&gt;실제 삶 속에 예시를 통해 객체 지향의 의미를 되세겨보자&lt;/p&gt;
+
+&lt;div class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;민수&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;먹기&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;레스토랑&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;스파게티&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;영애&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;먹기&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;레스토랑&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;스테이크&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;민수&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;운전하기&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;영애&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;집&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;mf&quot;&gt;4.&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;민수&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;자기&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+&lt;span class=&quot;mf&quot;&gt;5.&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;영애&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;자기&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;[출처:최신 표준 C++로 쉽고 빠르게 안내하는 모던 C++ 프로그래밍]&lt;/p&gt;</content><author><name>Kiho Lee</name></author><category term="C++" /><category term="객체지향" /><summary type="html"></summary></entry><entry><title type="html">05.C++ 네임스페이스(namespace) 사용하기</title><link href="http://localhost:4000/categories/c++/CPP-05-cpp-namespace.html" rel="alternate" type="text/html" title="05.C++ 네임스페이스(namespace) 사용하기" /><published>2019-12-28T00:00:00+00:00</published><updated>2019-12-28T00:00:00+00:00</updated><id>http://localhost:4000/categories/c++/CPP-05-cpp-namespace</id><content type="html" xml:base="http://localhost:4000/categories/c++/CPP-05-cpp-namespace.html">&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;1-네임스페이스&quot;&gt;1. 네임스페이스&lt;/h2&gt;
+
+&lt;p&gt;C++에서 가장 먼저 접하게 되는 개념이 바로 네임스페이스다. 
+처음 Hello Wordl를 출력할 때, 의미도 모른채 &lt;code class=&quot;highlighter-rouge&quot;&gt;using namespace std&lt;/code&gt;를 쓴 기억이 있을 것이다.&lt;/p&gt;
+
+&lt;p&gt;네임스페이스는 단어 그래도 지정한 라이브러리를 사용할 수 있도록 소속을 알리는 역할을 한다.&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-c&quot; data-lang=&quot;c&quot;&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;n&quot;&gt;using&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;namespace&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;std&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;이렇게 사용하게 되면, std라는 라이브러리가 더 이상 소속과 기능을 같이 쓰지 않아도 된다. 이게 무슨말이냐하면,&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-c&quot; data-lang=&quot;c&quot;&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+2
+3
+4
+5
+6
+7
+8
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;c1&quot;&gt;//일반적을 namespace를 선언 안한 경우&lt;/span&gt;
+&lt;span class=&quot;cp&quot;&gt;#include &amp;lt;iostream&amp;gt;
+&lt;/span&gt;
+&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(){&lt;/span&gt;
+
+    &lt;span class=&quot;n&quot;&gt;std&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;cout&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;Hello Wolrd&quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;endl&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;h2 id=&quot;2-네임스페이스-범위-지정에-따른-차이비교&quot;&gt;2. 네임스페이스 범위 지정에 따른 차이비교&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;using namespace std 경우&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-c&quot; data-lang=&quot;c&quot;&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;cp&quot;&gt;#include &amp;lt;iostream&amp;gt;
+&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;using&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;namespace&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;std&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;cin&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;//숫자 키보드 입력받기&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;cout&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;//입력 받은 숫자를 화면에 출력하기&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;using namespace std의 부분을 설정한 경우&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-c&quot; data-lang=&quot;c&quot;&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;cp&quot;&gt;#include &amp;lt;iostream&amp;gt;
+&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;using&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;std&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;cout&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;//cout으로 범위를 좁혀서 namespace 지정&lt;/span&gt;
+
+&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;cin&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;//컴파일 오류 발생&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;std&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;cin&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;//정상적으로 실행 가능한 코드&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;cout&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;//입력 받은 숫자를 화면에 출력하기&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;두 코드에서 알 수 있듯이, namespace는 범위를 지정해서 사용할 수 있고, 범위를 지정하면 다른 라이브러리의 다른 기능을 사용할 때 선별적으로 접근 할 수 있다.&lt;/p&gt;
+
+&lt;h2 id=&quot;3-namespace-직접-정의&quot;&gt;3. namespace 직접 정의&lt;/h2&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;namespace 네임스페이스명
+{
+    선언 내용:(클래스, 함수, 변수 등을 정의)
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;이와 같은 방식으로 namespace를 지정 할 수 있다.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;변수를 사용한 네임스페이스 설정&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-c&quot; data-lang=&quot;c&quot;&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;cp&quot;&gt;#include &amp;lt;iostream&amp;gt;
+&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;using&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;namespace&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;std&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;//first 네임스페이스 정의&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;namespace&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;first&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;value&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;//second 네임스페이스 정의&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;namespace&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;second&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;value&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;cout&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;first&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;value&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// 1을 출력&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;cout&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;second&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;value&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// 2를 출력&lt;/span&gt;
+
+    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;[출처:최신 표준 C++로 쉽고 빠르게 안내하는 모던 C++ 프로그래밍]&lt;/p&gt;</content><author><name>Kiho Lee</name></author><category term="C++" /><category term="네임스페이스" /><category term="namespace" /><summary type="html"></summary></entry><entry><title type="html">06.C++ 파일 입출력</title><link href="http://localhost:4000/categories/c++/CPP-06-cpp-file-io.html" rel="alternate" type="text/html" title="06.C++ 파일 입출력" /><published>2019-12-28T00:00:00+00:00</published><updated>2019-12-28T00:00:00+00:00</updated><id>http://localhost:4000/categories/c++/CPP-06-cpp-file-io</id><content type="html" xml:base="http://localhost:4000/categories/c++/CPP-06-cpp-file-io.html">&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;1-파일-입출력&quot;&gt;1. 파일 입출력&lt;/h2&gt;
+
+&lt;p&gt;파일 입출력은 말 그대로, 파일 형태로 데이터를 입출력 하는 라이브러리를 사용하는 방법을 살펴본다.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;필요한 라이브러리 헤더 fstream(파일클래스)&lt;/li&gt;
+  &lt;li&gt;네임스페이스 std(표준 라이브러리)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-c&quot; data-lang=&quot;c&quot;&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;cp&quot;&gt;#include &amp;lt;fstream&amp;gt;
+#include &amp;lt;iostream&amp;gt;
+#include &amp;lt;string&amp;gt;
+&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;using&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;namespace&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;std&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(){&lt;/span&gt;
+	&lt;span class=&quot;n&quot;&gt;string&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;str&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;안녕하세요.글자를써봅시다.&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+	&lt;span class=&quot;n&quot;&gt;ofstream&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ofs&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;file.txt&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;//file.txt 파일을 연다.&lt;/span&gt;
+	&lt;span class=&quot;n&quot;&gt;ofs&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;str&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// file.txt 파일에 str 문자열을 쓴다.&lt;/span&gt;
+	&lt;span class=&quot;n&quot;&gt;ofs&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;close&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;//file.txt를 닫는다.&lt;/span&gt;
+	&lt;span class=&quot;n&quot;&gt;ifstream&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ifs&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;file.txt&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;//file.txt 파일을 다시열고,&lt;/span&gt;
+	&lt;span class=&quot;n&quot;&gt;ifs&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;str&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;//파일의 내용을 str에 저장한다.&lt;/span&gt;
+	&lt;span class=&quot;n&quot;&gt;str&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;str&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;(읽어옴.)&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+	&lt;span class=&quot;n&quot;&gt;cout&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;str&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;endl&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+	&lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;이 코드를 실행하면, file.txt 파일이 프로젝트 폴더에 생성되고, 결과는 다음과 같이 나온다.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;안녕하세요.글자를써봅니다.(읽어옴.)
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;하지만, 주의할 점은 띄어쓰기를 하면 이상하게 출력될 수 있다는 점을 확인하기 바란다.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;출력 : ofstream → fstream(ios::out);
+입력 : ifstream → fstream(ios::in);
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;파일 모드 표&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;파일 모드&lt;/th&gt;
+      &lt;th&gt;설명&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;ios::in&lt;/td&gt;
+      &lt;td&gt;파일 읽기&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;ios::out&lt;/td&gt;
+      &lt;td&gt;파일 쓰기&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;ios::app&lt;/td&gt;
+      &lt;td&gt;파일에 이어쓰기(마지막 줄부터)&lt;br /&gt;예)fstream(ios::app)와 같이 ios::out과 함께 써야 함.&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;ios::trunc&lt;/td&gt;
+      &lt;td&gt;파일이 이미 있으면, 삭제하고 새로 파일 작성&lt;br /&gt;예) 파일 읽을 때: fstream(ios::in|ios::trunc)&lt;br /&gt;예) 파일 쓸 때:fstream(ios::out|ios::trunc)&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;ios::binary&lt;/td&gt;
+      &lt;td&gt;이진 파일 처리&lt;br /&gt;예) 파일 읽을 때: fstream(ios::in|ios::binary)&lt;br /&gt;예) 파일 쓸 때: fstream(ios::out|ios::binary)&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/&quot; title=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-c&quot; data-lang=&quot;c&quot;&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;cp&quot;&gt;#include &amp;lt;fstream&amp;gt;
+&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;using&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;namespace&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;std&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(){&lt;/span&gt;
+
+	&lt;span class=&quot;n&quot;&gt;ofstream&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ofs&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+	&lt;span class=&quot;c1&quot;&gt;//file.txt 파일을 연다.(없으면 생성)&lt;/span&gt;
+	&lt;span class=&quot;n&quot;&gt;ofs&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;open&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;file.txt&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+
+	&lt;span class=&quot;c1&quot;&gt;//&quot;This is an apple&quot; 문자열을 쓴다.&lt;/span&gt;
+	&lt;span class=&quot;n&quot;&gt;ofs&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;write&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;This is an apple&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;16&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+
+	&lt;span class=&quot;c1&quot;&gt;//tellp() 멤버함수를 이용해서 파일의 현재 위치를 얻는다.&lt;/span&gt;
+	&lt;span class=&quot;c1&quot;&gt;// 현재위치는 This is an apple의 맨 끝일 것이다.&lt;/span&gt;
+	&lt;span class=&quot;kt&quot;&gt;long&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;pos&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ofs&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;tellp&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+
+	&lt;span class=&quot;c1&quot;&gt;//현재 위치에서 7만큼 위치를 뒤로 이동시킨다.&lt;/span&gt;
+	&lt;span class=&quot;c1&quot;&gt;//현재 위치를 앞뒤로 조정하는 것을 오프셋(offset)을 조정한다고 한다.&lt;/span&gt;
+	&lt;span class=&quot;c1&quot;&gt;//오프셋 -7로 조정한 위치는 문자 'n'이다.&lt;/span&gt;
+	&lt;span class=&quot;n&quot;&gt;ofs&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;seekp&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;pos&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;7&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+
+	&lt;span class=&quot;c1&quot;&gt;//조정한 위치부터 문자열 &quot;sam&quot; 을 쓴다.&lt;/span&gt;
+	&lt;span class=&quot;n&quot;&gt;ofs&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;write&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot; sam&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+
+	&lt;span class=&quot;c1&quot;&gt;//파일을 닫는다.&lt;/span&gt;
+	&lt;span class=&quot;n&quot;&gt;ofs&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;close&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+
+	&lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;[출처:최신 표준 C++로 쉽고 빠르게 안내하는 모던 C++ 프로그래밍]&lt;/p&gt;</content><author><name>Kiho Lee</name></author><category term="C++" /><category term="file" /><category term="IO" /><summary type="html"></summary></entry><entry><title type="html">07.C++ 변수와 자료형</title><link href="http://localhost:4000/categories/c++/CPP-07-cpp-variables.html" rel="alternate" type="text/html" title="07.C++ 변수와 자료형" /><published>2019-12-28T00:00:00+00:00</published><updated>2019-12-28T00:00:00+00:00</updated><id>http://localhost:4000/categories/c++/CPP-07-cpp-variables</id><content type="html" xml:base="http://localhost:4000/categories/c++/CPP-07-cpp-variables.html">&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;1-변수-설정&quot;&gt;1. 변수 설정&lt;/h2&gt;
+
+&lt;p&gt;다양한 프로그램에서 변수는 필수적인 요소이다. 따라서, 그 의미는 설명할 필요가 없을 듯 하다.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;int variable = 10;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;variable라는 변수에 10이라는 상수를 저장하는 것을 볼 수 있다.&lt;/p&gt;
+
+&lt;p&gt;변수를 설정하는 데 다음과 같은 몇 가지 유의사항이 있다.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;의미를 파악할 수 있도록 식별할 수 있는 단어로 구성(가장중요)&lt;/li&gt;
+  &lt;li&gt;일반적으로 소문자로 구성&lt;/li&gt;
+  &lt;li&gt;클래스 이름은 일반적으로 대문자로 시작&lt;/li&gt;
+  &lt;li&gt;숫자는 변수의 이름의 첫 글자로 사용할 수 없음&lt;/li&gt;
+  &lt;li&gt;여러단어를 조합할 때는 일관성 있는 규칙을 적용할 것(예 student_score)&lt;/li&gt;
+  &lt;li&gt;예약어는 변수의 이름으로 사용할 수 없다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;2-c-예약어&quot;&gt;2. C++ 예약어&lt;/h2&gt;
+
+&lt;p&gt;C++에서는 다음과 같은 예약어를 활용한다.&lt;/p&gt;
+
+&lt;p&gt;[그림]&lt;/p&gt;
+
+&lt;h2 id=&quot;3-c-기본-자료형&quot;&gt;3. C++ 기본 자료형&lt;/h2&gt;
+
+&lt;p&gt;C++에서는 다음 기본 자료형을 활용한다.&lt;/p&gt;
+
+&lt;p&gt;[그림]&lt;/p&gt;
+
+&lt;h2 id=&quot;3-singed와-unsinged-타입&quot;&gt;3. singed와 unsinged 타입&lt;/h2&gt;
+
+&lt;p&gt;기본 자료형 중 숫자형 자료형은 다음과 같이 signed와 unsigned 타입을 갖게 된다.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;long형의 (signed) 표현범위 : -2,147,483,648 ~ 2,147,483,648
+long형의 unsinged 표현범위 : 0 ~ 4,294,967,295
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;4-자료형-별칭-만들기&quot;&gt;4. 자료형 별칭 만들기&lt;/h2&gt;
+
+&lt;p&gt;자료형에 의미있는 별칭(alias)를 모던 C++에서부터 가능해졌다.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;1. typedef [기존 자료형] [별칭]
+예) typedef double salary;
+2. using [별칭] = [기존 자료형]; //C++11 표준 방식
+예) using salary = double;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-c&quot; data-lang=&quot;c&quot;&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(){&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;using&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;salary&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;double&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;//double형에 salary라는 별칭을 선언&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;using&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;point&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// int형에 point라는 별칭 선언&lt;/span&gt;
+
+    &lt;span class=&quot;c1&quot;&gt;//kiho 변수를 salary형으로 선언하고 값 할당&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;salary&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;kiho&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;125&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;20&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;c1&quot;&gt;//wonbin 변수를 salary형으로 선언하고 값 할당&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;salary&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;wonbin&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;100&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;12&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;h2 id=&quot;5-auto형-변수-초깃값-필요&quot;&gt;5. auto형 변수: 초깃값 필요&lt;/h2&gt;
+
+&lt;p&gt;모던 C++11 부터 새롭게 적용된 타입이 중에 특이한 것이 바로 &lt;code class=&quot;highlighter-rouge&quot;&gt;auto&lt;/code&gt; 타입이다. 
+기존에는 데이터 타입을 정해서 메모리를 할당하고, 컴파일의 구분기준으로 활용하였으나, 
+auto가 나오면서 이러한 방식을 자동으로 처리해주는 기능이 등장하게 되었다. 일종의 javascript에서 &lt;code class=&quot;highlighter-rouge&quot;&gt;var name&lt;/code&gt;이라고 쓰고, 데이터를 할당해준 것과 다르지 않은 느낌이다.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;auto 변수명 = 초깃값(상수, 변수, 함수 모두 가능);
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-c&quot; data-lang=&quot;c&quot;&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+2
+3
+4
+5
+6
+7
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;n&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;kt&quot;&gt;float&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;f&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;23&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;auto&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;answer1&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;auto&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;answer2&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;f&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;auto&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;answer&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;n&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;f&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;h2 id=&quot;6-decltype형-초깃값-불필요&quot;&gt;6. decltype형: 초깃값 불필요&lt;/h2&gt;
+
+&lt;p&gt;모던 C++부터 지원하는 또 다른 타입은 decltype이다. auto형의 초깃값 불필요 버전이라고 볼 수 있을 것 같다.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;1. decltype(함수 f()) [선언할 변수];
+2. decltype(변수) [선언할 변수];
+3. decltype((변수)) [선언할 변수];
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-c&quot; data-lang=&quot;c&quot;&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;f&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(){&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;20&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;30&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(){&lt;/span&gt;
+    &lt;span class=&quot;kt&quot;&gt;double&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;d&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;231&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;decltype&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;f&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;())&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;answer1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;  &lt;span class=&quot;c1&quot;&gt;//1 번 내용&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;decltype&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;d&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;answer2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;    &lt;span class=&quot;c1&quot;&gt;//2 번 내용&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;decltype&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;((&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;d&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;answer3&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;answer2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;  &lt;span class=&quot;c1&quot;&gt;//3 번 내용&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;[출처:최신 표준 C++로 쉽고 빠르게 안내하는 모던 C++ 프로그래밍]&lt;/p&gt;</content><author><name>Kiho Lee</name></author><category term="C++" /><category term="variables" /><category term="types" /><summary type="html"></summary></entry><entry><title type="html">12.ROS 파일 시스템</title><link href="http://localhost:4000/categories/ros/ROS-12-file-system.html" rel="alternate" type="text/html" title="12.ROS 파일 시스템" /><published>2019-12-17T00:00:00+00:00</published><updated>2019-12-17T00:00:00+00:00</updated><id>http://localhost:4000/categories/ros/ROS-12-file-system</id><content type="html" xml:base="http://localhost:4000/categories/ros/ROS-12-file-system.html">&lt;h2 id=&quot;1-파일-구성&quot;&gt;1. 파일 구성&lt;/h2&gt;
 
 &lt;p&gt;ROS에서 소프트웨어 구성을 위한 기본 단위는 패키지(package)로써 ROS의 응용프로그램은 패키지 단위로 개발된다.&lt;/p&gt;
 
@@ -982,593 +1679,4 @@ $ rosrun rqt_image_view rqt_image_view
 $ rosrun rqt_imgae_view rqt_imgae_view __ns:=back
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;출처:[ROS_Robot_Programming_EN]&lt;/p&gt;</content><author><name>Kiho Lee</name></author><category term="ROS" /><category term="네임" /><category term="name" /><summary type="html">1. 개념</summary></entry><entry><title type="html">09.ROS 웹캠 실행 해보기</title><link href="http://localhost:4000/categories/ros/ROS-09-camera-operation.html" rel="alternate" type="text/html" title="09.ROS 웹캠 실행 해보기" /><published>2019-12-13T00:00:00+00:00</published><updated>2019-12-13T00:00:00+00:00</updated><id>http://localhost:4000/categories/ros/ROS-09-camera-operation</id><content type="html" xml:base="http://localhost:4000/categories/ros/ROS-09-camera-operation.html">&lt;h2 id=&quot;1-카메라-확인&quot;&gt;1. 카메라 확인&lt;/h2&gt;
-
-&lt;p&gt;일단 삼성 USB camera를 USB 포트에 연결 하고, 아래의 명령어를 입력하면 다음과 같이 확인 할 수 있다.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/img/ros/samsung_web_cam.png&quot; title=&quot;삼성 웹캠 화면&quot; /&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ ls -ltr /dev/video*
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;&lt;img src=&quot;/assets/img/ros/camera_device.png&quot; title=&quot;USB 카메라 장치&quot; /&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;2-패키지-설치&quot;&gt;2. 패키지 설치&lt;/h2&gt;
-
-&lt;p&gt;이제부터 활용할 ROS 패키지는 uvc_camera 라는 것이다.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/img/ros/uvc_camera_wiki.png&quot; title=&quot;uvc_camera package&quot; /&gt;&lt;br /&gt;
-출처:&lt;a href=&quot;http://wiki.ros.org/uvc_camera&quot;&gt;uvc_camera&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;cs를 하여 catkin_ws/src로 이동하자.(환경설정에서 다루었던 내용)&lt;/p&gt;
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ cs
-~/catkin_ws/src$ git clone https://github.com/ros-drivers/camera_umd
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;git으로 데이터 패키지를 다운받고 받은 폴더를 ls를 이용하여 확인해보자&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;~/catkin_ws/src$ ls
-camera_umd      my_first_ros_pkg  turtlebot3_msgs
-CMakeLists.txt  turtlebot3        turtlebot3_simulations
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;h2 id=&quot;3-패키지-빌드&quot;&gt;3. 패키지 빌드&lt;/h2&gt;
-
-&lt;p&gt;이제 패키지를 빌드해보자.&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;~/catkin_ws/src$ cm
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;&lt;img src=&quot;/assets/img/ros/ros_uvc_install_fail.png&quot; title=&quot;uvc_camera package 설치실패&quot; /&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;em&gt;젠장 에러뜬다.&lt;/em&gt;&lt;/p&gt;
-
-&lt;p&gt;의존성 문제로 해당 문제를 해결하기 위해서는 아래의 커멘드를 입력해야 한다.&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;rosdep install --from-paths src --ignore-src --rosdistro=kinetic -y
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/img/ros/ros_uvc_install_success.png&quot; title=&quot;uvc_camera package 설치성공&quot; /&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;~/catkin_ws$ rospack profile
-Full tree crawl took 0.045761 seconds.
-Directories marked with (*) contain no manifest.  You may
-want to delete these directories.
-To get just of list of directories without manifests,
-re-run the profile with --zombie-only
--------------------------------------------------------------
-0.037673   /opt/ros/kinetic/share
-0.005741   /home/memaker/catkin_ws/src
-0.002084   /home/memaker/catkin_ws/src/turtlebot3
-0.001374   /home/memaker/catkin_ws/src/camera_umd
-0.000856   /home/memaker/catkin_ws/src/turtlebot3_simulations
-0.000228 * /opt/ros/kinetic/share/OpenCV-3.3.1-dev
-0.000049 * /opt/ros/kinetic/share/OpenCV-3.3.1-dev/haarcascades
-0.000049 * /opt/ros/kinetic/share/doc
-0.000021 * /opt/ros/kinetic/share/OpenCV-3.3.1-dev/lbpcascades
-0.000009 * /opt/ros/kinetic/share/doc/liborocos-kdl
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h2 id=&quot;4-launch-파일-편집하기&quot;&gt;4. launch 파일 편집하기&lt;/h2&gt;
-
-&lt;p&gt;launch 파일이 저장된 위치로 열심히 이동을 한다.
-카메라 스펙에 맞게 몇가지 항목을 변경 할 필요가 있다.(&lt;strong&gt;물론 그냥 실행해도 무관하다고 봄&lt;/strong&gt;)&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;~/catkin_ws$ cd ./src/camera_umd/uvc_camera/launch/
-~/catkin_ws/src/camera_umd/uvc_camera/launch$ gedit ./camera_node.launch
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;카메라에 따라 해상도 지원하는 스펙이 다를 수 있다. 확인하고 설정하자.&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;lt;launch&amp;gt;
-  &amp;lt;node pkg=&quot;uvc_camera&quot; type=&quot;uvc_camera_node&quot; name=&quot;uvc_camera&quot; output=&quot;screen&quot;&amp;gt;
-    &amp;lt;param name=&quot;width&quot; type=&quot;int&quot; value=&quot;640&quot; /&amp;gt;
-    &amp;lt;param name=&quot;height&quot; type=&quot;int&quot; value=&quot;480&quot; /&amp;gt;
-    &amp;lt;param name=&quot;fps&quot; type=&quot;int&quot; value=&quot;30&quot; /&amp;gt;
-    &amp;lt;param name=&quot;frame&quot; type=&quot;string&quot; value=&quot;wide_stereo&quot; /&amp;gt;
-
-    &amp;lt;param name=&quot;auto_focus&quot; type=&quot;bool&quot; value=&quot;False&quot; /&amp;gt;
-    &amp;lt;param name=&quot;focus_absolute&quot; type=&quot;int&quot; value=&quot;0&quot; /&amp;gt;
-    &amp;lt;!-- other supported params: auto_exposure, exposure_absolute, brightness, power_line_frequency --&amp;gt;
-
-    &amp;lt;param name=&quot;device&quot; type=&quot;string&quot; value=&quot;/dev/video0&quot; /&amp;gt;
-    &amp;lt;param name=&quot;camera_info_url&quot; type=&quot;string&quot; value=&quot;file://$(find uvc_camera)/example.yaml&quot; /&amp;gt;
-  &amp;lt;/node&amp;gt;
-&amp;lt;/launch&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;편집하고 꼭 저장을 하자.&lt;/p&gt;
-
-&lt;h2 id=&quot;5-실행&quot;&gt;5. 실행&lt;/h2&gt;
-
-&lt;p&gt;실행해보자.&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;~/catkin_ws/src/camera_umd/uvc_camera/launch$ cw
-~/catkin_ws$ roslaunch uvc_camera camera_node.launch
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h2 id=&quot;6-rqt_image_view-실행&quot;&gt;6. rqt_image_view 실행&lt;/h2&gt;
-
-&lt;p&gt;퍼블리셔 노드를 roslaucn로 실행했기 때문에 서브스크라이버로 rqt_image_view를 이용해서 확인해보자.&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;~/catkin_ws$ rqt_image_view
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/img/ros/rqt_image_view_uvc_camera.png&quot; title=&quot;uvc_camera 화면&quot; /&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;p&gt;색감조절이 필요할 듯하지만, 일단 화면이 나오는 것은 확인할 수 있다.&lt;/p&gt;
-
-&lt;h2 id=&quot;7-roscore와-rosrun-활용더-좋은-화면-제공&quot;&gt;7. roscore와 rosrun 활용(더 좋은 화면 제공)&lt;/h2&gt;
-
-&lt;p&gt;기존에 roslaunch를 활용하면 색감이 좀 나간 것 처럼 나오는 효과가 있어서, roscore를 활용해 보았다.&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ roscore
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;그리고, 퍼블리셔 노드를 실행해줘야 한다.&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ rosrun uvc_camera uvc_camera_node _device:=/dev/video0
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;이제 서브스크라이버 역할을 할 rqt_image_view 를 실행해보자&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ rqt_image_view
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;&lt;img src=&quot;/assets/img/ros/rqt_image_uvc_camera2.png&quot; title=&quot;uvc_camera roscore rosrun 실행시&quot; /&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;p&gt;당연히 rosrun과 rosluanch 상관없이 몇 가지 옵션을 손 보면 더 좋은 화면과 이미지가 제공될 수 있을 것이다.&lt;/p&gt;
-
-&lt;p&gt;출처:[ROS_Robot_Programming_EN]&lt;/p&gt;</content><author><name>Kiho Lee</name></author><category term="ROS" /><category term="카메라" /><category term="uvc_camera" /><category term="웹캠" /><summary type="html">1. 카메라 확인</summary></entry><entry><title type="html">06.GIT 파일 트랙킹 중지 및 재시작</title><link href="http://localhost:4000/categories/git/GIT-06-git-tracking-abort.html" rel="alternate" type="text/html" title="06.GIT 파일 트랙킹 중지 및 재시작" /><published>2019-12-12T00:00:00+00:00</published><updated>2019-12-12T00:00:00+00:00</updated><id>http://localhost:4000/categories/git/GIT-06-git-tracking-abort</id><content type="html" xml:base="http://localhost:4000/categories/git/GIT-06-git-tracking-abort.html">&lt;h2 id=&quot;1-들어가며&quot;&gt;1. 들어가며&lt;/h2&gt;
-
-&lt;p&gt;git을 쓰면서 트랙킹되고 있는 파일 즉, git의 인덱스에 등록된 파일을 &lt;strong&gt;.gitignore&lt;/strong&gt;로 등록해도 작동이 안되는 경우가 있다. 사실 gitignore와 다른 개념이기 때문에 이 명령어가 작동 안되는 것이다.&lt;/p&gt;
-
-&lt;p&gt;지금같은 경우는 &lt;code class=&quot;highlighter-rouge&quot;&gt;로컬에 파일은 있지만, 이 파일을 리모트로 올리지 않겠다(리모트는 있으면 삭제됨)&lt;/code&gt;가 아니라, &lt;code class=&quot;highlighter-rouge&quot;&gt;로컬의 파일과 리모트의 파일의 내용을 다르게 유지하고 싶은 경우&lt;/code&gt;에 해당한다.&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;git add .
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;이렇게 쓰면, 기존에 해당 폴더에 있는 모든 파일과 하위 폴더 내용이 모두 git index에 등록이 된다.&lt;/p&gt;
-
-&lt;p&gt;그래서 우리는 .gitignore라는 파일을 활용하게 되는데, 이미 등록이 된 경우 인덱스에서 빠져나오지 않는다.&lt;/p&gt;
-
-&lt;h2 id=&quot;2-gitignore-만들기-참고&quot;&gt;2. .gitignore 만들기 (참고)&lt;/h2&gt;
-
-&lt;p&gt;이 경우는 사실 로컬 디렉토리에는 존재하는 파일이지만, 리모트(github)에는 올리고 싶지 않은 *.log파일이나 기타 파일들에 해당할 수 있다.&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;로컬 &lt;strong&gt;.gitignore&lt;/strong&gt;를 만듭니다.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;저장소에 &lt;strong&gt;.gitignore&lt;/strong&gt; 라는 파일을 생성하면 Git은 커밋하기 전에 파일을 사용하여 무시할 파일과 디렉토리를 결정한다.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;.gitignore&lt;/strong&gt;의 파일은 저장소로 &lt;strong&gt;git add&lt;/strong&gt;를 수행할 때, 추적하지 않고, &lt;strong&gt;git commit&lt;/strong&gt;을 통해 인덱싱 되지 않고, &lt;strong&gt;git push&lt;/strong&gt;를 통해 리모트 리포지토리에도 저장되지 않는다.&lt;/p&gt;
-
-&lt;h3 id=&quot;1-터미널에서-git-저장소의-위치로-이동&quot;&gt;(1) 터미널에서 Git 저장소의 위치로 이동&lt;/h3&gt;
-&lt;h3 id=&quot;2-gitignore-파일-생성&quot;&gt;(2) .gitignore 파일 생성&lt;/h3&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ touch .gitignore
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;파일이 이미 체크인되어 있고 무시하려는 경우 나중에 규칙을 추가해도 Git 은 파일을 무시하지 않는다. 이 경우 터미널에서 다음 명령을 실행하여 파일을 먼저 추적 해제해야 한다.&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ git rm --cached FILENAME
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;이렇게 하면 git index에서 파일이 삭제되고, 디스크 상에 파일은 존재한다. 이후  commit과 push를 하면, 리모트에 존재하는 파일도 사라지게 된다.&lt;/p&gt;
-
-&lt;p&gt;[출처]&lt;a href=&quot;https://help.github.com/en/github/using-git/ignoring-files&quot;&gt;GitHub Help&lt;/a&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;3-리모트-파일과-로컬-파일-다르게-유지하기&quot;&gt;3. 리모트 파일과 로컬 파일 다르게 유지하기&lt;/h2&gt;
-
-&lt;p&gt;작업을 하다보면, 서버로 올라가서 작동하는 파일이 개발자가 로컬에서 테스트하는 환경과 다르게 유지해야 되는 경우가 비일비재하다.
-그럴 경우, 로컬에서 파일을 테스트하고 올리기 전에 세팅파일을 변경해서 커밋하는 번거로움을 중단하고, git index에서 추적을 중단시켜 놓는 방법이 있다. 즉, git의 index에서 파일 트래킹을 중지 시키는 것이다.&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;git update-index --assume-unchanged &amp;lt;file&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;만약 다시 트랙킹이 필요할 경우 아래 명령어로 트래킹 유지로 복구 시킬 수 있다.&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;git update-index --no-assume-unchanged &amp;lt;file&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;만약 폴더 자체를 트래킹 중지를 하고자 하면,&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;git ls-files -z .settings | xargs -0 git update-index --assume-unchanged
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;[출처]&lt;a href=&quot;https://seotory.tistory.com/5&quot;&gt;seotory&lt;/a&gt;&lt;/p&gt;</content><author><name>Kiho Lee</name></author><category term="GIT" /><category term="트래킹중지" /><category term="트래킹재시작" /><summary type="html">1. 들어가며</summary></entry><entry><title type="html">06.ROS 메시지 통신의 흐름</title><link href="http://localhost:4000/categories/ros/ROS-06-communication-process.html" rel="alternate" type="text/html" title="06.ROS 메시지 통신의 흐름" /><published>2019-12-12T00:00:00+00:00</published><updated>2019-12-12T00:00:00+00:00</updated><id>http://localhost:4000/categories/ros/ROS-06-communication-process</id><content type="html" xml:base="http://localhost:4000/categories/ros/ROS-06-communication-process.html">&lt;h2 id=&quot;1-들어가며&quot;&gt;1. 들어가며&lt;/h2&gt;
-
-&lt;p&gt;메시지 통신의 흐름에 앞서 통신 방식을 간략하게 집고 넘어가면 아래 표와 같다.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/img/ros/ros_communication3.jpeg&quot; title=&quot;ROS 메시지통신&quot; /&gt;
-출처:&lt;a href=&quot;https://robertchoi.gitbook.io/ros/untitled-2&quot;&gt;ROS 하루에 입문하기&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/img/ros/Selection_004.png&quot; title=&quot;메시지통신 종류와 특징&quot; /&gt;
-출처:[ROS_Robot_Programming_EN]&lt;/p&gt;
-
-&lt;h2 id=&quot;2-토픽-메시지-통신의-흐름&quot;&gt;2. 토픽 메시지 통신의 흐름&lt;/h2&gt;
-
-&lt;p&gt;마스터는 노드의 정보를 관리하고 각 노드는 필요에 따라 다른 노드를 연결하고 통신한다.&lt;/p&gt;
-
-&lt;h3 id=&quot;1-마스터-실행&quot;&gt;(1) 마스터 실행&lt;/h3&gt;
-
-&lt;p&gt;노드 간 메시지 통신에서 연결 정보를 관리하는 마스터는 ROS를 사용하기 위해 먼저 실행해야하는 필수 요소이다. ROS 마스터는 &lt;strong&gt;roscore&lt;/strong&gt; 명령을 사용하여 실행되며 &lt;strong&gt;XMLRPC&lt;/strong&gt;로 서버를 실행한다. 마스터는 노드 네임, 토픽, 서비스, 조치, 메시지 유형, URI 주소 및 노드 간 연결을위한 포트를 등록하고 요청시 다른 노드로 정보를 중계한다.&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ roscore
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/img/ros/ros_master.png&quot; width=&quot;50%&quot; height=&quot;50%&quot; title=&quot;ROS Master(core) 실행&quot; /&gt;&lt;br /&gt;
-출처:[ROS_Robot_Programming_EN]&lt;/p&gt;
-
-&lt;h3 id=&quot;2-서브스크라이버-노드-실행&quot;&gt;(2) 서브스크라이버 노드 실행&lt;/h3&gt;
-
-&lt;p&gt;서브스크라이버 노드는 &lt;strong&gt;rosrun&lt;/strong&gt; 또는 &lt;strong&gt;roslaunch&lt;/strong&gt; 명령으로 실행된다. 서브스크라이버 노드는 노드 이름, 토픽 이름, 메시지 유형, URI 주소 및 포트를 마스터가 실행되는 대로 등록한다. 마스터와 노드는 &lt;strong&gt;XMLRPC&lt;/strong&gt;를 사용하여 통신을 하게된다.&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ rosrun PACKAGE_NAME NODE_NAME
-$ roslaunch PACKAGE_NAME LAUNCH_NAME
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/img/ros/ros_subscriber_run.png&quot; title=&quot;서브스크라이버 실행&quot; /&gt;&lt;br /&gt;
-출처:[ROS_Robot_Programming_EN]&lt;/p&gt;
-
-&lt;h3 id=&quot;3-퍼블리셔-노드-실행&quot;&gt;(3) 퍼블리셔 노드 실행&lt;/h3&gt;
-
-&lt;p&gt;퍼블리셔 노드는 서브스크라이버 노드와 같은 방식(&lt;strong&gt;rosrun&lt;/strong&gt; 또는 &lt;strong&gt;roslaunch&lt;/strong&gt; 명령)으로 실행된다. 퍼블리셔 노드도 노드 이름, 토픽 이름, 메시지 유형, URI 주소 및 포트를 마스터가 실행되는 대로 등록한다. 마스터와 노드는 &lt;strong&gt;XMLRPC&lt;/strong&gt;를 사용하여 통신을 하게된다.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/img/ros/ros_publisher_run.png&quot; title=&quot;퍼블리셔 노드 실행&quot; /&gt;&lt;br /&gt;
-출처:[ROS_Robot_Programming_EN]&lt;/p&gt;
-
-&lt;h3 id=&quot;4-퍼블리셔-정보-제공&quot;&gt;(4) 퍼블리셔 정보 제공&lt;/h3&gt;
-
-&lt;p&gt;마스터는 퍼블리셔의 이름, 토픽 이름, 메시지 유형, URI 주소 및 포트 번호와 같은 정보를 연결하려는 구독자에게 배포한다.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/img/ros/ros_publisher_info.png&quot; title=&quot;퍼블리셔 정보 제공&quot; /&gt;&lt;br /&gt;
-출처:[ROS_Robot_Programming_EN]&lt;/p&gt;
-
-&lt;h3 id=&quot;5-서브스크라이버-노드의-연결-요청&quot;&gt;(5) 서브스크라이버 노드의 연결 요청&lt;/h3&gt;
-
-&lt;p&gt;서브스크라이버 노드는 마스터로부터 수신 된 퍼블리셔 정보에 바탕으로 퍼블리셔 노드에 직접 연결을 요청한다. 요청 절차 중에 서브스크라이버 노드는 노드 이름, 토픽 이름 및 메시지 유형과 같은 정보를 퍼블리셔 노드에 전송한다.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/img/ros/ros_subscriber_connection.png&quot; title=&quot;서브스크라이버 노드의 연결 요청&quot; /&gt;&lt;br /&gt;
-출처:[ROS_Robot_Programming_EN]&lt;/p&gt;
-
-&lt;h3 id=&quot;6-퍼블리셔-노드의-연결-응답&quot;&gt;(6) 퍼블리셔 노드의 연결 응답&lt;/h3&gt;
-
-&lt;p&gt;퍼블리셔 노드는 서브스크라이버 노드의 연결 요청에 대한 응답으로 TCP 서버의 URI 주소와 포트 번호를 보낸다.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/img/ros/ros_publisher_response.png&quot; title=&quot;퍼블리셔 노드의 연결 응답&quot; /&gt;&lt;br /&gt;
-출처:[ROS_Robot_Programming_EN]&lt;/p&gt;
-
-&lt;h3 id=&quot;7-tcpros-connection&quot;&gt;(7) TCPROS Connection&lt;/h3&gt;
-
-&lt;p&gt;서브스크라이버 노드는 TCPROS를 사용하여 퍼블리셔 노드에 대한 클라이언트를 생성하고 퍼블리셔 노드에 연결한다. 이 시점에서 노드 간 통신은 TCPROS라는 TCP/IP 기반 프로토콜을 사용한다.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/img/ros/ros_tcpros_connection.png&quot; title=&quot;TCPROS 연결&quot; /&gt;&lt;br /&gt;
-출처:[ROS_Robot_Programming_EN]&lt;/p&gt;
-
-&lt;h3 id=&quot;8-메시지-전송&quot;&gt;(8) 메시지 전송&lt;/h3&gt;
-
-&lt;p&gt;퍼블리셔 노드는 미리 설정된 메시지를 서브스크라이버 노드로 송신하게 된다. 이 둘 사이의 연결은 TCPROS 연결 방식을 활용하게 된다.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/img/ros/ros_message_trasmit.png&quot; title=&quot;TCPROS 메시지 전송&quot; /&gt;&lt;br /&gt;
-출처:[ROS_Robot_Programming_EN]&lt;/p&gt;
-
-&lt;h2 id=&quot;3-서비스-메시지-통신의-흐름&quot;&gt;3. 서비스 메시지 통신의 흐름&lt;/h2&gt;
-
-&lt;p&gt;서비스에는 두 노드를 중심으로 통신이 이루어 진다.&lt;/p&gt;
-
-&lt;p&gt;서비스 클라이언트 : 서비스 요청 및 응답 받기
-서비스 서버 : 서비스를 받고 지정된 작업을 실행하고 응답을 반환&lt;/p&gt;
-
-&lt;p&gt;서비스 서버와 클라이언트 간의 연결은 위에서 설명한 퍼블리셔 및 서브스크라이버의 TCPROS 연결과 동일하다. 토픽(Topic)과 달리 요청(request) 및 응답(response)이 성공하면 서비스가 연결을 종료합니다. 추가 요청이 필요한 경우 연결 절차를 다시 수행한다.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/img/ros/ros_service_ex.png&quot; title=&quot;서비스의 메시지 전송&quot; /&gt;&lt;br /&gt;
-출처:[ROS_Robot_Programming_EN]&lt;/p&gt;
-
-&lt;h2 id=&quot;4-액션-메시지-통신의-흐름&quot;&gt;4. 액션 메시지 통신의 흐름&lt;/h2&gt;
-
-&lt;p&gt;액션은 피드백이라는 추가 메시지가 있는 서비스 요청 및 응답과 유사하게 보일 수 있다.
-피드백 메시지는 요청(목표)과 응답(결과) 사이에 중간 결과를 제공하지만 실제로는 토픽과 비슷하다. 실제로 ‘rostopic’명령을 사용하여 주제를 나열하는 경우 액션에 사용되는 목표, 상태, 취소, 결과 및 피드백과 같은 5 가지 토픽이 있다. 액션 서버와 클라이언트 간의 연결은 퍼블리셔 및 서브스크라이버의 TCPROS 연결과 유사하지만 사용법이 약간 다르다. 예를 들어, 액션 클라이언트가 취소 명령을 보내거나 서버가 결과 값을 보내면 연결이 종료된다.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/img/ros/ros_action_ex.png&quot; title=&quot;액션의 메시지 전송&quot; /&gt;&lt;br /&gt;
-출처:[ROS_Robot_Programming_EN]&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;ROS 로봇 프로그래밍 책이 한국어판은 3만 2천원에 판매하는데, 영문 판은 무료로 다운로드 가능하다. 번역비용 치고 좀 비싸다는 생각이 들긴 하지만, 한 권정도 갖고 있으면 괜찮을 듯 싶다. 관련된 내용은 대체로 wiki.ros.org에서 확인할 수 있는 듯 하다.&lt;/p&gt;
-&lt;/blockquote&gt;</content><author><name>Kiho Lee</name></author><category term="ROS" /><category term="메시지통신" /><category term="통신프로세스" /><category term="메시지" /><summary type="html">1. 들어가며</summary></entry><entry><title type="html">05.ROS 용어 정리 및 개념</title><link href="http://localhost:4000/categories/ros/ROS-05-ros-words.html" rel="alternate" type="text/html" title="05.ROS 용어 정리 및 개념" /><published>2019-12-10T00:00:00+00:00</published><updated>2019-12-10T00:00:00+00:00</updated><id>http://localhost:4000/categories/ros/ROS-05-ros-words</id><content type="html" xml:base="http://localhost:4000/categories/ros/ROS-05-ros-words.html">&lt;h2 id=&quot;1-ros-란&quot;&gt;1. ROS 란?&lt;/h2&gt;
-
-&lt;p&gt;ROS는 로봇의 응용프로그램을 개발하기 위한 운영체제와 같은 로봇 소프트웨어 플랫폼이다. ROS는 로봇 응용프로그램을 개발할 때 필요한 하드웨어 추상화, 디바이스 제어, 센싱 및 인식, SLAM 등 다양한 기능을 라이브러리 형태로 제공하고 있으며, 디버깅 도구 및 시뮬레이션 도구를 제공하는 메타 OS이다.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/img/ros/ros_communication.png&quot; title=&quot;ROS 개념&quot; /&gt;
-출처:&lt;a href=&quot;https://robertchoi.gitbook.io/ros/untitled-2&quot;&gt;ROS 하루에 입문하기&lt;/a&gt;&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;메타 OS는 사실 실제로 존재하는 말이기 보다는 ROS를 설명하기 위해서 등장한 용어라고 보여진다. Linux, Windos, OS X와 같은 다른 운영체제간 통신을 기반으로 이기종 디바이스 컨트롤이 가능하게 만든 것이 ROS이기 때문이다.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;h2 id=&quot;2-마스터&quot;&gt;2. 마스터&lt;/h2&gt;
-
-&lt;p&gt;마스터(master)란 노드와 노드사이를 연결하여 메시지 통신이 가능하게 하는 일종의 커멘드 센터이다. 흔히 네임 서버로 비교하여 설명을 한다.&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;roscore
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;위 명령어를 실행하여 마스터를 실행하고, 각각의 패키지 노드들을 연결하여 ROS프로그램이 동작하게 된다.
-또한, 마스터는 마스터에 접속한 슬레이브들과의 접속상태를 지속적으로 유지하는 것이 아니라 HTTP기반의 프로토콜인 XMLRPC(XML-Remote Procedure Call)를 이용하여 슬레이브들과 통신한다.&lt;/p&gt;
-
-&lt;p&gt;로봇은 매우 복잡한 센서와 모듈들이 통합되어 있어서, 통신을 지속적으로 연결하고 있으면 리소스의 낭비가 심각해질 수 있지만, 이러한 통신 방식은 자원을 효율적으로 활용할 수 있도록 돕니다. 게다가 XMLRPC는 매우 가볍고, 다양한 프로그래밍 언어를 지원하기 때문에 여러 종류의 하드웨어와 언어를 지원해야 하는 ROS에 매우 적합하다고 볼 수 있다.&lt;/p&gt;
-
-&lt;p&gt;설정시 유의해야 할 점은 ROS를 구동하면서 마스터는 사용자가 정해 놓은 ROS_MASTER_URI 변수에 기재된 URI 주소와 포트를 가진다.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/img/ros/ros_communication3.jpeg&quot; title=&quot;ROS 통신 개념&quot; /&gt;
-출처:&lt;a href=&quot;https://robertchoi.gitbook.io/ros/untitled-2&quot;&gt;ROS 하루에 입문하기&lt;/a&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;3-노드&quot;&gt;3. 노드&lt;/h2&gt;
-
-&lt;p&gt;노드(node)는 ROS에서 실행되는 최소 단위의 프로세서를 지칭한다. 즉, 최소 단위의 실행 가능한 프로그램으로 반드시 roscore가 등록된 이후에 실행을 시켜야 한다.
-모든 프로그램에서 권장하는 방법이겠지만, 프로그램을 모듈단위로 잘 구성하여 재사용성을 높이도록 하는 것이 좋은 노드를 구성하는 방법이 될 것이다. 예를 들면, 로봇을 구동하기 위해서 필요한 모터와 엔코더 등을 각각 세분화하여 노드로 구성하는 것을 권장한다.&lt;/p&gt;
-
-&lt;p&gt;노드에는 다양한 정보가 들어간다.&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;노드 명칭&lt;/li&gt;
-  &lt;li&gt;퍼블리셔(Publisher), 서브스크라이버(Subscriber), 서비스 서버(Service server), 서비스 클라이언트(Service Client) 구분&lt;/li&gt;
-  &lt;li&gt;사용되는 토픽 및 서비스 이름&lt;/li&gt;
-  &lt;li&gt;메시지 형태&lt;/li&gt;
-  &lt;li&gt;URI 주소&lt;/li&gt;
-  &lt;li&gt;포트 번호 등&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;노드는 마스터와 통신할 때 XMLRPC를 활용하고, 노드간에도 XMLRPC 혹은 TCP/IP 통신 방식을 활용한 TCPROS를 이용한다.&lt;/p&gt;
-
-&lt;h2 id=&quot;4-패키지&quot;&gt;4. 패키지&lt;/h2&gt;
-
-&lt;p&gt;패키지(Package)는 ROS를 구성하는 기본 단위가 된다. 
-ROS의 응용프로그램은 패키지 단위로 개발되며 패키지는 최소한 하나 이상의 노드를 포함하거나 다른 패키지의 노드를 싱행하기 위한 설정파일 및 의존성 라이브러리, 데이터 셋 등이 있을 수 있다.&lt;/p&gt;
-
-&lt;h2 id=&quot;5-메타패키지&quot;&gt;5. 메타패키지&lt;/h2&gt;
-
-&lt;p&gt;메타패키지(metapackage)는 공통된 목적을 가진 패키지 집합이다. 대단위 기능을 수행하는 프로그램의 경우 단일 패키지로 불가능하고 복수 개의 패키지를 연동 실행하여 수행 할 수 있다.&lt;/p&gt;
-
-&lt;h2 id=&quot;6-메시지&quot;&gt;6. 메시지&lt;/h2&gt;
-
-&lt;p&gt;노드는 메시지(message)를 통해 노드 간의 데이터를 주고 받을 수 있다. 메시지의 종류는 integer, floating point, boolean과 같은 변수 형태에서 메시지를 품은 메시지이거나 배열도 메시지로 송수신이 가능하다.&lt;/p&gt;
-
-&lt;p&gt;메시지의 통신 방식은 TCPROS, UDPROS 등의 방식이 있다.&lt;/p&gt;
-
-&lt;p&gt;단방향 메시지 송수신 방식을 토픽(Topic)이라고 한다.
-양방향 메시지 송수신 방식을 서비스(Service)라고 한다.&lt;/p&gt;
-
-&lt;h2 id=&quot;7-토픽&quot;&gt;7. 토픽&lt;/h2&gt;
-
-&lt;p&gt;토픽(topic)은 로봇 혹은 로봇 연관 시스템에서 작업을 수행하기 위한 작업 내용(ROS프로그래밍 책에서는 ‘이야깃거리’라 칭함)을 말한다고 보면 된다. 퍼블리셔(Publisher) 노드가 하나의 작업 내용에 대해 마스터에 등록한 후, 이 작업 내용에 대한 메시지를 퍼블리시(출판 혹은 발송)하게 된다.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/img/ros/ros_topic.jpeg&quot; title=&quot;토픽 개념&quot; /&gt;
-출처:&lt;a href=&quot;https://robertchoi.gitbook.io/ros/untitled-2&quot;&gt;ROS 하루에 입문하기&lt;/a&gt;&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;용어나 말이 굉장히 낯설게 느껴질 수 있다. ROS를 설계자가 나름 통신 프로토콜(일종의 통신 약속)을 규정하기 위해서 들고 나온 개념이라고 보면 된다. 이러한 용어는 자주 보고 쓰다보면 익숙해질 수 있을 것이라고 생각한다.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;이 작업 내용을 구독해주시는 열혈 독자가 있는데, 이를 서브스크라이버(subscriber)라고 한다. 각각 노드별로 역할이 있고,명칭이 있다고 보면된다.&lt;/p&gt;
-
-&lt;h2 id=&quot;8-퍼블리시-및-퍼블리셔&quot;&gt;8. 퍼블리시 및 퍼블리셔&lt;/h2&gt;
-
-&lt;p&gt;퍼블리시(publish)는 작업 내용에 해당하는 토픽의 메시지 형태의 데이터를 발송(송신)하는 것을 말한다. 퍼블리셔(publisher)는 이러한 퍼블리시(publish)라는 행위를 하는 노드를 말한다.&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;골키퍼가 공을 잡고, 다른 선수들은 공을 발로 찬다. 이렇게 하면 말이 되지만, 공격수가 공을 잡는다 하면 말도 안되는 행위가 될 것이다. 머 이렇게 일단 이해해보자. 사실 어려운 내용도 아니니 말이다.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;퍼블리셔는 자신의 노드 정보와 토픽으로 보낼 정보 등을 마스터 ROSCORE에 등록한다. 그리고 subscriber를 할 노드에게 메시지를 보낸다.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/img/ros/ros_publisher.png&quot; title=&quot;퍼블리셔 개념&quot; /&gt;
-&lt;br /&gt;
-출처:&lt;a href=&quot;https://m.blog.naver.com/PostView.nhn?blogId=0323lena&amp;amp;logNo=220357703221&amp;amp;proxyReferer=https%3A%2F%2Fwww.google.com%2F&quot;&gt;김빠진사이다&lt;/a&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;9-서브스크라이브-및-서브스크라이버&quot;&gt;9. 서브스크라이브 및 서브스크라이버&lt;/h2&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;야구에 투수가 있으면, 당연히 포수가 있고, 타자도 있다. 그렇지만, 토픽(TOPIC)의 개념에서 보면 투수와 포수만 있다고 볼 수 있다. 야구공은 메시지라고 볼 수 있을 것 같다.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/img/ros/ros_subscriber.png&quot; title=&quot;서브스크라이버 개념&quot; /&gt;
-&lt;br /&gt;
-출처:&lt;a href=&quot;https://wyvernsstory.tistory.com/entry/%EA%B3%B5%EA%B0%90%E5%85%B1%E6%84%9F-W-%EC%95%BC%EA%B5%AC%EC%9E%A5%EC%97%90%EC%84%9C-%EA%B7%B8%EB%A6%AC%EB%8A%94-%EB%82%98%EC%9D%98-%EB%AF%B8%EB%9E%98-SK-%ED%8F%AC%EC%88%98-%EC%9D%B4%EC%9C%A4%EC%9E%AC&quot;&gt;sk와이번스&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;서브스크라이버는 퍼블려서와 같은 프로세스를 따른다. 먼저 마스터에 자신의 정보를 등록하고, 서브스크라이브를 수행하기 위한 토픽을 포함한 자신의 정보들을 등록하고, 해당 토픽을 퍼블리시하는 퍼블리셔 노드의 정보를 마스터로 부터 받게 된다.&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;야구를 예로 들어서 설명을 하지만, 다수의 퍼블리셔가 있을 수 있고, 다수의 서브스크라이버가 있을 수 있다.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;토픽 개념의 통신방식(퍼블리시와 서브스크라이브)은 비동기 방식이라서 전송이 필요할 때만, 데이터를 보낼 수 있기 때문에 매우 효율적인 방식이다.&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;보통 센서로부터 데이터를 받을 때, 패시브한 방식으로 데이터를 받기만 한다. 물론 일부 I2C 통신으로 COMMAND를 날리는 센서도 있긴 하지만, 대부분의 패시브 센서 (온도, 습도, 조도 등)는 데이터를 보내는 핀(Tx)만 활용하기 때문에 이러한 센서는 토픽 방식을 쓰면 매우 효율적이다.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;h2 id=&quot;10-서비스service&quot;&gt;10. 서비스(service)&lt;/h2&gt;
-
-&lt;p&gt;서비스(service)는 작업 내용(특수 목적 포함)에 대해 서비스 클라이언트(service client)와 서비스 서버(service server)간의 양방향 동기적 통신을 말한다. 클라이언트는 요청하고, 서버는 응답하게된다.&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;흔히 대화를 주고 받는 만담(conversation)과는 좀 다르다고 볼 수 있는데, 작업 내용에 대한 메시지를 보내고 그 결과를 주는 형식이라고 보면 된다.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/img/ros/ros_service.jpeg&quot; title=&quot;서비스 개념&quot; /&gt;
-출처:&lt;a href=&quot;https://robertchoi.gitbook.io/ros/untitled-2&quot;&gt;ROS 하루에 입문하기&lt;/a&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;11-서비스-서버service-server&quot;&gt;11. 서비스 서버(service server)&lt;/h2&gt;
-
-&lt;p&gt;서비스 서버(service server)는 서비스 클라이언트(service client)로 부터 작업 내용의 요청(메시지;request)를 받고, 작업을 한 후에 작업 내용의 완료결과(메시지)를 응답(메시지;response)하게 된다. 따라서, 서비스 서버가 응답 주체(노드)가 된다.&lt;/p&gt;
-
-&lt;h2 id=&quot;12-서비스-클라이언트service-client&quot;&gt;12. 서비스 클라이언트(service client)&lt;/h2&gt;
-
-&lt;p&gt;서비스 클라이언트(service client)는 작업 내용의 요청(메시지;request)을 서비스 서버(service server)로 보내고 그 결과 응답(메시지;response)를 받는 요청 주체(노드)가 된다.&lt;/p&gt;
-
-&lt;h2 id=&quot;13-액션action&quot;&gt;13. 액션(action)&lt;/h2&gt;
-
-&lt;p&gt;액션(action)은 서비스처럼 양방향을 통신방식이지만, 중간 중간에 작업 상황을 피드백을 해주는 처리가 들어간 통신 방식이라고 할 수 있다.&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;파일을 옮기기 하면, 파일이 이동하는 Progress bar가 보인다. 이러한 기능도 액션의 개념과 유사하다고 볼 수 있다.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;액션도 서비스와 비슷한 면이 있지만, 요청과 응답을 달리 표현한다.&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;목표(goal)&lt;/li&gt;
-  &lt;li&gt;결과(result)&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;액션의 목표를 정하는 액션 클라이언트(action client)와 목표에 따라 임무를 수행하고, 임무가 끝나기 전까지 계속 피드백을 보내는 액션 서버(action server)가 서로 비동기 양방향 통신을 하게 된다.&lt;/p&gt;
-
-&lt;h2 id=&quot;14-액션-서버action-server&quot;&gt;14. 액션 서버(action server)&lt;/h2&gt;
-
-&lt;p&gt;액션 서버(action server)는 앞서 설명한 바와 같이 액션 클라이언트로 부터 목표를 전달 받고, 해당 목표를 수행하는 노드(주체)가 된다. 또한, 목표(임무)를 완료하기 전까지 중간 중간 액션 클라이언트로 부터 받은 목표에 맞게 피드백을 보내주게 된다.&lt;/p&gt;
-
-&lt;h2 id=&quot;15-액션-클라이언트action-client&quot;&gt;15. 액션 클라이언트(action client)&lt;/h2&gt;
-
-&lt;p&gt;액션 클라이언트(action client)는 목표를 출력하고, 액션 서버에서 보내는 결과와 피드백을 입력받는 노드이다. 액션 클라이언트가 목표를 액션 서버에 보내고 피드백을 받다가 취소명령을 보낼 수 있고, 완료 메시지를 액션 서버로부터 받으면 다음 명령을 보낼 수도 있다.&lt;/p&gt;
-
-&lt;h2 id=&quot;16-파라미터&quot;&gt;16. 파라미터&lt;/h2&gt;
-
-&lt;p&gt;ROS에서 parameter(매개변수)는 보통 노드에서 활용되는 파라미터를 말하게 된다. 예를 들면, 윈도우에서 활용되는 &lt;strong&gt;*.ini&lt;/strong&gt;파일이라고 볼 수도 있을 것 같다.
-보통은 디폴트(default) 값을 활용하게 되는 데, 상황에 따라 외부에서 설정 값을 밀어 넣을 수 있기 때문에 실시간 변경이 매우 용이하고 유용한 기능이다.&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;외부 장치와 연결되는 USB포트, 카메라 캘리브레이션 값, 모터 속도 등등&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;h2 id=&quot;17-파라미터-서버&quot;&gt;17. 파라미터 서버&lt;/h2&gt;
-
-&lt;p&gt;파라미터 서버(parameter server)는 패키지에서 파라미터를 사용할 때, 이 곳에 등록하여 활용한다. 이는 마스터의 기능 중 하나이기도 하다.&lt;/p&gt;
-
-&lt;h2 id=&quot;18-catkin&quot;&gt;18. Catkin&lt;/h2&gt;
-
-&lt;p&gt;캐킨(Catkin)은 ROS의 빌드 시스템이다. ROS의 빌드 시스템은 기본적으로 CMake(Cross Platform Make)를 이용하고 있어서 패키지 폴더에 CMakeLists.txt라는 파일에 빌드를 하기 위한 다양한 설정 내용들을 작성해야 한다. ROS에서 CMake를 ROS에 맞게 변경하여 ROS만의 특ㄹ화된 Catkin Build System을 구축하였다.
-캐킨 빌드 스스템은 ROS와 관련된 빌드, 패키지 관리, 패키지 간의 의존관계 등을 편리하게 사용할 수 있게 한다.&lt;/p&gt;
-
-&lt;h2 id=&quot;19-roscore&quot;&gt;19. roscore&lt;/h2&gt;
-
-&lt;p&gt;roscore는 ROS 마스터를 실행하는 명령어이다. 같은 네트워크라면 다른 컴퓨터에서 실행해도 된다. ROS2는 기본적으로 멀티네트워크를 지원한다고 하지만, ROS는 roscore와 같은 네트워크 상에 있어야 통신이 가능하다.&lt;/p&gt;
-
-&lt;p&gt;네트워크 설정은 환경설정 파트에서 했던 부분의 IP주소를 참조하면 된다.&lt;/p&gt;
-
-&lt;p&gt;기존에 설정했던 내용&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
-2
-3
-&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;c&quot;&gt;# Set ROS Network&lt;/span&gt;
-&lt;span class=&quot;nb&quot;&gt;export &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;ROS_HOSTNAME&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;192.168.0.44
-&lt;span class=&quot;nb&quot;&gt;export &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;ROS_MASTER_URI&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;http://&lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;ROS_HOSTNAME&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;:11311
-&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;만약 특별한 설정이 없으면, localhost를 활용하게 되고, 포트번호는 11311을 활용하게 된다.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/img/ros/ros_communication2.jpeg&quot; title=&quot;ROS 통신 개념&quot; /&gt;
-출처:&lt;a href=&quot;https://robertchoi.gitbook.io/ros/untitled-2&quot;&gt;ROS 하루에 입문하기&lt;/a&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;20-rosrun&quot;&gt;20. rosrun&lt;/h2&gt;
-
-&lt;p&gt;rosrun은 ROS의 기본 실행 명령어이다. 패키지에서 하나의 노드를 실행할 때 사용하게 된다. 
-거북이 움직이는 테스트를 해본 경험이 있다면 아래 명령어를 기억할 것이다.&lt;/p&gt;
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ rosrun turtlesim turtlesim_node
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;노드는 실행되면서 ROS_HOSTNAME에 URI의 주소를 활용하게 되고, 포트번호는 임의로 지정되게 된다.&lt;/p&gt;
-
-&lt;h2 id=&quot;21-roslaunch&quot;&gt;21. roslaunch&lt;/h2&gt;
-
-&lt;p&gt;ROS를 조금이라도 실행해 본 사람이라면, 알겠지만 굉장히 많은 터미널 창을 열어두어야 할 것이다. 만약 여러 노드를 실행한다면, 해당하는 노드만큼 터미널을 실행해야 될테지만, 만약 한 번에 많은 노드를 실행한다면 상당히 피로도 높은 작업이 될 수 있다.
-roslaunch는 여러 노드를 실행하는 개념이라고 볼 수 있다.&lt;/p&gt;
-
-&lt;p&gt;– 지원 옵션 –&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;복수 개의 노드 실행&lt;/li&gt;
-  &lt;li&gt;패키지 파라미터 설정&lt;/li&gt;
-  &lt;li&gt;노드 이름 변경&lt;/li&gt;
-  &lt;li&gt;노드 네임스페이스 설정&lt;/li&gt;
-  &lt;li&gt;ROS_ROOT 및 ROS_PACKAGE_PATH 설정&lt;/li&gt;
-  &lt;li&gt;환경변수 변경&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;roslaunch의 실행 내용은 *.launch 파일을 사용하여 실행 노드에 대한 설정을 해주는데 XML(Extensible Markup Language)을 이용해서 옵션을 설정하게된다.&lt;/p&gt;
-
-&lt;h2 id=&quot;22-bag&quot;&gt;22. bag&lt;/h2&gt;
-
-&lt;p&gt;ROS에서 매우 중요한 기능중에 하나로 보여지는 bag은 메시지를 저장한 파일 포맷(*.bag)이다. 이 파일을 이용하여 로봇을 활용한 테스트 상황을 구현할 수 있다. 그러면 실제 실험환경을 재구축 하지 않아도 &lt;strong&gt;rosbag play *.bag&lt;/strong&gt;를 이용해서 센서의 값들을 확인해 볼 수 있다.&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;rosbag의 기록, 재생의 기능을 활용하면 반복되는 프로그램 수정이 많은 알고리즘 개발에 매우 유용하다.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;h2 id=&quot;23-ros-wiki&quot;&gt;23. ROS Wiki&lt;/h2&gt;
-
-&lt;p&gt;ROS에 관련된 개념과 활용방법에 대하여 설명을 제공하는 위키 기반(&lt;strong&gt;http://wiki.ros.org&lt;/strong&gt;)의 페이지이다. ROS에 관련된 강좌나 책을 찾아보는 것도 좋지만, 가장 기본이 되는 메뉴얼은 ROS Wiki이다.&lt;/p&gt;
-
-&lt;h2 id=&quot;24-리포지토리&quot;&gt;24. 리포지토리&lt;/h2&gt;
-
-&lt;p&gt;공개 패키지는 ROS Wiki에서 리포지토리의 주소를 명시하고 있다. 리포지토리는 패키지가 저장된 웹상의 URL이며, svn, hg, git 등의 소스 관리 시스템을 이요하여 이슈, 개발, 내려받기 등을 관리하고 있다.&lt;/p&gt;
-
-&lt;h2 id=&quot;25-그래프&quot;&gt;25. 그래프&lt;/h2&gt;
-
-&lt;p&gt;ROS에서 실행한 다양한 노드와 통신 관계(토픽, 서비스, 액션)을 그래프(graph)로 시각화하여 직관적으로 관계를 파악 할 수 있도로 돕는 시각화 도구이다.&lt;/p&gt;
-
-&lt;h2 id=&quot;26-네임&quot;&gt;26. 네임&lt;/h2&gt;
-
-&lt;p&gt;노드, 파라미터, 토픽, 서비스, 액션 등 모두 네임(name)을 갖고 있고, 이를 활용하게 된다. 각 네임은 ROS 마스터에 등록하고, 통신을 할 때 이름을 기반으로 검색하거나 메시지를 전송하게 된다.&lt;/p&gt;
-
-&lt;h2 id=&quot;27-클라이언트-라이브러리&quot;&gt;27. 클라이언트 라이브러리&lt;/h2&gt;
-
-&lt;p&gt;ROS는 개발 언어의 의존성을 줄이기 위한 방법으로 클라이언트 라이브러리(client library)로 각종 언어의 개발환경을 제공하고 있다.&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;strong&gt;C++&lt;/strong&gt; - roscpp&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;Python&lt;/strong&gt; - rospy&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;Lips&lt;/strong&gt; - roslips&lt;/li&gt;
-  &lt;li&gt;Java - rosjava&lt;/li&gt;
-  &lt;li&gt;Lua - roslua&lt;/li&gt;
-  &lt;li&gt;.NET - roscs&lt;/li&gt;
-  &lt;li&gt;EusLisp - roseus&lt;/li&gt;
-  &lt;li&gt;R - rosR&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;28-uri&quot;&gt;28. URI&lt;/h2&gt;
-
-&lt;p&gt;URI(Uniform Resource Identifier, 통합 자원 식별자)는 인터넷에 있는 자원을 나타내는 유일한 주소이다.&lt;/p&gt;
-
-&lt;h2 id=&quot;29-md5&quot;&gt;29. MD5&lt;/h2&gt;
-
-&lt;p&gt;MD5(Message-Digest algorithm 5)는 128bit 암호화 해시 함수이다. 주로 프로그램이나 파일이 송신된 원본과 같은지 무결성을 검사하기 위해서 활용된다.&lt;/p&gt;
-
-&lt;h2 id=&quot;30-rpc&quot;&gt;30. RPC&lt;/h2&gt;
-
-&lt;p&gt;RPC(Remote Procedure Call)란 &lt;strong&gt;원격 컴퓨터의 프로그램이 다른 컴퓨터에 있는 서브 프로그램(Procedure)을 불러내는(Call) 것&lt;/strong&gt;을 의미한다. TCP/IP, IPX 등의 전송 프로토콜 기술을 활용한다.&lt;/p&gt;
-
-&lt;h2 id=&quot;31-xml&quot;&gt;31. XML&lt;/h2&gt;
-
-&lt;p&gt;XML(Extensible Markup Language)은 W3C에서 다른 특수 목적의 마크텁 언어를 만드는 용도로 권장하는 다목적 마크업 언어(markup language)이다.
-ROS에서 *.launch, *.urdf, package.xml 등 다양한 부분에서 사용되고 있다.&lt;/p&gt;
-
-&lt;h2 id=&quot;32-xmlrpc&quot;&gt;32. XMLRPC&lt;/h2&gt;
-
-&lt;p&gt;XMLRPC(XML-Remote Procedure Call)는 RPC 프로토콜의 일종으로, 인코딩 형식에서는 XML을 채택하고, 전송방식은 접속상태를 유지하지 않고 점검하지 않는 요청과 응답 방식의 HTTP 프로토콜을 사용한다.&lt;/p&gt;
-
-&lt;h2 id=&quot;33-tcpip&quot;&gt;33. TCP/IP&lt;/h2&gt;
-
-&lt;p&gt;TCP(Transmission Control Protocol)는 전송 제어 프로토콜이다.
-인터넷 프로토콜 계층으로 보면 IP(Internet Protocol)를 기반으로 전송 제어 프로토콜인 TCP를 사용하여 데이터의 전달을 보증하고 보낸 순서대로 송수신한다.&lt;/p&gt;
-
-&lt;p&gt;TCPROS 메시지 및 서비스에서 사용되는 TCP/IP 기반의 메시지 방식을 TCPROS라고 하고 UDPROS는 UDP기반이다.&lt;/p&gt;
-
-&lt;h2 id=&quot;34-cmakeliststxt&quot;&gt;34. CMakeLists.txt&lt;/h2&gt;
-
-&lt;p&gt;ROS의 빌드 시스템인 Catkin은 기본적으로 CMake를 이용하고 있고, CMakeLists.txt는 빌드를 할 데이터의 빌드 환경을 기술하고 있다.&lt;/p&gt;
-
-&lt;h2 id=&quot;35-packagexml&quot;&gt;35. package.xml&lt;/h2&gt;
-
-&lt;p&gt;패키지의 정보를 담은 XML 파일로 패키지의 이름, 저작권, 라이선스, 의존성 패키지 등을 기술하고 있다.&lt;/p&gt;
-
-&lt;p&gt;출처:[ROS 로봇프로그래밍 저)표윤석, 조한철, 정려운, 임태훈]&lt;/p&gt;
-
-&lt;h2 id=&quot;36-tftranform&quot;&gt;36. TF(Tranform)&lt;/h2&gt;
-
-&lt;p&gt;구동하는 로봇의 각 조인트(joint)들의 상대좌표 변환으로 물리적 이미지를 표현
-트리(tree) 형태로 조인트들 간의 관계도를 표시함&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/img/ros/ros_TF.jpeg&quot; title=&quot;TF 개념&quot; /&gt;
-출처:&lt;a href=&quot;https://robertchoi.gitbook.io/ros/untitled-2&quot;&gt;ROS 하루에 입문하기&lt;/a&gt;&lt;/p&gt;</content><author><name>Kiho Lee</name></author><category term="ROS" /><category term="words" /><category term="concept" /><summary type="html">1. ROS 란?</summary></entry></feed>
+&lt;p&gt;출처:[ROS_Robot_Programming_EN]&lt;/p&gt;</content><author><name>Kiho Lee</name></author><category term="ROS" /><category term="네임" /><category term="name" /><summary type="html">1. 개념</summary></entry></feed>

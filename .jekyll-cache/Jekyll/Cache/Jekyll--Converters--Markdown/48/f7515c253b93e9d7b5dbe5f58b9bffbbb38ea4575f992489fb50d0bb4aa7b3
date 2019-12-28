@@ -1,8 +1,0 @@
-I"�<h2 id="1-들어가며">1. 들어가며</h2>
-
-<p>ROS 빌드 시스템은 기본적으로 CMake(Cross Platform Make)를 사용하며, 빌드 환경은 패키지 폴더의 <code class="highlighter-rouge">CMakeLists.txt</code>파일에 설명되어 있다.</p>
-
-<p>ROS에서 CMake를 사용하는 이유는 여러 플랫폼에서 ROS 패키지를 빌드 할 수 있기 때문이다.</p>
-
-<p>출처:[ROS_Robot_Programming_EN]</p>
-:ET
