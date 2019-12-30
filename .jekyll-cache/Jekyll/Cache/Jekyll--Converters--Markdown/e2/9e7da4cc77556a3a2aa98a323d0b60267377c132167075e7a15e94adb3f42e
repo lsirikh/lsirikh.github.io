@@ -1,0 +1,70 @@
+I"�<p><br /></p>
+
+<h2 id="1-배열의-포인터-변환">1. 배열의 포인터 변환</h2>
+
+<p>배열을 포인터로 변환하여 주소 값 이동을 통해 쉽게 배열의 값을 접근 할 수 있다. 
+다음 예제를 통해서 그 기능을 살펴 볼 수 있다.</p>
+
+<figure class="highlight"><pre><code class="language-c--" data-lang="c++"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+</pre></td><td class="code"><pre><span class="cp">#include &lt;iostream&gt;
+</span>
+<span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">(){</span>
+	<span class="kt">int</span> <span class="n">i</span><span class="p">;</span> 
+	<span class="kt">int</span> <span class="n">arr</span><span class="p">[</span><span class="mi">10</span><span class="p">];</span>
+
+	<span class="k">for</span> <span class="p">(</span><span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">){</span>
+		<span class="n">arr</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">i</span> <span class="o">*</span> <span class="mi">2</span><span class="p">;</span>
+	<span class="p">}</span>
+
+	<span class="kt">int</span> <span class="o">*</span><span class="n">ptr</span> <span class="o">=</span> <span class="n">arr</span><span class="p">;</span>
+	<span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">arr</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+	<span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="o">*</span><span class="p">(</span><span class="n">ptr</span> <span class="o">+</span><span class="mi">1</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+	<span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></td></tr></tbody></table></code></pre></figure>
+
+<p>위 내용을 완전히 이해 한다면, 대충 포인터의 개념은 잡혔다고 생각해도 좋을 것 같다.</p>
+
+<h2 id="2-null-포인터">2. null 포인터</h2>
+
+<p>포인터 변수는 될수 있으면 선언할 때 null 포인터로 초기화 해주는 것이 좋다. 이는 초기화가 안된 포인터 변수의 Garbage로 인해 런타임 메모리 오류를 일으킬 수 있는 소지를 미연에 방지할 수 있다.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>int *p = nullptr;
+</code></pre></div></div>
+
+<h2 id="3-void-포인터">3. void 포인터</h2>
+
+<p>C++ 11 표준 부터 재미있는 포인터의 개념들이 나오기 시작했다. void 포인터는 참조자변수의 타입을 지정하지 않아도 auto와 같이 자동으로 할당해주는 기능을 갖추고 있다. 기존의 C언어는 노가다 성이 짙었는데, 모던 C++은 더 편리해진 느낌이다.</p>
+
+<figure class="highlight"><pre><code class="language-c--" data-lang="c++"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+</pre></td><td class="code"><pre><span class="kt">int</span> <span class="n">value</span> <span class="o">=</span> <span class="mi">100</span><span class="p">;</span>
+<span class="n">doble</span> <span class="n">value2</span> <span class="o">=</span> <span class="mf">100.121</span><span class="p">;</span>
+
+<span class="kt">void</span> <span class="o">*</span><span class="n">voidPtr</span> <span class="o">=</span> <span class="o">&amp;</span><span class="n">value</span><span class="p">;</span>
+<span class="n">voidPtr</span> <span class="o">=</span> <span class="o">&amp;</span><span class="n">value2</span><span class="p">;</span>
+</pre></td></tr></tbody></table></code></pre></figure>
+
+<p>[출처:최신 표준 C++로 쉽고 빠르게 안내하는 모던 C++ 프로그래밍]</p>
+:ET

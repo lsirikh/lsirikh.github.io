@@ -1,0 +1,107 @@
+I"<p><br /></p>
+
+<h2 id="1-참조자의-이해">1. 참조자의 이해</h2>
+
+<p>참조자를 선언하려면 다음처럼 주소 연산자(&amp;)를 변수명 앞에 지정한다.</p>
+
+<figure class="highlight"><pre><code class="language-c--" data-lang="c++"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+</pre></td><td class="code"><pre><span class="k">using</span> <span class="n">salary</span> <span class="o">=</span> <span class="kt">double</span><span class="p">;</span> <span class="c1">//별칭 선언</span>
+<span class="n">salary</span> <span class="n">kiho</span> <span class="o">=</span> <span class="mf">100.12</span><span class="p">;</span><span class="c1">//salary형으로 kiho 변수 선언</span>
+
+<span class="n">salary</span> <span class="n">kiho</span> <span class="o">=</span> <span class="mf">100.12</span><span class="p">;</span>
+<span class="n">salary</span> <span class="o">&amp;</span><span class="n">john</span> <span class="o">=</span> <span class="n">kiho</span><span class="p">;</span>
+</pre></td></tr></tbody></table></code></pre></figure>
+
+<p>이렇게 선언하면 john 변수는 salary형으로 선언한 kiho를 참조하게 되며 kiho 변수의 별칭이 된다.</p>
+
+<figure class="highlight"><pre><code class="language-c--" data-lang="c++"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+</pre></td><td class="code"><pre><span class="cp">#include &lt;iostream&gt;
+</span><span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+<span class="kt">int</span> <span class="nf">main</span><span class="p">(){</span>
+	<span class="k">using</span> <span class="n">salary</span> <span class="o">=</span> <span class="kt">double</span><span class="p">;</span>
+	<span class="n">salary</span> <span class="n">kiho</span> <span class="o">=</span> <span class="mf">100.12</span><span class="p">;</span>
+	<span class="n">salary</span> <span class="o">&amp;</span><span class="n">john</span> <span class="o">=</span> <span class="n">kiho</span><span class="p">;</span>
+
+	<span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"kiho's memory address = "</span> <span class="o">&lt;&lt;</span> <span class="o">&amp;</span><span class="n">kiho</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+	<span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"john's memory address = "</span> <span class="o">&lt;&lt;</span> <span class="o">&amp;</span><span class="n">john</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+
+	<span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></td></tr></tbody></table></code></pre></figure>
+
+<p>터미널에서 본 결과값.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>kiho's memory address = 0017F828
+john's memory address = 0017F828
+</code></pre></div></div>
+
+<p>오류가 나는 경우.</p>
+
+<figure class="highlight"><pre><code class="language-c--" data-lang="c++"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+3
+</pre></td><td class="code"><pre><span class="k">using</span> <span class="n">salary</span> <span class="o">=</span> <span class="kt">double</span><span class="p">;</span>
+<span class="n">salary</span> <span class="n">kiho</span> <span class="o">=</span> <span class="mf">100.12</span><span class="p">;</span>
+<span class="n">salary</span> <span class="o">&amp;</span><span class="n">john</span><span class="p">;</span> <span class="c1">//오류(별칭을 지정할 초기값 필요)</span>
+</pre></td></tr></tbody></table></code></pre></figure>
+
+<figure class="highlight"><pre><code class="language-c--" data-lang="c++"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+</pre></td><td class="code"><pre><span class="cp">#include &lt;iostream&gt;
+</span><span class="k">using</span> <span class="n">namespcae</span> <span class="n">std</span><span class="p">;</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">(){</span>
+	<span class="kt">int</span> <span class="n">val1</span> <span class="o">=</span> <span class="mi">100</span><span class="p">;</span>
+	<span class="kt">int</span> <span class="o">&amp;</span><span class="n">val2</span> <span class="o">=</span> <span class="n">val1</span><span class="p">;</span>
+	<span class="kt">int</span> <span class="o">&amp;</span><span class="n">val3</span> <span class="o">=</span> <span class="mi">200</span><span class="p">;</span> <span class="c1">// 상수 대입 에러</span>
+	<span class="kt">int</span> <span class="o">&amp;</span><span class="n">val4</span> <span class="o">=</span> <span class="n">val2</span><span class="p">;</span>
+	<span class="kt">int</span> <span class="o">&amp;</span><span class="n">val5</span><span class="p">;</span>  <span class="c1">// 변수 초기값 에러</span>
+	<span class="n">val1</span> <span class="o">=</span> <span class="n">val1</span> <span class="o">*</span> <span class="mi">3</span><span class="p">;</span>
+
+	<span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"val1 = "</span> <span class="o">&lt;&lt;</span> <span class="n">val1</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+	<span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"val2 = "</span> <span class="o">&lt;&lt;</span> <span class="n">val2</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+	<span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"val4 = "</span> <span class="o">&lt;&lt;</span> <span class="n">val4</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+
+	<span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+
+<span class="p">}</span>
+</pre></td></tr></tbody></table></code></pre></figure>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>val1 = 300;
+val2 = 300;
+val3 = 300;
+</code></pre></div></div>
+
+<p>[출처:최신 표준 C++로 쉽고 빠르게 안내하는 모던 C++ 프로그래밍]</p>
+:ET
