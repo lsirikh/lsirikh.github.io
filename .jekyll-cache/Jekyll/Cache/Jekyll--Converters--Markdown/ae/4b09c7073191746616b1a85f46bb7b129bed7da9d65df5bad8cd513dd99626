@@ -1,4 +1,4 @@
-I"�r<p>A list of all the posts and pages found on the site. For you robots out there is an <a href="/sitemap.xml">XML version</a> available for digesting as well.</p>
+I"�r<p>A list of all the posts and pages found on the site. For you robots out there is an <a href="/sitemap.xml">XML version</a> available for digesting as well.</p>
 
 <h2>Pages</h2>
 
@@ -352,6 +352,45 @@
     
     <h2 class="archive__item-title" itemprop="headline">
       
+        <a href="/sitemap.xml" rel="permalink"></a>
+      
+    </h2>
+    
+    
+  </article>
+</div>
+
+<div class="list__item">
+  <article class="archive__item" itemscope="" itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/robots.txt" rel="permalink"></a>
+      
+    </h2>
+    
+    
+  </article>
+</div>
+
+<div class="list__item">
+  <article class="archive__item" itemscope="" itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/feed.xml" rel="permalink"></a>
+      
+    </h2>
+    
+    
+  </article>
+</div>
+
+<div class="list__item">
+  <article class="archive__item" itemscope="" itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
         <a href="/page2/" rel="permalink"></a>
       
     </h2>
@@ -436,45 +475,6 @@
     
     <h2 class="archive__item-title" itemprop="headline">
       
-        <a href="/sitemap.xml" rel="permalink"></a>
-      
-    </h2>
-    
-    
-  </article>
-</div>
-
-<div class="list__item">
-  <article class="archive__item" itemscope="" itemtype="https://schema.org/CreativeWork">
-    
-    <h2 class="archive__item-title" itemprop="headline">
-      
-        <a href="/robots.txt" rel="permalink"></a>
-      
-    </h2>
-    
-    
-  </article>
-</div>
-
-<div class="list__item">
-  <article class="archive__item" itemscope="" itemtype="https://schema.org/CreativeWork">
-    
-    <h2 class="archive__item-title" itemprop="headline">
-      
-        <a href="/feed.xml" rel="permalink"></a>
-      
-    </h2>
-    
-    
-  </article>
-</div>
-
-<div class="list__item">
-  <article class="archive__item" itemscope="" itemtype="https://schema.org/CreativeWork">
-    
-    <h2 class="archive__item-title" itemprop="headline">
-      
         <a href="/assets/css/main.css.map" rel="permalink"></a>
       
     </h2>
@@ -490,7 +490,7 @@
     
     <h2 class="archive__item-title" itemprop="headline">
       
-        <a href="/categories/c++/CPP-12-cpp-typecast.html" rel="permalink">11.C++ 포인터(pointer)
+        <a href="/categories/c++/CPP-12-cpp-typecast.html" rel="permalink">12.C++ 형변환(conversion-typcast)
 </a>
       
     </h2>

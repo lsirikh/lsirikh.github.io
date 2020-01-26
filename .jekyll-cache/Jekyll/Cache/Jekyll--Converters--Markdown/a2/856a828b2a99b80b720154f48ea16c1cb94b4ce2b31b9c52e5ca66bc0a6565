@@ -1,4 +1,4 @@
-I"T<p>A variety of common markup showing how the theme styles them.</p>
+I"�U<p>A variety of common markup showing how the theme styles them.</p>
 
 <h1 id="header-one">Header one</h1>
 
@@ -625,6 +625,45 @@
     
     <h2 class="archive__item-title" itemprop="headline">
       
+        <a href="/sitemap.xml" rel="permalink"></a>
+      
+    </h2>
+    
+    
+  </article>
+</div>
+
+<div class="list__item">
+  <article class="archive__item" itemscope="" itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/robots.txt" rel="permalink"></a>
+      
+    </h2>
+    
+    
+  </article>
+</div>
+
+<div class="list__item">
+  <article class="archive__item" itemscope="" itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/feed.xml" rel="permalink"></a>
+      
+    </h2>
+    
+    
+  </article>
+</div>
+
+<div class="list__item">
+  <article class="archive__item" itemscope="" itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
         <a href="/page2/" rel="permalink"></a>
       
     </h2>
@@ -695,37 +734,12 @@
     
     <h2 class="archive__item-title" itemprop="headline">
       
-        <a href="/sitemap.xml" rel="permalink"></a>
+        <a href="/page7/" rel="permalink"></a>
       
     </h2>
     
-    
-  </article>
-</div>
-
-<div class="list__item">
-  <article class="archive__item" itemscope="" itemtype="https://schema.org/CreativeWork">
-    
-    <h2 class="archive__item-title" itemprop="headline">
-      
-        <a href="/robots.txt" rel="permalink"></a>
-      
-    </h2>
-    
-    
-  </article>
-</div>
-
-<div class="list__item">
-  <article class="archive__item" itemscope="" itemtype="https://schema.org/CreativeWork">
-    
-    <h2 class="archive__item-title" itemprop="headline">
-      
-        <a href="/feed.xml" rel="permalink"></a>
-      
-    </h2>
-    
-    
+    <p class="archive__item-excerpt" itemprop="description">로봇을 제작하기 위한 지식을 하나씩 습득하고, 제작합니다.
+</p>
   </article>
 </div>
 
